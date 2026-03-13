@@ -1,0 +1,25 @@
+{
+  "name": "Python-17",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List, Tuple\ndef process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:\n    \"\"\"\n    Remove duplicate integers from the input list and return the sorted unique numbers.\n\n    The function first converts the input list of numbers into a set to remove any duplicates,\n    then sorts the resulting set of unique numbers. It returns a tuple containing the count\n    of unique numbers and a list of these unique numbers in ascending order.\n\n    Args:\n    numbers (List[int]): A list of integers, which may contain duplicates.\n\n    Returns:\n    Tuple[int, List[int]]: A tuple with two elements:\n        - An integer representing the count of unique numbers.\n        - A list of the unique numbers sorted in ascending order.\n\n    Examples:\n    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])\n    (8, [15, 20, 32, 40, 67, 89, 300, 400])\n\n    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])\n    (5, [1, 2, 3, 4, 5])\n    \"\"\"",
+  "tests": "def test_process_random_numbers():\n    # Test case 1: Basic example with duplicates\n    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), \"Test case 1 failed\"\n\n    # Test case 2: All elements are the same\n    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), \"Test case 2 failed\"\n\n    # Test case 3: No duplicates\n    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), \"Test case 3 failed\"\n\n    # Test case 4: Random numbers with single element\n    assert process_random_numbers([42]) == (1, [42]), \"Test case 4 failed\"\n\n    # Test case 5: Empty list\n    assert process_random_numbers([]) == (0, []), \"Test case 5 failed\"\n\n    # Test case 6: Random numbers with negatives and zero\n    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), \"Test case 6 failed\"\n\n    # Test case 7: Large range of numbers\n    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), \"Test case 7 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test function\ntest_process_random_numbers()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List, Tuple\ndef process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:\n    \"\"\"\n    Remove duplicate integers from the input list and return the sorted unique numbers.\n\n    The function first converts the input list of numbers into a set to remove any duplicates,\n    then sorts the resulting set of unique numbers. It returns a tuple containing the count\n    of unique numbers and a list of these unique numbers in ascending order.\n\n    Args:\n    numbers (List[int]): A list of integers, which may contain duplicates.\n\n    Returns:\n    Tuple[int, List[int]]: A tuple with two elements:\n        - An integer representing the count of unique numbers.\n        - A list of the unique numbers sorted in ascending order.\n\n    Examples:\n    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])\n    (8, [15, 20, 32, 40, 67, 89, 300, 400])\n\n    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])\n    (5, [1, 2, 3, 4, 5])\n    \"\"\"\n    unique_numbers = set(numbers)\n    return len(unique_numbers), sorted(list(unique_numbers))\ndef test_process_random_numbers():\n    # Test case 1: Basic example with duplicates\n    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), \"Test case 1 failed\"\n\n    # Test case 2: All elements are the same\n    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), \"Test case 2 failed\"\n\n    # Test case 3: No duplicates\n    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), \"Test case 3 failed\"\n\n    # Test case 4: Random numbers with single element\n    assert process_random_numbers([42]) == (1, [42]), \"Test case 4 failed\"\n\n    # Test case 5: Empty list\n    assert process_random_numbers([]) == (0, []), \"Test case 5 failed\"\n\n    # Test case 6: Random numbers with negatives and zero\n    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), \"Test case 6 failed\"\n\n    # Test case 7: Large range of numbers\n    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), \"Test case 7 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test function\ntest_process_random_numbers()",
+      "timestamp": 1772569603,
+      "stdout": "All test cases passed!\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

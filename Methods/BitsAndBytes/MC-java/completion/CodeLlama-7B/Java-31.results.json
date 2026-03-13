@@ -1,0 +1,20 @@
+{
+  "name": "Java-31",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n\n  /**\n   * Given a string s, split the string and return the maximum number of unique substrings.\n   * The split substrings should be able to reconstruct the original string, and each substring must be unique.\n   *\n   * Example:\n   * Input: s = \"ababccc\"\n   * Output: 5\n   * Explanation: One possible way to split the string is ['a', 'b', 'ab', 'c', 'cc'].\n   *              Splitting the string as ['a', 'b', 'a', 'b', 'c', 'cc'] is not valid, because both 'a' and 'b' appear more than once.\n   *\n   * Note:\n   * - The length of s is between 1 and 16.\n   * - s only contains lowercase English letters.\n   */\n  public int maxUniqueSplit(String s) ",
+  "tests": "  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.maxUniqueSplit(\"ababccc\") == 5;\n    assert solution.maxUniqueSplit(\"abcabcabc\") == 6;\n    assert solution.maxUniqueSplit(\"abcdefg\") == 7;\n    assert solution.maxUniqueSplit(\"aaaaaaa\") == 3;\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n\n  /**\n   * Given a string s, split the string and return the maximum number of unique substrings.\n   * The split substrings should be able to reconstruct the original string, and each substring must be unique.\n   *\n   * Example:\n   * Input: s = \"ababccc\"\n   * Output: 5\n   * Explanation: One possible way to split the string is ['a', 'b', 'ab', 'c', 'cc'].\n   *              Splitting the string as ['a', 'b', 'a', 'b', 'c', 'cc'] is not valid, because both 'a' and 'b' appear more than once.\n   *\n   * Note:\n   * - The length of s is between 1 and 16.\n   * - s only contains lowercase English letters.\n   */\n  public int maxUniqueSplit(String s)  {\n    int n = s.length();\n    int[] dp = new int[n + 1];\n    int[][] dp2 = new int[n + 1][n + 1];\n    for (int i = 1; i <= n; i++) {\n      dp[i] = 1;\n      for (int j = 1; j < i; j++) {\n        if (s.charAt(i - 1) == s.charAt(j - 1)) {\n          dp[i] = Math.max(dp[i], dp[j] + 1);\n        }\n      }\n    }\n    for (int i = 1; i <= n; i++) {\n      for (int j = 1; j < i; j++) {\n        if (s.charAt(i - 1) == s.charAt(j - 1)) {\n          dp2[i][j] = dp2[j][i];\n        } else {\n          dp2[i][j] = Math.max(dp2[i][j], dp2[j][i] + 1);\n        }\n      }\n    }\n    int ans = 0;\n    for (int i = 1; i <= n; i++) {\n      ans = Math.max(ans, dp[i]);\n    }\n    return ans;\n  }\n  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.maxUniqueSplit(\"ababccc\") == 5;\n    assert solution.maxUniqueSplit(\"abcabcabc\") == 6;\n    assert solution.maxUniqueSplit(\"abcdefg\") == 7;\n    assert solution.maxUniqueSplit(\"aaaaaaa\") == 3;\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772569542,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmps_gwg4h4.java:50)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

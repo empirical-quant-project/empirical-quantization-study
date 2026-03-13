@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_95_check_dict_case",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import Dict\n\ndef check_dict_case(dict: Dict[str, str]) -> bool:\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    >>> check_dict_case({ 'a': 'apple', 'b': 'banana' })\n    True\n    >>> check_dict_case({ 'a': 'apple', 'A': 'banana', 'B': 'banana' })\n    False\n    >>> check_dict_case({ 'a': 'apple', 8: 'banana', 'a': 'apple' })\n    False\n    >>> check_dict_case({ 'Name': 'John', 'Age': '36', 'City': 'Houston' })\n    False\n    >>> check_dict_case({ 'STATE': 'NC', 'ZIP': '12345' })\n    True\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate({ 'p': 'pineapple', 'b': 'banana' }) == True\n    assert candidate({ 'p': 'pineapple', 'A': 'banana', 'B': 'banana' }) == False\n    assert candidate({ 'p': 'pineapple', '5': 'banana', 'a': 'apple' }) == False\n    assert candidate({ 'Name': 'John', 'Age': '36', 'City': 'Houston' }) == False\n    assert candidate({ 'STATE': 'NC', 'ZIP': '12345' }) == True\n    assert candidate({ 'fruit': 'Orange', 'taste': 'Sweet' }) == True\n    assert candidate({  }) == False\n\ndef test_check():\n    check(check_dict_case)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import Dict\n\ndef check_dict_case(dict: Dict[str, str]) -> bool:\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    >>> check_dict_case({ 'a': 'apple', 'b': 'banana' })\n    True\n    >>> check_dict_case({ 'a': 'apple', 'A': 'banana', 'B': 'banana' })\n    False\n    >>> check_dict_case({ 'a': 'apple', 8: 'banana', 'a': 'apple' })\n    False\n    >>> check_dict_case({ 'Name': 'John', 'Age': '36', 'City': 'Houston' })\n    False\n    >>> check_dict_case({ 'STATE': 'NC', 'ZIP': '12345' })\n    True\n    \"\"\"\n\n    if not dict:\n        return False\n    keys = list(dict.keys())\n    if all(isinstance(key, str) and key.islower() for key in keys):\n        return True\n    if all(isinstance(key, str) and key.isupper() for key in keys):\n        return True\n    return False\ndef check(candidate):\n    assert candidate({ 'p': 'pineapple', 'b': 'banana' }) == True\n    assert candidate({ 'p': 'pineapple', 'A': 'banana', 'B': 'banana' }) == False\n    assert candidate({ 'p': 'pineapple', '5': 'banana', 'a': 'apple' }) == False\n    assert candidate({ 'Name': 'John', 'Age': '36', 'City': 'Houston' }) == False\n    assert candidate({ 'STATE': 'NC', 'ZIP': '12345' }) == True\n    assert candidate({ 'fruit': 'Orange', 'taste': 'Sweet' }) == True\n    assert candidate({  }) == False\n\ndef test_check():\n    check(check_dict_case)\n\ntest_check()\n",
+      "timestamp": 1771868422,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

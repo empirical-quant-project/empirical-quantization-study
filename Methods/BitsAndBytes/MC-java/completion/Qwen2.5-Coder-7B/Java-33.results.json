@@ -1,0 +1,20 @@
+{
+  "name": "Java-33",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Return the lexicographically smallest string of length n and value k.\n     * The value of a string is the sum of the positions of its characters in the alphabet (starting from 1).\n     * Example:\n     * >>> getSmallestString(3, 27)\n     * \"aay\"\n     * >>> getSmallestString(5, 73)\n     * \"aaszz\"\n     */\n    public String getSmallestString(int n, int k) ",
+  "tests": "\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.getSmallestString(3, 27).equals(\"aay\");\n        assert solution.getSmallestString(5, 73).equals(\"aaszz\");\n        assert solution.getSmallestString(3, 30).equals(\"acz\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Return the lexicographically smallest string of length n and value k.\n     * The value of a string is the sum of the positions of its characters in the alphabet (starting from 1).\n     * Example:\n     * >>> getSmallestString(3, 27)\n     * \"aay\"\n     * >>> getSmallestString(5, 73)\n     * \"aaszz\"\n     */\n    public String getSmallestString(int n, int k)  {\n        StringBuilder result = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            int maxCharValue = Math.min(26, k - (n - i - 1));\n            result.append((char) ('a' + maxCharValue - 1));\n            k -= maxCharValue;\n        }\n        return result.toString();\n    }\n\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.getSmallestString(3, 27).equals(\"aay\");\n        assert solution.getSmallestString(5, 73).equals(\"aaszz\");\n        assert solution.getSmallestString(3, 30).equals(\"acz\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771863289,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmppopxo0po.java:27)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

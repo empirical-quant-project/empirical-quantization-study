@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_19_sort_numbers",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n\n        String[] numberStrings = numbers.split(\" \");\n        List<Integer> numbersList = new ArrayList<>();\n        for (String numberString : numberStrings) {\n            numbersList.add(getNumber(numberString));\n        }\n        Collections.sort(numbersList);\n        StringBuilder sb = new StringBuilder();\n        for (int number : numbersList) {\n            sb.append(getNumberString(number));\n            sb.append(\" \");\n        }\n        return sb.toString().trim();\n    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+      "timestamp": 1771870072,
+      "stdout": "",
+      "stderr": "/tmp/tmp062fp9uo.java:19: error: cannot find symbol\n            numbersList.add(getNumber(numberString));\n                            ^\n  symbol:   method getNumber(String)\n  location: class Problem\n/tmp/tmp062fp9uo.java:24: error: cannot find symbol\n            sb.append(getNumberString(number));\n                      ^\n  symbol:   method getNumberString(int)\n  location: class Problem\n2 errors\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

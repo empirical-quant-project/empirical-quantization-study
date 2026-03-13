@@ -1,0 +1,20 @@
+{
+  "name": "Java-43",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nclass Problem {\n\n  /**\n   * Given n non-negative integers representing the heights of bars in a bar chart.\n   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.\n   *\n   * @param heights An array of integers representing the heights of bars.\n   * @return The maximum area of the rectangle that can be formed.\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,1,5,6,2,3})\n   * Output: 10\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,4})\n   * Output: 4\n   */\n  public static int largestRectangleArea(int[] heights) ",
+  "tests": "  public static void main(String[] args) {\n    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;\n    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;\n    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\nclass Problem {\n\n  /**\n   * Given n non-negative integers representing the heights of bars in a bar chart.\n   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.\n   *\n   * @param heights An array of integers representing the heights of bars.\n   * @return The maximum area of the rectangle that can be formed.\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,1,5,6,2,3})\n   * Output: 10\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,4})\n   * Output: 4\n   */\n  public static int largestRectangleArea(int[] heights)  {\n    int n = heights.length;\n    int[] left = new int[n];\n    int[] right = new int[n];\n    Stack<Integer> stack = new Stack<>();\n\n    // Fill left array\n    for (int i = 0; i < n; i++) {\n      while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {\n        stack.pop();\n      }\n      left[i] = stack.isEmpty() ? -1 : stack.peek();\n      stack.push(i);\n    }\n\n    // Clear stack\n    stack.clear();\n\n    // Fill right array\n    for (int i = n - 1; i >= 0; i--) {\n      while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {\n        stack.pop();\n      }\n      right[i] = stack.isEmpty() ? n : stack.peek();\n      stack.push(i);\n    }\n\n    // Calculate maximum area\n    int maxArea = 0;\n    for (int i = 0; i < n; i++) {\n      maxArea = Math.max(maxArea, heights[i] * (right[i] - left[i] - 1));\n    }\n\n    return maxArea;\n  }\n  public static void main(String[] args) {\n    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;\n    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;\n    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1771863281,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

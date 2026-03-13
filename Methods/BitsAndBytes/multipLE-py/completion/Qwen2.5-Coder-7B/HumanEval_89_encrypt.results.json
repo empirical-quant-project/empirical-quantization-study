@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_89_encrypt",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def encrypt(s: str) -> str:\n    \"\"\"Create a function encrypt that takes a string as an argument and\n    returns a string encrypted with the alphabet being rotated. \n    The alphabet should be rotated in a manner such that the letters \n    shift down by two multiplied to two places.\n    For example:\n    >>> encrypt('hi')\n    'lm'\n    >>> encrypt('asdfghjkl')\n    'ewhjklnop'\n    >>> encrypt('gf')\n    'kj'\n    >>> encrypt('et')\n    'ix'\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('hi') == 'lm'\n    assert candidate('asdfghjkl') == 'ewhjklnop'\n    assert candidate('gf') == 'kj'\n    assert candidate('et') == 'ix'\n    assert candidate('faewfawefaewg') == 'jeiajeaijeiak'\n    assert candidate('hellomyfriend') == 'lippsqcjvmirh'\n    assert candidate('dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh') == 'hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl'\n    assert candidate('a') == 'e'\n\ndef test_check():\n    check(encrypt)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def encrypt(s: str) -> str:\n    \"\"\"Create a function encrypt that takes a string as an argument and\n    returns a string encrypted with the alphabet being rotated. \n    The alphabet should be rotated in a manner such that the letters \n    shift down by two multiplied to two places.\n    For example:\n    >>> encrypt('hi')\n    'lm'\n    >>> encrypt('asdfghjkl')\n    'ewhjklnop'\n    >>> encrypt('gf')\n    'kj'\n    >>> encrypt('et')\n    'ix'\n    \"\"\"\n\n    alphabet = 'abcdefghijklmnopqrstuvwxyz'\n    encrypted = ''\n    for char in s:\n        if char.isalpha():\n            index = alphabet.index(char.lower())\n            new_index = (index + 2 * 2) % 26\n            new_char = alphabet[new_index]\n            if char.isupper():\n                new_char = new_char.upper()\n            encrypted += new_char\n        else:\n            encrypted += char\n    return encrypted\ndef check(candidate):\n    assert candidate('hi') == 'lm'\n    assert candidate('asdfghjkl') == 'ewhjklnop'\n    assert candidate('gf') == 'kj'\n    assert candidate('et') == 'ix'\n    assert candidate('faewfawefaewg') == 'jeiajeaijeiak'\n    assert candidate('hellomyfriend') == 'lippsqcjvmirh'\n    assert candidate('dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh') == 'hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl'\n    assert candidate('a') == 'e'\n\ndef test_check():\n    check(encrypt)\n\ntest_check()\n",
+      "timestamp": 1771863889,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

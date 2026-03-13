@@ -1,0 +1,25 @@
+{
+  "name": "Python-39",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def calculate_arrangements(n, m, a) -> int:\n    \"\"\"\n    Compute the number of ways to arrange m pots of flowers using up to n types,\n    where the ith type can have at most a[i] pots, and the arrangement must be in\n    increasing order of flower types.\n\n    Args:\n    - n (int): The number of flower types available.\n    - m (int): The total number of flower pots to arrange.\n    - a (list of int): A list where a[i] is the maximum number of pots for the ith type of flower.\n\n    Returns:\n    - int: The number of distinct arrangements modulo (10^6 + 7).\n\n    Examples:\n    - calculate_arrangements(2, 4, [3, 2]) returns 2.\n    - calculate_arrangements(3, 3, [1, 2, 3]) returns 6.\n    \"\"\"",
+  "tests": "def test_calculate_arrangements():\n    # Helper function to compare expected and actual results\n    def assert_equal(actual, expected, message):\n        assert actual == expected, message\n\n    # Test Case 1\n    n, m, a = 2, 4, [3, 2]\n    expected = 2\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 1 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n\n    # Test Case 2\n    n, m, a = 3, 3, [1, 2, 3]\n    expected = 6\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 2 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n\n    # Test Case 3\n    n, m, a = 1, 5, [5]\n    expected = 1\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 3 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n\n    print(\"All tests passed!\")\n\nif __name__ == \"__main__\":\n    test_calculate_arrangements()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def calculate_arrangements(n, m, a) -> int:\n    \"\"\"\n    Compute the number of ways to arrange m pots of flowers using up to n types,\n    where the ith type can have at most a[i] pots, and the arrangement must be in\n    increasing order of flower types.\n\n    Args:\n    - n (int): The number of flower types available.\n    - m (int): The total number of flower pots to arrange.\n    - a (list of int): A list where a[i] is the maximum number of pots for the ith type of flower.\n\n    Returns:\n    - int: The number of distinct arrangements modulo (10^6 + 7).\n\n    Examples:\n    - calculate_arrangements(2, 4, [3, 2]) returns 2.\n    - calculate_arrangements(3, 3, [1, 2, 3]) returns 6.\n    \"\"\"\n    # Initialize the number of arrangements to 1.\n    arrangements = 1\n\n    # Iterate over the flower types.\n    for i in range(n):\n        # Compute the number of arrangements for the current flower type.\n        arrangements *= (m - a[i] + 1)\n\n        # Reduce the number of arrangements by the number of arrangements for the previous flower types.\n        arrangements //= (n - i)\n\n    # Return the number of arrangements modulo (10^6 + 7).\n    return arrangements % (10**6 + 7)\ndef test_calculate_arrangements():\n    # Helper function to compare expected and actual results\n    def assert_equal(actual, expected, message):\n        assert actual == expected, message\n\n    # Test Case 1\n    n, m, a = 2, 4, [3, 2]\n    expected = 2\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 1 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n\n    # Test Case 2\n    n, m, a = 3, 3, [1, 2, 3]\n    expected = 6\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 2 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n\n    # Test Case 3\n    n, m, a = 1, 5, [5]\n    expected = 1\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 3 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n\n    print(\"All tests passed!\")\n\nif __name__ == \"__main__\":\n    test_calculate_arrangements()",
+      "timestamp": 1772569603,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpik5lwfh7.py\", line 55, in <module>\n    test_calculate_arrangements()\n  File \"/tmp/tmpik5lwfh7.py\", line 40, in test_calculate_arrangements\n    assert_equal(calculate_arrangements(n, m, a), expected, f\"Test Case 1 failed: expected {expected}, got {calculate_arrangements(n, m, a)}\")\n  File \"/tmp/tmpik5lwfh7.py\", line 35, in assert_equal\n    assert actual == expected, message\nAssertionError: Test Case 1 failed: expected 2, got 3\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

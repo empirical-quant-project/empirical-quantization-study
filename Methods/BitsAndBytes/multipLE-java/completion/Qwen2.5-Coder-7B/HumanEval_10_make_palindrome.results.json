@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_10_make_palindrome",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find the shortest palindrome that begins with a supplied string.\n    // Algorithm idea is simple:\n    // - Find the longest postfix of supplied string that is a palindrome.\n    // - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    // >>> makePalindrome((\"\"))\n    // (\"\")\n    // >>> makePalindrome((\"cat\"))\n    // (\"catac\")\n    // >>> makePalindrome((\"cata\"))\n    // (\"catac\")\n    public static String makePalindrome(String string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(makePalindrome((\"\")).equals((\"\")));\n    assert(makePalindrome((\"x\")).equals((\"x\")));\n    assert(makePalindrome((\"xyz\")).equals((\"xyzyx\")));\n    assert(makePalindrome((\"xyx\")).equals((\"xyx\")));\n    assert(makePalindrome((\"jerry\")).equals((\"jerryrrej\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find the shortest palindrome that begins with a supplied string.\n    // Algorithm idea is simple:\n    // - Find the longest postfix of supplied string that is a palindrome.\n    // - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    // >>> makePalindrome((\"\"))\n    // (\"\")\n    // >>> makePalindrome((\"cat\"))\n    // (\"catac\")\n    // >>> makePalindrome((\"cata\"))\n    // (\"catac\")\n    public static String makePalindrome(String string) {\n\n        int i = string.length();\n        while (i > 0) {\n            if (isPalindrome(string.substring(0, i))) {\n                break;\n            }\n            i--;\n        }\n        return string + new StringBuilder(string.substring(0, string.length() - i)).reverse().toString();\n    }\n    public static void main(String[] args) {\n    assert(makePalindrome((\"\")).equals((\"\")));\n    assert(makePalindrome((\"x\")).equals((\"x\")));\n    assert(makePalindrome((\"xyz\")).equals((\"xyzyx\")));\n    assert(makePalindrome((\"xyx\")).equals((\"xyx\")));\n    assert(makePalindrome((\"jerry\")).equals((\"jerryrrej\")));\n    }\n\n}\n",
+      "timestamp": 1771870045,
+      "stdout": "",
+      "stderr": "/tmp/tmpj8oyd2w3.java:23: error: cannot find symbol\n            if (isPalindrome(string.substring(0, i))) {\n                ^\n  symbol:   method isPalindrome(String)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

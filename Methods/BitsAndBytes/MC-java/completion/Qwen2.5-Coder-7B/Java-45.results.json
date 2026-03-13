@@ -1,0 +1,20 @@
+{
+  "name": "Java-45",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Find the smallest integer that can be formed by rearranging the digits of the given positive integer n, which is greater than n.\n   *\n   * @param n The input positive integer.\n   * @return The smallest rearranged integer greater than n, or -1 if not possible.\n   *\n   * Example:\n   * findSmallestInteger(12)\n   * Output: 21\n   */\n  public static int findSmallestInteger(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert findSmallestInteger(123) == 132;\n    assert findSmallestInteger(531) == -1;\n    assert findSmallestInteger(2071) == 2107;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Find the smallest integer that can be formed by rearranging the digits of the given positive integer n, which is greater than n.\n   *\n   * @param n The input positive integer.\n   * @return The smallest rearranged integer greater than n, or -1 if not possible.\n   *\n   * Example:\n   * findSmallestInteger(12)\n   * Output: 21\n   */\n  public static int findSmallestInteger(int n)  {\n    char[] digits = Integer.toString(n).toCharArray();\n    int length = digits.length;\n\n    // Find the first digit that is smaller than the digit to its right\n    int i;\n    for (i = length - 2; i >= 0; i--) {\n      if (digits[i] < digits[i + 1]) {\n        break;\n      }\n    }\n\n    // If no such digit is found, no rearrangement can make the number greater\n    if (i == -1) {\n      return -1;\n    }\n\n    // Find the smallest digit on the right side of the found digit that is greater than it\n    int j;\n    for (j = length - 1; j > i; j--) {\n      if (digits[j] > digits[i]) {\n        break;\n      }\n    }\n\n    // Swap the found digits\n    char temp = digits[i];\n    digits[i] = digits[j];\n    digits[j] = temp;\n\n    // Sort the digits after the position of the first found digit\n    Arrays.sort(digits, i + 1, length);\n\n    // Convert the array of digits back to an integer\n    return Integer.parseInt(new String(digits));\n  }\n  public static void main(String[] args) {\n    assert findSmallestInteger(123) == 132;\n    assert findSmallestInteger(531) == -1;\n    assert findSmallestInteger(2071) == 2107;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1771863287,
+      "stdout": "",
+      "stderr": "/tmp/tmpke2fjp94.java:44: error: cannot find symbol\n    Arrays.sort(digits, i + 1, length);\n    ^\n  symbol:   variable Arrays\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

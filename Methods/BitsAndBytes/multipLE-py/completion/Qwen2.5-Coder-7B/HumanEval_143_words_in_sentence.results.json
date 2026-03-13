@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_143_words_in_sentence",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def words_in_sentence(sentence: str) -> str:\n    \"\"\"\n    You are given a string representing a sentence,\n    the sentence contains some words separated by a space,\n    and you have to return a string that contains the words from the original sentence,\n    whose lengths are prime numbers,\n    the order of the words in the new string should be the same as the original one.\n\n    Example 1:\n    >>> words_in_sentence('This is a test')\n    'is'\n\n    Example 2:\n    >>> words_in_sentence('lets go for swimming')\n    'go for'\n    \n    Constraints:\n        * 1 <= len(sentence) <= 100\n        * sentence contains only letters\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('This is a test') == 'is'\n    assert candidate('lets go for swimming') == 'go for'\n    assert candidate('there is no place available here') == 'there is no place'\n    assert candidate('Hi I am Hussein') == 'Hi am Hussein'\n    assert candidate('go for it') == 'go for it'\n    assert candidate('here') == ''\n    assert candidate('here is') == 'is'\n\ndef test_check():\n    check(words_in_sentence)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def words_in_sentence(sentence: str) -> str:\n    \"\"\"\n    You are given a string representing a sentence,\n    the sentence contains some words separated by a space,\n    and you have to return a string that contains the words from the original sentence,\n    whose lengths are prime numbers,\n    the order of the words in the new string should be the same as the original one.\n\n    Example 1:\n    >>> words_in_sentence('This is a test')\n    'is'\n\n    Example 2:\n    >>> words_in_sentence('lets go for swimming')\n    'go for'\n    \n    Constraints:\n        * 1 <= len(sentence) <= 100\n        * sentence contains only letters\n    \"\"\"\n\n    # Check if a number is prime\n    def is_prime(n):\n        if n <= 1:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    # Split the sentence into words\n    words = sentence.split()\n\n    # Filter words with prime lengths\n    prime_words = [word for word in words if is_prime(len(word))]\n\n    # Join the prime words into a string\n    result = ' '.join(prime_words)\n\n    return result\ndef check(candidate):\n    assert candidate('This is a test') == 'is'\n    assert candidate('lets go for swimming') == 'go for'\n    assert candidate('there is no place available here') == 'there is no place'\n    assert candidate('Hi I am Hussein') == 'Hi am Hussein'\n    assert candidate('go for it') == 'go for it'\n    assert candidate('here') == ''\n    assert candidate('here is') == 'is'\n\ndef test_check():\n    check(words_in_sentence)\n\ntest_check()\n",
+      "timestamp": 1771863887,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

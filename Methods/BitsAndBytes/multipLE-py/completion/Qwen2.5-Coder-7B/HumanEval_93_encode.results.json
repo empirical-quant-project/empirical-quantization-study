@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_93_encode",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def encode(message: str) -> str:\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('TEST') == 'tgst'\n    assert candidate('Mudasir') == 'mWDCSKR'\n    assert candidate('YES') == 'ygs'\n    assert candidate('This is a message') == 'tHKS KS C MGSSCGG'\n    assert candidate('I DoNt KnOw WhAt tO WrItE') == 'k dQnT kNqW wHcT Tq wRkTg'\n\ndef test_check():\n    check(encode)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def encode(message: str) -> str:\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n\n    vowels = 'aeiou'\n    encoded_message = ''\n    for char in message:\n        if char.isalpha():\n            if char.isupper():\n                char = char.lower()\n            else:\n                char = char.upper()\n            if char in vowels:\n                char = chr(ord(char) + 2)\n        encoded_message += char\n    return encoded_message\ndef check(candidate):\n    assert candidate('TEST') == 'tgst'\n    assert candidate('Mudasir') == 'mWDCSKR'\n    assert candidate('YES') == 'ygs'\n    assert candidate('This is a message') == 'tHKS KS C MGSSCGG'\n    assert candidate('I DoNt KnOw WhAt tO WrItE') == 'k dQnT kNqW wHcT Tq wRkTg'\n\ndef test_check():\n    check(encode)\n\ntest_check()\n",
+      "timestamp": 1771863890,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp3lw4qm1p.py\", line 38, in <module>\n    test_check()\n  File \"/tmp/tmp3lw4qm1p.py\", line 36, in test_check\n    check(encode)\n  File \"/tmp/tmp3lw4qm1p.py\", line 30, in check\n    assert candidate('Mudasir') == 'mWDCSKR'\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

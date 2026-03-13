@@ -1,0 +1,20 @@
+{
+  "name": "Java-26",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Given an integer array `gain` representing the net gain in altitude between consecutive points, return the highest altitude reached.\n     *\n     * Example:\n     * >>> highestAltitude([-5,1,5,0,-7])\n     * 1\n     * Explanation: The altitudes are [0,-5,-4,1,1,-6]. The highest altitude reached is 1.\n     *\n     * >>> highestAltitude([-4,-3,-2,-1,4,3,2])\n     * 0\n     * Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest altitude reached is 0.\n     *\n     * Constraints:\n     * - The length of the `gain` array is between 1 and 100, inclusive.\n     * - Each element in the `gain` array is between -100 and 100, inclusive.\n     */\n    public int highestAltitude(int[] gain) ",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.highestAltitude(new int[]{-5,1,5,0,-7}) == 1;\n        assert solution.highestAltitude(new int[]{-4,-3,-2,-1,4,3,2}) == 0;\n        assert solution.highestAltitude(new int[]{-4, -3, -2, -1, 4, 3, 2, 1}) == 0;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Given an integer array `gain` representing the net gain in altitude between consecutive points, return the highest altitude reached.\n     *\n     * Example:\n     * >>> highestAltitude([-5,1,5,0,-7])\n     * 1\n     * Explanation: The altitudes are [0,-5,-4,1,1,-6]. The highest altitude reached is 1.\n     *\n     * >>> highestAltitude([-4,-3,-2,-1,4,3,2])\n     * 0\n     * Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest altitude reached is 0.\n     *\n     * Constraints:\n     * - The length of the `gain` array is between 1 and 100, inclusive.\n     * - Each element in the `gain` array is between -100 and 100, inclusive.\n     */\n    public int highestAltitude(int[] gain)  {\n        int maxAltitude = 0;\n        int currentAltitude = 0;\n        for (int altitudeGain : gain) {\n            currentAltitude += altitudeGain;\n            maxAltitude = Math.max(maxAltitude, currentAltitude);\n        }\n        return maxAltitude;\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.highestAltitude(new int[]{-5,1,5,0,-7}) == 1;\n        assert solution.highestAltitude(new int[]{-4,-3,-2,-1,4,3,2}) == 0;\n        assert solution.highestAltitude(new int[]{-4, -3, -2, -1, 4, 3, 2, 1}) == 0;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771863299,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

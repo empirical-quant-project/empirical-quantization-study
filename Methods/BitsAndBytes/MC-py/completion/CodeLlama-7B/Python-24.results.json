@@ -1,0 +1,25 @@
+{
+  "name": "Python-24",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def count_partitions(n: int, k: int, x: int) -> int:\n    \"\"\"\n    Count the number of ways to partition an integer n into k parts,\n    where each part is at least x and order of parts does not matter.\n\n    Parameters:\n    n (int): The integer to be partitioned.\n    k (int): The number of parts to divide n into.\n    x (int): The minimum value for each part.\n\n    Returns:\n    int: The number of distinct partitioning ways.\n\n    Examples:\n    >>> count_partitions(7, 3, 1)\n    4\n    >>> count_partitions(6, 2, 1)\n    3\n    \"\"\"",
+  "tests": "def test_count_partitions():\n    # Test case 1: Simple case\n    result = count_partitions(7, 3, 1)\n    assert result == 4, f\"Expected 4, got {result}\"\n\n    # Test case 2: Another simple case\n    result = count_partitions(6, 2, 1)\n    assert result == 3, f\"Expected 3, got {result}\"\n\n    # Test case 3: Partitioning into a larger number of parts\n    result = count_partitions(8, 4, 1)\n    assert result == 5, f\"Expected 5, got {result}\"\n\n    print(\"All test cases passed successfully!\")\n\n\n# Call the test function to run the test cases\ntest_count_partitions()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def count_partitions(n: int, k: int, x: int) -> int:\n    \"\"\"\n    Count the number of ways to partition an integer n into k parts,\n    where each part is at least x and order of parts does not matter.\n\n    Parameters:\n    n (int): The integer to be partitioned.\n    k (int): The number of parts to divide n into.\n    x (int): The minimum value for each part.\n\n    Returns:\n    int: The number of distinct partitioning ways.\n\n    Examples:\n    >>> count_partitions(7, 3, 1)\n    4\n    >>> count_partitions(6, 2, 1)\n    3\n    \"\"\"\n    if n == 0:\n        return 1\n    if k == 1:\n        return 1\n    if n < x:\n        return 0\n    return count_partitions(n - x, k - 1, x) + count_partitions(n - x, k, x)\ndef test_count_partitions():\n    # Test case 1: Simple case\n    result = count_partitions(7, 3, 1)\n    assert result == 4, f\"Expected 4, got {result}\"\n\n    # Test case 2: Another simple case\n    result = count_partitions(6, 2, 1)\n    assert result == 3, f\"Expected 3, got {result}\"\n\n    # Test case 3: Partitioning into a larger number of parts\n    result = count_partitions(8, 4, 1)\n    assert result == 5, f\"Expected 5, got {result}\"\n\n    print(\"All test cases passed successfully!\")\n\n\n# Call the test function to run the test cases\ntest_count_partitions()",
+      "timestamp": 1772569603,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp07603q2_.py\", line 44, in <module>\n    test_count_partitions()\n  File \"/tmp/tmp07603q2_.py\", line 30, in test_count_partitions\n    assert result == 4, f\"Expected 4, got {result}\"\nAssertionError: Expected 4, got 29\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

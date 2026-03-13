@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_18_how_many_times",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find how many times a given substring can be found in the original string. Count overlaping cases.\n    // >>> howManyTimes((\"\"), (\"a\"))\n    // (0l)\n    // >>> howManyTimes((\"aaa\"), (\"a\"))\n    // (3l)\n    // >>> howManyTimes((\"aaaa\"), (\"aa\"))\n    // (3l)\n    public static long howManyTimes(String string, String substring) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(howManyTimes((\"\"), (\"x\")) == (0l));\n    assert(howManyTimes((\"xyxyxyx\"), (\"x\")) == (4l));\n    assert(howManyTimes((\"cacacacac\"), (\"cac\")) == (4l));\n    assert(howManyTimes((\"john doe\"), (\"john\")) == (1l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find how many times a given substring can be found in the original string. Count overlaping cases.\n    // >>> howManyTimes((\"\"), (\"a\"))\n    // (0l)\n    // >>> howManyTimes((\"aaa\"), (\"a\"))\n    // (3l)\n    // >>> howManyTimes((\"aaaa\"), (\"aa\"))\n    // (3l)\n    public static long howManyTimes(String string, String substring) {\n\n        long count = 0;\n        int index = 0;\n        while ((index = string.indexOf(substring, index)) != -1) {\n            count++;\n            index += substring.length();\n        }\n        return count;\n    }\n    public static void main(String[] args) {\n    assert(howManyTimes((\"\"), (\"x\")) == (0l));\n    assert(howManyTimes((\"xyxyxyx\"), (\"x\")) == (4l));\n    assert(howManyTimes((\"cacacacac\"), (\"cac\")) == (4l));\n    assert(howManyTimes((\"john doe\"), (\"john\")) == (1l));\n    }\n\n}\n",
+      "timestamp": 1771870057,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpqsj8p801.java:29)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

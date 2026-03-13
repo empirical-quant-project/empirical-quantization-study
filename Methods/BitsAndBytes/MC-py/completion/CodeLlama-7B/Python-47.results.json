@@ -1,0 +1,25 @@
+{
+  "name": "Python-47",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def sort_students(student_scores):\n    \"\"\"\n    Sorts a list of students based on their scores. The students are sorted primarily by their total score (descending),\n    then by their Chinese score (descending), and finally by their student number (ascending) in case of a tie.\n    \n    Args:\n    student_scores (list): A list of tuples, where each tuple consists of (student_number, total_score, Chinese_score).\n    \n    Returns:\n    list: A list of tuples sorted according to the above rules.\n    \n    Examples:\n    >>> sort_students([(1, 237, 90), (2, 244, 87), (3, 258, 78), (4, 264, 88), (5, 215, 67), (6, 265, 78)])\n    [(6, 265, 78), (4, 264, 88), (3, 258, 78), (2, 244, 87), (1, 237, 90), (5, 215, 67)]\n    \n    >>> sort_students([(1, 300, 100), (2, 300, 99), (3, 299, 98), (4, 298, 97), (5, 297, 96)])\n    [(1, 300, 100), (2, 300, 99), (3, 299, 98), (4, 298, 97), (5, 297, 96)]\n    \"\"\"",
+  "tests": "def test_sort_students():\n    # Test case 1\n    input_scores = [(1, 237, 90), (2, 244, 87), (3, 258, 78), (4, 264, 88), (5, 215, 67), (6, 265, 78)]\n    expected_output = [(6, 265, 78), (4, 264, 88), (3, 258, 78), (2, 244, 87), (1, 237, 90), (5, 215, 67)]\n    assert sort_students(input_scores) == expected_output, \"Test case 1 failed\"\n\n    # Test case 2\n    input_scores = [(1, 258, 80), (2, 264, 88), (3, 258, 90), (4, 244, 87), (5, 258, 78), (6, 264, 88), (7, 220, 67), (8, 265, 78)]\n    expected_output = [(8, 265, 78), (2, 264, 88), (6, 264, 88), (3, 258, 90), (1, 258, 80), (5, 258, 78), (4, 244, 87), (7, 220, 67)]\n    assert sort_students(input_scores) == expected_output, \"Test case 2 failed\"\n\n    # Test case 3\n    input_scores = [(1, 300, 100), (2, 300, 100), (3, 299, 99), (4, 298, 98), (5, 297, 97)]\n    expected_output = [(1, 300, 100), (2, 300, 100), (3, 299, 99), (4, 298, 98), (5, 297, 97)]\n    assert sort_students(input_scores) == expected_output, \"Test case 3 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test function\ntest_sort_students()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def sort_students(student_scores):\n    \"\"\"\n    Sorts a list of students based on their scores. The students are sorted primarily by their total score (descending),\n    then by their Chinese score (descending), and finally by their student number (ascending) in case of a tie.\n    \n    Args:\n    student_scores (list): A list of tuples, where each tuple consists of (student_number, total_score, Chinese_score).\n    \n    Returns:\n    list: A list of tuples sorted according to the above rules.\n    \n    Examples:\n    >>> sort_students([(1, 237, 90), (2, 244, 87), (3, 258, 78), (4, 264, 88), (5, 215, 67), (6, 265, 78)])\n    [(6, 265, 78), (4, 264, 88), (3, 258, 78), (2, 244, 87), (1, 237, 90), (5, 215, 67)]\n    \n    >>> sort_students([(1, 300, 100), (2, 300, 99), (3, 299, 98), (4, 298, 97), (5, 297, 96)])\n    [(1, 300, 100), (2, 300, 99), (3, 299, 98), (4, 298, 97), (5, 297, 96)]\n    \"\"\"\n    return sorted(student_scores, key=lambda x: (-x[0], -x[1], x[2]))\ndef test_sort_students():\n    # Test case 1\n    input_scores = [(1, 237, 90), (2, 244, 87), (3, 258, 78), (4, 264, 88), (5, 215, 67), (6, 265, 78)]\n    expected_output = [(6, 265, 78), (4, 264, 88), (3, 258, 78), (2, 244, 87), (1, 237, 90), (5, 215, 67)]\n    assert sort_students(input_scores) == expected_output, \"Test case 1 failed\"\n\n    # Test case 2\n    input_scores = [(1, 258, 80), (2, 264, 88), (3, 258, 90), (4, 244, 87), (5, 258, 78), (6, 264, 88), (7, 220, 67), (8, 265, 78)]\n    expected_output = [(8, 265, 78), (2, 264, 88), (6, 264, 88), (3, 258, 90), (1, 258, 80), (5, 258, 78), (4, 244, 87), (7, 220, 67)]\n    assert sort_students(input_scores) == expected_output, \"Test case 2 failed\"\n\n    # Test case 3\n    input_scores = [(1, 300, 100), (2, 300, 100), (3, 299, 99), (4, 298, 98), (5, 297, 97)]\n    expected_output = [(1, 300, 100), (2, 300, 100), (3, 299, 99), (4, 298, 98), (5, 297, 97)]\n    assert sort_students(input_scores) == expected_output, \"Test case 3 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test function\ntest_sort_students()",
+      "timestamp": 1772569607,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpa1yg1m28.py\", line 39, in <module>\n    test_sort_students()\n  File \"/tmp/tmpa1yg1m28.py\", line 24, in test_sort_students\n    assert sort_students(input_scores) == expected_output, \"Test case 1 failed\"\nAssertionError: Test case 1 failed\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

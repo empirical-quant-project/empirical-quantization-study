@@ -1,0 +1,25 @@
+{
+  "name": "Python-49",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def hanoi_double_iterative(n: int) -> int:\n    \"\"\"\n    Calculate the minimum number of moves required to solve the double-disc Hanoi Towers problem for n pairs of discs.\n    \n    This function implements an iterative algorithm to determine the minimum number of moves necessary to transfer\n    2n discs from the A pole to the C pole in a double-disc Hanoi Towers setup, following the rules that only one disc \n    can be moved at a time and no disc may be placed on top of a smaller disc. The function uses a known recursive relation \n    and iteratively computes the total number of moves for n pairs of discs.\n    \n    Args:\n    n (int): The number of disc pairs (each of two identical discs) on the A pole.\n\n    Returns:\n    int: The minimum number of moves required to transfer all the discs from the A pole to the C pole.\n\n    Cases:\n    - For n=1, the function should return 2.\n    - For n=2, the function should return 6.\n    - For n=3, the function should return 14.\n    \"\"\"",
+  "tests": "def test_hanoi_double_iterative():\n    # Test case 1: n = 1\n    assert hanoi_double_iterative(1) == 2, \"Test case 1 failed\"\n\n    # Test case 2: n = 2\n    assert hanoi_double_iterative(2) == 6, \"Test case 2 failed\"\n\n    # Test case 3: n = 3\n    assert hanoi_double_iterative(3) == 14, \"Test case 3 failed\"\n\n    # Additional test cases can be added based on computed or known results\n    # Test case 4: n = 4 (computed using the formula)\n    assert hanoi_double_iterative(4) == 30, \"Test case 4 failed\"\n\n    # Test case 5: n = 5 (computed using the formula)\n    assert hanoi_double_iterative(5) == 62, \"Test case 5 failed\"\n\n    # Test case 6: Large n, n = 10 (computed using the formula or a trusted source)\n    assert hanoi_double_iterative(10) == 2046, \"Test case 6 failed\"\n\n    print(\"All test cases passed!\")\n\n\n# Run the test function\ntest_hanoi_double_iterative()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def hanoi_double_iterative(n: int) -> int:\n    \"\"\"\n    Calculate the minimum number of moves required to solve the double-disc Hanoi Towers problem for n pairs of discs.\n    \n    This function implements an iterative algorithm to determine the minimum number of moves necessary to transfer\n    2n discs from the A pole to the C pole in a double-disc Hanoi Towers setup, following the rules that only one disc \n    can be moved at a time and no disc may be placed on top of a smaller disc. The function uses a known recursive relation \n    and iteratively computes the total number of moves for n pairs of discs.\n    \n    Args:\n    n (int): The number of disc pairs (each of two identical discs) on the A pole.\n\n    Returns:\n    int: The minimum number of moves required to transfer all the discs from the A pole to the C pole.\n\n    Cases:\n    - For n=1, the function should return 2.\n    - For n=2, the function should return 6.\n    - For n=3, the function should return 14.\n    \"\"\"\n    # Base case: if there are no disc pairs, no moves are needed\n    if n == 0:\n        return 0\n\n    # Initialize the total number of moves\n    total_moves = 0\n\n    # Calculate the total number of moves using the recursive relation\n    for i in range(1, n + 1):\n        total_moves += 2 ** i - 1\n\n    return total_moves\ndef test_hanoi_double_iterative():\n    # Test case 1: n = 1\n    assert hanoi_double_iterative(1) == 2, \"Test case 1 failed\"\n\n    # Test case 2: n = 2\n    assert hanoi_double_iterative(2) == 6, \"Test case 2 failed\"\n\n    # Test case 3: n = 3\n    assert hanoi_double_iterative(3) == 14, \"Test case 3 failed\"\n\n    # Additional test cases can be added based on computed or known results\n    # Test case 4: n = 4 (computed using the formula)\n    assert hanoi_double_iterative(4) == 30, \"Test case 4 failed\"\n\n    # Test case 5: n = 5 (computed using the formula)\n    assert hanoi_double_iterative(5) == 62, \"Test case 5 failed\"\n\n    # Test case 6: Large n, n = 10 (computed using the formula or a trusted source)\n    assert hanoi_double_iterative(10) == 2046, \"Test case 6 failed\"\n\n    print(\"All test cases passed!\")\n\n\n# Run the test function\ntest_hanoi_double_iterative()",
+      "timestamp": 1771863891,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpbqroo3nl.py\", line 57, in <module>\n    test_hanoi_double_iterative()\n  File \"/tmp/tmpbqroo3nl.py\", line 35, in test_hanoi_double_iterative\n    assert hanoi_double_iterative(1) == 2, \"Test case 1 failed\"\nAssertionError: Test case 1 failed\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

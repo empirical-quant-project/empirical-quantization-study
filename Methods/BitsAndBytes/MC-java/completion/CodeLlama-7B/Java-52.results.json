@@ -1,0 +1,20 @@
+{
+  "name": "Java-52",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Given an integer n, return the minimum number of perfect square numbers that sum up to n.\n   *\n   * @param n The target integer.\n   * @return The minimum number of perfect square numbers.\n   *\n   * Example:\n   * minPerfectSquareSum(12)\n   * Output: 3\n   *\n   * Example:\n   * minPerfectSquareSum(13)\n   * Output: 2\n   */\n  public static int minPerfectSquareSum(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert minPerfectSquareSum(26) == 2 : \"Test case 1 failed\";\n    assert minPerfectSquareSum(17) == 2 : \"Test case 2 failed\";\n    assert minPerfectSquareSum(99) == 3 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Given an integer n, return the minimum number of perfect square numbers that sum up to n.\n   *\n   * @param n The target integer.\n   * @return The minimum number of perfect square numbers.\n   *\n   * Example:\n   * minPerfectSquareSum(12)\n   * Output: 3\n   *\n   * Example:\n   * minPerfectSquareSum(13)\n   * Output: 2\n   */\n  public static int minPerfectSquareSum(int n)  {\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n      if (i * i == n) {\n        count++;\n      }\n    }\n    return count;\n  }\n  public static void main(String[] args) {\n    assert minPerfectSquareSum(26) == 2 : \"Test case 1 failed\";\n    assert minPerfectSquareSum(17) == 2 : \"Test case 2 failed\";\n    assert minPerfectSquareSum(99) == 3 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772569550,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test case 1 failed\n\tat Problem.main(tmpwr4oeu_d.java:27)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}
