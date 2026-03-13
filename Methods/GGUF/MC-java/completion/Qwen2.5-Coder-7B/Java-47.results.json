@@ -1,0 +1,20 @@
+{
+  "name": "Java-47",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Determine if the given points form a boomerang on the X-Y plane.\n   *\n   * @param points An array of points where points[i] = [xi, yi].\n   * @return True if the points form a boomerang, false otherwise.\n   *\n   * Example:\n   * isBoomerang(new int[][]{{1,1},{2,3},{3,2}})\n   * Output: true\n   */\n  public static boolean isBoomerang(int[][] points) ",
+  "tests": "  public static void main(String[] args) {\n    assert isBoomerang(new int[][] { { 0, 0 }, { 2, 2 }, { 1, 1 } }) ==\n    false : \"Test case 1 failed\";\n    assert isBoomerang(new int[][] { { 1, 1 }, { 2, 4 }, { 3, 1 } }) ==\n    true : \"Test case 2 failed\";\n    assert isBoomerang(new int[][] { { 0, 1 }, { 1, 0 }, { 0, -1 } }) ==\n    true : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Determine if the given points form a boomerang on the X-Y plane.\n   *\n   * @param points An array of points where points[i] = [xi, yi].\n   * @return True if the points form a boomerang, false otherwise.\n   *\n   * Example:\n   * isBoomerang(new int[][]{{1,1},{2,3},{3,2}})\n   * Output: true\n   */\n  public static boolean isBoomerang(int[][] points)  {\n    // Calculate the area of the triangle formed by the points\n    int area = points[0][0] * (points[1][1] - points[2][1]) +\n               points[1][0] * (points[2][1] - points[0][1]) +\n               points[2][0] * (points[0][1] - points[1][1]);\n    // If the area is zero, the points are collinear and do not form a boomerang\n    return area != 0;\n  }\n  public static void main(String[] args) {\n    assert isBoomerang(new int[][] { { 0, 0 }, { 2, 2 }, { 1, 1 } }) ==\n    false : \"Test case 1 failed\";\n    assert isBoomerang(new int[][] { { 1, 1 }, { 2, 4 }, { 3, 1 } }) ==\n    true : \"Test case 2 failed\";\n    assert isBoomerang(new int[][] { { 0, 1 }, { 1, 0 }, { 0, -1 } }) ==\n    true : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1771962949,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

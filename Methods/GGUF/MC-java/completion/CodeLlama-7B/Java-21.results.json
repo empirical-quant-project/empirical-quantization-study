@@ -1,0 +1,20 @@
+{
+  "name": "Java-21",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,\n     * return the number of different transformations among all words.\n     *\n     * Example:\n     * uniqueMorseRepresentations([\"gin\",\"zen\",\"gig\",\"msg\"]) -> 2\n     * uniqueMorseRepresentations([\"a\"]) -> 1\n     */\n    public int uniqueMorseRepresentations(String[] words) ",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.uniqueMorseRepresentations(new String[]{\"hello\", \"world\", \"hello\"}) == 2;\n        assert solution.uniqueMorseRepresentations(new String[]{\"abc\", \"def\", \"ghi\"}) == 3;\n        assert solution.uniqueMorseRepresentations(new String[]{\"aaa\", \"aaa\", \"aaa\"}) == 1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,\n     * return the number of different transformations among all words.\n     *\n     * Example:\n     * uniqueMorseRepresentations([\"gin\",\"zen\",\"gig\",\"msg\"]) -> 2\n     * uniqueMorseRepresentations([\"a\"]) -> 1\n     */\n    public int uniqueMorseRepresentations(String[] words)  {\n        Set<String> set = new HashSet<>();\n        for (String word : words) {\n            set.add(getMorseCode(word));\n        }\n        return set.size();\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.uniqueMorseRepresentations(new String[]{\"hello\", \"world\", \"hello\"}) == 2;\n        assert solution.uniqueMorseRepresentations(new String[]{\"abc\", \"def\", \"ghi\"}) == 3;\n        assert solution.uniqueMorseRepresentations(new String[]{\"aaa\", \"aaa\", \"aaa\"}) == 1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772211557,
+      "stdout": "",
+      "stderr": "/tmp/tmphdwki_iy.java:15: error: cannot find symbol\n            set.add(getMorseCode(word));\n                    ^\n  symbol:   method getMorseCode(String)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

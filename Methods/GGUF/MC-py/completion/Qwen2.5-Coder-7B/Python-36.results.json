@@ -1,0 +1,25 @@
+{
+  "name": "Python-36",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List, Tuple\ndef remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:\n    \"\"\"\n    Calculate the number of remaining trees along a road after specific areas have been cleared.\n\n    The road is represented as a straight line of length 'l' and is initially filled with trees.\n    Each area scheduled for clearing is specified as a pair of integers (start, end), representing\n    the inclusive range along the road where the trees will be removed.\n\n    Args:\n    - l (int): The length of the road.\n    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.\n    \n    Returns:\n    - int: The total number of trees remaining along the road after the specified areas have been cleared.\n    \n    Examples:\n    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    \n    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.\n    \"\"\"",
+  "tests": "def test_remaining_trees_after_clearing():\n    test_cases = [\n        (500, [(150, 300), (100, 200), (470, 471)], 298),\n        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),\n        (10, [(3, 4), (7, 9)], 6),\n    ]\n\n    for i, (l, areas, expected) in enumerate(test_cases, 1):\n        result = remaining_trees_after_clearing(l, areas)\n        assert result == expected, f\"Test case {i} failed: expected {expected}, got {result}\"\n        print(f\"Test case {i} passed.\")\n\n\ntest_remaining_trees_after_clearing()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List, Tuple\ndef remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:\n    \"\"\"\n    Calculate the number of remaining trees along a road after specific areas have been cleared.\n\n    The road is represented as a straight line of length 'l' and is initially filled with trees.\n    Each area scheduled for clearing is specified as a pair of integers (start, end), representing\n    the inclusive range along the road where the trees will be removed.\n\n    Args:\n    - l (int): The length of the road.\n    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.\n    \n    Returns:\n    - int: The total number of trees remaining along the road after the specified areas have been cleared.\n    \n    Examples:\n    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    \n    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.\n    \"\"\"    \n    # Initialize a set to keep track of cleared positions\n    cleared_positions = set()\n    \n    # Add all positions in the cleared areas to the set\n    for start, end in areas:\n        for pos in range(start, end + 1):\n            cleared_positions.add(pos)\n    \n    # Calculate the number of remaining trees by subtracting the cleared positions from the total length\n    remaining_trees = l - len(cleared_positions)\n    \n    return remaining_trees\ndef test_remaining_trees_after_clearing():\n    test_cases = [\n        (500, [(150, 300), (100, 200), (470, 471)], 298),\n        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),\n        (10, [(3, 4), (7, 9)], 6),\n    ]\n\n    for i, (l, areas, expected) in enumerate(test_cases, 1):\n        result = remaining_trees_after_clearing(l, areas)\n        assert result == expected, f\"Test case {i} failed: expected {expected}, got {result}\"\n        print(f\"Test case {i} passed.\")\n\n\ntest_remaining_trees_after_clearing()",
+      "timestamp": 1771965020,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpo75hyuwx.py\", line 46, in <module>\n    test_remaining_trees_after_clearing()\n  File \"/tmp/tmpo75hyuwx.py\", line 42, in test_remaining_trees_after_clearing\n    assert result == expected, f\"Test case {i} failed: expected {expected}, got {result}\"\nAssertionError: Test case 1 failed: expected 298, got 297\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

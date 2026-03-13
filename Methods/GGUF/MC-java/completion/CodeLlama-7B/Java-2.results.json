@@ -1,0 +1,20 @@
+{
+  "name": "Java-2",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Given a positive integer Y indicating the start year, and a positive integer N,\n     * this function finds the Nth leap year after the start year Y.\n     *\n     * @param Y The start year.\n     * @param N The position of the leap year to find.\n     * @return The Nth leap year after the start year Y.\n     *\n     * Example:\n     * findNthLeapYear(2000, 4) => 2008\n     * findNthLeapYear(1996, 10) => 2032\n     */\n    public static int findNthLeapYear(int Y, int N) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with the examples from the comment\n        assert findNthLeapYear(2000, 4) == 2012;\n        assert findNthLeapYear(1996, 10) == 2032;\n        assert findNthLeapYear(2000, 1) == 2000;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Given a positive integer Y indicating the start year, and a positive integer N,\n     * this function finds the Nth leap year after the start year Y.\n     *\n     * @param Y The start year.\n     * @param N The position of the leap year to find.\n     * @return The Nth leap year after the start year Y.\n     *\n     * Example:\n     * findNthLeapYear(2000, 4) => 2008\n     * findNthLeapYear(1996, 10) => 2032\n     */\n    public static int findNthLeapYear(int Y, int N)  {\n        int count = 0;\n        while (count < N) {\n            if (isLeapYear(Y)) {\n                count++;\n            }\n            Y++;\n        }\n        return Y;\n    }\n    public static void main(String[] args) {\n        // Test the function with the examples from the comment\n        assert findNthLeapYear(2000, 4) == 2012;\n        assert findNthLeapYear(1996, 10) == 2032;\n        assert findNthLeapYear(2000, 1) == 2000;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772211547,
+      "stdout": "",
+      "stderr": "/tmp/tmpkwiocpgx.java:17: error: cannot find symbol\n            if (isLeapYear(Y)) {\n                ^\n  symbol:   method isLeapYear(int)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

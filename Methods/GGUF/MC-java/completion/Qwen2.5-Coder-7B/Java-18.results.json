@@ -1,0 +1,20 @@
+{
+  "name": "Java-18",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given a string s. You should re-order the string using the following algorithm:\n     * 1. Pick the smallest character from s and append it to the result.\n     * 2. Pick the smallest character from s which is greater than the last appended character to the result and append it.\n     * 3. Repeat step 2 until you cannot pick more characters.\n     * 4. Pick the largest character from s and append it to the result.\n     * 5. Pick the largest character from s which is smaller than the last appended character to the result and append it.\n     * 6. Repeat step 5 until you cannot pick more characters.\n     * 7. Repeat the steps from 1 to 6 until you pick all characters from s.\n     * In each step, If the smallest or the largest character appears more than once you can choose any occurrence and append it to the result.\n     * Return the result string after sorting s with this algorithm.\n     */\n    public String sortString(String s)",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.sortString(\"aaaabbbbcccc\").equals(\"abccbaabccba\");\n        assert solution.sortString(\"rat\").equals(\"art\");\n        assert solution.sortString(\"leetcode\").equals(\"cdelotee\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given a string s. You should re-order the string using the following algorithm:\n     * 1. Pick the smallest character from s and append it to the result.\n     * 2. Pick the smallest character from s which is greater than the last appended character to the result and append it.\n     * 3. Repeat step 2 until you cannot pick more characters.\n     * 4. Pick the largest character from s and append it to the result.\n     * 5. Pick the largest character from s which is smaller than the last appended character to the result and append it.\n     * 6. Repeat step 5 until you cannot pick more characters.\n     * 7. Repeat the steps from 1 to 6 until you pick all characters from s.\n     * In each step, If the smallest or the largest character appears more than once you can choose any occurrence and append it to the result.\n     * Return the result string after sorting s with this algorithm.\n     */\n    public String sortString(String s) {\n        // Create a frequency array to count occurrences of each character\n        int[] freq = new int[26];\n        for (char c : s.toCharArray()) {\n            freq[c - 'a']++;\n        }\n\n        StringBuilder result = new StringBuilder();\n        while (result.length() < s.length()) {\n            // Step 1 to 3: Append smallest characters\n            for (int i = 0; i < 26; i++) {\n                if (freq[i] > 0) {\n                    result.append((char) (i + 'a'));\n                    freq[i]--;\n                }\n            }\n\n            // Step 4 to 6: Append largest characters\n            for (int i = 25; i >= 0; i--) {\n                if (freq[i] > 0) {\n                    result.append((char) (i + 'a'));\n                    freq[i]--;\n                }\n            }\n        }\n\n        return result.toString();\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.sortString(\"aaaabbbbcccc\").equals(\"abccbaabccba\");\n        assert solution.sortString(\"rat\").equals(\"art\");\n        assert solution.sortString(\"leetcode\").equals(\"cdelotee\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771962941,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

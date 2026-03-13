@@ -1,0 +1,20 @@
+{
+  "name": "Java-50",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.ArrayList;\nimport java.util.List;\n\nclass Problem {\n\n  /**\n   * Return all integers in the range [1, n] in lexicographical order.\n   *\n   * @param n The upper limit of the range.\n   * @return List of integers in lexicographical order.\n   *\n   * Example:\n   * lexicalOrder(13)\n   * Output: [1,10,11,12,13,2,3,4,5,6,7,8,9]\n   */\n  public static List<Integer> lexicalOrder(int n) ",
+  "tests": "  public static void main(String[] args) {\n    // Test cases\n    assert lexicalOrder(13)\n      .equals(\n        new ArrayList<Integer>() {\n          {\n            add(1);\n            add(10);\n            add(11);\n            add(12);\n            add(13);\n            add(2);\n            add(3);\n            add(4);\n            add(5);\n            add(6);\n            add(7);\n            add(8);\n            add(9);\n          }\n        }\n      ) : \"Test case 1 failed\";\n\n    assert lexicalOrder(20)\n      .equals(\n        new ArrayList<Integer>() {\n          {\n            add(1);\n            add(10);\n            add(11);\n            add(12);\n            add(13);\n            add(14);\n            add(15);\n            add(16);\n            add(17);\n            add(18);\n            add(19);\n            add(2);\n            add(20);\n            add(3);\n            add(4);\n            add(5);\n            add(6);\n            add(7);\n            add(8);\n            add(9);\n          }\n        }\n      ) : \"Test case 2 failed\";\n\n    assert lexicalOrder(2)\n      .equals(\n        new ArrayList<Integer>() {\n          {\n            add(1);\n            add(2);\n          }\n        }\n      ) : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.ArrayList;\nimport java.util.List;\n\nclass Problem {\n\n  /**\n   * Return all integers in the range [1, n] in lexicographical order.\n   *\n   * @param n The upper limit of the range.\n   * @return List of integers in lexicographical order.\n   *\n   * Example:\n   * lexicalOrder(13)\n   * Output: [1,10,11,12,13,2,3,4,5,6,7,8,9]\n   */\n  public static List<Integer> lexicalOrder(int n)  {\n    List<Integer> result = new ArrayList<>();\n    for (int i = 1; i < 10; i++) {\n      dfs(i, n, result);\n    }\n    return result;\n  }\n  public static void main(String[] args) {\n    // Test cases\n    assert lexicalOrder(13)\n      .equals(\n        new ArrayList<Integer>() {\n          {\n            add(1);\n            add(10);\n            add(11);\n            add(12);\n            add(13);\n            add(2);\n            add(3);\n            add(4);\n            add(5);\n            add(6);\n            add(7);\n            add(8);\n            add(9);\n          }\n        }\n      ) : \"Test case 1 failed\";\n\n    assert lexicalOrder(20)\n      .equals(\n        new ArrayList<Integer>() {\n          {\n            add(1);\n            add(10);\n            add(11);\n            add(12);\n            add(13);\n            add(14);\n            add(15);\n            add(16);\n            add(17);\n            add(18);\n            add(19);\n            add(2);\n            add(20);\n            add(3);\n            add(4);\n            add(5);\n            add(6);\n            add(7);\n            add(8);\n            add(9);\n          }\n        }\n      ) : \"Test case 2 failed\";\n\n    assert lexicalOrder(2)\n      .equals(\n        new ArrayList<Integer>() {\n          {\n            add(1);\n            add(2);\n          }\n        }\n      ) : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+      "timestamp": 1771962955,
+      "stdout": "",
+      "stderr": "/tmp/tmp4zphrjtg.java:19: error: cannot find symbol\n      dfs(i, n, result);\n      ^\n  symbol:   method dfs(int,int,List<Integer>)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}
