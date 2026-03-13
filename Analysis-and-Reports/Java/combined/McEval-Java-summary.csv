@@ -1,0 +1,16 @@
+Directory,Model,Method,LoC,Reliability,Maintainability,Security_Hotspots,CyC,CoC
+McEval-Java-CodeLlama-7B-FP,CodeLlama-7B,FP,1301.0,9,274,0,231.0,193.0
+McEval-Java-CodeLlama-7B-AWQ,CodeLlama-7B,AWQ,1261.0,9,328,0,229.0,211.0
+McEval-Java-CodeLlama-7B-GPTQ,CodeLlama-7B,GPTQ,1384.0,9,276,0,243.0,202.0
+McEval-Java-CodeLlama-7B-BitsAndBytes,CodeLlama-7B,BitsAndBytes,1368.0,9,280,0,251.0,251.0
+McEval-Java-CodeLlama-7B-AQLM,CodeLlama-7B,AQLM,1418.0,9,274,0,269.0,273.0
+McEval-Java-CodeLlama-7B-GGUF,CodeLlama-7B,GGUF,1348.0,9,276,0,242.0,209.0
+McEval-Java-CodeLlama-7B-QUIP,CodeLlama-7B,QUIP,1217.0,10,250,0,216.0,193.0
+McEval-Java-CodeLlama-7B-run2-QUIP,CodeLlama-7B-run2,QUIP,1217.0,10,250,0,216.0,193.0
+McEval-Java-Qwen2.5-Coder-7B-FP,Qwen2.5-Coder-7B,FP,1325.0,9,273,0,243.0,211.0
+McEval-Java-Qwen2.5-Coder-7B-AWQ,Qwen2.5-Coder-7B,AWQ,1310.0,9,328,0,252.0,234.0
+McEval-Java-Qwen2.5-Coder-7B-GPTQ,Qwen2.5-Coder-7B,GPTQ,1222.0,9,272,0,215.0,164.0
+McEval-Java-Qwen2.5-Coder-7B-BitsAndBytes,Qwen2.5-Coder-7B,BitsAndBytes,1368.0,9,275,0,261.0,252.0
+McEval-Java-Qwen2.5-Coder-7B-AQLM,Qwen2.5-Coder-7B,AQLM,1339.0,9,281,0,248.0,227.0
+McEval-Java-Qwen2.5-Coder-7B-GGUF,Qwen2.5-Coder-7B,GGUF,1299.0,9,278,0,234.0,206.0
+McEval-Java-Qwen2.5-Coder-7B-QUIP,Qwen2.5-Coder-7B,QUIP,1237.0,9,275,0,223.0,203.0
