@@ -1,0 +1,20 @@
+{
+  "name": "Java-12",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.text.SimpleDateFormat;\nimport java.text.ParseException;\n\nclass Problem {\n    /**\n     * Given a date in the format \"MM dd yyyy\", return the weekday of the date.\n     * \n     * Example:\n     * >>> convertDatesToWeekdays(\"11 15 1997\")\n     * \"November 15, 1997 is a Saturday\"\n     * >>> convertDatesToWeekdays(\"01 01 2000\")\n     * \"January 1, 2000 is a Saturday\"\n     * >>> convertDatesToWeekdays(\"07 04 1998\")\n     * \"July 4, 1998 is a Saturday\"\n     */\n    public static String convertDatesToWeekdays(String date) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert convertDatesToWeekdays(\"02 05 2024\").equals(\"February 5, 2024 is a Monday\");\n        assert convertDatesToWeekdays(\"01 12 2023\").equals(\"January 12, 2023 is a Thursday\");\n        assert convertDatesToWeekdays(\"09 14 2013\").equals(\"September 14, 2013 is a Saturday\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.text.SimpleDateFormat;\nimport java.text.ParseException;\n\nclass Problem {\n    /**\n     * Given a date in the format \"MM dd yyyy\", return the weekday of the date.\n     * \n     * Example:\n     * >>> convertDatesToWeekdays(\"11 15 1997\")\n     * \"November 15, 1997 is a Saturday\"\n     * >>> convertDatesToWeekdays(\"01 01 2000\")\n     * \"January 1, 2000 is a Saturday\"\n     * >>> convertDatesToWeekdays(\"07 04 1998\")\n     * \"July 4, 1998 is a Saturday\"\n     */\n    public static String convertDatesToWeekdays(String date)  {\n        String[] dateParts = date.split(\" \");\n        String month = dateParts[0];\n        String day = dateParts[1];\n        String year = dateParts[2];\n        String dateString = month + \" \" + day + \", \" + year;\n        String weekday = getWeekday(dateString);\n        return dateString + \" is a \" + weekday;\n    }\n    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert convertDatesToWeekdays(\"02 05 2024\").equals(\"February 5, 2024 is a Monday\");\n        assert convertDatesToWeekdays(\"01 12 2023\").equals(\"January 12, 2023 is a Thursday\");\n        assert convertDatesToWeekdays(\"09 14 2013\").equals(\"September 14, 2013 is a Saturday\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772567564,
+      "stdout": "",
+      "stderr": "/tmp/tmpux7i17i3.java:23: error: cannot find symbol\n        String weekday = getWeekday(dateString);\n                         ^\n  symbol:   method getWeekday(String)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

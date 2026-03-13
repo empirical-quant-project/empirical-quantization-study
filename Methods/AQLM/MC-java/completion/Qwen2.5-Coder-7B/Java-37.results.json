@@ -1,0 +1,20 @@
+{
+  "name": "Java-37",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Calculate the number of times the digit 1 appears in all non-negative integers less than or equal to n.\n   *\n   * @param n An integer representing the upper limit.\n   * @return The number of times the digit 1 appears.\n   *\n   * Example:\n   * countDigitOne(13)\n   * Output: 6\n   *\n   * Example:\n   * countDigitOne(0)\n   * Output: 0\n   */\n  public static int countDigitOne(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert countDigitOne(20) == 12 : \"Test case 1 failed\";\n    assert countDigitOne(55) == 16 : \"Test case 2 failed\";\n    assert countDigitOne(99) == 20 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Calculate the number of times the digit 1 appears in all non-negative integers less than or equal to n.\n   *\n   * @param n An integer representing the upper limit.\n   * @return The number of times the digit 1 appears.\n   *\n   * Example:\n   * countDigitOne(13)\n   * Output: 6\n   *\n   * Example:\n   * countDigitOne(0)\n   * Output: 0\n   */\n  public static int countDigitOne(int n)  {\n    int count = 0;\n    for (long i = 1; i <= n; i *= 10) {\n      long divider = i * 10;\n      long current = (n / divider) * i;\n      long remainder = n % divider;\n      if (remainder >= i) {\n        current += i;\n      }\n      count += current;\n    }\n    return count;\n  }\n  public static void main(String[] args) {\n    assert countDigitOne(20) == 12 : \"Test case 1 failed\";\n    assert countDigitOne(55) == 16 : \"Test case 2 failed\";\n    assert countDigitOne(99) == 20 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772566662,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

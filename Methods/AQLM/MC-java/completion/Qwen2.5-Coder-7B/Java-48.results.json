@@ -1,0 +1,20 @@
+{
+  "name": "Java-48",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.lang.Math;\n\nclass Problem {\n\n  /**\n   * Find and return the nth ugly number.\n   *\n   * @param n The index of the ugly number to find.\n   * @return The nth ugly number.\n   *\n   * Example:\n   * findNthUglyNumber(10)\n   * Output: 12\n   */\n  public static int findNthUglyNumber(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert findNthUglyNumber(1) == 1 : \"Test case 1 failed\";\n    assert findNthUglyNumber(7) == 8 : \"Test case 2 failed\";\n    assert findNthUglyNumber(15) == 24 : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.lang.Math;\n\nclass Problem {\n\n  /**\n   * Find and return the nth ugly number.\n   *\n   * @param n The index of the ugly number to find.\n   * @return The nth ugly number.\n   *\n   * Example:\n   * findNthUglyNumber(10)\n   * Output: 12\n   */\n  public static int findNthUglyNumber(int n)  {\n    int[] uglyNumbers = new int[n];\n    uglyNumbers[0] = 1;\n    int index2 = 0, index3 = 0, index5 = 0;\n    int nextMultipleOf2 = 2;\n    int nextMultipleOf3 = 3;\n    int nextMultipleOf5 = 5;\n\n    for (int i = 1; i < n; i++) {\n      uglyNumbers[i] = Math.min(nextMultipleOf2, Math.min(nextMultipleOf3, nextMultipleOf5));\n      if (uglyNumbers[i] == nextMultipleOf2) {\n        index2++;\n        nextMultipleOf2 = uglyNumbers[index2] * 2;\n      }\n      if (uglyNumbers[i] == nextMultipleOf3) {\n        index3++;\n        nextMultipleOf3 = uglyNumbers[index3] * 3;\n      }\n      if (uglyNumbers[i] == nextMultipleOf5) {\n        index5++;\n        nextMultipleOf5 = uglyNumbers[index5] * 5;\n      }\n    }\n    return uglyNumbers[n - 1];\n  }\n  public static void main(String[] args) {\n    assert findNthUglyNumber(1) == 1 : \"Test case 1 failed\";\n    assert findNthUglyNumber(7) == 8 : \"Test case 2 failed\";\n    assert findNthUglyNumber(15) == 24 : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+      "timestamp": 1772566659,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

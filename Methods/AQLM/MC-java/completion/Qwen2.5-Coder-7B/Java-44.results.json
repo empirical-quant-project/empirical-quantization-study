@@ -1,0 +1,20 @@
+{
+  "name": "Java-44",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.ArrayList;\n\nclass Problem {\n\n  /**\n   * Return all elements in the matrix in diagonal order.\n   *\n   * @param mat The input matrix.\n   * @return An array containing all elements in diagonal order.\n   *\n   * Example:\n   * diagonalOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}})\n   * Output: [1,2,4,7,5,3,6,8,9]\n   */\n  public static int[] diagonalOrder(int[][] mat) ",
+  "tests": "  public static void main(String[] args) {\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1, 2 }, { 3, 4 } }),\n      new int[] { 1, 2, 3, 4 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(\n        new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }\n      ),\n      new int[] { 1, 2, 5, 9, 6, 3, 4, 7, 10, 11, 8, 12 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1 }, { 2 }, { 3 } }),\n      new int[] { 1, 2, 3 }\n    );\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.ArrayList;\n\nclass Problem {\n\n  /**\n   * Return all elements in the matrix in diagonal order.\n   *\n   * @param mat The input matrix.\n   * @return An array containing all elements in diagonal order.\n   *\n   * Example:\n   * diagonalOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}})\n   * Output: [1,2,4,7,5,3,6,8,9]\n   */\n  public static int[] diagonalOrder(int[][] mat)  {\n    if (mat == null || mat.length == 0) {\n      return new int[0];\n    }\n\n    int rows = mat.length;\n    int cols = mat[0].length;\n    int[] result = new int[rows * cols];\n    ArrayList<Integer> temp = new ArrayList<>();\n\n    for (int i = 0; i < rows + cols - 1; i++) {\n      temp.clear();\n      int r = i < cols ? 0 : i - cols + 1;\n      int c = i < cols ? i : cols - 1;\n\n      while (r < rows && c >= 0) {\n        temp.add(mat[r][c]);\n        r++;\n        c--;\n      }\n\n      if (i % 2 == 0) {\n        Collections.reverse(temp);\n      }\n\n      for (int j = 0; j < temp.size(); j++) {\n        result[i * cols + j] = temp.get(j);\n      }\n    }\n\n    return result;\n  }\n  public static void main(String[] args) {\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1, 2 }, { 3, 4 } }),\n      new int[] { 1, 2, 3, 4 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(\n        new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }\n      ),\n      new int[] { 1, 2, 5, 9, 6, 3, 4, 7, 10, 11, 8, 12 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1 }, { 2 }, { 3 } }),\n      new int[] { 1, 2, 3 }\n    );\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772566679,
+      "stdout": "",
+      "stderr": "/tmp/tmpo6hdn13z.java:37: error: cannot find symbol\n        Collections.reverse(temp);\n        ^\n  symbol:   variable Collections\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

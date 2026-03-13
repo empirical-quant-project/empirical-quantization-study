@@ -1,0 +1,25 @@
+{
+  "name": "Python-16",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def count_passing_ways(n: int, m: int) -> int:\n    \"\"\"\n    Counts the number of different ways to pass a ball among 'n' students arranged in a circle \n    such that after 'm' passes, the ball returns to the starting student.\n\n    The function uses dynamic programming to determine the number of passing sequences. Each student\n    can pass the ball either to the left neighbor or to the right neighbor.\n\n    Args:\n    n: The number of students standing in a circle.\n    m: The number of times the ball is passed.\n\n    Returns:\n    An integer representing the number of distinct passing ways that result in the ball\n    returning to the starting student after 'm' passes.\n\n    Cases:\n    >>> count_passing_ways(3, 3)\n    2\n    >>> count_passing_ways(5, 4)\n    6\n    \"\"\"",
+  "tests": "def test_count_passing_ways():\n    test_cases = [\n        # Test case 1: simple case\n        {\n            'n': 3,\n            'm': 1,\n            'expected': 0\n        },\n        # Test case 2: another simple case\n        {\n            'n': 4,\n            'm': 2,\n            'expected': 2\n        },\n        # Test case 3: larger number of students and passes\n        {\n            'n': 5,\n            'm': 3,\n            'expected': 0\n        },\n    ]\n\n    for i, test in enumerate(test_cases, 1):\n        result = count_passing_ways(test['n'], test['m'])\n        assert result == test['expected'], f\"Test case {i} failed: result {result} does not match expected {test['expected']}\"\n        print(f\"Test case {i} passed with result {result}.\")\n\n# Run the test function\ntest_count_passing_ways()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def count_passing_ways(n: int, m: int) -> int:\n    \"\"\"\n    Counts the number of different ways to pass a ball among 'n' students arranged in a circle \n    such that after 'm' passes, the ball returns to the starting student.\n\n    The function uses dynamic programming to determine the number of passing sequences. Each student\n    can pass the ball either to the left neighbor or to the right neighbor.\n\n    Args:\n    n: The number of students standing in a circle.\n    m: The number of times the ball is passed.\n\n    Returns:\n    An integer representing the number of distinct passing ways that result in the ball\n    returning to the starting student after 'm' passes.\n\n    Cases:\n    >>> count_passing_ways(3, 3)\n    2\n    >>> count_passing_ways(5, 4)\n    6\n    \"\"\"\n\n\n    # Initialize a 2D list to store the number of ways to pass the ball\n    dp = [[0 for _ in range(m + 1)] for _ in range(n)]\n\n    # Base case: There is one way to pass the ball to the left or right from the starting student\n    dp[0][1] = 2\n\n    # Fill the dp table\n    for i in range(1, n):\n        for j in range(2, m + 1):\n            dp[i][j] = dp[i - 1][j - 1] + dp[i - 2][j - 1]\n\n    # The result is the number of ways to pass the ball back to the starting student after 'm' passes\n    return dp[n - 1][m] if m >= 2 else 0\ndef test_count_passing_ways():\n    test_cases = [\n        # Test case 1: simple case\n        {\n            'n': 3,\n            'm': 1,\n            'expected': 0\n        },\n        # Test case 2: another simple case\n        {\n            'n': 4,\n            'm': 2,\n            'expected': 2\n        },\n        # Test case 3: larger number of students and passes\n        {\n            'n': 5,\n            'm': 3,\n            'expected': 0\n        },\n    ]\n\n    for i, test in enumerate(test_cases, 1):\n        result = count_passing_ways(test['n'], test['m'])\n        assert result == test['expected'], f\"Test case {i} failed: result {result} does not match expected {test['expected']}\"\n        print(f\"Test case {i} passed with result {result}.\")\n\n# Run the test function\ntest_count_passing_ways()",
+      "timestamp": 1772566957,
+      "stdout": "Test case 1 passed with result 0.\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpawfh7pr8.py\", line 66, in <module>\n    test_count_passing_ways()\n  File \"/tmp/tmpawfh7pr8.py\", line 62, in test_count_passing_ways\n    assert result == test['expected'], f\"Test case {i} failed: result {result} does not match expected {test['expected']}\"\nAssertionError: Test case 2 failed: result 0 does not match expected 2\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "model": "Devy1/CodeLlama-7b-hf-AQLM-4bit-mixed-2x15",
+    "model_label": "Devy1_CodeLlama_7b_hf_AQLM_4bit_mixed_2x15",
+    "quant_tag": "AQLM",
+    "language": "java",
+    "prompt_mode": "completion",
+    "temperature": 0.0,
+    "max_new_tokens": 512,
+    "batch_size": 1,
+    "total_tasks": 184,
+    "start_time": "2026-03-04 17:47:08.059404",
+    "script": "automodel_codereval_v2.py",
+    "tasks": [],
+    "end_time": "2026-03-04 17:47:08.061100",
+    "completed_tasks": 184,
+    "total_tasks_in_dataset": 184,
+    "evaluation": {
+        "total_tasks": 184,
+        "passed": 61,
+        "pass_at_1": 33.15,
+        "dataset": "/scratch/oldhome/safrin/projects/CoderEval-Benchmark/CoderEval4Java_filtered.jsonl",
+        "filtered": true,
+        "prompt_mode": "COMPLETION (HumanEval-style)"
+    }
+}
