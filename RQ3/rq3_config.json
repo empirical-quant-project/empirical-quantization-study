@@ -1,0 +1,78 @@
+{
+    "models": {
+        "CodeLlama-7B-Instruct": {
+            "benchmarks": {
+                "McEval": {
+                    "fp": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-FP.csv",
+                    "techniques": {
+                        "AWQ":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-AWQ.csv",
+                        "GPTQ":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-GPTQ.csv",
+                        "GGUF":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-GGUF.csv",
+                        "BnB":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-BitsAndBytes.csv",
+                        "AQLM":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-AQLM.csv",
+                        "QuIP#": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-CodeLlama-7B-QUIP.csv"
+                    }
+                },
+                "CoderEval": {
+                    "fp": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-FP.csv",
+                    "techniques": {
+                        "AWQ":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-AWQ.csv",
+                        "GPTQ":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-GPTQ.csv",
+                        "GGUF":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-GGUF.csv",
+                        "BnB":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-BitsAndBytes.csv",
+                        "AQLM":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-AQLM.csv",
+                        "QuIP#": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-CodeLlama-7B-QUIP.csv"
+                    }
+                },
+                "BigCodeBench": {
+                    "fp": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-FP.csv",
+                    "techniques": {
+                        "AWQ":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-AWQ.csv",
+                        "GPTQ":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-GPTQ.csv",
+                        "GGUF":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-GGUF.csv",
+                        "BnB":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-BitsAndBytes.csv",
+                        "AQLM":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-AQLM.csv",
+                        "QuIP#": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-CodeLlama-7B-QUIP.csv"
+                    }
+                }
+            }
+        },
+        "Qwen2.5-Coder-7B-Instruct": {
+            "benchmarks": {
+                "McEval": {
+                    "fp": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-FP.csv",
+                    "techniques": {
+                        "AWQ":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-AWQ.csv",
+                        "GPTQ":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-GPTQ.csv",
+                        "GGUF":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-GGUF.csv",
+                        "BnB":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-BitsAndBytes.csv",
+                        "AQLM":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-AQLM.csv",
+                        "QuIP#": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/McEval/McEval-Python-Qwen2.5-Coder-7B-QUIP.csv"
+                    }
+                },
+                "CoderEval": {
+                    "fp": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-FP.csv",
+                    "techniques": {
+                        "AWQ":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-AWQ.csv",
+                        "GPTQ":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-GPTQ.csv",
+                        "GGUF":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-GGUF.csv",
+                        "BnB":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-BitsAndBytes.csv",
+                        "AQLM":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-AQLM.csv",
+                        "QuIP#": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/CoderEval/CoderEval-Python-Qwen2.5-Coder-7B-QUIP.csv"
+                    }
+                },
+                "BigCodeBench": {
+                    "fp": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-FP.csv",
+                    "techniques": {
+                        "AWQ":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-AWQ.csv",
+                        "GPTQ":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-GPTQ.csv",
+                        "GGUF":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-GGUF.csv",
+                        "BnB":   "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-BitsAndBytes.csv",
+                        "AQLM":  "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-AQLM.csv",
+                        "QuIP#": "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values/BCB/BCB-Python-Qwen2.5-Coder-7B-QUIP.csv"
+                    }
+                }
+            }
+        }
+    }
+}

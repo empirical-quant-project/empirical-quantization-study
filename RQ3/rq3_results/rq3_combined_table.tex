@@ -1,0 +1,42 @@
+\begin{table*}[t]
+    \centering
+    \caption{RQ$_3$ results: per-benchmark degradation rates (\%) within entropy buckets and correlation between input complexity and quantization-induced degradation. $r$ = point-biserial correlation coefficient. Significance: *$p<0.05$, **$p<0.01$, ***$p<0.001$.}
+    \label{tab:rq3-combined}
+    \footnotesize
+    \begin{tabular}{ll l rrr c rr c rr}
+        \toprule
+        & & & \multicolumn{3}{c}{\textbf{Degradation Rate (\%)}} & & \multicolumn{2}{c}{\textbf{Entropy}} & & \multicolumn{2}{c}{\textbf{Length}} \\
+        \cmidrule(lr){4-6} \cmidrule(lr){8-9} \cmidrule(lr){11-12}
+        \textbf{Model} & \textbf{Bucket} & \textbf{Technique} & \textbf{McEval} & \textbf{CoderEval} & \textbf{BigCodeBench} & & \textbf{$r$} & \textbf{$p$} & & \textbf{$r$} & \textbf{$p$} \\
+        \midrule
+        \multirow{12}{*}{\shortstack[l]{CodeLlama-7B-Instruct}} & \multirow{6}{*}{High} & AWQ & 6.7 & 0.0 & 5.5 & & $+0.192$ & $<$0.001*** & & $+0.248$ & $<$0.001*** \\
+         &  & GPTQ & 6.7 & 0.0 & 4.3 & & $+0.092$ & 0.108 & & $+0.106$ & 0.063 \\
+         &  & GGUF & 10.0 & 0.0 & 5.4 & & $+0.137$ & 0.016* & & $+0.207$ & $<$0.001*** \\
+         &  & BnB & 3.3 & 0.0 & 7.4 & & $+0.203$ & $<$0.001*** & & $+0.187$ & $<$0.001*** \\
+         &  & AQLM & 16.7 & 0.0 & 6.9 & & $+0.177$ & 0.002** & & $+0.172$ & 0.002** \\
+         &  & QuIP# & 13.3 & 0.0 & 12.3 & & $+0.325$ & $<$0.001*** & & $+0.321$ & $<$0.001*** \\
+        \cmidrule(l){2-12}
+         & \multirow{6}{*}{Low} & AWQ & 0.0 & 2.2 & 4.7 & &  &  & &  &  \\
+         &  & GPTQ & 0.0 & 3.8 & 4.7 & &  &  & &  &  \\
+         &  & GGUF & 0.0 & 3.8 & 8.6 & &  &  & &  &  \\
+         &  & BnB & 0.0 & 2.7 & 11.6 & &  &  & &  &  \\
+         &  & AQLM & 0.0 & 3.8 & 9.4 & &  &  & &  &  \\
+         &  & QuIP# & 0.0 & 7.1 & 15.3 & &  &  & &  &  \\
+        \midrule
+        \multirow{12}{*}{\shortstack[l]{Qwen2.5-Coder-7B-Instruct}} & \multirow{6}{*}{High} & AWQ & 6.7 & 0.0 & 5.2 & & $-0.039$ & 0.374 & & $-0.004$ & 0.923 \\
+         &  & GPTQ & 13.3 & 0.0 & 3.7 & & $-0.156$ & $<$0.001*** & & $-0.086$ & 0.047* \\
+         &  & GGUF & 3.3 & 0.0 & 5.1 & & $-0.049$ & 0.263 & & $-0.029$ & 0.506 \\
+         &  & BnB & 6.7 & 0.0 & 7.8 & & $-0.011$ & 0.807 & & $+0.015$ & 0.734 \\
+         &  & AQLM & 6.7 & 0.0 & 6.3 & & $+0.014$ & 0.741 & & $+0.054$ & 0.213 \\
+         &  & QuIP# & 6.7 & 16.7 & 14.8 & & $+0.061$ & 0.160 & & $+0.095$ & 0.028* \\
+        \cmidrule(l){2-12}
+         & \multirow{6}{*}{Low} & AWQ & 16.7 & 5.4 & 4.9 & &  &  & &  &  \\
+         &  & GPTQ & 8.3 & 8.2 & 5.9 & &  &  & &  &  \\
+         &  & GGUF & 8.3 & 4.9 & 5.7 & &  &  & &  &  \\
+         &  & BnB & 16.7 & 5.4 & 9.8 & &  &  & &  &  \\
+         &  & AQLM & 8.3 & 4.3 & 7.5 & &  &  & &  &  \\
+         &  & QuIP# & 16.7 & 7.6 & 15.9 & &  &  & &  &  \\
+        \bottomrule
+    \end{tabular}
+    \vspace{-0.2cm}
+\end{table*}
