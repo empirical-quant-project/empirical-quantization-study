@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_59_largest_prime_factor",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    // >>> largestPrimeFactor((13195l))\n    // (29l)\n    // >>> largestPrimeFactor((2048l))\n    // (2l)\n    public static long largestPrimeFactor(long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(largestPrimeFactor((15l)) == (5l));\n    assert(largestPrimeFactor((27l)) == (3l));\n    assert(largestPrimeFactor((63l)) == (7l));\n    assert(largestPrimeFactor((330l)) == (11l));\n    assert(largestPrimeFactor((13195l)) == (29l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    // >>> largestPrimeFactor((13195l))\n    // (29l)\n    // >>> largestPrimeFactor((2048l))\n    // (2l)\n    public static long largestPrimeFactor(long n) {\n \n        long largestPrime = -1;\n        while (n % 2 == 0) {\n            largestPrime = 2;\n            n /= 2;\n        }\n        for (long i = 3; i <= Math.sqrt(n); i += 2) {\n            while (n % i == 0) {\n                largestPrime = i;\n                n /= i;\n            }\n        }\n        if (n > 2) {\n            largestPrime = n;\n        }\n        return largestPrime;\n    }\n    public static void main(String[] args) {\n    assert(largestPrimeFactor((15l)) == (5l));\n    assert(largestPrimeFactor((27l)) == (3l));\n    assert(largestPrimeFactor((63l)) == (7l));\n    assert(largestPrimeFactor((330l)) == (11l));\n    assert(largestPrimeFactor((13195l)) == (29l));\n    }\n\n}\n",
+      "timestamp": 1771877478,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "model": "TheBloke/CodeLlama-7B-Instruct-AWQ",
+    "model_label": "TheBloke_CodeLlama_7B_Instruct_AWQ",
+    "quant_tag": "AWQ",
+    "language": "py",
+    "prompt_mode": "completion",
+    "temperature": 0.0,
+    "max_new_tokens": 512,
+    "batch_size": 1,
+    "total_tasks": 190,
+    "start_time": "2026-03-05 11:08:38.933308",
+    "script": "automodel_codereval_v2.py",
+    "tasks": [],
+    "end_time": "2026-03-05 11:08:38.934867",
+    "completed_tasks": 190,
+    "total_tasks_in_dataset": 190,
+    "evaluation": {
+        "total_tasks": 190,
+        "passed": 46,
+        "pass_at_1": 24.21,
+        "dataset": "/scratch/oldhome/safrin/projects/CoderEval-Benchmark/CoderEval4Python_filtered.jsonl",
+        "filtered": true,
+        "prompt_mode": "COMPLETION (HumanEval-style)"
+    }
+}

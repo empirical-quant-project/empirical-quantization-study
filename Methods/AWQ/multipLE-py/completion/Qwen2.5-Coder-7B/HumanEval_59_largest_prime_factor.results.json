@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_59_largest_prime_factor",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def largest_prime_factor(n: int) -> int:\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(15) == 5\n    assert candidate(27) == 3\n    assert candidate(63) == 7\n    assert candidate(330) == 11\n    assert candidate(13195) == 29\n\ndef test_check():\n    check(largest_prime_factor)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def largest_prime_factor(n: int) -> int:\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n \n    # Start with the smallest prime number\n    factor = 2\n    \n    while n % factor == 0:\n        n //= factor\n    \n    # Check for larger factors up to the square root of n\n    for i in range(3, int(n**0.5) + 1, 2):\n        while n % i == 0:\n            n //= i\n            factor = i\n    \n    # If n is still greater than 2, then it is a prime number\n    if n > 2:\n        factor = n\n    \n    return factor\ndef check(candidate):\n    assert candidate(15) == 5\n    assert candidate(27) == 3\n    assert candidate(63) == 7\n    assert candidate(330) == 11\n    assert candidate(13195) == 29\n\ndef test_check():\n    check(largest_prime_factor)\n\ntest_check()\n",
+      "timestamp": 1771886252,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

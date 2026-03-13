@@ -1,0 +1,25 @@
+{
+  "name": "Python-26",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from math import gcd\ndef count_coprime_pairs(x0: int, y0: int) -> int:\n    \"\"\"\n    Counts the number of pairs of positive integers (P, Q) such that P and Q have x0 as their greatest common divisor (GCD)\n    and y0 as their least common multiple (LCM).\n\n    Args:\n    x0 (int): The GCD that each pair (P, Q) must have.\n    y0 (int): The LCM that each pair (P, Q) must have.\n\n    Returns:\n    int: The count of all possible pairs (P, Q) that meet the specified criteria.\n\n    The function iterates through all possible factors 'a' of the quotient 'y0 / x0'. For each factor 'a',\n    it calculates the corresponding factor 'b' such that 'a * b = y0 / x0'. It then checks if 'a' and 'b'\n    are co-prime (their GCD is 1) because P and Q can only be multiples of 'x0' by co-prime factors to maintain\n    the GCD as 'x0'. If 'a' and 'b' are co-prime, the count is incremented by 1 if 'a' is the same as 'b',\n    else by 2 to account for both (P, Q) and (Q, P) pairs.\n\n    Example Cases:\n\n    >>> count_coprime_pairs(3, 60)\n    4\n    >>> count_coprime_pairs(2, 50)\n    0\n    \"\"\"",
+  "tests": "def test_count_coprime_pairs():\n    test_cases = [\n        (3, 60, 4),   # The example from the problem statement\n        (2, 50, 2), \n        (6, 180, 8),  # 180/6 = 30, factors are (1, 30), (2, 15), (3, 10), (5, 6), (6, 5), (10, 3), (15, 2), (30, 1)\n    ]\n\n    for i, (x0, y0, expected) in enumerate(test_cases):\n        result = count_coprime_pairs(x0, y0)\n        assert result == expected, f\"Test case {i+1} failed: expected {expected}, got {result}\"\n        print(f\"Test case {i+1} passed: x0 = {x0}, y0 = {y0}, expected = {expected}, got = {result}\")\n\n# Call the test function\ntest_count_coprime_pairs()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from math import gcd\ndef count_coprime_pairs(x0: int, y0: int) -> int:\n    \"\"\"\n    Counts the number of pairs of positive integers (P, Q) such that P and Q have x0 as their greatest common divisor (GCD)\n    and y0 as their least common multiple (LCM).\n\n    Args:\n    x0 (int): The GCD that each pair (P, Q) must have.\n    y0 (int): The LCM that each pair (P, Q) must have.\n\n    Returns:\n    int: The count of all possible pairs (P, Q) that meet the specified criteria.\n\n    The function iterates through all possible factors 'a' of the quotient 'y0 / x0'. For each factor 'a',\n    it calculates the corresponding factor 'b' such that 'a * b = y0 / x0'. It then checks if 'a' and 'b'\n    are co-prime (their GCD is 1) because P and Q can only be multiples of 'x0' by co-prime factors to maintain\n    the GCD as 'x0'. If 'a' and 'b' are co-prime, the count is incremented by 1 if 'a' is the same as 'b',\n    else by 2 to account for both (P, Q) and (Q, P) pairs.\n\n    Example Cases:\n\n    >>> count_coprime_pairs(3, 60)\n    4\n    >>> count_coprime_pairs(2, 50)\n    0\n    \"\"\"\ndef test_count_coprime_pairs():\n    test_cases = [\n        (3, 60, 4),   # The example from the problem statement\n        (2, 50, 2), \n        (6, 180, 8),  # 180/6 = 30, factors are (1, 30), (2, 15), (3, 10), (5, 6), (6, 5), (10, 3), (15, 2), (30, 1)\n    ]\n\n    for i, (x0, y0, expected) in enumerate(test_cases):\n        result = count_coprime_pairs(x0, y0)\n        assert result == expected, f\"Test case {i+1} failed: expected {expected}, got {result}\"\n        print(f\"Test case {i+1} passed: x0 = {x0}, y0 = {y0}, expected = {expected}, got = {result}\")\n\n# Call the test function\ntest_count_coprime_pairs()",
+      "timestamp": 1771903643,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpb0fnmzw1.py\", line 40, in <module>\n    test_count_coprime_pairs()\n  File \"/tmp/tmpb0fnmzw1.py\", line 36, in test_count_coprime_pairs\n    assert result == expected, f\"Test case {i+1} failed: expected {expected}, got {result}\"\nAssertionError: Test case 1 failed: expected 4, got None\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

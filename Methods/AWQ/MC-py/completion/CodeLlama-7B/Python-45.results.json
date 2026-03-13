@@ -1,0 +1,25 @@
+{
+  "name": "Python-45",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import heapq\nfrom typing import List \n\ndef minimum_cost_to_merge_fruits(fruit_counts: List[int]) -> int:\n    \"\"\"\n    Calculates the minimum total cost to merge multiple heaps of fruits into a single heap.\n    The cost of merging two heaps is equal to the sum of their weights. The function utilizes\n    a greedy algorithm with a min-heap (priority queue) to ensure the smallest heaps are merged first,\n    minimizing the total cost.\n\n    Parameters:\n    fruit_counts (List[int]): A list of integers representing the counts of each type of fruit.\n\n    Returns:\n    int: The minimum total cost required to merge all heaps of fruits.\n\n    Examples:\n    >>> minimum_cost_to_merge_fruits([1, 2, 9])\n    15\n    >>> minimum_cost_to_merge_fruits([10, 20, 30, 40, 50])\n    300 .\n    \"\"\"",
+  "tests": "def test_minimum_cost_to_merge_fruits():\n    # Test case 1: As provided in the problem statement example\n    fruits1 = [1, 2, 9]\n    assert minimum_cost_to_merge_fruits(fruits1) == 15, \"Test case 1 failed\"\n\n    # Test case 2: Simple case with only two types of fruits\n    fruits2 = [5, 5]\n    assert minimum_cost_to_merge_fruits(fruits2) == 10, \"Test case 2 failed\"\n\n    # Test case 3: More complex case with multiple types of fruits\n    fruits3 = [10, 20, 30, 40, 50]\n    assert minimum_cost_to_merge_fruits(fruits3) == 330, \"Test case 3 failed\"\n\n    # Test case 4: Case with fruits having the same count\n    fruits4 = [3, 3, 3, 3]\n    assert minimum_cost_to_merge_fruits(fruits4) == 24, \"Test case 4 failed\"\n\n    # Test case 5: Case with a single type of fruit\n    fruits5 = [7]\n    assert minimum_cost_to_merge_fruits(fruits5) == 0, \"Test case 5 failed\"\n\n    print(\"All test cases passed.\")\n\n# Run the test function\ntest_minimum_cost_to_merge_fruits()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "import heapq\nfrom typing import List \n\ndef minimum_cost_to_merge_fruits(fruit_counts: List[int]) -> int:\n    \"\"\"\n    Calculates the minimum total cost to merge multiple heaps of fruits into a single heap.\n    The cost of merging two heaps is equal to the sum of their weights. The function utilizes\n    a greedy algorithm with a min-heap (priority queue) to ensure the smallest heaps are merged first,\n    minimizing the total cost.\n\n    Parameters:\n    fruit_counts (List[int]): A list of integers representing the counts of each type of fruit.\n\n    Returns:\n    int: The minimum total cost required to merge all heaps of fruits.\n\n    Examples:\n    >>> minimum_cost_to_merge_fruits([1, 2, 9])\n    15\n    >>> minimum_cost_to_merge_fruits([10, 20, 30, 40, 50])\n    300 .\n    \"\"\"\n    # Initialize a min-heap with the fruit counts.\n    min_heap = []\n    for fruit_count in fruit_counts:\n        heapq.heappush(min_heap, fruit_count)\n\n    # Initialize the total cost to zero.\n    total_cost = 0\n\n    # While there are still heaps to merge, merge the smallest two heaps.\n    while len(min_heap) > 1:\n        # Get the smallest two heaps.\n        smallest_heap_1 = heapq.heappop(min_heap)\n        smallest_heap_2 = heapq.heappop(min_heap)\n\n        # Merge the two heaps.\n        merged_heap = smallest_heap_1 + smallest_heap_2\n\n        # Push the merged heap back onto the min-heap.\n        heapq.heappush(min_heap, merged_heap)\n\n        # Add the cost of the merge to the total cost.\n        total_cost += smallest_heap_1 + smallest_heap_2\n\n    # Return the total cost.\n    return total_cost\ndef test_minimum_cost_to_merge_fruits():\n    # Test case 1: As provided in the problem statement example\n    fruits1 = [1, 2, 9]\n    assert minimum_cost_to_merge_fruits(fruits1) == 15, \"Test case 1 failed\"\n\n    # Test case 2: Simple case with only two types of fruits\n    fruits2 = [5, 5]\n    assert minimum_cost_to_merge_fruits(fruits2) == 10, \"Test case 2 failed\"\n\n    # Test case 3: More complex case with multiple types of fruits\n    fruits3 = [10, 20, 30, 40, 50]\n    assert minimum_cost_to_merge_fruits(fruits3) == 330, \"Test case 3 failed\"\n\n    # Test case 4: Case with fruits having the same count\n    fruits4 = [3, 3, 3, 3]\n    assert minimum_cost_to_merge_fruits(fruits4) == 24, \"Test case 4 failed\"\n\n    # Test case 5: Case with a single type of fruit\n    fruits5 = [7]\n    assert minimum_cost_to_merge_fruits(fruits5) == 0, \"Test case 5 failed\"\n\n    print(\"All test cases passed.\")\n\n# Run the test function\ntest_minimum_cost_to_merge_fruits()",
+      "timestamp": 1772137218,
+      "stdout": "All test cases passed.\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

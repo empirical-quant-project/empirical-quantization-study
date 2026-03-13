@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_53_add",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def add(x: int, y: int) -> int:\n    \"\"\"Add two numbers x and y\n    >>> add(2, 3)\n    5\n    >>> add(5, 7)\n    12\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(0, 1) == 1\n    assert candidate(1, 0) == 1\n    assert candidate(2, 3) == 5\n    assert candidate(5, 7) == 12\n    assert candidate(7, 5) == 12\n\ndef test_check():\n    check(add)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def add(x: int, y: int) -> int:\n    \"\"\"Add two numbers x and y\n    >>> add(2, 3)\n    5\n    >>> add(5, 7)\n    12\n    \"\"\"\n\n    return x + y\ndef check(candidate):\n    assert candidate(0, 1) == 1\n    assert candidate(1, 0) == 1\n    assert candidate(2, 3) == 5\n    assert candidate(5, 7) == 12\n    assert candidate(7, 5) == 12\n\ndef test_check():\n    check(add)\n\ntest_check()\n",
+      "timestamp": 1772139510,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

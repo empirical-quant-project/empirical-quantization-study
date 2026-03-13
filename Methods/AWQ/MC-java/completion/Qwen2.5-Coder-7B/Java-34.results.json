@@ -1,0 +1,20 @@
+{
+  "name": "Java-34",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  // Given the number of passengers n, calculate the probability that the last passenger will sit in their own seat.\n  // @param n The number of passengers.\n  // @return The probability that the last passenger will sit in their own seat.\n\n  // Example 1:\n  // Input: n = 1\n  // Output: 1.00000\n\n  // Example 2:\n  // Input: n = 2\n  // Output: 0.50000\n\n  // Example 3:\n  // Input: n = 3\n  // Output: 0.50000\n\n  // Example 4:\n  // Input: n = 4\n  // Output: 0.50000\n\n  // Example 5:\n  // Input: n = 5\n  // Output: 0.50000\n\n  // Example 6:\n  // Input: n = 100000\n  // Output: 0.50000\n\n  // Function to calculate the probability that the last passenger will sit in their own seat\n  public static double calculateProbability(int n) ",
+  "tests": "public static void main(String[] args) {\n    assert Math.abs(calculateProbability(6) - 0.50000) < 0.00001;\n    assert Math.abs(calculateProbability(10) - 0.50000) < 0.00001;\n    assert Math.abs(calculateProbability(50) - 0.50000) < 0.00001;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  // Given the number of passengers n, calculate the probability that the last passenger will sit in their own seat.\n  // @param n The number of passengers.\n  // @return The probability that the last passenger will sit in their own seat.\n\n  // Example 1:\n  // Input: n = 1\n  // Output: 1.00000\n\n  // Example 2:\n  // Input: n = 2\n  // Output: 0.50000\n\n  // Example 3:\n  // Input: n = 3\n  // Output: 0.50000\n\n  // Example 4:\n  // Input: n = 4\n  // Output: 0.50000\n\n  // Example 5:\n  // Input: n = 5\n  // Output: 0.50000\n\n  // Example 6:\n  // Input: n = 100000\n  // Output: 0.50000\n\n  // Function to calculate the probability that the last passenger will sit in their own seat\n  public static double calculateProbability(int n)  {\n    if (n == 1) {\n      return 1.0;\n    } else {\n      return 0.5;\n    }\n  }\npublic static void main(String[] args) {\n    assert Math.abs(calculateProbability(6) - 0.50000) < 0.00001;\n    assert Math.abs(calculateProbability(10) - 0.50000) < 0.00001;\n    assert Math.abs(calculateProbability(50) - 0.50000) < 0.00001;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1771903701,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

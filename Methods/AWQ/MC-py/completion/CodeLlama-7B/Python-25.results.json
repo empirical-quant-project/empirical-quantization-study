@@ -1,0 +1,25 @@
+{
+  "name": "Python-25",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def count_sequences(n: int, last: int, memo: dict) -> int:\n    \"\"\"\n    Calculate the number of valid sequences that can be formed according to specific rules.\n    \n    Each sequence starts with a given number 'n', and a new number can be appended to the sequence\n    if it is a positive integer and not greater than half the last number in the sequence. This\n    function uses memoization to store previously calculated results to optimize performance.\n    \n    Args:\n        n (int): The starting number of the sequence.\n        last (int): The last number in the current sequence.\n        memo (dict): A dictionary used for memoization, storing the number of valid sequences\n                     for each 'last' value encountered.\n    \n    Returns:\n        int: The total number of valid sequences that can be formed starting with 'n'.\n    \n    Examples:\n        >>> count_sequences(1, 1, {})\n        1\n        >>> count_sequences(6, 6, {})\n        6\n    \"\"\"",
+  "tests": "def test_count_sequences():\n    test_cases = [\n        (6, 6),\n        (1, 1),\n        (10, 14)\n    ]\n\n    for i, (n, expected) in enumerate(test_cases):\n        memo = {}\n        result = count_sequences(n, n, memo)\n        assert result == expected, f\"Test case {i+1} failed: expected {expected}, got {result}\"\n        print(f\"Test case {i+1} passed: n = {n}, expected = {expected}, got = {result}\")\n\n# Call the test function\ntest_count_sequences()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def count_sequences(n: int, last: int, memo: dict) -> int:\n    \"\"\"\n    Calculate the number of valid sequences that can be formed according to specific rules.\n    \n    Each sequence starts with a given number 'n', and a new number can be appended to the sequence\n    if it is a positive integer and not greater than half the last number in the sequence. This\n    function uses memoization to store previously calculated results to optimize performance.\n    \n    Args:\n        n (int): The starting number of the sequence.\n        last (int): The last number in the current sequence.\n        memo (dict): A dictionary used for memoization, storing the number of valid sequences\n                     for each 'last' value encountered.\n    \n    Returns:\n        int: The total number of valid sequences that can be formed starting with 'n'.\n    \n    Examples:\n        >>> count_sequences(1, 1, {})\n        1\n        >>> count_sequences(6, 6, {})\n        6\n    \"\"\"\n    if last in memo:\n        return memo[last]\n    else:\n        count = 0\n        for i in range(1, last // 2 + 1):\n            if n + i <= last:\n                count += count_sequences(n + i, last, memo)\n        memo[last] = count\n        return count\ndef test_count_sequences():\n    test_cases = [\n        (6, 6),\n        (1, 1),\n        (10, 14)\n    ]\n\n    for i, (n, expected) in enumerate(test_cases):\n        memo = {}\n        result = count_sequences(n, n, memo)\n        assert result == expected, f\"Test case {i+1} failed: expected {expected}, got {result}\"\n        print(f\"Test case {i+1} passed: n = {n}, expected = {expected}, got = {result}\")\n\n# Call the test function\ntest_count_sequences()",
+      "timestamp": 1772137218,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpoo79t52j.py\", line 47, in <module>\n    test_count_sequences()\n  File \"/tmp/tmpoo79t52j.py\", line 43, in test_count_sequences\n    assert result == expected, f\"Test case {i+1} failed: expected {expected}, got {result}\"\nAssertionError: Test case 1 failed: expected 6, got 0\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

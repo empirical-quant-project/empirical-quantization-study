@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_93_encode",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that takes a message, and encodes in such a \n    // way that it swaps case of all letters, replaces all vowels in \n    // the message with the letter that appears 2 places ahead of that \n    // vowel in the english alphabet. \n    // Assume only letters. \n    // Examples:\n    // >>> encode((\"test\"))\n    // (\"TGST\")\n    // >>> encode((\"This is a message\"))\n    // (\"tHKS KS C MGSSCGG\")\n    public static String encode(String message) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(encode((\"TEST\")).equals((\"tgst\")));\n    assert(encode((\"Mudasir\")).equals((\"mWDCSKR\")));\n    assert(encode((\"YES\")).equals((\"ygs\")));\n    assert(encode((\"This is a message\")).equals((\"tHKS KS C MGSSCGG\")));\n    assert(encode((\"I DoNt KnOw WhAt tO WrItE\")).equals((\"k dQnT kNqW wHcT Tq wRkTg\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that takes a message, and encodes in such a \n    // way that it swaps case of all letters, replaces all vowels in \n    // the message with the letter that appears 2 places ahead of that \n    // vowel in the english alphabet. \n    // Assume only letters. \n    // Examples:\n    // >>> encode((\"test\"))\n    // (\"TGST\")\n    // >>> encode((\"This is a message\"))\n    // (\"tHKS KS C MGSSCGG\")\n    public static String encode(String message) {\n \n        Map<Character, Character> map = new HashMap<>();\n        for (char c = 'a'; c <= 'z'; ++c) {\n            char next = (char)(c + 2);\n            if (next > 'z') {\n                next -= 26;\n            }\n            map.put(c, next);\n        }\n        StringBuilder sb = new StringBuilder();\n        for (char c : message.toCharArray()) {\n            if (Character.isLetter(c)) {\n                if (Character.isLowerCase(c)) {\n                    c = Character.toUpperCase(c);\n                } else {\n                    c = Character.toLowerCase(c);\n                }\n                if (map.containsKey(c)) {\n                    c = map.get(c);\n                }\n            }\n            sb.append(c);\n        }\n        return sb.toString();\n    }\n    public static void main(String[] args) {\n    assert(encode((\"TEST\")).equals((\"tgst\")));\n    assert(encode((\"Mudasir\")).equals((\"mWDCSKR\")));\n    assert(encode((\"YES\")).equals((\"ygs\")));\n    assert(encode((\"This is a message\")).equals((\"tHKS KS C MGSSCGG\")));\n    assert(encode((\"I DoNt KnOw WhAt tO WrItE\")).equals((\"k dQnT kNqW wHcT Tq wRkTg\")));\n    }\n\n}\n",
+      "timestamp": 1771879112,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp__zwzmt_.java:46)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

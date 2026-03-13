@@ -1,0 +1,20 @@
+{
+  "name": "Java-19",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Check if it is possible to split the given integer array into two non-empty arrays\n     * with the same average.\n     *\n     * >>> splitArraySameAverage(new int[]{1,2,3,4,5,6,7,8})\n     * true\n     *\n     * >>> splitArraySameAverage(new int[]{3,1})\n     * false\n     */\n    public boolean splitArraySameAverage(int[] nums) ",
+  "tests": "public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 8}) == true;\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 9}) == false;\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 10}) == true;\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}) == true;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Check if it is possible to split the given integer array into two non-empty arrays\n     * with the same average.\n     *\n     * >>> splitArraySameAverage(new int[]{1,2,3,4,5,6,7,8})\n     * true\n     *\n     * >>> splitArraySameAverage(new int[]{3,1})\n     * false\n     */\n    public boolean splitArraySameAverage(int[] nums)  {\n        int n = nums.length;\n        int sum = 0;\n        for (int num : nums) {\n            sum += num;\n        }\n        \n        // Try all possible sizes of subsets\n        for (int i = 1; i <= n / 2; i++) {\n            Set<Integer> subsetSums = new HashSet<>();\n            subsetSums.add(0);\n            for (int j = 0; j < n; j++) {\n                Set<Integer> newSubsetSums = new HashSet<>(subsetSums);\n                for (int s : subsetSums) {\n                    if (s + nums[j] <= sum) {\n                        newSubsetSums.add(s + nums[j]);\n                    }\n                }\n                subsetSums = newSubsetSums;\n            }\n            \n            // Check if there's a subset with the required sum\n            if (subsetSums.contains(sum * i / n)) {\n                return true;\n            }\n        }\n        \n        return false;\n    }\npublic static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 8}) == true;\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 9}) == false;\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 10}) == true;\n        assert solution.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}) == true;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771903700,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpa5jfild4.java:48)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_19_sort_numbers",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n \n        Map<String, Integer> map = new HashMap<>();\n        map.put(\"zero\", 0);\n        map.put(\"one\", 1);\n        map.put(\"two\", 2);\n        map.put(\"three\", 3);\n        map.put(\"four\", 4);\n        map.put(\"five\", 5);\n        map.put(\"six\", 6);\n        map.put(\"seven\", 7);\n        map.put(\"eight\", 8);\n        map.put(\"nine\", 9);\n\n        List<Integer> list = Arrays.asList(numbers.split(\" \"))\n            .stream()\n            .map(map::get)\n            .sorted()\n            .map(i -> map.entrySet().stream().filter(e -> e.getValue() == i).findFirst().get().getKey())\n            .collect(Collectors.toList());\n\n        return String.join(\" \", list);\n    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+      "timestamp": 1771879091,
+      "stdout": "",
+      "stderr": "/tmp/tmpwd4069gz.java:33: error: incompatible types: inference variable T has incompatible bounds\n            .collect(Collectors.toList());\n                    ^\n    equality constraints: Integer\n    lower bounds: String\n  where T is a type-variable:\n    T extends Object declared in method <T>toList()\n/tmp/tmpwd4069gz.java:35: error: no suitable method found for join(String,List<Integer>)\n        return String.join(\" \", list);\n                     ^\n    method String.join(CharSequence,CharSequence...) is not applicable\n      (varargs mismatch; List<Integer> cannot be converted to CharSequence)\n    method String.join(CharSequence,Iterable<? extends CharSequence>) is not applicable\n      (argument mismatch; List<Integer> cannot be converted to Iterable<? extends CharSequence>)\n2 errors\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

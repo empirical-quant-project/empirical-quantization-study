@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_53_add",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Add two numbers x and y\n    // >>> add((2l), (3l))\n    // (5l)\n    // >>> add((5l), (7l))\n    // (12l)\n    public static long add(long x, long y) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(add((0l), (1l)) == (1l));\n    assert(add((1l), (0l)) == (1l));\n    assert(add((2l), (3l)) == (5l));\n    assert(add((5l), (7l)) == (12l));\n    assert(add((7l), (5l)) == (12l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Add two numbers x and y\n    // >>> add((2l), (3l))\n    // (5l)\n    // >>> add((5l), (7l))\n    // (12l)\n    public static long add(long x, long y) {\n return x + y; }\n    }\n    public static void main(String[] args) {\n    assert(add((0l), (1l)) == (1l));\n    assert(add((1l), (0l)) == (1l));\n    assert(add((2l), (3l)) == (5l));\n    assert(add((5l), (7l)) == (12l));\n    assert(add((7l), (5l)) == (12l));\n    }\n\n}\n",
+      "timestamp": 1771879044,
+      "stdout": "",
+      "stderr": "/tmp/tmpr9q9txo8.java:17: error: class, interface, or enum expected\n    public static void main(String[] args) {\n                  ^\n/tmp/tmpr9q9txo8.java:19: error: as of release 1.4, 'assert' is a keyword, and may not be used as an identifier\n    assert(add((1l), (0l)) == (1l));\n    ^\n/tmp/tmpr9q9txo8.java:20: error: as of release 1.4, 'assert' is a keyword, and may not be used as an identifier\n    assert(add((2l), (3l)) == (5l));\n    ^\n/tmp/tmpr9q9txo8.java:21: error: as of release 1.4, 'assert' is a keyword, and may not be used as an identifier\n    assert(add((5l), (7l)) == (12l));\n    ^\n/tmp/tmpr9q9txo8.java:22: error: as of release 1.4, 'assert' is a keyword, and may not be used as an identifier\n    assert(add((7l), (5l)) == (12l));\n    ^\n/tmp/tmpr9q9txo8.java:23: error: class, interface, or enum expected\n    }\n    ^\n6 errors\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_67_fruit_distribution",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // In this task, you will be given a string that represents a number of apples and oranges \n    // that are distributed in a basket of fruit this basket contains \n    // apples, oranges, and mango fruits. Given the string that represents the total number of \n    // the oranges and apples and an integer that represent the total number of the fruits \n    // in the basket return the number of the mango fruits in the basket.\n    // for examble:\n    // >>> fruitDistribution((\"5 apples and 6 oranges\"), (19l))\n    // (8l)\n    // >>> fruitDistribution((\"0 apples and 1 oranges\"), (3l))\n    // (2l)\n    // >>> fruitDistribution((\"2 apples and 3 oranges\"), (100l))\n    // (95l)\n    // >>> fruitDistribution((\"100 apples and 1 oranges\"), (120l))\n    // (19l)\n    public static long fruitDistribution(String s, long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(fruitDistribution((\"5 apples and 6 oranges\"), (19l)) == (8l));\n    assert(fruitDistribution((\"5 apples and 6 oranges\"), (21l)) == (10l));\n    assert(fruitDistribution((\"0 apples and 1 oranges\"), (3l)) == (2l));\n    assert(fruitDistribution((\"1 apples and 0 oranges\"), (3l)) == (2l));\n    assert(fruitDistribution((\"2 apples and 3 oranges\"), (100l)) == (95l));\n    assert(fruitDistribution((\"2 apples and 3 oranges\"), (5l)) == (0l));\n    assert(fruitDistribution((\"1 apples and 100 oranges\"), (120l)) == (19l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // In this task, you will be given a string that represents a number of apples and oranges \n    // that are distributed in a basket of fruit this basket contains \n    // apples, oranges, and mango fruits. Given the string that represents the total number of \n    // the oranges and apples and an integer that represent the total number of the fruits \n    // in the basket return the number of the mango fruits in the basket.\n    // for examble:\n    // >>> fruitDistribution((\"5 apples and 6 oranges\"), (19l))\n    // (8l)\n    // >>> fruitDistribution((\"0 apples and 1 oranges\"), (3l))\n    // (2l)\n    // >>> fruitDistribution((\"2 apples and 3 oranges\"), (100l))\n    // (95l)\n    // >>> fruitDistribution((\"100 apples and 1 oranges\"), (120l))\n    // (19l)\n    public static long fruitDistribution(String s, long n) {\n\n        String[] arr = s.split(\" \");\n        long apples = Long.parseLong(arr[0]);\n        long oranges = Long.parseLong(arr[2]);\n        return n - apples - oranges;\n    }\n    public static void main(String[] args) {\n    assert(fruitDistribution((\"5 apples and 6 oranges\"), (19l)) == (8l));\n    assert(fruitDistribution((\"5 apples and 6 oranges\"), (21l)) == (10l));\n    assert(fruitDistribution((\"0 apples and 1 oranges\"), (3l)) == (2l));\n    assert(fruitDistribution((\"1 apples and 0 oranges\"), (3l)) == (2l));\n    assert(fruitDistribution((\"2 apples and 3 oranges\"), (100l)) == (95l));\n    assert(fruitDistribution((\"2 apples and 3 oranges\"), (5l)) == (0l));\n    assert(fruitDistribution((\"1 apples and 100 oranges\"), (120l)) == (19l));\n    }\n\n}\n",
+      "timestamp": 1772138976,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"and\"\n\tat java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.base/java.lang.Long.parseLong(Long.java:692)\n\tat java.base/java.lang.Long.parseLong(Long.java:817)\n\tat Problem.fruitDistribution(tmplmp5rvoo.java:27)\n\tat Problem.main(tmplmp5rvoo.java:31)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Java-23",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n    * Check if the searchWord is a prefix of any word in the sentence.\n    * If searchWord is a prefix of multiple words, return the index of the first matching word.\n    * If searchWord is not a prefix of any word, return -1.\n    * \n    * Example:\n    * >>> isPrefixOfWord(\"i love eating burger\", \"burg\")\n    * 4\n    * >>> isPrefixOfWord(\"this problem is an easy problem\", \"pro\")\n    * 2\n    * >>> isPrefixOfWord(\"i am tired\", \"you\")\n    * -1\n    */\n  public int isPrefixOfWord(String sentence, String searchWord) ",
+  "tests": "  public static void main(String[] args) {\n      Problem solution = new Problem();\n\n      // Test the function with different test cases\n      assert solution.isPrefixOfWord(\"hello world\", \"wor\") == 2;\n      assert solution.isPrefixOfWord(\"hello world\", \"hell\") == 1;\n      assert solution.isPrefixOfWord(\"hello world\", \"foo\") == -1;\n      System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n    * Check if the searchWord is a prefix of any word in the sentence.\n    * If searchWord is a prefix of multiple words, return the index of the first matching word.\n    * If searchWord is not a prefix of any word, return -1.\n    * \n    * Example:\n    * >>> isPrefixOfWord(\"i love eating burger\", \"burg\")\n    * 4\n    * >>> isPrefixOfWord(\"this problem is an easy problem\", \"pro\")\n    * 2\n    * >>> isPrefixOfWord(\"i am tired\", \"you\")\n    * -1\n    */\n  public int isPrefixOfWord(String sentence, String searchWord)  {\n      String[] words = sentence.split(\" \");\n      for (int i = 0; i < words.length; i++) {\n          if (words[i].startsWith(searchWord)) {\n              return i + 1;\n          }\n      }\n      return -1;\n  }\n  public static void main(String[] args) {\n      Problem solution = new Problem();\n\n      // Test the function with different test cases\n      assert solution.isPrefixOfWord(\"hello world\", \"wor\") == 2;\n      assert solution.isPrefixOfWord(\"hello world\", \"hell\") == 1;\n      assert solution.isPrefixOfWord(\"hello world\", \"foo\") == -1;\n      System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1771903697,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

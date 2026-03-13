@@ -1,0 +1,20 @@
+{
+  "name": "Java-28",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given an integer k, return the minimum number of Fibonacci numbers whose sum is equal to k.\n     * Fibonacci numbers are defined as follows:\n     * F1 = 1\n     * F2 = 1\n     * Fn = Fn-1 + Fn-2, for n > 2.\n     * It is guaranteed that there is at least one valid solution for the given k.\n     *\n     * Example 1:\n     * Input: k = 7\n     * Output: 2\n     * Explanation: Fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, ...\n     * For k = 7, we can get 2 + 5 = 7.\n     *\n     * Example 2:\n     * Input: k = 10\n     * Output: 2\n     * Explanation: For k = 10, we can get 2 + 8 = 10.\n     *\n     * Example 3:\n     * Input: k = 19\n     * Output: 3\n     * Explanation: For k = 19, we can get 1 + 5 + 13 = 19.\n     */\n  public int findMinFibonacciNumbers(int k) ",
+  "tests": "  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.findMinFibonacciNumbers(7) == 2;\n    assert solution.findMinFibonacciNumbers(10) == 2;\n    assert solution.findMinFibonacciNumbers(13) == 1;\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given an integer k, return the minimum number of Fibonacci numbers whose sum is equal to k.\n     * Fibonacci numbers are defined as follows:\n     * F1 = 1\n     * F2 = 1\n     * Fn = Fn-1 + Fn-2, for n > 2.\n     * It is guaranteed that there is at least one valid solution for the given k.\n     *\n     * Example 1:\n     * Input: k = 7\n     * Output: 2\n     * Explanation: Fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, ...\n     * For k = 7, we can get 2 + 5 = 7.\n     *\n     * Example 2:\n     * Input: k = 10\n     * Output: 2\n     * Explanation: For k = 10, we can get 2 + 8 = 10.\n     *\n     * Example 3:\n     * Input: k = 19\n     * Output: 3\n     * Explanation: For k = 19, we can get 1 + 5 + 13 = 19.\n     */\n  public int findMinFibonacciNumbers(int k)  {\n    int[] fib = new int[k + 1];\n    fib[0] = 0;\n    fib[1] = 1;\n    for (int i = 2; i <= k; i++) {\n      fib[i] = fib[i - 1] + fib[i - 2];\n    }\n    int count = 0;\n    for (int i = k; i > 0; i--) {\n      if (fib[i] <= k) {\n        count++;\n      }\n    }\n    return count;\n  }\n  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.findMinFibonacciNumbers(7) == 2;\n    assert solution.findMinFibonacciNumbers(10) == 2;\n    assert solution.findMinFibonacciNumbers(13) == 1;\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772137262,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpacbx51tu.java:47)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

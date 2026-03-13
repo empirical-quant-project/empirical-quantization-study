@@ -1,0 +1,25 @@
+{
+  "name": "Python-12",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def max_product(num_str: str, N: int, K: int) -> int:\n    \"\"\"\n    Function name: max_product\n    Arguments:\n    num_str (str): A string representing the number string.\n    N (int): An integer representing the length of the number string.\n    K (int): An integer representing the number of multiplication signs to insert.\n    Return type: int (The function returns the maximum product that can be obtained by inserting Kmultiplication signs into the number string.)\n    \"\"\"",
+  "tests": "def test_max_product():\n    # Test case 1\n    num_str1 = \"123\"\n    N1 = 3\n    K1 = 1\n    expected_result1 = 36  # Corrected expected result: 1*23 = 23 or 12*3 = 36, max is 36\n    assert max_product(num_str1, N1,\n                       K1) == expected_result1, f\"Test case 1 failed. Expected {expected_result1}, got {max_product(num_str1, N1, K1)}\"\n\n    # Test case 2\n    num_str2 = \"1234\"\n    N2 = 4\n    K2 = 2\n    expected_result2 = 144  # Corrected expected result: 1*2*34 = 68 or 12*3*4 = 144, max is 144\n    assert max_product(num_str2, N2,\n                       K2) == expected_result2, f\"Test case 2 failed. Expected {expected_result2}, got {max_product(num_str2, N2, K2)}\"\n\n    # Test case 3\n    num_str3 = \"051\"\n    N3 = 3\n    K3 = 1\n    expected_result3 = 5  # 0*51 = 0 or 05*1 = 5, max is 5\n    assert max_product(num_str3, N3,\n                       K3) == expected_result3, f\"Test case 3 failed. Expected {expected_result3}, got {max_product(num_str3, N3, K3)}\"\n\n    # If no assertion is raised, all test cases passed\n    print(\"All test cases passed!\")\ntest_max_product()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def max_product(num_str: str, N: int, K: int) -> int:\n    \"\"\"\n    Function name: max_product\n    Arguments:\n    num_str (str): A string representing the number string.\n    N (int): An integer representing the length of the number string.\n    K (int): An integer representing the number of multiplication signs to insert.\n    Return type: int (The function returns the maximum product that can be obtained by inserting Kmultiplication signs into the number string.)\n    \"\"\"\n    # Initialize variables\n    max_product = 0\n    # Iterate through each possible position of the multiplication sign\n    for i in range(N - K + 1):\n        # Calculate the product of the two substrings\n        product = int(num_str[i:i + K]) * int(num_str[i + K:])\n        # Update the maximum product\n        max_product = max(max_product, product)\n    # Return the maximum product\n    return max_product\ndef test_max_product():\n    # Test case 1\n    num_str1 = \"123\"\n    N1 = 3\n    K1 = 1\n    expected_result1 = 36  # Corrected expected result: 1*23 = 23 or 12*3 = 36, max is 36\n    assert max_product(num_str1, N1,\n                       K1) == expected_result1, f\"Test case 1 failed. Expected {expected_result1}, got {max_product(num_str1, N1, K1)}\"\n\n    # Test case 2\n    num_str2 = \"1234\"\n    N2 = 4\n    K2 = 2\n    expected_result2 = 144  # Corrected expected result: 1*2*34 = 68 or 12*3*4 = 144, max is 144\n    assert max_product(num_str2, N2,\n                       K2) == expected_result2, f\"Test case 2 failed. Expected {expected_result2}, got {max_product(num_str2, N2, K2)}\"\n\n    # Test case 3\n    num_str3 = \"051\"\n    N3 = 3\n    K3 = 1\n    expected_result3 = 5  # 0*51 = 0 or 05*1 = 5, max is 5\n    assert max_product(num_str3, N3,\n                       K3) == expected_result3, f\"Test case 3 failed. Expected {expected_result3}, got {max_product(num_str3, N3, K3)}\"\n\n    # If no assertion is raised, all test cases passed\n    print(\"All test cases passed!\")\ntest_max_product()",
+      "timestamp": 1772137218,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp3nsws_v3.py\", line 47, in <module>\n    test_max_product()\n  File \"/tmp/tmp3nsws_v3.py\", line 26, in test_max_product\n    assert max_product(num_str1, N1,\n  File \"/tmp/tmp3nsws_v3.py\", line 15, in max_product\n    product = int(num_str[i:i + K]) * int(num_str[i + K:])\nValueError: invalid literal for int() with base 10: ''\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

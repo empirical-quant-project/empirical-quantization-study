@@ -1,0 +1,20 @@
+{
+  "name": "Java-3",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Calculate the time needed to obtain the reverse seating order.\n     * For each person, the person who was originally on their left will be on their right, and the person who was originally on their right will be on their left.\n     * \n     * @param N the number of people\n     * @return the time needed in minutes\n     * \n     * Example:\n     * >>> calculateTimeNeeded(4)\n     * 2\n     * >>> calculateTimeNeeded(5)\n     * 4\n     * >>> calculateTimeNeeded(6)\n     * 6\n     */\n    public static int calculateTimeNeeded(int N) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert calculateTimeNeeded(7) == 3;\n        assert calculateTimeNeeded(8) == 4;\n        assert calculateTimeNeeded(9) == 4;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Calculate the time needed to obtain the reverse seating order.\n     * For each person, the person who was originally on their left will be on their right, and the person who was originally on their right will be on their left.\n     * \n     * @param N the number of people\n     * @return the time needed in minutes\n     * \n     * Example:\n     * >>> calculateTimeNeeded(4)\n     * 2\n     * >>> calculateTimeNeeded(5)\n     * 4\n     * >>> calculateTimeNeeded(6)\n     * 6\n     */\n    public static int calculateTimeNeeded(int N)  {\n        // The time needed is twice the number of people minus two\n        return 2 * (N - 1);\n    }\n    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert calculateTimeNeeded(7) == 3;\n        assert calculateTimeNeeded(8) == 4;\n        assert calculateTimeNeeded(9) == 4;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771903700,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp7yff3r42.java:23)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

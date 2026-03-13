@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_76_is_simple_power",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Your task is to write a function that returns true if a number x is a simple\n    // power of n and false in other cases.\n    // x is a simple power of n if n**int=x\n    // For example:\n    // >>> isSimplePower((1l), (4l))\n    // (true)\n    // >>> isSimplePower((2l), (2l))\n    // (true)\n    // >>> isSimplePower((8l), (2l))\n    // (true)\n    // >>> isSimplePower((3l), (2l))\n    // (false)\n    // >>> isSimplePower((3l), (1l))\n    // (false)\n    // >>> isSimplePower((5l), (3l))\n    // (false)\n    public static boolean isSimplePower(long x, long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(isSimplePower((16l), (2l)) == (true));\n    assert(isSimplePower((143214l), (16l)) == (false));\n    assert(isSimplePower((4l), (2l)) == (true));\n    assert(isSimplePower((9l), (3l)) == (true));\n    assert(isSimplePower((16l), (4l)) == (true));\n    assert(isSimplePower((24l), (2l)) == (false));\n    assert(isSimplePower((128l), (4l)) == (false));\n    assert(isSimplePower((12l), (6l)) == (false));\n    assert(isSimplePower((1l), (1l)) == (true));\n    assert(isSimplePower((1l), (12l)) == (true));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Your task is to write a function that returns true if a number x is a simple\n    // power of n and false in other cases.\n    // x is a simple power of n if n**int=x\n    // For example:\n    // >>> isSimplePower((1l), (4l))\n    // (true)\n    // >>> isSimplePower((2l), (2l))\n    // (true)\n    // >>> isSimplePower((8l), (2l))\n    // (true)\n    // >>> isSimplePower((3l), (2l))\n    // (false)\n    // >>> isSimplePower((3l), (1l))\n    // (false)\n    // >>> isSimplePower((5l), (3l))\n    // (false)\n    public static boolean isSimplePower(long x, long n) {\n \n        if(n == 1){\n            return x == 1;\n        }\n        long i = 1;\n        while(i < x){\n            i *= n;\n        }\n        return i == x;\n    }\n    public static void main(String[] args) {\n    assert(isSimplePower((16l), (2l)) == (true));\n    assert(isSimplePower((143214l), (16l)) == (false));\n    assert(isSimplePower((4l), (2l)) == (true));\n    assert(isSimplePower((9l), (3l)) == (true));\n    assert(isSimplePower((16l), (4l)) == (true));\n    assert(isSimplePower((24l), (2l)) == (false));\n    assert(isSimplePower((128l), (4l)) == (false));\n    assert(isSimplePower((12l), (6l)) == (false));\n    assert(isSimplePower((1l), (1l)) == (true));\n    assert(isSimplePower((1l), (12l)) == (true));\n    }\n\n}\n",
+      "timestamp": 1771879037,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

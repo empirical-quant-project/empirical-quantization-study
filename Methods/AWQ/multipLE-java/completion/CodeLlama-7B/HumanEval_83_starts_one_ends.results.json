@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_83_starts_one_ends",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given a positive integer n, return the count of the numbers of n-digit\n    // positive integers that start or end with 1.\n    public static long startsOneEnds(long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(startsOneEnds((1l)) == (1l));\n    assert(startsOneEnds((2l)) == (18l));\n    assert(startsOneEnds((3l)) == (180l));\n    assert(startsOneEnds((4l)) == (1800l));\n    assert(startsOneEnds((5l)) == (18000l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given a positive integer n, return the count of the numbers of n-digit\n    // positive integers that start or end with 1.\n    public static long startsOneEnds(long n) {\n\n        long count = 0;\n        for (long i = 1; i <= n; i++) {\n            if (i % 10 == 1) {\n                count++;\n            }\n        }\n        return count;\n    }\n    public static void main(String[] args) {\n    assert(startsOneEnds((1l)) == (1l));\n    assert(startsOneEnds((2l)) == (18l));\n    assert(startsOneEnds((3l)) == (180l));\n    assert(startsOneEnds((4l)) == (1800l));\n    assert(startsOneEnds((5l)) == (18000l));\n    }\n\n}\n",
+      "timestamp": 1772138949,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp_tcgf5p0.java:23)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

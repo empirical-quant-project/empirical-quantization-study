@@ -1,0 +1,20 @@
+{
+  "name": "Java-29",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Given two positive integers n and k, find the kth factor of n.\n     * A factor of n is a positive integer that divides n evenly.\n     * Return the kth factor in ascending order. If n has less than k factors, return -1.\n     *\n     * Example 1:\n     * Input: n = 12, k = 3\n     * Output: 3\n     * Explanation: The factors of 12 are [1, 2, 3, 4, 6, 12]. The 3rd factor is 3.\n     *\n     * Example 2:\n     * Input: n = 7, k = 2\n     * Output: 7\n     * Explanation: The factors of 7 are [1, 7]. The 2nd factor is 7.\n     *\n     * Example 3:\n     * Input: n = 4, k = 4\n     * Output: -1\n     * Explanation: The factors of 4 are [1, 2, 4]. There is no 4th factor, so we return -1.\n     */\n    public int kthFactor(int n, int k) ",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.kthFactor(100, 3) == 4;\n        assert solution.kthFactor(15, 4) == 15;\n        assert solution.kthFactor(30, 18) == -1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Given two positive integers n and k, find the kth factor of n.\n     * A factor of n is a positive integer that divides n evenly.\n     * Return the kth factor in ascending order. If n has less than k factors, return -1.\n     *\n     * Example 1:\n     * Input: n = 12, k = 3\n     * Output: 3\n     * Explanation: The factors of 12 are [1, 2, 3, 4, 6, 12]. The 3rd factor is 3.\n     *\n     * Example 2:\n     * Input: n = 7, k = 2\n     * Output: 7\n     * Explanation: The factors of 7 are [1, 7]. The 2nd factor is 7.\n     *\n     * Example 3:\n     * Input: n = 4, k = 4\n     * Output: -1\n     * Explanation: The factors of 4 are [1, 2, 4]. There is no 4th factor, so we return -1.\n     */\n    public int kthFactor(int n, int k)  {\n        int low = 1, high = n;\n        while (low <= high) {\n            int mid = low + (high - low) / 2;\n            if (mid * n / mid == n) {\n                k--;\n                if (k == 0) {\n                    return mid;\n                }\n                low = mid + 1;\n            } else if (mid * n / mid < n) {\n                low = mid + 1;\n            } else {\n                high = mid - 1;\n            }\n        }\n        return -1;\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.kthFactor(100, 3) == 4;\n        assert solution.kthFactor(15, 4) == 15;\n        assert solution.kthFactor(30, 18) == -1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772137256,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpl17vrsr6.java:44)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

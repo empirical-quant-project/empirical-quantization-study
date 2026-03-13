@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_77_iscube",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def iscube(a: int) -> bool:\n    \"\"\"\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    >>> iscube(1)\n    True\n    >>> iscube(2)\n    False\n    >>> iscube(-1)\n    True\n    >>> iscube(64)\n    True\n    >>> iscube(0)\n    True\n    >>> iscube(180)\n    False\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(1) == True\n    assert candidate(2) == False\n    assert candidate(-1) == True\n    assert candidate(64) == True\n    assert candidate(180) == False\n    assert candidate(1000) == True\n    assert candidate(0) == True\n    assert candidate(1729) == False\n\ndef test_check():\n    check(iscube)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def iscube(a: int) -> bool:\n    \"\"\"\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    >>> iscube(1)\n    True\n    >>> iscube(2)\n    False\n    >>> iscube(-1)\n    True\n    >>> iscube(64)\n    True\n    >>> iscube(0)\n    True\n    >>> iscube(180)\n    False\n    \"\"\"\n\ndef check(candidate):\n    assert candidate(1) == True\n    assert candidate(2) == False\n    assert candidate(-1) == True\n    assert candidate(64) == True\n    assert candidate(180) == False\n    assert candidate(1000) == True\n    assert candidate(0) == True\n    assert candidate(1729) == False\n\ndef test_check():\n    check(iscube)\n\ntest_check()\n",
+      "timestamp": 1771886252,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpyr4k3lxe.py\", line 34, in <module>\n    test_check()\n  File \"/tmp/tmpyr4k3lxe.py\", line 32, in test_check\n    check(iscube)\n  File \"/tmp/tmpyr4k3lxe.py\", line 22, in check\n    assert candidate(1) == True\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

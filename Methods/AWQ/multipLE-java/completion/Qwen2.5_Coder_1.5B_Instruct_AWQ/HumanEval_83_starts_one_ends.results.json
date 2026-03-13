@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_83_starts_one_ends",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given a positive integer n, return the count of the numbers of n-digit\n    // positive integers that start or end with 1.\n    public static long startsOneEnds(long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(startsOneEnds((1l)) == (1l));\n    assert(startsOneEnds((2l)) == (18l));\n    assert(startsOneEnds((3l)) == (180l));\n    assert(startsOneEnds((4l)) == (1800l));\n    assert(startsOneEnds((5l)) == (18000l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given a positive integer n, return the count of the numbers of n-digit\n    // positive integers that start or end with 1.\n    public static long startsOneEnds(long n) {\n \n        // If n is 1, there are 2 numbers that start or end with 1 (1 and 10)\n        if (n == 1) {\n            return 2;\n        }\n        // If n is greater than 1, there are 10^(n-1) numbers that start or end with 1\n        // because each of the n-1 digits can be any digit from 0 to 9\n        return (long) Math.pow(10, n - 1);\n    }\n    public static void main(String[] args) {\n    assert(startsOneEnds((1l)) == (1l));\n    assert(startsOneEnds((2l)) == (18l));\n    assert(startsOneEnds((3l)) == (180l));\n    assert(startsOneEnds((4l)) == (1800l));\n    assert(startsOneEnds((5l)) == (18000l));\n    }\n\n}\n",
+      "timestamp": 1771877409,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpkxvr_u7s.java:22)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

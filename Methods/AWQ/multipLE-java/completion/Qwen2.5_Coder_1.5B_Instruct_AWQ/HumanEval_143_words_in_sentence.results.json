@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_143_words_in_sentence",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given a string representing a sentence,\n    // the sentence contains some words separated by a space,\n    // and you have to return a string that contains the words from the original sentence,\n    // whose lengths are prime numbers,\n    // the order of the words in the new string should be the same as the original one.\n    // Example 1:\n    // >>> wordsInSentence((\"This is a test\"))\n    // (\"is\")\n    // Example 2:\n    // >>> wordsInSentence((\"lets go for swimming\"))\n    // (\"go for\")\n    // Constraints:\n    // * 1 <= len(sentence) <= 100\n    // * sentence contains only letters\n    public static String wordsInSentence(String sentence) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(wordsInSentence((\"This is a test\")).equals((\"is\")));\n    assert(wordsInSentence((\"lets go for swimming\")).equals((\"go for\")));\n    assert(wordsInSentence((\"there is no place available here\")).equals((\"there is no place\")));\n    assert(wordsInSentence((\"Hi I am Hussein\")).equals((\"Hi am Hussein\")));\n    assert(wordsInSentence((\"go for it\")).equals((\"go for it\")));\n    assert(wordsInSentence((\"here\")).equals((\"\")));\n    assert(wordsInSentence((\"here is\")).equals((\"is\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given a string representing a sentence,\n    // the sentence contains some words separated by a space,\n    // and you have to return a string that contains the words from the original sentence,\n    // whose lengths are prime numbers,\n    // the order of the words in the new string should be the same as the original one.\n    // Example 1:\n    // >>> wordsInSentence((\"This is a test\"))\n    // (\"is\")\n    // Example 2:\n    // >>> wordsInSentence((\"lets go for swimming\"))\n    // (\"go for\")\n    // Constraints:\n    // * 1 <= len(sentence) <= 100\n    // * sentence contains only letters\n    public static String wordsInSentence(String sentence) {\n \n        String[] words = sentence.split(\" \");\n        List<String> primeLengthWords = new ArrayList<>();\n        for (String word : words) {\n            if (isPrime(word.length())) {\n                primeLengthWords.add(word);\n            }\n        }\n        return String.join(\" \", primeLengthWords);\n    }\n    public static void main(String[] args) {\n    assert(wordsInSentence((\"This is a test\")).equals((\"is\")));\n    assert(wordsInSentence((\"lets go for swimming\")).equals((\"go for\")));\n    assert(wordsInSentence((\"there is no place available here\")).equals((\"there is no place\")));\n    assert(wordsInSentence((\"Hi I am Hussein\")).equals((\"Hi am Hussein\")));\n    assert(wordsInSentence((\"go for it\")).equals((\"go for it\")));\n    assert(wordsInSentence((\"here\")).equals((\"\")));\n    assert(wordsInSentence((\"here is\")).equals((\"is\")));\n    }\n\n}\n",
+      "timestamp": 1771877467,
+      "stdout": "",
+      "stderr": "/tmp/tmp3m_ar6bl.java:28: error: cannot find symbol\n            if (isPrime(word.length())) {\n                ^\n  symbol:   method isPrime(int)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Java-51",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.HashMap;\n\nclass Problem {\n\n  /**\n   * Calculate the sum of unique elements in the given integer array.\n   *\n   * @param nums An array of integers.\n   * @return The sum of unique elements.\n   *\n   * Example:\n   * calculateUniqueSum(new int[]{1, 2, 3, 2})\n   * Output: 4\n   */\n  public static int calculateUniqueSum(int[] nums) ",
+  "tests": "  public static void main(String[] args) {\n    assert calculateUniqueSum(new int[] { 1, 4, 5, 1, 2, 4 }) == 7; // Test Case 1\n    assert calculateUniqueSum(new int[] { 0, 0, 0, 0 }) == 0; // Test Case 2\n    assert calculateUniqueSum(new int[] { -1, -2, -3, -2 }) == -4; // Test Case 3\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.HashMap;\n\nclass Problem {\n\n  /**\n   * Calculate the sum of unique elements in the given integer array.\n   *\n   * @param nums An array of integers.\n   * @return The sum of unique elements.\n   *\n   * Example:\n   * calculateUniqueSum(new int[]{1, 2, 3, 2})\n   * Output: 4\n   */\n  public static int calculateUniqueSum(int[] nums)  {\n    // Write your solution here\n    return 0;\n  }\n  public static void main(String[] args) {\n    assert calculateUniqueSum(new int[] { 1, 4, 5, 1, 2, 4 }) == 7; // Test Case 1\n    assert calculateUniqueSum(new int[] { 0, 0, 0, 0 }) == 0; // Test Case 2\n    assert calculateUniqueSum(new int[] { -1, -2, -3, -2 }) == -4; // Test Case 3\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772137256,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpfs47oo8r.java:20)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

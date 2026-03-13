@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_39_prime_fib",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // prime_fib returns n-th number that is a Fibonacci number and it's also prime.\n    // >>> primeFib((1l))\n    // (2l)\n    // >>> primeFib((2l))\n    // (3l)\n    // >>> primeFib((3l))\n    // (5l)\n    // >>> primeFib((4l))\n    // (13l)\n    // >>> primeFib((5l))\n    // (89l)\n    public static long primeFib(long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(primeFib((1l)) == (2l));\n    assert(primeFib((2l)) == (3l));\n    assert(primeFib((3l)) == (5l));\n    assert(primeFib((4l)) == (13l));\n    assert(primeFib((5l)) == (89l));\n    assert(primeFib((6l)) == (233l));\n    assert(primeFib((7l)) == (1597l));\n    assert(primeFib((8l)) == (28657l));\n    assert(primeFib((9l)) == (514229l));\n    assert(primeFib((10l)) == (433494437l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // prime_fib returns n-th number that is a Fibonacci number and it's also prime.\n    // >>> primeFib((1l))\n    // (2l)\n    // >>> primeFib((2l))\n    // (3l)\n    // >>> primeFib((3l))\n    // (5l)\n    // >>> primeFib((4l))\n    // (13l)\n    // >>> primeFib((5l))\n    // (89l)\n    public static long primeFib(long n) {\n\n        long a = 0, b = 1;\n        for (long i = 0; i < n; i++) {\n            long c = a + b;\n            a = b;\n            b = c;\n            if (isPrime(c)) {\n                return c;\n            }\n        }\n        return -1;\n    }\n    public static void main(String[] args) {\n    assert(primeFib((1l)) == (2l));\n    assert(primeFib((2l)) == (3l));\n    assert(primeFib((3l)) == (5l));\n    assert(primeFib((4l)) == (13l));\n    assert(primeFib((5l)) == (89l));\n    assert(primeFib((6l)) == (233l));\n    assert(primeFib((7l)) == (1597l));\n    assert(primeFib((8l)) == (28657l));\n    assert(primeFib((9l)) == (514229l));\n    assert(primeFib((10l)) == (433494437l));\n    }\n\n}\n",
+      "timestamp": 1772138963,
+      "stdout": "",
+      "stderr": "/tmp/tmpakgfpw29.java:27: error: cannot find symbol\n            if (isPrime(c)) {\n                ^\n  symbol:   method isPrime(long)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_75_is_multiply_prime",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    // and false otherwise.\n    // Knowing that (a) is less then 100. \n    // Example:\n    // >>> isMultiplyPrime((30l))\n    // (true)\n    // 30 = 2 * 3 * 5\n    public static boolean isMultiplyPrime(long a) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(isMultiplyPrime((5l)) == (false));\n    assert(isMultiplyPrime((30l)) == (true));\n    assert(isMultiplyPrime((8l)) == (true));\n    assert(isMultiplyPrime((10l)) == (false));\n    assert(isMultiplyPrime((125l)) == (true));\n    assert(isMultiplyPrime((105l)) == (true));\n    assert(isMultiplyPrime((126l)) == (false));\n    assert(isMultiplyPrime((729l)) == (false));\n    assert(isMultiplyPrime((891l)) == (false));\n    assert(isMultiplyPrime((1001l)) == (true));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    // and false otherwise.\n    // Knowing that (a) is less then 100. \n    // Example:\n    // >>> isMultiplyPrime((30l))\n    // (true)\n    // 30 = 2 * 3 * 5\n    public static boolean isMultiplyPrime(long a) {\n \n        // Your code here\n    }\n    public static void main(String[] args) {\n    assert(isMultiplyPrime((5l)) == (false));\n    assert(isMultiplyPrime((30l)) == (true));\n    assert(isMultiplyPrime((8l)) == (true));\n    assert(isMultiplyPrime((10l)) == (false));\n    assert(isMultiplyPrime((125l)) == (true));\n    assert(isMultiplyPrime((105l)) == (true));\n    assert(isMultiplyPrime((126l)) == (false));\n    assert(isMultiplyPrime((729l)) == (false));\n    assert(isMultiplyPrime((891l)) == (false));\n    assert(isMultiplyPrime((1001l)) == (true));\n    }\n\n}\n",
+      "timestamp": 1771877426,
+      "stdout": "",
+      "stderr": "/tmp/tmpu_xc54tb.java:19: error: missing return statement\n    }\n    ^\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

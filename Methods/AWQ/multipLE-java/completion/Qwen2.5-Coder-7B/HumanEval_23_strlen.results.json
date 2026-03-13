@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_23_strlen",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Return length of given string\n    // >>> stringLength((\"\"))\n    // (0l)\n    // >>> stringLength((\"abc\"))\n    // (3l)\n    public static long strlen(String string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(strlen((\"\")) == (0l));\n    assert(strlen((\"x\")) == (1l));\n    assert(strlen((\"asdasnakj\")) == (9l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Return length of given string\n    // >>> stringLength((\"\"))\n    // (0l)\n    // >>> stringLength((\"abc\"))\n    // (3l)\n    public static long strlen(String string) {\n return string.length(); }\n    }\n    public static void main(String[] args) {\n    assert(strlen((\"\")) == (0l));\n    assert(strlen((\"x\")) == (1l));\n    assert(strlen((\"asdasnakj\")) == (9l));\n    }\n\n}\n",
+      "timestamp": 1771879055,
+      "stdout": "",
+      "stderr": "/tmp/tmpyvrbjj_x.java:17: error: class, interface, or enum expected\n    public static void main(String[] args) {\n                  ^\n/tmp/tmpyvrbjj_x.java:19: error: as of release 1.4, 'assert' is a keyword, and may not be used as an identifier\n    assert(strlen((\"x\")) == (1l));\n    ^\n/tmp/tmpyvrbjj_x.java:20: error: as of release 1.4, 'assert' is a keyword, and may not be used as an identifier\n    assert(strlen((\"asdasnakj\")) == (9l));\n    ^\n/tmp/tmpyvrbjj_x.java:21: error: class, interface, or enum expected\n    }\n    ^\n4 errors\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

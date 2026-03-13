@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_10_make_palindrome",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find the shortest palindrome that begins with a supplied string.\n    // Algorithm idea is simple:\n    // - Find the longest postfix of supplied string that is a palindrome.\n    // - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    // >>> makePalindrome((\"\"))\n    // (\"\")\n    // >>> makePalindrome((\"cat\"))\n    // (\"catac\")\n    // >>> makePalindrome((\"cata\"))\n    // (\"catac\")\n    public static String makePalindrome(String string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(makePalindrome((\"\")).equals((\"\")));\n    assert(makePalindrome((\"x\")).equals((\"x\")));\n    assert(makePalindrome((\"xyz\")).equals((\"xyzyx\")));\n    assert(makePalindrome((\"xyx\")).equals((\"xyx\")));\n    assert(makePalindrome((\"jerry\")).equals((\"jerryrrej\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find the shortest palindrome that begins with a supplied string.\n    // Algorithm idea is simple:\n    // - Find the longest postfix of supplied string that is a palindrome.\n    // - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    // >>> makePalindrome((\"\"))\n    // (\"\")\n    // >>> makePalindrome((\"cat\"))\n    // (\"catac\")\n    // >>> makePalindrome((\"cata\"))\n    // (\"catac\")\n    public static String makePalindrome(String string) {\n\n        String palindrome = string;\n        String suffix = \"\";\n        String prefix = \"\";\n        for (int i = string.length() - 1; i >= 0; i--) {\n            if (string.charAt(i) == string.charAt(string.length() - 1 - i)) {\n                suffix += string.charAt(i);\n            } else {\n                break;\n            }\n        }\n        for (int i = 0; i < string.length(); i++) {\n            if (string.charAt(i) == string.charAt(string.length() - 1 - i)) {\n                prefix += string.charAt(i);\n            } else {\n                break;\n            }\n        }\n        palindrome += new StringBuilder(prefix).reverse().toString().substring(1);\n        return palindrome;\n    }\n    public static void main(String[] args) {\n    assert(makePalindrome((\"\")).equals((\"\")));\n    assert(makePalindrome((\"x\")).equals((\"x\")));\n    assert(makePalindrome((\"xyz\")).equals((\"xyzyx\")));\n    assert(makePalindrome((\"xyx\")).equals((\"xyx\")));\n    assert(makePalindrome((\"jerry\")).equals((\"jerryrrej\")));\n    }\n\n}\n",
+      "timestamp": 1772138966,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: String index out of range: -1\n\tat java.base/java.lang.String.substring(String.java:1841)\n\tat Problem.makePalindrome(tmptkm7l2ur.java:38)\n\tat Problem.main(tmptkm7l2ur.java:42)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_115_max_fill",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List\n\ndef max_fill(grid: List[List[int]], capacity: int) -> int:\n    \"\"\"\n    You are given a rectangular grid of wells. Each row represents a single well,\n    and each 1 in a row represents a single unit of water.\n    Each well has a corresponding bucket that can be used to extract water from it, \n    and all buckets have the same capacity.\n    Your task is to use the buckets to empty the wells.\n    Output the number of times you need to lower the buckets.\n\n    Example 1:\n    >>> max_fill([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1)\n    6\n\n    Example 2:\n    >>> max_fill([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], 2)\n    5\n    \n    Example 3:\n    >>> max_fill([[0, 0, 0], [0, 0, 0]], 5)\n    0\n\n    Constraints:\n        * all wells have the same length\n        * 1 <= grid.length <= 10^2\n        * 1 <= grid[:,1].length <= 10^2\n        * grid[i][j] -> 0 | 1\n        * 1 <= capacity <= 10\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1) == 6\n    assert candidate([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], 2) == 5\n    assert candidate([[0, 0, 0], [0, 0, 0]], 5) == 0\n    assert candidate([[1, 1, 1, 1], [1, 1, 1, 1]], 2) == 4\n    assert candidate([[1, 1, 1, 1], [1, 1, 1, 1]], 9) == 2\n\ndef test_check():\n    check(max_fill)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List\n\ndef max_fill(grid: List[List[int]], capacity: int) -> int:\n    \"\"\"\n    You are given a rectangular grid of wells. Each row represents a single well,\n    and each 1 in a row represents a single unit of water.\n    Each well has a corresponding bucket that can be used to extract water from it, \n    and all buckets have the same capacity.\n    Your task is to use the buckets to empty the wells.\n    Output the number of times you need to lower the buckets.\n\n    Example 1:\n    >>> max_fill([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1)\n    6\n\n    Example 2:\n    >>> max_fill([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], 2)\n    5\n    \n    Example 3:\n    >>> max_fill([[0, 0, 0], [0, 0, 0]], 5)\n    0\n\n    Constraints:\n        * all wells have the same length\n        * 1 <= grid.length <= 10^2\n        * 1 <= grid[:,1].length <= 10^2\n        * grid[i][j] -> 0 | 1\n        * 1 <= capacity <= 10\n    \"\"\"\n\n    # Time complexity: O(n)\n    # Space complexity: O(n)\n    # where n is the number of rows in the grid\n    n = len(grid)\n    m = len(grid[0])\n    dp = [[0] * m for _ in range(n)]\n    for i in range(n):\n        for j in range(m):\n            if grid[i][j] == 0:\n                continue\n            if i == 0:\n                dp[i][j] = 1\n            else:\n                dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - 1]) + 1\n    return sum(dp[-1])\ndef check(candidate):\n    assert candidate([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1) == 6\n    assert candidate([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], 2) == 5\n    assert candidate([[0, 0, 0], [0, 0, 0]], 5) == 0\n    assert candidate([[1, 1, 1, 1], [1, 1, 1, 1]], 2) == 4\n    assert candidate([[1, 1, 1, 1], [1, 1, 1, 1]], 9) == 2\n\ndef test_check():\n    check(max_fill)\n\ntest_check()\n",
+      "timestamp": 1772137252,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp1i5rq36l.py\", line 57, in <module>\n    test_check()\n  File \"/tmp/tmp1i5rq36l.py\", line 55, in test_check\n    check(max_fill)\n  File \"/tmp/tmp1i5rq36l.py\", line 48, in check\n    assert candidate([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1) == 6\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Java-21",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,\n     * return the number of different transformations among all words.\n     *\n     * Example:\n     * uniqueMorseRepresentations([\"gin\",\"zen\",\"gig\",\"msg\"]) -> 2\n     * uniqueMorseRepresentations([\"a\"]) -> 1\n     */\n    public int uniqueMorseRepresentations(String[] words) ",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.uniqueMorseRepresentations(new String[]{\"hello\", \"world\", \"hello\"}) == 2;\n        assert solution.uniqueMorseRepresentations(new String[]{\"abc\", \"def\", \"ghi\"}) == 3;\n        assert solution.uniqueMorseRepresentations(new String[]{\"aaa\", \"aaa\", \"aaa\"}) == 1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,\n     * return the number of different transformations among all words.\n     *\n     * Example:\n     * uniqueMorseRepresentations([\"gin\",\"zen\",\"gig\",\"msg\"]) -> 2\n     * uniqueMorseRepresentations([\"a\"]) -> 1\n     */\n    public int uniqueMorseRepresentations(String[] words)  {\n        Set<String> morse = new HashSet<>();\n        String[] morseCode = {\".-\", \"-...\", \"-.-.\", \"-..\", \".\", \"..-.\", \"--.\", \"....\", \"..\", \".---\", \"-.-\", \".-..\", \"--\", \"-.\", \"---\", \".--.\", \"--.-\", \".-.\", \"...\", \"-\", \"..-\", \"...-\", \".--\", \"-..-\", \"-.--\", \"--..\"};\n        for (char c : morseCode) {\n            morse.add(c);\n        }\n        Set<String> unique = new HashSet<>();\n        for (String word : words) {\n            String morseWord = \"\";\n            for (char c : word.toCharArray()) {\n                morseWord += morse.get(c);\n            }\n            unique.add(morseWord);\n        }\n        return unique.size();\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.uniqueMorseRepresentations(new String[]{\"hello\", \"world\", \"hello\"}) == 2;\n        assert solution.uniqueMorseRepresentations(new String[]{\"abc\", \"def\", \"ghi\"}) == 3;\n        assert solution.uniqueMorseRepresentations(new String[]{\"aaa\", \"aaa\", \"aaa\"}) == 1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772137249,
+      "stdout": "",
+      "stderr": "/tmp/tmpf4ff0vsw.java:15: error: incompatible types: String cannot be converted to char\n        for (char c : morseCode) {\n                      ^\n/tmp/tmpf4ff0vsw.java:16: error: incompatible types: char cannot be converted to String\n            morse.add(c);\n                      ^\n/tmp/tmpf4ff0vsw.java:22: error: cannot find symbol\n                morseWord += morse.get(c);\n                                  ^\n  symbol:   method get(char)\n  location: variable morse of type Set<String>\nNote: Some messages have been simplified; recompile with -Xdiags:verbose to get full output\n3 errors\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

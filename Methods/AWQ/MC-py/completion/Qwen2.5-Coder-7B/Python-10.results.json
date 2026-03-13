@@ -1,0 +1,25 @@
+{
+  "name": "Python-10",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def sum_of_factorials_optimized(n: int) -> int:\n    \"\"\"\n    Compute the cumulative sum of factorial values from 1 up to a specified integer n.\n\n    This function employs a more efficient method to calculate factorials by iteratively\n    multiplying the current number to the previous factorial result, thus avoiding redundant\n    calculations. It then accumulates the factorial of each number from 1 to n inclusively.\n\n    Args:\n    n (int): The upper limit of the range for which the factorial sum is to be calculated.\n             The value of n should be in the range of 1 to 50, inclusive.\n\n    Returns:\n    int: The sum of all factorial values from 1! to n!.\n\n    Examples:\n    >>> sum_of_factorials_optimized(3)\n    9\n    >>> sum_of_factorials_optimized(5)\n    153\n    \"\"\"",
+  "tests": "def test_sum_of_factorials_optimized():\n    assert sum_of_factorials_optimized(1) == 1, \"Test case 1 failed: sum_of_factorials_optimized(1) should be 1.\"\n    assert sum_of_factorials_optimized(3) == 9, \"Test case 2 failed: sum_of_factorials_optimized(3) should be 9.\"\n    assert sum_of_factorials_optimized(4) == 33, \"Test case 3 failed: sum_of_factorials_optimized(4) should be 33.\"\n    assert sum_of_factorials_optimized(5) == 153, \"Test case 4 failed: sum_of_factorials_optimized(5) should be 153.\"\n    assert sum_of_factorials_optimized(6) == 873, \"Test case 5 failed: sum_of_factorials_optimized(6) should be 873.\"\n    assert sum_of_factorials_optimized(10) == 4037913, \"Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.\"\n    print(\"All test cases passed.\")\n\n# Call the test function to run the test cases\ntest_sum_of_factorials_optimized()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def sum_of_factorials_optimized(n: int) -> int:\n    \"\"\"\n    Compute the cumulative sum of factorial values from 1 up to a specified integer n.\n\n    This function employs a more efficient method to calculate factorials by iteratively\n    multiplying the current number to the previous factorial result, thus avoiding redundant\n    calculations. It then accumulates the factorial of each number from 1 to n inclusively.\n\n    Args:\n    n (int): The upper limit of the range for which the factorial sum is to be calculated.\n             The value of n should be in the range of 1 to 50, inclusive.\n\n    Returns:\n    int: The sum of all factorial values from 1! to n!.\n\n    Examples:\n    >>> sum_of_factorials_optimized(3)\n    9\n    >>> sum_of_factorials_optimized(5)\n    153\n    \"\"\"    \n    if not 1 <= n <= 50:\n        raise ValueError(\"The input must be an integer between 1 and 50.\")\n\n    factorial_sum = 0\n    current_factorial = 1\n\n    for i in range(1, n + 1):\n        current_factorial *= i\n        factorial_sum += current_factorial\n\n    return factorial_sum\ndef test_sum_of_factorials_optimized():\n    assert sum_of_factorials_optimized(1) == 1, \"Test case 1 failed: sum_of_factorials_optimized(1) should be 1.\"\n    assert sum_of_factorials_optimized(3) == 9, \"Test case 2 failed: sum_of_factorials_optimized(3) should be 9.\"\n    assert sum_of_factorials_optimized(4) == 33, \"Test case 3 failed: sum_of_factorials_optimized(4) should be 33.\"\n    assert sum_of_factorials_optimized(5) == 153, \"Test case 4 failed: sum_of_factorials_optimized(5) should be 153.\"\n    assert sum_of_factorials_optimized(6) == 873, \"Test case 5 failed: sum_of_factorials_optimized(6) should be 873.\"\n    assert sum_of_factorials_optimized(10) == 4037913, \"Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.\"\n    print(\"All test cases passed.\")\n\n# Call the test function to run the test cases\ntest_sum_of_factorials_optimized()",
+      "timestamp": 1771903643,
+      "stdout": "All test cases passed.\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

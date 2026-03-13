@@ -1,0 +1,20 @@
+{
+  "name": "Java-37",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Calculate the number of times the digit 1 appears in all non-negative integers less than or equal to n.\n   *\n   * @param n An integer representing the upper limit.\n   * @return The number of times the digit 1 appears.\n   *\n   * Example:\n   * countDigitOne(13)\n   * Output: 6\n   *\n   * Example:\n   * countDigitOne(0)\n   * Output: 0\n   */\n  public static int countDigitOne(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert countDigitOne(20) == 12 : \"Test case 1 failed\";\n    assert countDigitOne(55) == 16 : \"Test case 2 failed\";\n    assert countDigitOne(99) == 20 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Calculate the number of times the digit 1 appears in all non-negative integers less than or equal to n.\n   *\n   * @param n An integer representing the upper limit.\n   * @return The number of times the digit 1 appears.\n   *\n   * Example:\n   * countDigitOne(13)\n   * Output: 6\n   *\n   * Example:\n   * countDigitOne(0)\n   * Output: 0\n   */\n  public static int countDigitOne(int n)  {\n    if (n <= 0) return 0;\n    \n    long res = 0;\n    for (long m = 1; m <= n; m *= 10) {\n      long a = n / (m * 10);\n      long b = n % m;\n      if (a > 0 && a != 1) {\n        res += (a + 1) * m;\n      } else if (a == 1) {\n        res += b + 1;\n      }\n    }\n    return (int)res;\n  }\n  public static void main(String[] args) {\n    assert countDigitOne(20) == 12 : \"Test case 1 failed\";\n    assert countDigitOne(55) == 16 : \"Test case 2 failed\";\n    assert countDigitOne(99) == 20 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1771903699,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test case 1 failed\n\tat Problem.main(tmpoudyzytq.java:33)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

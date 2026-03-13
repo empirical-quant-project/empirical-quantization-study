@@ -1,0 +1,20 @@
+{
+  "name": "Java-44",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.ArrayList;\n\nclass Problem {\n\n  /**\n   * Return all elements in the matrix in diagonal order.\n   *\n   * @param mat The input matrix.\n   * @return An array containing all elements in diagonal order.\n   *\n   * Example:\n   * diagonalOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}})\n   * Output: [1,2,4,7,5,3,6,8,9]\n   */\n  public static int[] diagonalOrder(int[][] mat) ",
+  "tests": "  public static void main(String[] args) {\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1, 2 }, { 3, 4 } }),\n      new int[] { 1, 2, 3, 4 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(\n        new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }\n      ),\n      new int[] { 1, 2, 5, 9, 6, 3, 4, 7, 10, 11, 8, 12 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1 }, { 2 }, { 3 } }),\n      new int[] { 1, 2, 3 }\n    );\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.ArrayList;\n\nclass Problem {\n\n  /**\n   * Return all elements in the matrix in diagonal order.\n   *\n   * @param mat The input matrix.\n   * @return An array containing all elements in diagonal order.\n   *\n   * Example:\n   * diagonalOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}})\n   * Output: [1,2,4,7,5,3,6,8,9]\n   */\n  public static int[] diagonalOrder(int[][] mat)  {\n    int rows = mat.length;\n    int cols = mat[0].length;\n    int[] result = new int[rows * cols];\n    int index = 0;\n    for (int i = 0; i < rows; i++) {\n      for (int j = 0; j < cols; j++) {\n        if (i == j || i + j == rows - 1) {\n          result[index++] = mat[i][j];\n        }\n      }\n    }\n    return result;\n  }\n  public static void main(String[] args) {\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1, 2 }, { 3, 4 } }),\n      new int[] { 1, 2, 3, 4 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(\n        new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }\n      ),\n      new int[] { 1, 2, 5, 9, 6, 3, 4, 7, 10, 11, 8, 12 }\n    );\n    assert java.util.Arrays.equals(\n      diagonalOrder(new int[][] { { 1 }, { 2 }, { 3 } }),\n      new int[] { 1, 2, 3 }\n    );\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772137265,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpsp4ap8p5.java:34)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_155_even_odd_count",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given an integer. return a pair that has the number of even and odd digits respectively.\n    // Example:\n    // >>> evenOddCount((-12l))\n    // (Pair.with(1l, 1l))\n    // >>> evenOddCount((123l))\n    // (Pair.with(1l, 2l))\n    public static Pair<Long, Long> evenOddCount(long num) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(evenOddCount((7l)).equals((Pair.with(0l, 1l))));\n    assert(evenOddCount((-78l)).equals((Pair.with(1l, 1l))));\n    assert(evenOddCount((3452l)).equals((Pair.with(2l, 2l))));\n    assert(evenOddCount((346211l)).equals((Pair.with(3l, 3l))));\n    assert(evenOddCount((-345821l)).equals((Pair.with(3l, 3l))));\n    assert(evenOddCount((-2l)).equals((Pair.with(1l, 0l))));\n    assert(evenOddCount((-45347l)).equals((Pair.with(2l, 3l))));\n    assert(evenOddCount((0l)).equals((Pair.with(1l, 0l))));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given an integer. return a pair that has the number of even and odd digits respectively.\n    // Example:\n    // >>> evenOddCount((-12l))\n    // (Pair.with(1l, 1l))\n    // >>> evenOddCount((123l))\n    // (Pair.with(1l, 2l))\n    public static Pair<Long, Long> evenOddCount(long num) {\n \n        long evens = 0;\n        long odds = 0;\n        String s = Long.toString(Math.abs(num));\n        for(int i=0; i<s.length(); i++) {\n            if((s.charAt(i)-'0')%2==0)\n                evens++;\n            else\n                odds++;\n        }\n        return Pair.with(evens, odds);\n    }\n    public static void main(String[] args) {\n    assert(evenOddCount((7l)).equals((Pair.with(0l, 1l))));\n    assert(evenOddCount((-78l)).equals((Pair.with(1l, 1l))));\n    assert(evenOddCount((3452l)).equals((Pair.with(2l, 2l))));\n    assert(evenOddCount((346211l)).equals((Pair.with(3l, 3l))));\n    assert(evenOddCount((-345821l)).equals((Pair.with(3l, 3l))));\n    assert(evenOddCount((-2l)).equals((Pair.with(1l, 0l))));\n    assert(evenOddCount((-45347l)).equals((Pair.with(2l, 3l))));\n    assert(evenOddCount((0l)).equals((Pair.with(1l, 0l))));\n    }\n\n}\n",
+      "timestamp": 1771879062,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

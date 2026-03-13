@@ -1,0 +1,25 @@
+{
+  "name": "Python-41",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def mod_inverse(a, b):\n    \"\"\"\n    Calculate the modular multiplicative inverse of `a` modulo `b`.\n    \n    This function finds an integer `x` such that (a * x) % b == 1, provided that\n    `a` and `b` are coprime (i.e., gcd(a, b) == 1). It uses the Extended Euclidean\n    Algorithm to compute the inverse. If `a` and `b` are not coprime, the modular\n    inverse does not exist, and the function returns `None`.\n    \n    Args:\n      a (int): The integer whose modular inverse is to be found.\n      b (int): The modulus with respect to which the inverse is sought.\n    \n    Returns:\n      int: The modular inverse of `a` modulo `b` if it exists, otherwise `None`.\n    \n    Examples:\n      >>> mod_inverse(3, 10)\n      7\n\n      >>> mod_inverse(42, 2017)\n      None\n    \"\"\"",
+  "tests": "def test_mod_inverse():\n    test_cases = [\n        (3, 10),  # Test case 1: gcd(3, 10) = 1, inverse should be 7\n        (17, 3120),  # Test case 2: gcd(17, 3120) = 1, inverse should be 2753\n        (42, 2017),  # Test case 3: gcd(42, 2017) = 1, inverse should be 1969\n    ]\n    expected_results = [\n        7,  # Expected result for test case 1\n        2753,  # Expected result for test case 2\n        1969,  # Expected result for test case 3\n    ]\n\n    for i, (a, b) in enumerate(test_cases):\n        actual_result = mod_inverse(a, b)\n        expected_result = expected_results[i]\n        assert actual_result == expected_result, f\"Test case {i+1} failed: expected {expected_result}, got {actual_result}\"\n        print(f\"Test case {i+1} passed: a={a}, b={b}, x0={actual_result}\")\n\n# Run the test function\ntest_mod_inverse()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def mod_inverse(a, b):\n    \"\"\"\n    Calculate the modular multiplicative inverse of `a` modulo `b`.\n    \n    This function finds an integer `x` such that (a * x) % b == 1, provided that\n    `a` and `b` are coprime (i.e., gcd(a, b) == 1). It uses the Extended Euclidean\n    Algorithm to compute the inverse. If `a` and `b` are not coprime, the modular\n    inverse does not exist, and the function returns `None`.\n    \n    Args:\n      a (int): The integer whose modular inverse is to be found.\n      b (int): The modulus with respect to which the inverse is sought.\n    \n    Returns:\n      int: The modular inverse of `a` modulo `b` if it exists, otherwise `None`.\n    \n    Examples:\n      >>> mod_inverse(3, 10)\n      7\n\n      >>> mod_inverse(42, 2017)\n      None\n    \"\"\"\n    # Initialize the Euclidean algorithm\n    x, y, u, v = 0, 1, a, b\n\n    # Iterate until u == v == 1\n    while u != v:\n        # Update x and y using the Euclidean algorithm\n        q = u // v\n        x, u = u - q * x, x\n        y, v = v - q * y, y\n\n    # Make sure a and b are coprime\n    if x < 0:\n        x += b\n\n    return x\ndef test_mod_inverse():\n    test_cases = [\n        (3, 10),  # Test case 1: gcd(3, 10) = 1, inverse should be 7\n        (17, 3120),  # Test case 2: gcd(17, 3120) = 1, inverse should be 2753\n        (42, 2017),  # Test case 3: gcd(42, 2017) = 1, inverse should be 1969\n    ]\n    expected_results = [\n        7,  # Expected result for test case 1\n        2753,  # Expected result for test case 2\n        1969,  # Expected result for test case 3\n    ]\n\n    for i, (a, b) in enumerate(test_cases):\n        actual_result = mod_inverse(a, b)\n        expected_result = expected_results[i]\n        assert actual_result == expected_result, f\"Test case {i+1} failed: expected {expected_result}, got {actual_result}\"\n        print(f\"Test case {i+1} passed: a={a}, b={b}, x0={actual_result}\")\n\n# Run the test function\ntest_mod_inverse()",
+      "timestamp": 1772137234,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": -1,
+      "status": "Timeout"
+    }
+  ]
+}

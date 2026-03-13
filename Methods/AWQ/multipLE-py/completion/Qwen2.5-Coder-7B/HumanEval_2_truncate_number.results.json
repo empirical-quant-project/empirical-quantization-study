@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_2_truncate_number",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(3.5) == 0.5\n    assert candidate(1.25) == 0.25\n    assert candidate(123.0) == 0.0\n\ndef test_check():\n    check(truncate_number)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\ndef check(candidate):\n    assert candidate(3.5) == 0.5\n    assert candidate(1.25) == 0.25\n    assert candidate(123.0) == 0.0\n\ndef test_check():\n    check(truncate_number)\n\ntest_check()\n",
+      "timestamp": 1771886247,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp04x3k2qy.py\", line 19, in <module>\n    test_check()\n  File \"/tmp/tmp04x3k2qy.py\", line 17, in test_check\n    check(truncate_number)\n  File \"/tmp/tmp04x3k2qy.py\", line 12, in check\n    assert candidate(3.5) == 0.5\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

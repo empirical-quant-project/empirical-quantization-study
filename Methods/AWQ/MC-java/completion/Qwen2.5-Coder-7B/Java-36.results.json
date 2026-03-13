@@ -1,0 +1,20 @@
+{
+  "name": "Java-36",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.ArrayList;\nimport java.util.List;\n\nclass Problem {\n\n  /**\n   * Find all stepping numbers in the range [low, high] where a stepping number is defined as a number where each digit is either one more or one less than the adjacent digit.\n   *\n   * @param low The lower bound of the range.\n   * @param high The upper bound of the range.\n   * @return A list of stepping numbers within the range [low, high] sorted in ascending order.\n   *\n   * Example:\n   * findSteppingNumbers(0, 21)\n   * Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21]\n   */\n  public static List<Integer> findSteppingNumbers(int low, int high) ",
+  "tests": "  public static void main(String[] args) {\n    assert findSteppingNumbers(0, 21)\n      .equals(\n        new ArrayList<>(List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21))\n      );\n    assert findSteppingNumbers(10, 15).equals(new ArrayList<>(List.of(10, 12)));\n    assert findSteppingNumbers(50, 55).equals(List.of(54));\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.ArrayList;\nimport java.util.List;\n\nclass Problem {\n\n  /**\n   * Find all stepping numbers in the range [low, high] where a stepping number is defined as a number where each digit is either one more or one less than the adjacent digit.\n   *\n   * @param low The lower bound of the range.\n   * @param high The upper bound of the range.\n   * @return A list of stepping numbers within the range [low, high] sorted in ascending order.\n   *\n   * Example:\n   * findSteppingNumbers(0, 21)\n   * Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21]\n   */\n  public static List<Integer> findSteppingNumbers(int low, int high)  {\n    List<Integer> result = new ArrayList<>();\n    for (int i = low; i <= high; i++) {\n      if (isSteppingNumber(i)) {\n        result.add(i);\n      }\n    }\n    return result;\n  }\n  public static void main(String[] args) {\n    assert findSteppingNumbers(0, 21)\n      .equals(\n        new ArrayList<>(List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21))\n      );\n    assert findSteppingNumbers(10, 15).equals(new ArrayList<>(List.of(10, 12)));\n    assert findSteppingNumbers(50, 55).equals(List.of(54));\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+      "timestamp": 1771903711,
+      "stdout": "",
+      "stderr": "/tmp/tmpsac3boz9.java:20: error: cannot find symbol\n      if (isSteppingNumber(i)) {\n          ^\n  symbol:   method isSteppingNumber(int)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}
