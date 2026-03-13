@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_86_anti_shuffle",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def anti_shuffle(s: str) -> str:\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    >>> anti_shuffle('Hi')\n    'Hi'\n    >>> anti_shuffle('hello')\n    'ehllo'\n    >>> anti_shuffle('Hello World!!!')\n    'Hello !!!Wdlor'\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('Hi') == 'Hi'\n    assert candidate('hello') == 'ehllo'\n    assert candidate('number') == 'bemnru'\n    assert candidate('abcd') == 'abcd'\n    assert candidate('Hello World!!!') == 'Hello !!!Wdlor'\n    assert candidate('') == ''\n    assert candidate('Hi. My name is Mister Robot. How are you?') == '.Hi My aemn is Meirst .Rboot How aer ?ouy'\n\ndef test_check():\n    check(anti_shuffle)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def anti_shuffle(s: str) -> str:\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    >>> anti_shuffle('Hi')\n    'Hi'\n    >>> anti_shuffle('hello')\n    'ehllo'\n    >>> anti_shuffle('Hello World!!!')\n    'Hello !!!Wdlor'\n    \"\"\"\n\ndef check(candidate):\n    assert candidate('Hi') == 'Hi'\n    assert candidate('hello') == 'ehllo'\n    assert candidate('number') == 'bemnru'\n    assert candidate('abcd') == 'abcd'\n    assert candidate('Hello World!!!') == 'Hello !!!Wdlor'\n    assert candidate('') == ''\n    assert candidate('Hi. My name is Mister Robot. How are you?') == '.Hi My aemn is Meirst .Rboot How aer ?ouy'\n\ndef test_check():\n    check(anti_shuffle)\n\ntest_check()\n",
+      "timestamp": 1771540284,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpmc9s1idc.py\", line 30, in <module>\n    test_check()\n  File \"/tmp/tmpmc9s1idc.py\", line 28, in test_check\n    check(anti_shuffle)\n  File \"/tmp/tmpmc9s1idc.py\", line 19, in check\n    assert candidate('Hi') == 'Hi'\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

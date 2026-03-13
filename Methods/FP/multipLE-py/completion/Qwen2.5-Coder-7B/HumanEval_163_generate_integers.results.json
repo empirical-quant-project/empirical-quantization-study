@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_163_generate_integers",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List\n\ndef generate_integers(a: int, b: int) -> List[int]:\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    >>> generate_integers(2, 8)\n    [2, 4, 6, 8]\n    >>> generate_integers(8, 2)\n    [2, 4, 6, 8]\n    >>> generate_integers(10, 14)\n    []\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(2, 10) == [2, 4, 6, 8]\n    assert candidate(10, 2) == [2, 4, 6, 8]\n    assert candidate(132, 2) == [2, 4, 6, 8]\n    assert candidate(17, 89) == []\n\ndef test_check():\n    check(generate_integers)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List\n\ndef generate_integers(a: int, b: int) -> List[int]:\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    >>> generate_integers(2, 8)\n    [2, 4, 6, 8]\n    >>> generate_integers(8, 2)\n    [2, 4, 6, 8]\n    >>> generate_integers(10, 14)\n    []\n    \"\"\"\n \n    # Ensure a is less than or equal to b for iteration\n    start, end = sorted([a, b])\n    \n    # Generate list of even numbers within the range\n    return [num for num in range(start, end + 1) if num % 2 == 0]\ndef check(candidate):\n    assert candidate(2, 10) == [2, 4, 6, 8]\n    assert candidate(10, 2) == [2, 4, 6, 8]\n    assert candidate(132, 2) == [2, 4, 6, 8]\n    assert candidate(17, 89) == []\n\ndef test_check():\n    check(generate_integers)\n\ntest_check()\n",
+      "timestamp": 1771540275,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp7a2rsfe3.py\", line 31, in <module>\n    test_check()\n  File \"/tmp/tmp7a2rsfe3.py\", line 29, in test_check\n    check(generate_integers)\n  File \"/tmp/tmp7a2rsfe3.py\", line 23, in check\n    assert candidate(2, 10) == [2, 4, 6, 8]\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

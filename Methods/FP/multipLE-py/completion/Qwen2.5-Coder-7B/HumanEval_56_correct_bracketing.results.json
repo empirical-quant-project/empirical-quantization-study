@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_56_correct_bracketing",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def correct_bracketing(brackets: str) -> bool:\n    \"\"\" brackets is a string of \"<\" and \">\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing('<')\n    False\n    >>> correct_bracketing('<>')\n    True\n    >>> correct_bracketing('<<><>>')\n    True\n    >>> correct_bracketing('><<>')\n    False\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('<>') == True\n    assert candidate('<<><>>') == True\n    assert candidate('<><><<><>><>') == True\n    assert candidate('<><><<<><><>><>><<><><<>>>') == True\n    assert candidate('<<<><>>>>') == False\n    assert candidate('><<>') == False\n    assert candidate('<') == False\n    assert candidate('<<<<') == False\n    assert candidate('>') == False\n    assert candidate('<<>') == False\n    assert candidate('<><><<><>><>><<>') == False\n    assert candidate('<><><<><>><>>><>') == False\n\ndef test_check():\n    check(correct_bracketing)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def correct_bracketing(brackets: str) -> bool:\n    \"\"\" brackets is a string of \"<\" and \">\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing('<')\n    False\n    >>> correct_bracketing('<>')\n    True\n    >>> correct_bracketing('<<><>>')\n    True\n    >>> correct_bracketing('><<>')\n    False\n    \"\"\"\n\ndef check(candidate):\n    assert candidate('<>') == True\n    assert candidate('<<><>>') == True\n    assert candidate('<><><<><>><>') == True\n    assert candidate('<><><<<><><>><>><<><><<>>>') == True\n    assert candidate('<<<><>>>>') == False\n    assert candidate('><<>') == False\n    assert candidate('<') == False\n    assert candidate('<<<<') == False\n    assert candidate('>') == False\n    assert candidate('<<>') == False\n    assert candidate('<><><<><>><>><<>') == False\n    assert candidate('<><><<><>><>>><>') == False\n\ndef test_check():\n    check(correct_bracketing)\n\ntest_check()\n",
+      "timestamp": 1771540281,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpwxsgcxnk.py\", line 32, in <module>\n    test_check()\n  File \"/tmp/tmpwxsgcxnk.py\", line 30, in test_check\n    check(correct_bracketing)\n  File \"/tmp/tmpwxsgcxnk.py\", line 16, in check\n    assert candidate('<>') == True\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

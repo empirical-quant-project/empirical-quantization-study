@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_64_vowels_count",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def vowels_count(s: str) -> int:\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count('abcde')\n    2\n    >>> vowels_count('ACEDY')\n    3\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('abcde') == 2\n    assert candidate('Alone') == 3\n    assert candidate('key') == 2\n    assert candidate('bye') == 1\n    assert candidate('keY') == 2\n    assert candidate('bYe') == 1\n    assert candidate('ACEDY') == 3\n\ndef test_check():\n    check(vowels_count)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def vowels_count(s: str) -> int:\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count('abcde')\n    2\n    >>> vowels_count('ACEDY')\n    3\n    \"\"\"\n\ndef check(candidate):\n    assert candidate('abcde') == 2\n    assert candidate('Alone') == 3\n    assert candidate('key') == 2\n    assert candidate('bye') == 1\n    assert candidate('keY') == 2\n    assert candidate('bYe') == 1\n    assert candidate('ACEDY') == 3\n\ndef test_check():\n    check(vowels_count)\n\ntest_check()\n",
+      "timestamp": 1771540288,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpx3w88u_1.py\", line 26, in <module>\n    test_check()\n  File \"/tmp/tmpx3w88u_1.py\", line 24, in test_check\n    check(vowels_count)\n  File \"/tmp/tmpx3w88u_1.py\", line 15, in check\n    assert candidate('abcde') == 2\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

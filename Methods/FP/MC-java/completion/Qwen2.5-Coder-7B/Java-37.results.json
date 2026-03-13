@@ -1,0 +1,20 @@
+{
+  "name": "Java-37",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Calculate the number of times the digit 1 appears in all non-negative integers less than or equal to n.\n   *\n   * @param n An integer representing the upper limit.\n   * @return The number of times the digit 1 appears.\n   *\n   * Example:\n   * countDigitOne(13)\n   * Output: 6\n   *\n   * Example:\n   * countDigitOne(0)\n   * Output: 0\n   */\n  public static int countDigitOne(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert countDigitOne(20) == 12 : \"Test case 1 failed\";\n    assert countDigitOne(55) == 16 : \"Test case 2 failed\";\n    assert countDigitOne(99) == 20 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Calculate the number of times the digit 1 appears in all non-negative integers less than or equal to n.\n   *\n   * @param n An integer representing the upper limit.\n   * @return The number of times the digit 1 appears.\n   *\n   * Example:\n   * countDigitOne(13)\n   * Output: 6\n   *\n   * Example:\n   * countDigitOne(0)\n   * Output: 0\n   */\n  public static int countDigitOne(int n)  {\n    if (n <= 0) return 0;\n    String s = Integer.toString(n);\n    int first = s.charAt(0) - '0';\n    int length = s.length();\n    int numFirst = first == 1 ? Integer.parseInt(s.substring(1)) + 1 : (int)Math.pow(10, length - 1);\n    int numOther = first * (length - 2) * (int)Math.pow(10, length - 2);\n    int numRecursive = countDigitOne(Integer.parseInt(s.substring(1)));\n    return numFirst + numOther + numRecursive;\n  }\n  public static void main(String[] args) {\n    assert countDigitOne(20) == 12 : \"Test case 1 failed\";\n    assert countDigitOne(55) == 16 : \"Test case 2 failed\";\n    assert countDigitOne(99) == 20 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772661815,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test case 1 failed\n\tat Problem.main(tmpgc5h3a7o.java:28)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

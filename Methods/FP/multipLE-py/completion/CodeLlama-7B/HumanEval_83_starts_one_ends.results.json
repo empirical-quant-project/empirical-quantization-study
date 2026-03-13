@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_83_starts_one_ends",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def starts_one_ends(n: int) -> int:\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(1) == 1\n    assert candidate(2) == 18\n    assert candidate(3) == 180\n    assert candidate(4) == 1800\n    assert candidate(5) == 18000\n\ndef test_check():\n    check(starts_one_ends)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def starts_one_ends(n: int) -> int:\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n\n    count = 0\n    for i in range(1, n):\n        if str(i)[0] == '1' or str(i)[-1] == '1':\n            count += 1\n    return count\ndef check(candidate):\n    assert candidate(1) == 1\n    assert candidate(2) == 18\n    assert candidate(3) == 180\n    assert candidate(4) == 1800\n    assert candidate(5) == 18000\n\ndef test_check():\n    check(starts_one_ends)\n\ntest_check()\n",
+      "timestamp": 1772047839,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp3aexo0_2.py\", line 22, in <module>\n    test_check()\n  File \"/tmp/tmp3aexo0_2.py\", line 20, in test_check\n    check(starts_one_ends)\n  File \"/tmp/tmp3aexo0_2.py\", line 13, in check\n    assert candidate(1) == 1\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

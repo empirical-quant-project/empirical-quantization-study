@@ -1,0 +1,25 @@
+{
+  "name": "Python-35",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List\ndef count_apples_reachable(apple_heights: List[int], tao_reach: int) -> int:\n    \"\"\"\n    Calculate the number of apples that Tao Tao can reach.\n\n    Args:\n    apple_heights (List[int]): The heights of apples from the ground (in centimeters).\n    tao_reach (int): The maximum height Tao Tao can reach with her hand stretched upwards (in centimeters).\n\n    Returns:\n    int: The number of apples Tao Tao can reach with or without standing on a 30cm stool.\n\n    This function iterates over the list of apple heights and counts how many of them are within Tao Tao's reach,\n    considering an additional 30cm that the stool provides.\n\n    Example cases:\n       count_apples_reachable([100, 120, 130, 140, 150, 150, 140, 130, 120, 110], 120) -> returns 10\n       count_apples_reachable([200, 190, 180, 170, 160, 150, 140, 135, 130, 131], 100) -> returns 0\n    \"\"\"",
+  "tests": "import unittest\n\nclass TestTaoTaoApplePicking(unittest.TestCase):\n    def test_count_apples_reachable(self):\n        # Test case 1: Tao Tao can reach all apples\n        apples_1 = [100, 105, 110, 115, 120, 125, 130, 135, 140, 145]\n        tao_reach_1 = 120\n        self.assertEqual(count_apples_reachable(apples_1, tao_reach_1), 10)\n\n        # Test case 2: Tao Tao can't reach any apples\n        apples_2 = [200, 200, 200, 200, 200, 200, 200, 200, 200, 200]\n        tao_reach_2 = 100\n        self.assertEqual(count_apples_reachable(apples_2, tao_reach_2), 0)\n\n        # Test case 3: Tao Tao can reach some of the apples\n        apples_3 = [160, 150, 140, 170, 180, 190, 160, 150, 145, 155]\n        tao_reach_3 = 115\n        self.assertEqual(count_apples_reachable(apples_3, tao_reach_3), 2)\n\n# To run the tests\nif __name__ == '__main__':\n    unittest.main()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List\ndef count_apples_reachable(apple_heights: List[int], tao_reach: int) -> int:\n    \"\"\"\n    Calculate the number of apples that Tao Tao can reach.\n\n    Args:\n    apple_heights (List[int]): The heights of apples from the ground (in centimeters).\n    tao_reach (int): The maximum height Tao Tao can reach with her hand stretched upwards (in centimeters).\n\n    Returns:\n    int: The number of apples Tao Tao can reach with or without standing on a 30cm stool.\n\n    This function iterates over the list of apple heights and counts how many of them are within Tao Tao's reach,\n    considering an additional 30cm that the stool provides.\n\n    Example cases:\n       count_apples_reachable([100, 120, 130, 140, 150, 150, 140, 130, 120, 110], 120) -> returns 10\n       count_apples_reachable([200, 190, 180, 170, 160, 150, 140, 135, 130, 131], 100) -> returns 0\n    \"\"\" \n    # Counting apples within reach without the stool\n    reachable_without_stool = sum(1 for height in apple_heights if height <= tao_reach)\n    \n    # Counting apples within reach with the stool\n    reachable_with_stool = sum(1 for height in apple_heights if height <= tao_reach + 30)\n    \n    return reachable_with_stool\nimport unittest\n\nclass TestTaoTaoApplePicking(unittest.TestCase):\n    def test_count_apples_reachable(self):\n        # Test case 1: Tao Tao can reach all apples\n        apples_1 = [100, 105, 110, 115, 120, 125, 130, 135, 140, 145]\n        tao_reach_1 = 120\n        self.assertEqual(count_apples_reachable(apples_1, tao_reach_1), 10)\n\n        # Test case 2: Tao Tao can't reach any apples\n        apples_2 = [200, 200, 200, 200, 200, 200, 200, 200, 200, 200]\n        tao_reach_2 = 100\n        self.assertEqual(count_apples_reachable(apples_2, tao_reach_2), 0)\n\n        # Test case 3: Tao Tao can reach some of the apples\n        apples_3 = [160, 150, 140, 170, 180, 190, 160, 150, 145, 155]\n        tao_reach_3 = 115\n        self.assertEqual(count_apples_reachable(apples_3, tao_reach_3), 2)\n\n# To run the tests\nif __name__ == '__main__':\n    unittest.main()",
+      "timestamp": 1772662297,
+      "stdout": "",
+      "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

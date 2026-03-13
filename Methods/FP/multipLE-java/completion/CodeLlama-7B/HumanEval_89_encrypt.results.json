@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_89_encrypt",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function encrypt that takes a string as an argument and\n    // returns a string encrypted with the alphabet being rotated. \n    // The alphabet should be rotated in a manner such that the letters \n    // shift down by two multiplied to two places.\n    // For example:\n    // >>> encrypt((\"hi\"))\n    // (\"lm\")\n    // >>> encrypt((\"asdfghjkl\"))\n    // (\"ewhjklnop\")\n    // >>> encrypt((\"gf\"))\n    // (\"kj\")\n    // >>> encrypt((\"et\"))\n    // (\"ix\")\n    public static String encrypt(String s) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(encrypt((\"hi\")).equals((\"lm\")));\n    assert(encrypt((\"asdfghjkl\")).equals((\"ewhjklnop\")));\n    assert(encrypt((\"gf\")).equals((\"kj\")));\n    assert(encrypt((\"et\")).equals((\"ix\")));\n    assert(encrypt((\"faewfawefaewg\")).equals((\"jeiajeaijeiak\")));\n    assert(encrypt((\"hellomyfriend\")).equals((\"lippsqcjvmirh\")));\n    assert(encrypt((\"dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh\")).equals((\"hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl\")));\n    assert(encrypt((\"a\")).equals((\"e\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function encrypt that takes a string as an argument and\n    // returns a string encrypted with the alphabet being rotated. \n    // The alphabet should be rotated in a manner such that the letters \n    // shift down by two multiplied to two places.\n    // For example:\n    // >>> encrypt((\"hi\"))\n    // (\"lm\")\n    // >>> encrypt((\"asdfghjkl\"))\n    // (\"ewhjklnop\")\n    // >>> encrypt((\"gf\"))\n    // (\"kj\")\n    // >>> encrypt((\"et\"))\n    // (\"ix\")\n    public static String encrypt(String s) {\n\n        String encrypted = \"\";\n        for (int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            if (c >= 'a' && c <= 'z') {\n                encrypted += (char) (((c - 'a' + 2) % 26) + 'a');\n            } else if (c >= 'A' && c <= 'Z') {\n                encrypted += (char) (((c - 'A' + 2) % 26) + 'A');\n            } else {\n                encrypted += c;\n            }\n        }\n        return encrypted;\n    }\n    public static void main(String[] args) {\n    assert(encrypt((\"hi\")).equals((\"lm\")));\n    assert(encrypt((\"asdfghjkl\")).equals((\"ewhjklnop\")));\n    assert(encrypt((\"gf\")).equals((\"kj\")));\n    assert(encrypt((\"et\")).equals((\"ix\")));\n    assert(encrypt((\"faewfawefaewg\")).equals((\"jeiajeaijeiak\")));\n    assert(encrypt((\"hellomyfriend\")).equals((\"lippsqcjvmirh\")));\n    assert(encrypt((\"dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh\")).equals((\"hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl\")));\n    assert(encrypt((\"a\")).equals((\"e\")));\n    }\n\n}\n",
+      "timestamp": 1772044466,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpsp3677n1.java:38)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

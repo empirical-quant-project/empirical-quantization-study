@@ -1,0 +1,25 @@
+{
+    "model": "codellama/CodeLlama-7b-Instruct-hf",
+    "model_label": "codellama_CodeLlama_7b_Instruct_hf",
+    "quant_tag": "FP",
+    "language": "py",
+    "prompt_mode": "completion",
+    "temperature": 0.0,
+    "max_new_tokens": 512,
+    "batch_size": 1,
+    "total_tasks": 190,
+    "start_time": "2026-03-05 11:10:47.393426",
+    "script": "automodel_codereval_v2.py",
+    "tasks": [],
+    "end_time": "2026-03-05 11:10:47.394402",
+    "completed_tasks": 190,
+    "total_tasks_in_dataset": 190,
+    "evaluation": {
+        "total_tasks": 190,
+        "passed": 45,
+        "pass_at_1": 23.68,
+        "dataset": "/scratch/oldhome/safrin/projects/CoderEval-Benchmark/CoderEval4Python_filtered.jsonl",
+        "filtered": true,
+        "prompt_mode": "COMPLETION (HumanEval-style)"
+    }
+}

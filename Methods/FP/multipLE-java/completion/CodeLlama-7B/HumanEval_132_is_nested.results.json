@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_132_is_nested",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function that takes a string as input which contains only square brackets.\n    // The function should return true if and only if there is a valid subsequence of brackets \n    // where at least one bracket in the subsequence is nested.\n    // >>> isNested((\"[[]]\"))\n    // (true)\n    // >>> isNested((\"[]]]]]]][[[[[]\"))\n    // (false)\n    // >>> isNested((\"[][]\"))\n    // (false)\n    // >>> isNested((\"[]\"))\n    // (false)\n    // >>> isNested((\"[[][]]\"))\n    // (true)\n    // >>> isNested((\"[[]][[\"))\n    // (true)\n    public static boolean isNested(String string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(isNested((\"[[]]\")) == (true));\n    assert(isNested((\"[]]]]]]][[[[[]\")) == (false));\n    assert(isNested((\"[][]\")) == (false));\n    assert(isNested((\"[]\")) == (false));\n    assert(isNested((\"[[[[]]]]\")) == (true));\n    assert(isNested((\"[]]]]]]]]]]\")) == (false));\n    assert(isNested((\"[][][[]]\")) == (true));\n    assert(isNested((\"[[]\")) == (false));\n    assert(isNested((\"[]]\")) == (false));\n    assert(isNested((\"[[]][[\")) == (true));\n    assert(isNested((\"[[][]]\")) == (true));\n    assert(isNested((\"\")) == (false));\n    assert(isNested((\"[[[[[[[[\")) == (false));\n    assert(isNested((\"]]]]]]]]\")) == (false));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function that takes a string as input which contains only square brackets.\n    // The function should return true if and only if there is a valid subsequence of brackets \n    // where at least one bracket in the subsequence is nested.\n    // >>> isNested((\"[[]]\"))\n    // (true)\n    // >>> isNested((\"[]]]]]]][[[[[]\"))\n    // (false)\n    // >>> isNested((\"[][]\"))\n    // (false)\n    // >>> isNested((\"[]\"))\n    // (false)\n    // >>> isNested((\"[[][]]\"))\n    // (true)\n    // >>> isNested((\"[[]][[\"))\n    // (true)\n    public static boolean isNested(String string) {\n\n        Stack<Character> stack = new Stack<>();\n        for (char c : string.toCharArray()) {\n            if (c == '[' || c == ']') {\n                stack.push(c);\n            } else {\n                if (stack.isEmpty()) {\n                    return false;\n                }\n                char top = stack.pop();\n                if (top == '[' && c == ']') {\n                    return true;\n                }\n                stack.push(top);\n            }\n        }\n        return false;\n    }\n    public static void main(String[] args) {\n    assert(isNested((\"[[]]\")) == (true));\n    assert(isNested((\"[]]]]]]][[[[[]\")) == (false));\n    assert(isNested((\"[][]\")) == (false));\n    assert(isNested((\"[]\")) == (false));\n    assert(isNested((\"[[[[]]]]\")) == (true));\n    assert(isNested((\"[]]]]]]]]]]\")) == (false));\n    assert(isNested((\"[][][[]]\")) == (true));\n    assert(isNested((\"[[]\")) == (false));\n    assert(isNested((\"[]]\")) == (false));\n    assert(isNested((\"[[]][[\")) == (true));\n    assert(isNested((\"[[][]]\")) == (true));\n    assert(isNested((\"\")) == (false));\n    assert(isNested((\"[[[[[[[[\")) == (false));\n    assert(isNested((\"]]]]]]]]\")) == (false));\n    }\n\n}\n",
+      "timestamp": 1772044452,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpl9s0biz5.java:44)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

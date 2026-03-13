@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_67_fruit_distribution",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def fruit_distribution(s: str, n: int) -> int:\n    \"\"\"\n    In this task, you will be given a string that represents a number of apples and oranges \n    that are distributed in a basket of fruit this basket contains \n    apples, oranges, and mango fruits. Given the string that represents the total number of \n    the oranges and apples and an integer that represent the total number of the fruits \n    in the basket return the number of the mango fruits in the basket.\n    for examble:\n    >>> fruit_distribution('5 apples and 6 oranges', 19)\n    8\n    >>> fruit_distribution('0 apples and 1 oranges', 3)\n    2\n    >>> fruit_distribution('2 apples and 3 oranges', 100)\n    95\n    >>> fruit_distribution('100 apples and 1 oranges', 120)\n    19\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('5 apples and 6 oranges', 19) == 8\n    assert candidate('5 apples and 6 oranges', 21) == 10\n    assert candidate('0 apples and 1 oranges', 3) == 2\n    assert candidate('1 apples and 0 oranges', 3) == 2\n    assert candidate('2 apples and 3 oranges', 100) == 95\n    assert candidate('2 apples and 3 oranges', 5) == 0\n    assert candidate('1 apples and 100 oranges', 120) == 19\n\ndef test_check():\n    check(fruit_distribution)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def fruit_distribution(s: str, n: int) -> int:\n    \"\"\"\n    In this task, you will be given a string that represents a number of apples and oranges \n    that are distributed in a basket of fruit this basket contains \n    apples, oranges, and mango fruits. Given the string that represents the total number of \n    the oranges and apples and an integer that represent the total number of the fruits \n    in the basket return the number of the mango fruits in the basket.\n    for examble:\n    >>> fruit_distribution('5 apples and 6 oranges', 19)\n    8\n    >>> fruit_distribution('0 apples and 1 oranges', 3)\n    2\n    >>> fruit_distribution('2 apples and 3 oranges', 100)\n    95\n    >>> fruit_distribution('100 apples and 1 oranges', 120)\n    19\n    \"\"\"\n\n    apples, oranges = s.split('and')\n    apples = int(apples.split(' ')[0])\n    oranges = int(oranges.split(' ')[0])\n    return n - apples - oranges\ndef check(candidate):\n    assert candidate('5 apples and 6 oranges', 19) == 8\n    assert candidate('5 apples and 6 oranges', 21) == 10\n    assert candidate('0 apples and 1 oranges', 3) == 2\n    assert candidate('1 apples and 0 oranges', 3) == 2\n    assert candidate('2 apples and 3 oranges', 100) == 95\n    assert candidate('2 apples and 3 oranges', 5) == 0\n    assert candidate('1 apples and 100 oranges', 120) == 19\n\ndef test_check():\n    check(fruit_distribution)\n\ntest_check()\n",
+      "timestamp": 1772047854,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpv2w15tpr.py\", line 35, in <module>\n    test_check()\n  File \"/tmp/tmpv2w15tpr.py\", line 33, in test_check\n    check(fruit_distribution)\n  File \"/tmp/tmpv2w15tpr.py\", line 24, in check\n    assert candidate('5 apples and 6 oranges', 19) == 8\n  File \"/tmp/tmpv2w15tpr.py\", line 21, in fruit_distribution\n    oranges = int(oranges.split(' ')[0])\nValueError: invalid literal for int() with base 10: ''\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

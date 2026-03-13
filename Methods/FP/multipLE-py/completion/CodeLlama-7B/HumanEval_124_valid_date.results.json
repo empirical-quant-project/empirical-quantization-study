@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_124_valid_date",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def valid_date(date: str) -> bool:\n    \"\"\"You have to write a function which validates a given date string and\n    returns True if the date is valid otherwise False.\n    The date is valid if all of the following rules are satisfied:\n    1. The date string is not empty.\n    2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n    3. The months should not be less than 1 or higher than 12.\n    4. The date should be in the format: mm-dd-yyyy\n\n    >>> valid_date('03-11-2000')\n    True\n\n    >>> valid_date('15-01-2012')\n    False\n\n    >>> valid_date('04-0-2040')\n    False\n\n    >>> valid_date('06-04-2020')\n    True\n\n    >>> valid_date('06/04/2020')\n    False\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('03-11-2000') == True\n    assert candidate('15-01-2012') == False\n    assert candidate('04-0-2040') == False\n    assert candidate('06-04-2020') == True\n    assert candidate('01-01-2007') == True\n    assert candidate('03-32-2011') == False\n    assert candidate('') == False\n    assert candidate('04-31-3000') == False\n    assert candidate('06-06-2005') == True\n    assert candidate('21-31-2000') == False\n    assert candidate('04-12-2003') == True\n    assert candidate('04122003') == False\n    assert candidate('20030412') == False\n    assert candidate('2003-04') == False\n    assert candidate('2003-04-12') == False\n    assert candidate('04-2003') == False\n\ndef test_check():\n    check(valid_date)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def valid_date(date: str) -> bool:\n    \"\"\"You have to write a function which validates a given date string and\n    returns True if the date is valid otherwise False.\n    The date is valid if all of the following rules are satisfied:\n    1. The date string is not empty.\n    2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n    3. The months should not be less than 1 or higher than 12.\n    4. The date should be in the format: mm-dd-yyyy\n\n    >>> valid_date('03-11-2000')\n    True\n\n    >>> valid_date('15-01-2012')\n    False\n\n    >>> valid_date('04-0-2040')\n    False\n\n    >>> valid_date('06-04-2020')\n    True\n\n    >>> valid_date('06/04/2020')\n    False\n    \"\"\"\n\n    if date == '':\n        return False\n    if date.count('-') != 2:\n        return False\n    month, day, year = date.split('-')\n    if int(month) < 1 or int(month) > 12:\n        return False\n    if int(day) < 1 or int(day) > 31:\n        return False\n    if int(year) < 1900 or int(year) > 2022:\n        return False\n    if int(month) in [1, 3, 5, 7, 8, 10, 12]:\n        if int(day) < 1 or int(day) > 31:\n            return False\n    elif int(month) in [4, 6, 9, 11]:\n        if int(day) < 1 or int(day) > 30:\n            return False\n    elif int(month) == 2:\n        if int(day) < 1 or int(day) > 29:\n            return False\n    return True\ndef check(candidate):\n    assert candidate('03-11-2000') == True\n    assert candidate('15-01-2012') == False\n    assert candidate('04-0-2040') == False\n    assert candidate('06-04-2020') == True\n    assert candidate('01-01-2007') == True\n    assert candidate('03-32-2011') == False\n    assert candidate('') == False\n    assert candidate('04-31-3000') == False\n    assert candidate('06-06-2005') == True\n    assert candidate('21-31-2000') == False\n    assert candidate('04-12-2003') == True\n    assert candidate('04122003') == False\n    assert candidate('20030412') == False\n    assert candidate('2003-04') == False\n    assert candidate('2003-04-12') == False\n    assert candidate('04-2003') == False\n\ndef test_check():\n    check(valid_date)\n\ntest_check()\n",
+      "timestamp": 1772047858,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

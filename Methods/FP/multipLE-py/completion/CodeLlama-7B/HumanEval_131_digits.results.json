@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_131_digits",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def digits(n: int) -> int:\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    >>> digits(1)\n    1\n    >>> digits(4)\n    0\n    >>> digits(235)\n    15\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(5) == 5\n    assert candidate(54) == 5\n    assert candidate(120) == 1\n    assert candidate(5014) == 5\n    assert candidate(98765) == 315\n    assert candidate(5576543) == 2625\n    assert candidate(2468) == 0\n\ndef test_check():\n    check(digits)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def digits(n: int) -> int:\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    >>> digits(1)\n    1\n    >>> digits(4)\n    0\n    >>> digits(235)\n    15\n    \"\"\"\n\n    if n < 0:\n        raise ValueError(\"n must be positive\")\n    if n == 0:\n        return 0\n    result = 1\n    while n > 0:\n        digit = n % 10\n        if digit % 2 == 1:\n            result *= digit\n        n //= 10\n    return result\ndef check(candidate):\n    assert candidate(5) == 5\n    assert candidate(54) == 5\n    assert candidate(120) == 1\n    assert candidate(5014) == 5\n    assert candidate(98765) == 315\n    assert candidate(5576543) == 2625\n    assert candidate(2468) == 0\n\ndef test_check():\n    check(digits)\n\ntest_check()\n",
+      "timestamp": 1772047859,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp6fnnfwy_.py\", line 36, in <module>\n    test_check()\n  File \"/tmp/tmp6fnnfwy_.py\", line 34, in test_check\n    check(digits)\n  File \"/tmp/tmp6fnnfwy_.py\", line 31, in check\n    assert candidate(2468) == 0\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

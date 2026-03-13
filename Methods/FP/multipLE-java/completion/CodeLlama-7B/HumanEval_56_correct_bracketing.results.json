@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_56_correct_bracketing",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // brackets is a string of \"<\" and \">\".\n    // return true if every opening bracket has a corresponding closing bracket.\n    // >>> correctBracketing((\"<\"))\n    // (false)\n    // >>> correctBracketing((\"<>\"))\n    // (true)\n    // >>> correctBracketing((\"<<><>>\"))\n    // (true)\n    // >>> correctBracketing((\"><<>\"))\n    // (false)\n    public static boolean correctBracketing(String brackets) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(correctBracketing((\"<>\")) == (true));\n    assert(correctBracketing((\"<<><>>\")) == (true));\n    assert(correctBracketing((\"<><><<><>><>\")) == (true));\n    assert(correctBracketing((\"<><><<<><><>><>><<><><<>>>\")) == (true));\n    assert(correctBracketing((\"<<<><>>>>\")) == (false));\n    assert(correctBracketing((\"><<>\")) == (false));\n    assert(correctBracketing((\"<\")) == (false));\n    assert(correctBracketing((\"<<<<\")) == (false));\n    assert(correctBracketing((\">\")) == (false));\n    assert(correctBracketing((\"<<>\")) == (false));\n    assert(correctBracketing((\"<><><<><>><>><<>\")) == (false));\n    assert(correctBracketing((\"<><><<><>><>>><>\")) == (false));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // brackets is a string of \"<\" and \">\".\n    // return true if every opening bracket has a corresponding closing bracket.\n    // >>> correctBracketing((\"<\"))\n    // (false)\n    // >>> correctBracketing((\"<>\"))\n    // (true)\n    // >>> correctBracketing((\"<<><>>\"))\n    // (true)\n    // >>> correctBracketing((\"><<>\"))\n    // (false)\n    public static boolean correctBracketing(String brackets) {\n\n        Stack<Character> stack = new Stack<>();\n        for (char c : brackets.toCharArray()) {\n            if (c == '<') {\n                stack.push(c);\n            } else if (c == '>') {\n                if (stack.isEmpty()) {\n                    return false;\n                }\n                stack.pop();\n            }\n        }\n        return stack.isEmpty();\n    }\n    public static void main(String[] args) {\n    assert(correctBracketing((\"<>\")) == (true));\n    assert(correctBracketing((\"<<><>>\")) == (true));\n    assert(correctBracketing((\"<><><<><>><>\")) == (true));\n    assert(correctBracketing((\"<><><<<><><>><>><<><><<>>>\")) == (true));\n    assert(correctBracketing((\"<<<><>>>>\")) == (false));\n    assert(correctBracketing((\"><<>\")) == (false));\n    assert(correctBracketing((\"<\")) == (false));\n    assert(correctBracketing((\"<<<<\")) == (false));\n    assert(correctBracketing((\">\")) == (false));\n    assert(correctBracketing((\"<<>\")) == (false));\n    assert(correctBracketing((\"<><><<><>><>><<>\")) == (false));\n    assert(correctBracketing((\"<><><<><>><>>><>\")) == (false));\n    }\n\n}\n",
+      "timestamp": 1772044436,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

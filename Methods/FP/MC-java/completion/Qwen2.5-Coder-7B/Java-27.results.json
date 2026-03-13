@@ -1,0 +1,20 @@
+{
+  "name": "Java-27",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Given an integer array nums, return the maximum absolute sum of any subarray.\n     *\n     * >>> maxAbsoluteSum(new int[]{1,-3,2,3,-4})\n     * 5\n     *\n     * >>> maxAbsoluteSum(new int[]{2,-5,1,-4,3,-2})\n     * 8\n     */\n    public int maxAbsoluteSum(int[] nums) ",
+  "tests": "public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.maxAbsoluteSum(new int[]{1,-3,2,3,-4}) == 5;\n        assert solution.maxAbsoluteSum(new int[]{2,-5,1,-4,3,-2}) == 8;\n        assert solution.maxAbsoluteSum(new int[]{-2, -3, 4, -1, -2, 1, 5, -3}) == 7;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Given an integer array nums, return the maximum absolute sum of any subarray.\n     *\n     * >>> maxAbsoluteSum(new int[]{1,-3,2,3,-4})\n     * 5\n     *\n     * >>> maxAbsoluteSum(new int[]{2,-5,1,-4,3,-2})\n     * 8\n     */\n    public int maxAbsoluteSum(int[] nums)  {\n        int maxSum = 0;\n        int minSum = 0;\n        int currentMax = 0;\n        int currentMin = 0;\n\n        for (int num : nums) {\n            currentMax = Math.max(currentMax + num, 0);\n            currentMin = Math.min(currentMin - num, 0);\n\n            maxSum = Math.max(maxSum, currentMax);\n            minSum = Math.min(minSum, currentMin);\n        }\n\n        return Math.max(maxSum, -minSum);\n    }\npublic static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.maxAbsoluteSum(new int[]{1,-3,2,3,-4}) == 5;\n        assert solution.maxAbsoluteSum(new int[]{2,-5,1,-4,3,-2}) == 8;\n        assert solution.maxAbsoluteSum(new int[]{-2, -3, 4, -1, -2, 1, 5, -3}) == 7;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772661825,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpsdlj9wrq.java:32)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

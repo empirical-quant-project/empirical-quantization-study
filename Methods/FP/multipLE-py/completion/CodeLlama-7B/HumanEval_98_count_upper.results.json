@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_98_count_upper",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def count_upper(s: str) -> int:\n    \"\"\"\n    Given a string s, count the number of uppercase vowels in even indices.\n    \n    For example:\n    >>> count_upper('aBCdEf')\n    1\n    >>> count_upper('abcdefg')\n    0\n    >>> count_upper('dBBE')\n    0\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('aBCdEf') == 1\n    assert candidate('abcdefg') == 0\n    assert candidate('dBBE') == 0\n    assert candidate('B') == 0\n    assert candidate('U') == 1\n    assert candidate('') == 0\n    assert candidate('EEEE') == 2\n\ndef test_check():\n    check(count_upper)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def count_upper(s: str) -> int:\n    \"\"\"\n    Given a string s, count the number of uppercase vowels in even indices.\n    \n    For example:\n    >>> count_upper('aBCdEf')\n    1\n    >>> count_upper('abcdefg')\n    0\n    >>> count_upper('dBBE')\n    0\n    \"\"\"\n\n    return sum(1 for i, c in enumerate(s) if i % 2 == 0 and c.isupper())\ndef check(candidate):\n    assert candidate('aBCdEf') == 1\n    assert candidate('abcdefg') == 0\n    assert candidate('dBBE') == 0\n    assert candidate('B') == 0\n    assert candidate('U') == 1\n    assert candidate('') == 0\n    assert candidate('EEEE') == 2\n\ndef test_check():\n    check(count_upper)\n\ntest_check()\n",
+      "timestamp": 1772047858,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp1adevgnm.py\", line 27, in <module>\n    test_check()\n  File \"/tmp/tmp1adevgnm.py\", line 25, in test_check\n    check(count_upper)\n  File \"/tmp/tmp1adevgnm.py\", line 16, in check\n    assert candidate('aBCdEf') == 1\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_101_words_string",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List\n\ndef words_string(s: str) -> List[str]:\n    \"\"\"\n    You will be given a string of words separated by commas or spaces. Your task is\n    to split the string into words and return an array of the words.\n    \n    For example:\n    >>> words_string('Hi, my name is John')\n    ['Hi', 'my', 'name', 'is', 'John']\n    >>> words_string('One, two, three, four, five, six')\n    ['One', 'two', 'three', 'four', 'five', 'six']\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('Hi, my name is John') == ['Hi', 'my', 'name', 'is', 'John']\n    assert candidate('One, two, three, four, five, six') == ['One', 'two', 'three', 'four', 'five', 'six']\n    assert candidate('Hi, my name') == ['Hi', 'my', 'name']\n    assert candidate('One,, two, three, four, five, six,') == ['One', 'two', 'three', 'four', 'five', 'six']\n    assert candidate('') == []\n    assert candidate('ahmed     , gamal') == ['ahmed', 'gamal']\n\ndef test_check():\n    check(words_string)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List\n\ndef words_string(s: str) -> List[str]:\n    \"\"\"\n    You will be given a string of words separated by commas or spaces. Your task is\n    to split the string into words and return an array of the words.\n    \n    For example:\n    >>> words_string('Hi, my name is John')\n    ['Hi', 'my', 'name', 'is', 'John']\n    >>> words_string('One, two, three, four, five, six')\n    ['One', 'two', 'three', 'four', 'five', 'six']\n    \"\"\"\n\n    return s.split(', ')\ndef check(candidate):\n    assert candidate('Hi, my name is John') == ['Hi', 'my', 'name', 'is', 'John']\n    assert candidate('One, two, three, four, five, six') == ['One', 'two', 'three', 'four', 'five', 'six']\n    assert candidate('Hi, my name') == ['Hi', 'my', 'name']\n    assert candidate('One,, two, three, four, five, six,') == ['One', 'two', 'three', 'four', 'five', 'six']\n    assert candidate('') == []\n    assert candidate('ahmed     , gamal') == ['ahmed', 'gamal']\n\ndef test_check():\n    check(words_string)\n\ntest_check()\n",
+      "timestamp": 1772047852,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp5po1hvoa.py\", line 27, in <module>\n    test_check()\n  File \"/tmp/tmp5po1hvoa.py\", line 25, in test_check\n    check(words_string)\n  File \"/tmp/tmp5po1hvoa.py\", line 17, in check\n    assert candidate('Hi, my name is John') == ['Hi', 'my', 'name', 'is', 'John']\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_27_flip_case",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    // >>> flipCase((\"Hello\"))\n    // (\"hELLO\")\n    public static String flipCase(String string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(flipCase((\"\")).equals((\"\")));\n    assert(flipCase((\"Hello!\")).equals((\"hELLO!\")));\n    assert(flipCase((\"These violent delights have violent ends\")).equals((\"tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    // >>> flipCase((\"Hello\"))\n    // (\"hELLO\")\n    public static String flipCase(String string) {\n \n        StringBuilder sb = new StringBuilder();\n        for (char c : string.toCharArray()) {\n            if (Character.isUpperCase(c)) {\n                sb.append(Character.toLowerCase(c));\n            } else {\n                sb.append(Character.toUpperCase(c));\n            }\n        }\n        return sb.toString();\n    }\n    public static void main(String[] args) {\n    assert(flipCase((\"\")).equals((\"\")));\n    assert(flipCase((\"Hello!\")).equals((\"hELLO!\")));\n    assert(flipCase((\"These violent delights have violent ends\")).equals((\"tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS\")));\n    }\n\n}\n",
+      "timestamp": 1771521548,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Java-7",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given the number of triangles N, determine the maximum number of regions the plane can be divided into.\n     *\n     * Example:\n     * >>> maxRegions(1)\n     * 2\n     * >>> maxRegions(2)\n     * 8\n     *\n     * @param N the number of triangles\n     * @return the maximum number of regions\n     */\n    public static int maxRegions(int N) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert maxRegions(3) == 13;\n        assert maxRegions(4) == 21;\n        assert maxRegions(5) == 31;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given the number of triangles N, determine the maximum number of regions the plane can be divided into.\n     *\n     * Example:\n     * >>> maxRegions(1)\n     * 2\n     * >>> maxRegions(2)\n     * 8\n     *\n     * @param N the number of triangles\n     * @return the maximum number of regions\n     */\n    public static int maxRegions(int N)  {\n        // The formula to calculate the maximum number of regions is (N^2 + 5N + 6)/2\n        return (N * N + 5 * N + 6) / 2;\n    }\n    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert maxRegions(3) == 13;\n        assert maxRegions(4) == 21;\n        assert maxRegions(5) == 31;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772661814,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp1k_kew6m.java:22)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Python-14",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def verify_isbn(isbn: str) -> str:\n    \"\"\"\n    Verify the correctness of a given ISBN number and correct it if necessary.\n\n    The function checks the provided ISBN number against the ISBN standard checksum calculation.\n    If the checksum is correct, the function returns \"Right\". If the checksum is incorrect,\n    the function returns the corrected ISBN number.\n\n    Args:\n    isbn: A string representing the ISBN number to be verified. The format should be 'x-xxx-xxxxx-x',\n          where 'x' is a digit, and the last 'x' could also be 'X' representing the checksum digit.\n\n    Returns:\n    A string that is either \"Right\" if the ISBN checksum is correct, or the corrected ISBN number\n    in the same format as the input if the checksum is incorrect.\n\n    Examples:\n    >>> verify_isbn(\"0-670-82162-4\")\n    'Right'\n    \n    >>> verify_isbn(\"0-670-82162-0\")\n    '0-670-82162-4'\n    \"\"\"",
+  "tests": "def test_verify_isbn():\n    # Test case 1: Correct ISBN number\n    assert verify_isbn(\"0-670-82162-4\") == \"Right\", \"Test case 1 failed\"\n\n    # Test case 2: Incorrect ISBN number with wrong checksum digit\n    assert verify_isbn(\"0-670-82162-0\") == \"0-670-82162-4\", \"Test case 2 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test cases\ntest_verify_isbn()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def verify_isbn(isbn: str) -> str:\n    \"\"\"\n    Verify the correctness of a given ISBN number and correct it if necessary.\n\n    The function checks the provided ISBN number against the ISBN standard checksum calculation.\n    If the checksum is correct, the function returns \"Right\". If the checksum is incorrect,\n    the function returns the corrected ISBN number.\n\n    Args:\n    isbn: A string representing the ISBN number to be verified. The format should be 'x-xxx-xxxxx-x',\n          where 'x' is a digit, and the last 'x' could also be 'X' representing the checksum digit.\n\n    Returns:\n    A string that is either \"Right\" if the ISBN checksum is correct, or the corrected ISBN number\n    in the same format as the input if the checksum is incorrect.\n\n    Examples:\n    >>> verify_isbn(\"0-670-82162-4\")\n    'Right'\n    \n    >>> verify_isbn(\"0-670-82162-0\")\n    '0-670-82162-4'\n    \"\"\"\ndef test_verify_isbn():\n    # Test case 1: Correct ISBN number\n    assert verify_isbn(\"0-670-82162-4\") == \"Right\", \"Test case 1 failed\"\n\n    # Test case 2: Incorrect ISBN number with wrong checksum digit\n    assert verify_isbn(\"0-670-82162-0\") == \"0-670-82162-4\", \"Test case 2 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test cases\ntest_verify_isbn()",
+      "timestamp": 1772662299,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpya71jmwr.py\", line 34, in <module>\n    test_verify_isbn()\n  File \"/tmp/tmpya71jmwr.py\", line 26, in test_verify_isbn\n    assert verify_isbn(\"0-670-82162-4\") == \"Right\", \"Test case 1 failed\"\nAssertionError: Test case 1 failed\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

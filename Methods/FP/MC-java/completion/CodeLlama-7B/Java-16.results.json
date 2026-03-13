@@ -1,0 +1,20 @@
+{
+  "name": "Java-16",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.lang.*;\nimport java.util.*;\n\nclass Problem {\n    /**\n     * Check if it is possible to divide the array into n/2 pairs such that the sum of each pair is divisible by k.\n     *\n     * @param arr the input integer array\n     * @param k the divisor\n     * @return true if it is possible, false otherwise\n     *\n     * Example:\n     * Input: arr = [1,2,3,4,5,10,6,7,8,9], k = 5\n     * Output: true\n     * Explanation: The pairs are (1,9), (2,8), (3,7), (4,6), (5,10), and the sum of each pair is divisible by 5.\n     *\n     * Input: arr = [1,2,3,4,5,6], k = 7\n     * Output: true\n     * Explanation: The pairs are (1,6), (2,5), (3,4), and the sum of each pair is divisible by 7.\n     *\n     * Input: arr = [1,2,3,4,5,6], k = 10\n     * Output: false\n     * Explanation: It is not possible to divide the array into n/2 pairs such that the sum of each pair is divisible by 10.\n     */\n  public boolean canArrange(int[] arr, int k) ",
+  "tests": "  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.canArrange(new int[]{1,2,3,4,5,10,6,7,8,9}, 5) == true;\n    assert solution.canArrange(new int[]{1,2,3,4,5,6}, 7) == true;\n    assert solution.canArrange(new int[]{1,2,3,4,5,6}, 10) == false;\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.lang.*;\nimport java.util.*;\n\nclass Problem {\n    /**\n     * Check if it is possible to divide the array into n/2 pairs such that the sum of each pair is divisible by k.\n     *\n     * @param arr the input integer array\n     * @param k the divisor\n     * @return true if it is possible, false otherwise\n     *\n     * Example:\n     * Input: arr = [1,2,3,4,5,10,6,7,8,9], k = 5\n     * Output: true\n     * Explanation: The pairs are (1,9), (2,8), (3,7), (4,6), (5,10), and the sum of each pair is divisible by 5.\n     *\n     * Input: arr = [1,2,3,4,5,6], k = 7\n     * Output: true\n     * Explanation: The pairs are (1,6), (2,5), (3,4), and the sum of each pair is divisible by 7.\n     *\n     * Input: arr = [1,2,3,4,5,6], k = 10\n     * Output: false\n     * Explanation: It is not possible to divide the array into n/2 pairs such that the sum of each pair is divisible by 10.\n     */\n  public boolean canArrange(int[] arr, int k)  {\n    int n = arr.length;\n    if (n % 2 == 1) return false;\n    int[] sums = new int[n / 2];\n    for (int i = 0; i < n / 2; i++) {\n      sums[i] = arr[i * 2] + arr[i * 2 + 1];\n    }\n    Arrays.sort(sums);\n    for (int i = 0; i < n / 2; i++) {\n      if (sums[i] % k != 0) return false;\n    }\n    return true;\n  }\n  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.canArrange(new int[]{1,2,3,4,5,10,6,7,8,9}, 5) == true;\n    assert solution.canArrange(new int[]{1,2,3,4,5,6}, 7) == true;\n    assert solution.canArrange(new int[]{1,2,3,4,5,6}, 10) == false;\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772043096,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpfyt01ass.java:42)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

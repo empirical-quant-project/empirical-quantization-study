@@ -1,0 +1,20 @@
+{
+  "name": "Java-38",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Given an integer n, determine if it is a power of two.\n   * If it is, return true; otherwise, return false.\n   * A number n is a power of two if there exists an integer x such that n == 2^x.\n   *\n   * @param n The integer to be checked.\n   * @return True if n is a power of two, false otherwise.\n   *\n   * Example:\n   * isPowerOfTwo(1)\n   * Output: true\n   *\n   * Example:\n   * isPowerOfTwo(16)\n   * Output: true\n   *\n   * Example:\n   * isPowerOfTwo(3)\n   * Output: false\n   *\n   * Example:\n   * isPowerOfTwo(4)\n   * Output: true\n   *\n   * Example:\n   * isPowerOfTwo(5)\n   * Output: false\n   */\n  public static boolean isPowerOfTwo(int n) ",
+  "tests": "  public static void main(String[] args) {\n    // Test cases\n    assert isPowerOfTwo(1024) == true; // 1024 is 2^10\n    assert isPowerOfTwo(65536) == true; // 65536 is 2^16\n    assert isPowerOfTwo(14) == false; // 14 is not a power of two\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Given an integer n, determine if it is a power of two.\n   * If it is, return true; otherwise, return false.\n   * A number n is a power of two if there exists an integer x such that n == 2^x.\n   *\n   * @param n The integer to be checked.\n   * @return True if n is a power of two, false otherwise.\n   *\n   * Example:\n   * isPowerOfTwo(1)\n   * Output: true\n   *\n   * Example:\n   * isPowerOfTwo(16)\n   * Output: true\n   *\n   * Example:\n   * isPowerOfTwo(3)\n   * Output: false\n   *\n   * Example:\n   * isPowerOfTwo(4)\n   * Output: true\n   *\n   * Example:\n   * isPowerOfTwo(5)\n   * Output: false\n   */\n  public static boolean isPowerOfTwo(int n)  {\n    // Check if n is less than or equal to zero\n    if (n <= 0) {\n      return false;\n    }\n    // Use bitwise AND operation to check if n is a power of two\n    return (n & (n - 1)) == 0;\n  }\n  public static void main(String[] args) {\n    // Test cases\n    assert isPowerOfTwo(1024) == true; // 1024 is 2^10\n    assert isPowerOfTwo(65536) == true; // 65536 is 2^16\n    assert isPowerOfTwo(14) == false; // 14 is not a power of two\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772661819,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

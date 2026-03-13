@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_65_circular_shift",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Circular shift the digits of the integer x, shift the digits right by shift\n    // and return the result as a string.\n    // If shift > number of digits, return digits reversed.\n    // >>> circularShift((12l), (1l))\n    // (\"21\")\n    // >>> circularShift((12l), (2l))\n    // (\"12\")\n    public static String circularShift(long x, long shift) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(circularShift((100l), (2l)).equals((\"001\")));\n    assert(circularShift((12l), (2l)).equals((\"12\")));\n    assert(circularShift((97l), (8l)).equals((\"79\")));\n    assert(circularShift((12l), (1l)).equals((\"21\")));\n    assert(circularShift((11l), (101l)).equals((\"11\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Circular shift the digits of the integer x, shift the digits right by shift\n    // and return the result as a string.\n    // If shift > number of digits, return digits reversed.\n    // >>> circularShift((12l), (1l))\n    // (\"21\")\n    // >>> circularShift((12l), (2l))\n    // (\"12\")\n    public static String circularShift(long x, long shift) {\n\n        String s = String.valueOf(x);\n        int n = s.length();\n        if (shift > n) {\n            return new StringBuilder(s).reverse().toString();\n        }\n        return s.substring(shift) + s.substring(0, shift);\n    }\n    public static void main(String[] args) {\n    assert(circularShift((100l), (2l)).equals((\"001\")));\n    assert(circularShift((12l), (2l)).equals((\"12\")));\n    assert(circularShift((97l), (8l)).equals((\"79\")));\n    assert(circularShift((12l), (1l)).equals((\"21\")));\n    assert(circularShift((11l), (101l)).equals((\"11\")));\n    }\n\n}\n",
+      "timestamp": 1772044421,
+      "stdout": "",
+      "stderr": "/tmp/tmp1krprrlh.java:23: error: incompatible types: possible lossy conversion from long to int\n        return s.substring(shift) + s.substring(0, shift);\n                           ^\n/tmp/tmp1krprrlh.java:23: error: incompatible types: possible lossy conversion from long to int\n        return s.substring(shift) + s.substring(0, shift);\n                                                   ^\nNote: Some messages have been simplified; recompile with -Xdiags:verbose to get full output\n2 errors\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

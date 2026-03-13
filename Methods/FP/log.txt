@@ -1,0 +1,11 @@
+Processing humaneval-java-Qwen_Qwen2.5_Coder_1.5B_Instruct-0.0-reworded - Language: java
+Cleaning completions:   0%|                                                                         | 0/158 [00:00<?, ?it/s]/scratch/oldhome/safrin/anaconda3/envs/aqlm-fse/lib/python3.9/site-packages/tree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.
+  warn("{} is deprecated. Use {} instead.".format(old, new), FutureWarning)
+Cleaning completions: 100%|██████████████████████████████████████████████████████████████| 158/158 [00:00<00:00, 991.39it/s]
+Running evaluation script...
+100%|██████████| 158/158 [01:42<00:00,  1.55it/s]
+Execution took 102.01430296897888 seconds
+Printing the results...
+Dataset,Pass@k,Estimate,NumProblems,MinCompletions,MaxCompletions
+humaneval-java-Qwen_Qwen2.5_Coder_1.5B_Instruct-0.0-reworded,1,0.3924050632911392,158,1,1
+Found multiple temperatures set() in ././results_cleaned/Qwen2.5-Coder-1.5B-Instruct/java_benchmark_temperature_0.0_baseline_fp16/pass_result_temp_0_0.csv []

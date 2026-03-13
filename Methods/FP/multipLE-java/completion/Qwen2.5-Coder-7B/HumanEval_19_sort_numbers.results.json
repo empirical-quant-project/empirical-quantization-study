@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_19_sort_numbers",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n \n        Map<String, Integer> map = new HashMap<>();\n        map.put(\"zero\", 0);\n        map.put(\"one\", 1);\n        map.put(\"two\", 2);\n        map.put(\"three\", 3);\n        map.put(\"four\", 4);\n        map.put(\"five\", 5);\n        map.put(\"six\", 6);\n        map.put(\"seven\", 7);\n        map.put(\"eight\", 8);\n        map.put(\"nine\", 9);\n\n        List<Integer> list = Arrays.asList(numbers.split(\" \"))\n            .stream()\n            .map(map::get)\n            .sorted()\n            .collect(Collectors.toList());\n\n        return list.stream()\n            .map(i -> map.entrySet().stream()\n                .filter(e -> e.getValue() == i)\n                .findFirst()\n                .get()\n                .getKey())\n            .collect(Collectors.joining(\" \"));\n    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+      "timestamp": 1771521592,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.util.NoSuchElementException: No value present\n\tat java.base/java.util.Optional.get(Optional.java:148)\n\tat Problem.lambda$sortNumbers$1(tmpu5r6q4zy.java:38)\n\tat java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)\n\tat java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)\n\tat java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)\n\tat java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)\n\tat java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)\n\tat java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)\n\tat Problem.sortNumbers(tmpu5r6q4zy.java:40)\n\tat Problem.main(tmpu5r6q4zy.java:43)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

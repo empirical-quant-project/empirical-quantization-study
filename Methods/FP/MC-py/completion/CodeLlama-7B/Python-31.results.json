@@ -1,0 +1,25 @@
+{
+  "name": "Python-31",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from collections import deque\ndef generate_numbers(n, rules) -> int:\n    \"\"\"\n    Generate all unique numbers from the given number by applying transformation rules.\n\n    Each rule allows a single digit to be transformed into another. A breadth-first search\n    (BFS) is used to explore all possible transformations. The function returns the count\n    of unique numbers that can be generated from the original number, including the number itself.\n\n    Args:\n    - n (int): The original integer number to transform.\n    - rules (list of tuples): A list of transformation rules, where each rule is represented\n                              as a tuple (x, y) indicating that digit x can be transformed into y.\n\n    Returns:\n    - int: The total count of unique numbers that can be generated.\n\n    Cases:\n    >>> generate_numbers(234, [(2, 5), (3, 6)])\n    4\n    >>> generate_numbers(100, [(1, 9)])\n    2\n    \"\"\"",
+  "tests": "def test_generate_numbers():\n    # Test case 1\n    n1, k1 = 234, 2\n    rules1 = [(2, 5), (3, 6)]\n    assert generate_numbers(n1, rules1) == 4, \"Test case 1 failed\"\n\n    # Test case 2\n    n2, k2 = 123, 3\n    rules2 = [(1, 9), (2, 8), (3, 7)]\n    assert generate_numbers(n2, rules2) == 8, \"Test case 2 failed\"\n\n    # Test case 3\n    n3, k3 = 999, 1\n    rules3 = [(9, 1)]\n    assert generate_numbers(n3, rules3) == 8, \"Test case 3 failed\"\n\n    print(\"All test cases passed!\")\n\n# Call the test function\ntest_generate_numbers()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from collections import deque\ndef generate_numbers(n, rules) -> int:\n    \"\"\"\n    Generate all unique numbers from the given number by applying transformation rules.\n\n    Each rule allows a single digit to be transformed into another. A breadth-first search\n    (BFS) is used to explore all possible transformations. The function returns the count\n    of unique numbers that can be generated from the original number, including the number itself.\n\n    Args:\n    - n (int): The original integer number to transform.\n    - rules (list of tuples): A list of transformation rules, where each rule is represented\n                              as a tuple (x, y) indicating that digit x can be transformed into y.\n\n    Returns:\n    - int: The total count of unique numbers that can be generated.\n\n    Cases:\n    >>> generate_numbers(234, [(2, 5), (3, 6)])\n    4\n    >>> generate_numbers(100, [(1, 9)])\n    2\n    \"\"\"\n    # Initialize a queue to store the numbers to be explored\n    queue = deque([n])\n    # Initialize a set to store the unique numbers\n    unique_numbers = set([n])\n    # Loop until the queue is empty\n    while queue:\n        # Get the next number to explore\n        number = queue.popleft()\n        # Loop through each rule\n        for x, y in rules:\n            # If the number can be transformed into another number\n            if number % 10 == x:\n                # Transform the number\n                number = number // 10 * 10 + y\n                # If the transformed number is unique\n                if number not in unique_numbers:\n                    # Add it to the queue and the set of unique numbers\n                    queue.append(number)\n                    unique_numbers.add(number)\n    # Return the count of unique numbers\n    return len(unique_numbers)\ndef test_generate_numbers():\n    # Test case 1\n    n1, k1 = 234, 2\n    rules1 = [(2, 5), (3, 6)]\n    assert generate_numbers(n1, rules1) == 4, \"Test case 1 failed\"\n\n    # Test case 2\n    n2, k2 = 123, 3\n    rules2 = [(1, 9), (2, 8), (3, 7)]\n    assert generate_numbers(n2, rules2) == 8, \"Test case 2 failed\"\n\n    # Test case 3\n    n3, k3 = 999, 1\n    rules3 = [(9, 1)]\n    assert generate_numbers(n3, rules3) == 8, \"Test case 3 failed\"\n\n    print(\"All test cases passed!\")\n\n# Call the test function\ntest_generate_numbers()",
+      "timestamp": 1772044738,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpvypbrvhk.py\", line 64, in <module>\n    test_generate_numbers()\n  File \"/tmp/tmpvypbrvhk.py\", line 49, in test_generate_numbers\n    assert generate_numbers(n1, rules1) == 4, \"Test case 1 failed\"\nAssertionError: Test case 1 failed\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

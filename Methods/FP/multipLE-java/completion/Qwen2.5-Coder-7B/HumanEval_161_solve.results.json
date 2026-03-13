@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_161_solve",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given a string s.\n    // if s[i] is a letter, reverse its case from lower to upper or vise versa, \n    // otherwise keep it as it is.\n    // If the string contains no letters, reverse the string.\n    // The function should return the resulted string.\n    // Examples\n    // >>> solve((\"1234\"))\n    // (\"4321\")\n    // >>> solve((\"ab\"))\n    // (\"AB\")\n    // >>> solve((\"#a@C\"))\n    // (\"#A@c\")\n    public static String solve(String s) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(solve((\"AsDf\")).equals((\"aSdF\")));\n    assert(solve((\"1234\")).equals((\"4321\")));\n    assert(solve((\"ab\")).equals((\"AB\")));\n    assert(solve((\"#a@C\")).equals((\"#A@c\")));\n    assert(solve((\"#AsdfW^45\")).equals((\"#aSDFw^45\")));\n    assert(solve((\"#6@2\")).equals((\"2@6#\")));\n    assert(solve((\"#$a^D\")).equals((\"#$A^d\")));\n    assert(solve((\"#ccc\")).equals((\"#CCC\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given a string s.\n    // if s[i] is a letter, reverse its case from lower to upper or vise versa, \n    // otherwise keep it as it is.\n    // If the string contains no letters, reverse the string.\n    // The function should return the resulted string.\n    // Examples\n    // >>> solve((\"1234\"))\n    // (\"4321\")\n    // >>> solve((\"ab\"))\n    // (\"AB\")\n    // >>> solve((\"#a@C\"))\n    // (\"#A@c\")\n    public static String solve(String s) {\n        \n        boolean hasLetter = false;\n        StringBuilder sb = new StringBuilder();\n        for (char c : s.toCharArray()) {\n            if (Character.isLetter(c)) {\n                hasLetter = true;\n                sb.append(Character.isUpperCase(c) ? Character.toLowerCase(c) : Character.toUpperCase(c));\n            } else {\n                sb.append(c);\n            }\n        }\n        return hasLetter ? sb.toString() : sb.reverse().toString();\n    }\n    public static void main(String[] args) {\n    assert(solve((\"AsDf\")).equals((\"aSdF\")));\n    assert(solve((\"1234\")).equals((\"4321\")));\n    assert(solve((\"ab\")).equals((\"AB\")));\n    assert(solve((\"#a@C\")).equals((\"#A@c\")));\n    assert(solve((\"#AsdfW^45\")).equals((\"#aSDFw^45\")));\n    assert(solve((\"#6@2\")).equals((\"2@6#\")));\n    assert(solve((\"#$a^D\")).equals((\"#$A^d\")));\n    assert(solve((\"#ccc\")).equals((\"#CCC\")));\n    }\n\n}\n",
+      "timestamp": 1771521618,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}
