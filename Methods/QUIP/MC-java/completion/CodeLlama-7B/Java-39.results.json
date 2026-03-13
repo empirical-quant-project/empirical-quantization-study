@@ -1,0 +1,20 @@
+{
+  "name": "Java-39",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Given a non-negative integer num, repeatedly add all its digits until the result is a single digit. Return the result.\n   *\n   * @param num The non-negative integer to perform the operation on.\n   * @return The single digit result after repeatedly adding all digits.\n   *\n   * Example:\n   * addDigits(38)\n   * Output: 2\n   */\n  public static int addDigits(int num) ",
+  "tests": "  public static void main(String[] args) {\n    assert addDigits(123) == 6 : \"Test case 1 failed\";\n    assert addDigits(59) == 5 : \"Test case 2 failed\";\n    assert addDigits(0) == 0 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Given a non-negative integer num, repeatedly add all its digits until the result is a single digit. Return the result.\n   *\n   * @param num The non-negative integer to perform the operation on.\n   * @return The single digit result after repeatedly adding all digits.\n   *\n   * Example:\n   * addDigits(38)\n   * Output: 2\n   */\n  public static int addDigits(int num)  {\n    int result = 0;\n    while (num > 0) {\n      result += num % 10;\n      num /= 10;\n    }\n    return result;\n  }\n  public static void main(String[] args) {\n    assert addDigits(123) == 6 : \"Test case 1 failed\";\n    assert addDigits(59) == 5 : \"Test case 2 failed\";\n    assert addDigits(0) == 0 : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772229757,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test case 2 failed\n\tat Problem.main(tmp4ya71gdu.java:23)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

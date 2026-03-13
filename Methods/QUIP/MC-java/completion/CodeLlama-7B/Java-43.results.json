@@ -1,0 +1,20 @@
+{
+  "name": "Java-43",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nclass Problem {\n\n  /**\n   * Given n non-negative integers representing the heights of bars in a bar chart.\n   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.\n   *\n   * @param heights An array of integers representing the heights of bars.\n   * @return The maximum area of the rectangle that can be formed.\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,1,5,6,2,3})\n   * Output: 10\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,4})\n   * Output: 4\n   */\n  public static int largestRectangleArea(int[] heights) ",
+  "tests": "  public static void main(String[] args) {\n    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;\n    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;\n    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\nclass Problem {\n\n  /**\n   * Given n non-negative integers representing the heights of bars in a bar chart.\n   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.\n   *\n   * @param heights An array of integers representing the heights of bars.\n   * @return The maximum area of the rectangle that can be formed.\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,1,5,6,2,3})\n   * Output: 10\n   *\n   * Example:\n   * largestRectangleArea(new int[]{2,4})\n   * Output: 4\n   */\n  public static int largestRectangleArea(int[] heights)  {\n    int maxArea = 0;\n    int area = 0;\n    int left = 0;\n    int right = 0;\n    int width = 0;\n    int height = 0;\n    int temp = 0;\n    int temp2 = 0;\n    int temp3 = 0;\n    int temp4 = 0;\n    int temp5 = 0;\n    int temp6 = 0;\n    int temp7 = 0;\n    int temp8 = 0;\n    int temp9 = 0;\n    int temp10 = 0;\n    int temp11 = 0;\n    int temp12 = 0;\n    int temp13 = 0;\n    int temp14 = 0;\n    int temp15 = 0;\n    int temp16 = 0;\n    int temp17 = 0;\n    int temp18 = 0;\n    int temp19 = 0;\n    int temp20 = 0;\n    int temp21 = 0;\n    int temp22 = 0;\n    int temp23 = 0;\n    int temp24 = 0;\n    int temp25 = 0;\n    int temp26 = 0;\n    int temp27 = 0;\n    int temp28 = 0;\n    int temp29 = 0;\n    int temp30 = 0;\n    int temp31 = 0;\n    int temp32 = 0;\n    int temp33 = 0;\n    int temp34 = 0;\n    int temp35 = 0;\n    int temp36 = 0;\n    int temp37 = 0;\n    int temp38 = 0;\n    int temp39 = 0;\n    int temp40 = 0;\n    int temp41 = 0;\n    int temp42 = 0;\n    int temp43 = 0;\n    int temp44 = 0;\n    int temp45 = 0;\n    int temp46 = 0;\n    int temp47 = 0;\n    int temp48 = 0;\n    int temp49 = 0;\n    int temp50 = 0;\n    int temp51 = 0;\n    int temp52 = 0;\n    int temp53 = 0;\n    int temp54 = 0;\n    int temp55 = 0;\n    int temp56 = 0;\n    int temp57 = 0;\n    int temp58 = 0;\n    int temp59 = 0;\n    int temp60 = 0;\n    int temp61 = 0;\n    int temp62 = 0;\n    int temp63 = 0;\n    int temp64 = 0;\n    int temp65 = 0;\n    int temp66 = 0;\n    int temp67 = 0;\n    int temp68 = 0;\n    int temp69 = 0;\n    int temp70 = 0;\n    int temp71 = 0;\n    int temp72 = 0;\n    int temp73 = 0;\n    int temp74 = 0;\n    int temp75 = 0;\n    int temp76 = 0;\n    int temp77 = 0;\n    int temp78 = 0;\n    int temp79 = 0;\n    int temp80 = \n  public static void main(String[] args) {\n    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;\n    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;\n    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772229743,
+      "stdout": "",
+      "stderr": "/tmp/tmpo9ke6uu9.java:106: error: illegal start of expression\n  public static void main(String[] args) {\n  ^\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

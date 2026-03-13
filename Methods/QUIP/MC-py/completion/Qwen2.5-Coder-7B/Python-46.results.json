@@ -1,0 +1,25 @@
+{
+  "name": "Python-46",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def minimum_students_to_leave(heights):\n    \"\"\"\n    Calculate the minimum number of students that need to leave to form a choir formation.\n    A choir formation is defined such that for some position 'i', the heights of students\n    increase from the start to 'i' and decrease from 'i' to the end of the formation.\n\n    Args:\n    heights (List[int]): A list of student heights.\n\n    Returns:\n    int: The minimum number of students that need to leave.\n    \"\"\"",
+  "tests": "def test_minimum_students_to_leave():\n    # Test case 1: Provided example\n    assert minimum_students_to_leave([186, 186, 150, 200, 160, 130, 197, 220]) == 4, \"Test case 1 failed\"\n\n    # Test case 2: All students have the same height\n    assert minimum_students_to_leave([150, 150, 150, 150, 150]) == 4, \"Test case 2 failed\"\n\n    # Test case 3: Students are already in a choir formation\n    assert minimum_students_to_leave([130, 150, 170, 190, 170, 150, 130]) == 0, \"Test case 3 failed\"\n\n    # Test case 4: Students are in strictly increasing order\n    assert minimum_students_to_leave([130, 135, 140, 145, 150, 155]) == 0, \"Test case 4 failed\"\n\n    # Test case 5: Students are in strictly decreasing order\n    assert minimum_students_to_leave([155, 150, 145, 140, 135, 130]) == 0, \"Test case 5 failed\"\n\n    # Test case 6: Optimal choir formation is not including the first or last student\n    assert minimum_students_to_leave([200, 180, 190, 170, 210, 160, 220]) == 3, \"Test case 6 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test function\ntest_minimum_students_to_leave()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def minimum_students_to_leave(heights):\n    \"\"\"\n    Calculate the minimum number of students that need to leave to form a choir formation.\n    A choir formation is defined such that for some position 'i', the heights of students\n    increase from the start to 'i' and decrease from 'i' to the end of the formation.\n\n    Args:\n    heights (List[int]): A list of student heights.\n\n    Returns:\n    int: The minimum number of students that need to leave.\n    \"\"\"\n\n\n    # Check if the list is empty\n    if not heights:\n        return 0\n\n    # Initialize variables\n    n = len(heights)\n    left = [0] * n\n    right = [0] * n\n\n    # Calculate the minimum number of students to leave for each position\n    for i in range(1, n):\n        left[i] = left[i - 1] + (heights[i] > heights[i - 1])\n        right[i] = right[i - 1] + (heights[i] < heights[i - 1])\n\n    # Calculate the minimum number of students to leave for each position\n    for i in range(n - 1, -1, -1):\n        left[i] = left[i - 1] + (heights[i] > heights[i - 1])\n        right[i] = right[i - 1] + (heights[i] < heights[i - 1])\n\n    # Calculate the minimum number of students to leave\n    min_leave = min(left[i] + right[i] for i in range(n))\n\n    return min_leave\ndef test_minimum_students_to_leave():\n    # Test case 1: Provided example\n    assert minimum_students_to_leave([186, 186, 150, 200, 160, 130, 197, 220]) == 4, \"Test case 1 failed\"\n\n    # Test case 2: All students have the same height\n    assert minimum_students_to_leave([150, 150, 150, 150, 150]) == 4, \"Test case 2 failed\"\n\n    # Test case 3: Students are already in a choir formation\n    assert minimum_students_to_leave([130, 150, 170, 190, 170, 150, 130]) == 0, \"Test case 3 failed\"\n\n    # Test case 4: Students are in strictly increasing order\n    assert minimum_students_to_leave([130, 135, 140, 145, 150, 155]) == 0, \"Test case 4 failed\"\n\n    # Test case 5: Students are in strictly decreasing order\n    assert minimum_students_to_leave([155, 150, 145, 140, 135, 130]) == 0, \"Test case 5 failed\"\n\n    # Test case 6: Optimal choir formation is not including the first or last student\n    assert minimum_students_to_leave([200, 180, 190, 170, 210, 160, 220]) == 3, \"Test case 6 failed\"\n\n    print(\"All test cases passed!\")\n\n# Run the test function\ntest_minimum_students_to_leave()",
+      "timestamp": 1772207247,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpdeumonv6.py\", line 60, in <module>\n    test_minimum_students_to_leave()\n  File \"/tmp/tmpdeumonv6.py\", line 40, in test_minimum_students_to_leave\n    assert minimum_students_to_leave([186, 186, 150, 200, 160, 130, 197, 220]) == 4, \"Test case 1 failed\"\nAssertionError: Test case 1 failed\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

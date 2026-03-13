@@ -1,0 +1,20 @@
+{
+  "name": "Java-11",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * The approximate value is calculated by counting the number of common letters\n     * and dividing it by the sum of the lengths of the two words.\n     *\n     * @param word1 The first word.\n     * @param word2 The second word.\n     * @return The approximate value as a reduced fraction.\n     *\n     * >>> appx(\"CAR\", \"CART\")\n     * \"appx(CAR, CART) = 6/7\"\n     * >>> appx(\"TURKEY\", \"CHICKEN\")\n     * \"appx(TURKEY, CHICKEN) = 4/13\"\n     * >>> appx(\"MONEY\", \"POVERTY\")\n     * \"appx(MONEY, POVERTY) = 1/3\"\n     * >>> appx(\"ROUGH\", \"PESKY\")\n     * \"appx(ROUGH, PESKY) = 0\"\n     * >>> appx(\"A\", \"A\")\n     * \"appx(A, A) = 1\"\n     */\n    public static String appx(String word1, String word2) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert appx(\"DOG\", \"CAT\").equals(\"appx(DOG, CAT) = 0/6\");\n        assert appx(\"HELLO\", \"WORLD\").equals(\"appx(HELLO, WORLD) = 3/10\");\n        assert appx(\"JAVA\", \"PYTHON\").equals(\"appx(JAVA, PYTHON) = 0/10\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * The approximate value is calculated by counting the number of common letters\n     * and dividing it by the sum of the lengths of the two words.\n     *\n     * @param word1 The first word.\n     * @param word2 The second word.\n     * @return The approximate value as a reduced fraction.\n     *\n     * >>> appx(\"CAR\", \"CART\")\n     * \"appx(CAR, CART) = 6/7\"\n     * >>> appx(\"TURKEY\", \"CHICKEN\")\n     * \"appx(TURKEY, CHICKEN) = 4/13\"\n     * >>> appx(\"MONEY\", \"POVERTY\")\n     * \"appx(MONEY, POVERTY) = 1/3\"\n     * >>> appx(\"ROUGH\", \"PESKY\")\n     * \"appx(ROUGH, PESKY) = 0\"\n     * >>> appx(\"A\", \"A\")\n     * \"appx(A, A) = 1\"\n     */\n    public static String appx(String word1, String word2)  {\n        // Convert the words to lowercase to ensure the comparison is case-insensitive\n        String lowerWord1 = word1.toLowerCase();\n        String lowerWord2 = word2.toLowerCase();\n\n        // Create a set of characters from the first word\n        Set<Character> charSet = new HashSet<>();\n        for (char c : lowerWord1.toCharArray()) {\n            charSet.add(c);\n        }\n\n        // Count the number of common characters\n        int commonCount = 0;\n        for (char c : lowerWord2.toCharArray()) {\n            if (charSet.contains(c)) {\n                commonCount++;\n            }\n        }\n\n        // Calculate the approximate value\n        int numerator = commonCount;\n        int denominator = lowerWord1.length() + lowerWord2.length();\n        return \"appx(\" + word1 + \", \" + word2 + \") = \" + numerator + \"/\" + denominator;\n    }\n    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert appx(\"DOG\", \"CAT\").equals(\"appx(DOG, CAT) = 0/6\");\n        assert appx(\"HELLO\", \"WORLD\").equals(\"appx(HELLO, WORLD) = 3/10\");\n        assert appx(\"JAVA\", \"PYTHON\").equals(\"appx(JAVA, PYTHON) = 0/10\");\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772205226,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpd16_69ik.java:50)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

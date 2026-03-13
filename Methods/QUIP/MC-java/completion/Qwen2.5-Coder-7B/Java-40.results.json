@@ -1,0 +1,20 @@
+{
+  "name": "Java-40",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Given a binary matrix mat of size m x n, return the length of the longest continuous line of 1s in the matrix.\n   * The line could be horizontal, vertical, diagonal, or anti-diagonal.\n   *\n   * @param mat The binary matrix.\n   * @return The length of the longest continuous line of 1s.\n   *\n   * Example:\n   * longestLine(new int[][]{{0,1,1,0},{0,1,1,0},{0,0,0,1}})\n   * Output: 3\n   */\n  public static int longestLine(int[][] mat) ",
+  "tests": "  public static void main(String[] args) {\n    assert longestLine(\n      new int[][] {\n        { 1, 1, 0, 0 },\n        { 0, 1, 1, 0 },\n        { 0, 0, 0, 1 },\n        { 1, 0, 0, 0 },\n      }\n    ) ==\n    3;\n    assert longestLine(\n      new int[][] {\n        { 1, 0, 0, 1 },\n        { 0, 1, 1, 0 },\n        { 1, 1, 0, 0 },\n        { 1, 0, 1, 1 },\n      }\n    ) ==\n    4;\n    assert longestLine(new int[][] { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } }) ==\n    1;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Given a binary matrix mat of size m x n, return the length of the longest continuous line of 1s in the matrix.\n   * The line could be horizontal, vertical, diagonal, or anti-diagonal.\n   *\n   * @param mat The binary matrix.\n   * @return The length of the longest continuous line of 1s.\n   *\n   * Example:\n   * longestLine(new int[][]{{0,1,1,0},{0,1,1,0},{0,0,0,1}})\n   * Output: 3\n   */\n  public static int longestLine(int[][] mat)  {\n    int m = mat.length;\n    int n = mat[0].length;\n    int maxLength = 0;\n\n    // Check horizontal lines\n    for (int i = 0; i < m; i++) {\n      int count = 0;\n      for (int j = 0; j < n; j++) {\n        if (mat[i][j] == 1) {\n          count++;\n        } else {\n          maxLength = Math.max(maxLength, count);\n          count = 0;\n        }\n      }\n      maxLength = Math.max(maxLength, count);\n    }\n\n    // Check vertical lines\n    for (int j = 0; j < n; j++) {\n      int count = 0;\n      for (int i = 0; i < m; i++) {\n        if (mat[i][j] == 1) {\n          count++;\n        } else {\n          maxLength = Math.max(maxLength, count);\n          count = 0;\n        }\n      }\n      maxLength = Math.max(maxLength, count);\n    }\n\n    // Check diagonal lines\n    for (int i = 0; i < m; i++) {\n      for (int j = 0; j < n; j++) {\n        if (i + 1 < m && j + 1 < n && mat[i][j] == 1) {\n          int count = 0;\n          while (i + 1 < m && j + 1 < n && mat[i + 1][j + 1] == 1) {\n            i++;\n            j++;\n            count++;\n          }\n          maxLength = Math.max(maxLength, count);\n        }\n      }\n    }\n\n    // Check anti-diagonal lines\n    for (int i = 0; i < m; i++) {\n      for (int j = 0; j < n; j++) {\n        if (i + 1 < m && j - 1 >= 0 && mat[i][j] == 1) {\n          int count = 0;\n          while (i + 1 < m && j - 1 >= 0 && mat[i + 1][j - 1] == 1) {\n            i++;\n            j--;\n            count++;\n          }\n          maxLength = Math.max(maxLength, count);\n        }\n      }\n    }\n\n    return maxLength;\n  }\n  public static void main(String[] args) {\n    assert longestLine(\n      new int[][] {\n        { 1, 1, 0, 0 },\n        { 0, 1, 1, 0 },\n        { 0, 0, 0, 1 },\n        { 1, 0, 0, 0 },\n      }\n    ) ==\n    3;\n    assert longestLine(\n      new int[][] {\n        { 1, 0, 0, 1 },\n        { 0, 1, 1, 0 },\n        { 1, 1, 0, 0 },\n        { 1, 0, 1, 1 },\n      }\n    ) ==\n    4;\n    assert longestLine(new int[][] { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } }) ==\n    1;\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772205230,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp6amazxkm.java:80)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

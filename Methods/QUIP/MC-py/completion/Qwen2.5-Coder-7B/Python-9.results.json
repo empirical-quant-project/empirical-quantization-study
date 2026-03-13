@@ -1,0 +1,25 @@
+{
+  "name": "Python-9",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from itertools import permutations\n\ndef find_number_combinations():\n    \"\"\"\n    Generate all unique combinations of three numbers, each formed from the digits 1 to 9 without repetition,\n    such that the second number is twice the first and the third is three times the first.\n\n    Returns:\n        list of tuples: A sorted list of tuples, where each tuple contains three integers representing the\n                        valid number combinations in ascending order based on the first number.\n\n    Example:\n        >>> find_number_combinations()\n        [(123, 246, 369), (124, 248, 372), ...]\n    \"\"\"",
+  "tests": "def test_find_number_combinations():\n    # Call the function to get the combinations\n    combinations = find_number_combinations()\n\n    # Check that we have at least one valid combination\n    assert len(combinations) > 0, \"There should be at least one valid combination.\"\n\n    # Iterate over each combination to perform further checks\n    for combo in combinations:\n        # Each combination should have exactly three numbers\n        assert len(combo) == 3, \"Each combination should have three numbers.\"\n\n        # Check if numbers are 3-digit numbers\n        for num in combo:\n            assert 100 <= num <= 999, f\"Each number should be a 3-digit number, got {num}.\"\n\n        # Check the 1:2:3 ratio\n        assert combo[1] == 2 * combo[0] and combo[2] == 3 * combo[0], \"The numbers should be in a 1:2:3 ratio.\"\n\n    print(\"All test cases passed!\")\n\n# Run the test cases\ntest_find_number_combinations()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from itertools import permutations\n\ndef find_number_combinations():\n    \"\"\"\n    Generate all unique combinations of three numbers, each formed from the digits 1 to 9 without repetition,\n    such that the second number is twice the first and the third is three times the first.\n\n    Returns:\n        list of tuples: A sorted list of tuples, where each tuple contains three integers representing the\n                        valid number combinations in ascending order based on the first number.\n\n    Example:\n        >>> find_number_combinations()\n        [(123, 246, 369), (124, 248, 372), ...]\n    \"\"\"\ndef test_find_number_combinations():\n    # Call the function to get the combinations\n    combinations = find_number_combinations()\n\n    # Check that we have at least one valid combination\n    assert len(combinations) > 0, \"There should be at least one valid combination.\"\n\n    # Iterate over each combination to perform further checks\n    for combo in combinations:\n        # Each combination should have exactly three numbers\n        assert len(combo) == 3, \"Each combination should have three numbers.\"\n\n        # Check if numbers are 3-digit numbers\n        for num in combo:\n            assert 100 <= num <= 999, f\"Each number should be a 3-digit number, got {num}.\"\n\n        # Check the 1:2:3 ratio\n        assert combo[1] == 2 * combo[0] and combo[2] == 3 * combo[0], \"The numbers should be in a 1:2:3 ratio.\"\n\n    print(\"All test cases passed!\")\n\n# Run the test cases\ntest_find_number_combinations()",
+      "timestamp": 1772207249,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp1wpoosos.py\", line 38, in <module>\n    test_find_number_combinations()\n  File \"/tmp/tmp1wpoosos.py\", line 21, in test_find_number_combinations\n    assert len(combinations) > 0, \"There should be at least one valid combination.\"\nTypeError: object of type 'NoneType' has no len()\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

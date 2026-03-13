@@ -1,0 +1,20 @@
+{
+  "name": "Java-32",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Given a list of logs representing folder operations,\n     * return the minimum number of steps required to return to the main folder.\n     *\n     * Example:\n     * Input: logs = [\"d1/\",\"d2/\",\"../\",\"d21/\",\"./\"]\n     * Output: 2\n     * Explanation: Perform the \"../\" operation twice to return to the main folder.\n     *\n     * Input: logs = [\"d1/\",\"d2/\",\"./\",\"d3/\",\"../\",\"d31/\"]\n     * Output: 3\n     *\n     * Input: logs = [\"d1/\",\"../\",\"../\",\"../\"]\n     * Output: 0\n     */\n  public int minOperations(String[] logs) ",
+  "tests": "  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.minOperations(\n      new String[] { \"d1/\", \"d2/\", \"../\", \"d21/\", \"./\", \"../\" }\n    ) ==\n    1;\n    assert solution.minOperations(\n      new String[] { \"d1/\", \"d2/\", \"./\", \"d3/\", \"../\", \"d31/\", \"../\" }\n    ) ==\n    2;\n    assert solution.minOperations(\n      new String[] { \"d1/\", \"../\", \"../\", \"../\", \"d2/\" }\n    ) ==\n    1;\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Given a list of logs representing folder operations,\n     * return the minimum number of steps required to return to the main folder.\n     *\n     * Example:\n     * Input: logs = [\"d1/\",\"d2/\",\"../\",\"d21/\",\"./\"]\n     * Output: 2\n     * Explanation: Perform the \"../\" operation twice to return to the main folder.\n     *\n     * Input: logs = [\"d1/\",\"d2/\",\"./\",\"d3/\",\"../\",\"d31/\"]\n     * Output: 3\n     *\n     * Input: logs = [\"d1/\",\"../\",\"../\",\"../\"]\n     * Output: 0\n     */\n  public int minOperations(String[] logs)  {\n      int count = 0;\n      for (String log : logs) {\n          if (log.equals(\"../\")) {\n              count++;\n          }\n      }\n      return count;\n  }\n  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.minOperations(\n      new String[] { \"d1/\", \"d2/\", \"../\", \"d21/\", \"./\", \"../\" }\n    ) ==\n    1;\n    assert solution.minOperations(\n      new String[] { \"d1/\", \"d2/\", \"./\", \"d3/\", \"../\", \"d31/\", \"../\" }\n    ) ==\n    2;\n    assert solution.minOperations(\n      new String[] { \"d1/\", \"../\", \"../\", \"../\", \"d2/\" }\n    ) ==\n    1;\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772563651,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpznlfrmpg.java:30)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

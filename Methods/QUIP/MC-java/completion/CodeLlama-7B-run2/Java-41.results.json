@@ -1,0 +1,20 @@
+{
+  "name": "Java-41",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Given an integer n, add a dot ('.') as a thousand separator every three digits and return the result as a string.\n   *\n   * @param n The integer to add thousand separators to.\n   * @return The string with thousand separators added.\n   *\n   * Example:\n   * addThousandSeparator(987)\n   * Output: \"987\"\n   *\n   * Example:\n   * addThousandSeparator(1234)\n   * Output: \"1.234\"\n   *\n   * Example:\n   * addThousandSeparator(123456789)\n   * Output: \"123.456.789\"\n   *\n   * Example:\n   * addThousandSeparator(0)\n   * Output: \"0\"\n   */\n  public static String addThousandSeparator(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert \"2.147.483.647\".equals(\n        addThousandSeparator(2147483647)\n      ) : \"Test case 1 failed\";\n    assert \"10.000\".equals(addThousandSeparator(10000)) : \"Test case 2 failed\";\n    assert \"999\".equals(addThousandSeparator(999)) : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Given an integer n, add a dot ('.') as a thousand separator every three digits and return the result as a string.\n   *\n   * @param n The integer to add thousand separators to.\n   * @return The string with thousand separators added.\n   *\n   * Example:\n   * addThousandSeparator(987)\n   * Output: \"987\"\n   *\n   * Example:\n   * addThousandSeparator(1234)\n   * Output: \"1.234\"\n   *\n   * Example:\n   * addThousandSeparator(123456789)\n   * Output: \"123.456.789\"\n   *\n   * Example:\n   * addThousandSeparator(0)\n   * Output: \"0\"\n   */\n  public static String addThousandSeparator(int n)  {\n    return String.format(\"%,d\", n);\n  }\n  public static void main(String[] args) {\n    assert \"2.147.483.647\".equals(\n        addThousandSeparator(2147483647)\n      ) : \"Test case 1 failed\";\n    assert \"10.000\".equals(addThousandSeparator(10000)) : \"Test case 2 failed\";\n    assert \"999\".equals(addThousandSeparator(999)) : \"Test case 3 failed\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772563659,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test case 1 failed\n\tat Problem.main(tmpcastdpk7.java:29)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

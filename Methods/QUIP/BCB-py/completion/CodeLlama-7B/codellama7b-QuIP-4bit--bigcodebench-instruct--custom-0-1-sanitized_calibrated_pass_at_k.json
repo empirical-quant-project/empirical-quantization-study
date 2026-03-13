@@ -1,0 +1,21 @@
+{
+  "pass@1": 0.11491228070175438,
+  "model": "codellama7b-QuIP-4bit",
+  "split": "instruct",
+  "subset": "full",
+  "calibrated": true,
+  "gt_pass_rate": 0.9903508771929824,
+  "failed_tasks": [
+    "BigCodeBench/108",
+    "BigCodeBench/516",
+    "BigCodeBench/590",
+    "BigCodeBench/750",
+    "BigCodeBench/943",
+    "BigCodeBench/1005",
+    "BigCodeBench/289",
+    "BigCodeBench/363",
+    "BigCodeBench/417",
+    "BigCodeBench/419",
+    "BigCodeBench/418"
+  ]
+}

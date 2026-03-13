@@ -1,0 +1,20 @@
+{
+  "name": "Java-30",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n     * Given a string s consisting of lowercase and uppercase English letters,\n     * you need to make the string \"good\".\n     * A string is considered \"good\" if there are no adjacent characters such that\n     * one is a lowercase letter and the other is the corresponding uppercase letter.\n     * You can choose any adjacent characters in the string and remove them until the string is \"good\".\n     * Return the final \"good\" string.\n     *\n     * Example 1:\n     * Input: s = \"leEeetcode\"\n     * Output: \"leetcode\"\n     * Explanation: You can remove \"Ee\" to make \"leetcode\".\n     *\n     * Example 2:\n     * Input: s = \"abBAcC\"\n     * Output: \"\"\n     * Explanation: There are multiple possible solutions, such as:\n     * - Remove \"bB\" to make \"aAcC\", then remove \"cC\" to make \"aA\", then remove \"aA\" to make \"\".\n     * - Remove \"aA\" to make \"abBAcC\", then remove \"bB\" to make \"aAcC\", then remove \"cC\" to make \"aA\",\n     *   then remove \"aA\" to make \"\".\n     * No matter the choices, the result is an empty string.\n     *\n     * Example 3:\n     * Input: s = \"s\"\n     * Output: \"s\"\n     * Explanation: The string is already \"good\".\n     */\n  public String makeGood(String s) ",
+  "tests": "public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.makeGood(\"aAbBcC\").equals(\"\");\n    assert solution.makeGood(\"AaBbCc\").equals(\"\");\n    assert solution.makeGood(\"abcABC\").equals(\"abcABC\");\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n     * Given a string s consisting of lowercase and uppercase English letters,\n     * you need to make the string \"good\".\n     * A string is considered \"good\" if there are no adjacent characters such that\n     * one is a lowercase letter and the other is the corresponding uppercase letter.\n     * You can choose any adjacent characters in the string and remove them until the string is \"good\".\n     * Return the final \"good\" string.\n     *\n     * Example 1:\n     * Input: s = \"leEeetcode\"\n     * Output: \"leetcode\"\n     * Explanation: You can remove \"Ee\" to make \"leetcode\".\n     *\n     * Example 2:\n     * Input: s = \"abBAcC\"\n     * Output: \"\"\n     * Explanation: There are multiple possible solutions, such as:\n     * - Remove \"bB\" to make \"aAcC\", then remove \"cC\" to make \"aA\", then remove \"aA\" to make \"\".\n     * - Remove \"aA\" to make \"abBAcC\", then remove \"bB\" to make \"aAcC\", then remove \"cC\" to make \"aA\",\n     *   then remove \"aA\" to make \"\".\n     * No matter the choices, the result is an empty string.\n     *\n     * Example 3:\n     * Input: s = \"s\"\n     * Output: \"s\"\n     * Explanation: The string is already \"good\".\n     */\n  public String makeGood(String s)  {\n    // Your code here\n  }\npublic static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.makeGood(\"aAbBcC\").equals(\"\");\n    assert solution.makeGood(\"AaBbCc\").equals(\"\");\n    assert solution.makeGood(\"abcABC\").equals(\"abcABC\");\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772205224,
+      "stdout": "",
+      "stderr": "/tmp/tmp0tedple3.java:31: error: missing return statement\n  }\n  ^\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

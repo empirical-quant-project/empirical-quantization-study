@@ -1,0 +1,20 @@
+{
+  "name": "Java-22",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given a binary string s and an integer k, return true if every binary string of length k is a substring of s, or false otherwise.\n     *\n     * Example 1:\n     * Input: s = \"00110110\", k = 2\n     * Output: true\n     * Explanation: All binary strings of length 2 (\"00\", \"01\", \"10\", and \"11\") are substrings of s.\n     *\n     * Example 2:\n     * Input: s = \"0110\", k = 1\n     * Output: true\n     * Explanation: All binary strings of length 1 (\"0\" and \"1\") are substrings of s.\n     *\n     * Example 3:\n     * Input: s = \"0110\", k = 2\n     * Output: false\n     * Explanation: The binary string \"00\" is not a substring of s.\n     */\n  public boolean hasAllCodes(String s, int k) ",
+  "tests": "  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.hasAllCodes(\"00110110\", 3) == false;\n    assert solution.hasAllCodes(\"00110110\", 2) == true;\n    assert solution.hasAllCodes(\n      \"1111111111111111111111111111111111111111111111111111111111111111\",\n      1\n    ) ==\n    false;\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n    /**\n     * Given a binary string s and an integer k, return true if every binary string of length k is a substring of s, or false otherwise.\n     *\n     * Example 1:\n     * Input: s = \"00110110\", k = 2\n     * Output: true\n     * Explanation: All binary strings of length 2 (\"00\", \"01\", \"10\", and \"11\") are substrings of s.\n     *\n     * Example 2:\n     * Input: s = \"0110\", k = 1\n     * Output: true\n     * Explanation: All binary strings of length 1 (\"0\" and \"1\") are substrings of s.\n     *\n     * Example 3:\n     * Input: s = \"0110\", k = 2\n     * Output: false\n     * Explanation: The binary string \"00\" is not a substring of s.\n     */\n  public boolean hasAllCodes(String s, int k)  {\n    int n = s.length();\n    if (n < k) {\n      return false;\n    }\n    int[] bits = new int[k];\n    int j = 0;\n    for (int i = 0; i < n; i++) {\n      int num = (int) s.charAt(i) - '0';\n      if (num != 0) {\n        if (j == 0) {\n          for (int bit = 0; bit < k; bit++) {\n            bits[bit] = num;\n          }\n          j = k;\n        } else {\n          for (int bit = 0; bit < k - 1; bit++) {\n            if (bits[bit] != num) {\n              return false;\n            }\n          }\n          bits[k - 1] = num;\n          j = k - 1;\n        }\n      }\n    }\n    return j == k;\n  }\n  public static void main(String[] args) {\n    Problem solution = new Problem();\n\n    // Test the function with different test cases\n    assert solution.hasAllCodes(\"00110110\", 3) == false;\n    assert solution.hasAllCodes(\"00110110\", 2) == true;\n    assert solution.hasAllCodes(\n      \"1111111111111111111111111111111111111111111111111111111111111111\",\n      1\n    ) ==\n    false;\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772563662,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpsuvaxsvu.java:55)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

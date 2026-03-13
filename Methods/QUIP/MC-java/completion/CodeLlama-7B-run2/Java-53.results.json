@@ -1,0 +1,20 @@
+{
+  "name": "Java-53",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Reverse the characters of each word in the given string while maintaining the original word order.\n   *\n   * @param s The input string containing words separated by spaces.\n   * @return The string with characters of each word reversed.\n   *\n   * Example:\n   * reverseWords(\"Mr Ding\")\n   * Output: \"rM gniD\"\n   */\n  public static String reverseWords(String s) ",
+  "tests": "  public static void main(String[] args) {\n    assert reverseWords(\"The quick brown fox\").equals(\"ehT kciuq nworb xof\") : \"Test failed for input: The quick brown fox\";\n    assert reverseWords(\"Hello World\").equals(\"olleH dlroW\") : \"Test failed for input: Hello World\";\n    assert reverseWords(\"a b c d e f\").equals(\"a b c d e f\") : \"Test failed for input: a b c d e f\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Reverse the characters of each word in the given string while maintaining the original word order.\n   *\n   * @param s The input string containing words separated by spaces.\n   * @return The string with characters of each word reversed.\n   *\n   * Example:\n   * reverseWords(\"Mr Ding\")\n   * Output: \"rM gniD\"\n   */\n  public static String reverseWords(String s)  {\n    String[] words = s.split(\" \");\n    String result = \"\";\n    for (String word : words) {\n      String reversed = \"\";\n      for (int i = 0; i < word.length(); i++) {\n        reversed = word.charAt(i) + reversed;\n      }\n      result += reversed + \" \";\n    }\n    return result;\n  }\n  public static void main(String[] args) {\n    assert reverseWords(\"The quick brown fox\").equals(\"ehT kciuq nworb xof\") : \"Test failed for input: The quick brown fox\";\n    assert reverseWords(\"Hello World\").equals(\"olleH dlroW\") : \"Test failed for input: Hello World\";\n    assert reverseWords(\"a b c d e f\").equals(\"a b c d e f\") : \"Test failed for input: a b c d e f\";\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772563667,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test failed for input: The quick brown fox\n\tat Problem.main(tmpjix1gyui.java:26)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

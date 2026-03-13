@@ -1,0 +1,20 @@
+{
+  "name": "Java-49",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n\n  /**\n   * Calculate the energy of the string, which is defined as the length of the longest non-empty substring containing only one character.\n   *\n   * @param s The input string.\n   * @return The energy of the string.\n   *\n   * Example:\n   * calculateEnergy(\"aabbccdd\")\n   * Output: 2\n   */\n  public static int calculateEnergy(String s) ",
+  "tests": "  public static void main(String[] args) {\n    // Test cases\n    assert calculateEnergy(\"aabbccdd\") == 2 : \"Test case 1 failed\"; // Contains two characters 'aa', 'bb', 'cc', 'dd'\n    assert calculateEnergy(\"horizon\") == 1 : \"Test case 2 failed\"; // All characters are unique\n    assert calculateEnergy(\"success\") == 2 : \"Test case 3 failed\"; // Contains three characters 'ccc'\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n\n  /**\n   * Calculate the energy of the string, which is defined as the length of the longest non-empty substring containing only one character.\n   *\n   * @param s The input string.\n   * @return The energy of the string.\n   *\n   * Example:\n   * calculateEnergy(\"aabbccdd\")\n   * Output: 2\n   */\n  public static int calculateEnergy(String s)  {\n    int energy = 0;\n    int longest = 0;\n    for (int i = 0; i < s.length(); i++) {\n      if (s.charAt(i) == s.charAt(i + 1)) {\n        energy++;\n      } else {\n        if (longest < energy) {\n          longest = energy;\n        }\n        energy = 0;\n      }\n    }\n    return longest;\n  }\n  public static void main(String[] args) {\n    // Test cases\n    assert calculateEnergy(\"aabbccdd\") == 2 : \"Test case 1 failed\"; // Contains two characters 'aa', 'bb', 'cc', 'dd'\n    assert calculateEnergy(\"horizon\") == 1 : \"Test case 2 failed\"; // All characters are unique\n    assert calculateEnergy(\"success\") == 2 : \"Test case 3 failed\"; // Contains three characters 'ccc'\n\n    System.out.println(\"All tests passed\");\n  }\n}",
+      "timestamp": 1772563664,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: String index out of range: 8\n\tat java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)\n\tat java.base/java.lang.String.charAt(String.java:693)\n\tat Problem.calculateEnergy(tmp8j7rxtze.java:17)\n\tat Problem.main(tmp8j7rxtze.java:30)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}
