@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_27_flip_case",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    // >>> flipCase((\"Hello\"))\n    // (\"hELLO\")\n    public static String flipCase(String string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(flipCase((\"\")).equals((\"\")));\n    assert(flipCase((\"Hello!\")).equals((\"hELLO!\")));\n    assert(flipCase((\"These violent delights have violent ends\")).equals((\"tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    // >>> flipCase((\"Hello\"))\n    // (\"hELLO\")\n    public static String flipCase(String string) {\n\n        return string.toLowerCase().toUpperCase();\n    }\n    public static void main(String[] args) {\n    assert(flipCase((\"\")).equals((\"\")));\n    assert(flipCase((\"Hello!\")).equals((\"hELLO!\")));\n    assert(flipCase((\"These violent delights have violent ends\")).equals((\"tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS\")));\n    }\n\n}\n",
+      "timestamp": 1772053518,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp_0frfu_j.java:18)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

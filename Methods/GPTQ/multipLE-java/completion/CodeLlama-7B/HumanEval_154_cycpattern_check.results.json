@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_154_cycpattern_check",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given 2 words. You need to return true if the second word or any of its rotations is a substring in the first word\n    // >>> cycpatternCheck((\"abcd\"), (\"abd\"))\n    // (false)\n    // >>> cycpatternCheck((\"hello\"), (\"ell\"))\n    // (true)\n    // >>> cycpatternCheck((\"whassup\"), (\"psus\"))\n    // (false)\n    // >>> cycpatternCheck((\"abab\"), (\"baa\"))\n    // (true)\n    // >>> cycpatternCheck((\"efef\"), (\"eeff\"))\n    // (false)\n    // >>> cycpatternCheck((\"himenss\"), (\"simen\"))\n    // (true)\n    public static boolean cycpatternCheck(String a, String b) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(cycpatternCheck((\"xyzw\"), (\"xyw\")) == (false));\n    assert(cycpatternCheck((\"yello\"), (\"ell\")) == (true));\n    assert(cycpatternCheck((\"whattup\"), (\"ptut\")) == (false));\n    assert(cycpatternCheck((\"efef\"), (\"fee\")) == (true));\n    assert(cycpatternCheck((\"abab\"), (\"aabb\")) == (false));\n    assert(cycpatternCheck((\"winemtt\"), (\"tinem\")) == (true));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given 2 words. You need to return true if the second word or any of its rotations is a substring in the first word\n    // >>> cycpatternCheck((\"abcd\"), (\"abd\"))\n    // (false)\n    // >>> cycpatternCheck((\"hello\"), (\"ell\"))\n    // (true)\n    // >>> cycpatternCheck((\"whassup\"), (\"psus\"))\n    // (false)\n    // >>> cycpatternCheck((\"abab\"), (\"baa\"))\n    // (true)\n    // >>> cycpatternCheck((\"efef\"), (\"eeff\"))\n    // (false)\n    // >>> cycpatternCheck((\"himenss\"), (\"simen\"))\n    // (true)\n    public static boolean cycpatternCheck(String a, String b) {\n\n        return a.contains(b) || a.contains(reverse(b)) || a.contains(rotate(b, 1)) || a.contains(rotate(b, 2)) || a.contains(rotate(b, 3));\n    }\n    public static void main(String[] args) {\n    assert(cycpatternCheck((\"xyzw\"), (\"xyw\")) == (false));\n    assert(cycpatternCheck((\"yello\"), (\"ell\")) == (true));\n    assert(cycpatternCheck((\"whattup\"), (\"ptut\")) == (false));\n    assert(cycpatternCheck((\"efef\"), (\"fee\")) == (true));\n    assert(cycpatternCheck((\"abab\"), (\"aabb\")) == (false));\n    assert(cycpatternCheck((\"winemtt\"), (\"tinem\")) == (true));\n    }\n\n}\n",
+      "timestamp": 1772077539,
+      "stdout": "",
+      "stderr": "/tmp/tmpi63wyans.java:24: error: cannot find symbol\n        return a.contains(b) || a.contains(reverse(b)) || a.contains(rotate(b, 1)) || a.contains(rotate(b, 2)) || a.contains(rotate(b, 3));\n                                           ^\n  symbol:   method reverse(String)\n  location: class Problem\n/tmp/tmpi63wyans.java:24: error: cannot find symbol\n        return a.contains(b) || a.contains(reverse(b)) || a.contains(rotate(b, 1)) || a.contains(rotate(b, 2)) || a.contains(rotate(b, 3));\n                                                                     ^\n  symbol:   method rotate(String,int)\n  location: class Problem\n/tmp/tmpi63wyans.java:24: error: cannot find symbol\n        return a.contains(b) || a.contains(reverse(b)) || a.contains(rotate(b, 1)) || a.contains(rotate(b, 2)) || a.contains(rotate(b, 3));\n                                                                                                 ^\n  symbol:   method rotate(String,int)\n  location: class Problem\n/tmp/tmpi63wyans.java:24: error: cannot find",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

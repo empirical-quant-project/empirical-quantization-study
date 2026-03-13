@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_118_get_closest_vowel",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given a word. Your task is to find the closest vowel that stands between \n    // two consonants from the right side of the word (case sensitive).\n    // Vowels in the beginning and ending doesn't count. Return empty string if you didn't\n    // find any vowel met the above condition. \n    // You may assume that the given string contains English letter only.\n    // Example:\n    // >>> getClosestVowel((\"yogurt\"))\n    // (\"u\")\n    // >>> getClosestVowel((\"FULL\"))\n    // (\"U\")\n    // >>> getClosestVowel((\"quick\"))\n    // (\"\")\n    // >>> getClosestVowel((\"ab\"))\n    // (\"\")\n    public static String getClosestVowel(String word) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(getClosestVowel((\"yogurt\")).equals((\"u\")));\n    assert(getClosestVowel((\"full\")).equals((\"u\")));\n    assert(getClosestVowel((\"easy\")).equals((\"\")));\n    assert(getClosestVowel((\"eAsy\")).equals((\"\")));\n    assert(getClosestVowel((\"ali\")).equals((\"\")));\n    assert(getClosestVowel((\"bad\")).equals((\"a\")));\n    assert(getClosestVowel((\"most\")).equals((\"o\")));\n    assert(getClosestVowel((\"ab\")).equals((\"\")));\n    assert(getClosestVowel((\"ba\")).equals((\"\")));\n    assert(getClosestVowel((\"quick\")).equals((\"\")));\n    assert(getClosestVowel((\"anime\")).equals((\"i\")));\n    assert(getClosestVowel((\"Asia\")).equals((\"\")));\n    assert(getClosestVowel((\"Above\")).equals((\"o\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // You are given a word. Your task is to find the closest vowel that stands between \n    // two consonants from the right side of the word (case sensitive).\n    // Vowels in the beginning and ending doesn't count. Return empty string if you didn't\n    // find any vowel met the above condition. \n    // You may assume that the given string contains English letter only.\n    // Example:\n    // >>> getClosestVowel((\"yogurt\"))\n    // (\"u\")\n    // >>> getClosestVowel((\"FULL\"))\n    // (\"U\")\n    // >>> getClosestVowel((\"quick\"))\n    // (\"\")\n    // >>> getClosestVowel((\"ab\"))\n    // (\"\")\n    public static String getClosestVowel(String word) {\n\n        // write your code here\n        int len = word.length();\n        for (int i = len - 1; i >= 0; i--) {\n            if (word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') {\n                if (i < len - 1 && word.charAt(i + 1) != 'a' && word.charAt(i + 1) != 'e' && word.charAt(i + 1) != 'i' && word.charAt(i + 1) != 'o' && word.charAt(i + 1) != 'u') {\n                    return String.valueOf(word.charAt(i));\n                }\n            }\n        }\n        return \"\";\n    }\n    public static void main(String[] args) {\n    assert(getClosestVowel((\"yogurt\")).equals((\"u\")));\n    assert(getClosestVowel((\"full\")).equals((\"u\")));\n    assert(getClosestVowel((\"easy\")).equals((\"\")));\n    assert(getClosestVowel((\"eAsy\")).equals((\"\")));\n    assert(getClosestVowel((\"ali\")).equals((\"\")));\n    assert(getClosestVowel((\"bad\")).equals((\"a\")));\n    assert(getClosestVowel((\"most\")).equals((\"o\")));\n    assert(getClosestVowel((\"ab\")).equals((\"\")));\n    assert(getClosestVowel((\"ba\")).equals((\"\")));\n    assert(getClosestVowel((\"quick\")).equals((\"\")));\n    assert(getClosestVowel((\"anime\")).equals((\"i\")));\n    assert(getClosestVowel((\"Asia\")).equals((\"\")));\n    assert(getClosestVowel((\"Above\")).equals((\"o\")));\n    }\n\n}\n",
+      "timestamp": 1772077570,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpf9vcsqc6.java:39)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

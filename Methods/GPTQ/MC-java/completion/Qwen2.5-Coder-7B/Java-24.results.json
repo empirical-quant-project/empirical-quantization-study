@@ -1,0 +1,20 @@
+{
+  "name": "Java-24",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.\n    *\n    * Example 1:\n    * Input: s = \"(()))\"\n    * Output: 1\n    * Explanation:  We need to add one '(' at the first of the string to make it balanced: \"((()))\".\n    * Example 2:\n    * Input: s = \"((()))\"\n    * Output: 0\n    *\n    * - s consists of '(' and ')' only.\n    */\n public int minInsertions(String s) ",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.minInsertions(\"((()))\") == 0;\n        assert solution.minInsertions(\"()()()\") == 0;\n        assert solution.minInsertions(\"(()))(()\") == 2;\n        assert solution.minInsertions(\"))())(((\") == 6;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.\n    *\n    * Example 1:\n    * Input: s = \"(()))\"\n    * Output: 1\n    * Explanation:  We need to add one '(' at the first of the string to make it balanced: \"((()))\".\n    * Example 2:\n    * Input: s = \"((()))\"\n    * Output: 0\n    *\n    * - s consists of '(' and ')' only.\n    */\n public int minInsertions(String s)  {\n        int open = 0, close = 0;\n        for (char c : s.toCharArray()) {\n            if (c == '(') {\n                open++;\n            } else {\n                if (open > 0) {\n                    open--;\n                } else {\n                    close++;\n                }\n            }\n        }\n        return open + close;\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.minInsertions(\"((()))\") == 0;\n        assert solution.minInsertions(\"()()()\") == 0;\n        assert solution.minInsertions(\"(()))(()\") == 2;\n        assert solution.minInsertions(\"))())(((\") == 6;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771882057,
+      "stdout": "All tests passed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

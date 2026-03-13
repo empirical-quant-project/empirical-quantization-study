@@ -1,0 +1,25 @@
+{
+    "model": "TheBloke/CodeLlama-7B-Instruct-GPTQ",
+    "model_label": "TheBloke_CodeLlama_7B_Instruct_GPTQ",
+    "quant_tag": "GPTQ",
+    "language": "java",
+    "prompt_mode": "completion",
+    "temperature": 0.0,
+    "max_new_tokens": 512,
+    "batch_size": 1,
+    "total_tasks": 184,
+    "start_time": "2026-03-05 10:51:46.747163",
+    "script": "automodel_codereval_v2.py",
+    "tasks": [],
+    "end_time": "2026-03-05 10:51:46.748496",
+    "completed_tasks": 184,
+    "total_tasks_in_dataset": 184,
+    "evaluation": {
+        "total_tasks": 184,
+        "passed": 56,
+        "pass_at_1": 30.43,
+        "dataset": "/scratch/oldhome/safrin/projects/CoderEval-Benchmark/CoderEval4Java_filtered.jsonl",
+        "filtered": true,
+        "prompt_mode": "COMPLETION (HumanEval-style)"
+    }
+}

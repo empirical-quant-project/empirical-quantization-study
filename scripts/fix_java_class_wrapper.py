@@ -17,7 +17,7 @@ import glob
 DRY_RUN = "--dry-run" in sys.argv
 
 JAVA_DIRS = [
-    "/scratch/oldhome/safrin/projects/SonarQube-Analysis-java/emp-quant",
+    "/scratch/oldhome/user/projects/SonarQube-Analysis-java/emp-quant",
 ]
 
 def needs_wrapping(content):

@@ -16,8 +16,8 @@
 set -euo pipefail
 
 # ──────────────────────────── CONFIG ────────────────────────────
-SRC_BASE="/scratch/oldhome/safrin/projects/lowbit-quantization-D070/4-run-benchmarks/results_cleaned"
-DST_BASE="/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Methods"
+SRC_BASE="/scratch/oldhome/user/projects/lowbit-quantization-D070/4-run-benchmarks/results_cleaned"
+DST_BASE="/scratch/oldhome/user/projects/Empirical-Quantization-Study/Methods"
 
 DRY_RUN=false
 [[ "${1:-}" == "--dry-run" ]] && DRY_RUN=true

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_24_largest_divisor",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // For a given number n, find the largest number that divides n evenly, smaller than n\n    // >>> largestDivisor((15l))\n    // (5l)\n    public static long largestDivisor(long n) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(largestDivisor((3l)) == (1l));\n    assert(largestDivisor((7l)) == (1l));\n    assert(largestDivisor((10l)) == (5l));\n    assert(largestDivisor((100l)) == (50l));\n    assert(largestDivisor((49l)) == (7l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // For a given number n, find the largest number that divides n evenly, smaller than n\n    // >>> largestDivisor((15l))\n    // (5l)\n    public static long largestDivisor(long n) {\n\n        long i = n;\n        while (i > 1) {\n            if (n % i == 0) {\n                return i;\n            }\n            i--;\n        }\n        return 1;\n    }\n    public static void main(String[] args) {\n    assert(largestDivisor((3l)) == (1l));\n    assert(largestDivisor((7l)) == (1l));\n    assert(largestDivisor((10l)) == (5l));\n    assert(largestDivisor((100l)) == (50l));\n    assert(largestDivisor((49l)) == (7l));\n    }\n\n}\n",
+      "timestamp": 1772053552,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpr23c0gw7.java:24)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

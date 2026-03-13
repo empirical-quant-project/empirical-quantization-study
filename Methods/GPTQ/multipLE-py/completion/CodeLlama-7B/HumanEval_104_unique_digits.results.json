@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_104_unique_digits",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List\n\ndef unique_digits(x: List[int]) -> List[int]:\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n    assert candidate([152, 323, 1422, 10]) == []\n    assert candidate([12345, 2033, 111, 151]) == [111, 151]\n    assert candidate([135, 103, 31]) == [31, 135]\n\ndef test_check():\n    check(unique_digits)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List\n\ndef unique_digits(x: List[int]) -> List[int]:\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n\n    return sorted([i for i in x if not any(j % 2 == 0 for j in str(i))])\ndef check(candidate):\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n    assert candidate([152, 323, 1422, 10]) == []\n    assert candidate([12345, 2033, 111, 151]) == [111, 151]\n    assert candidate([135, 103, 31]) == [31, 135]\n\ndef test_check():\n    check(unique_digits)\n\ntest_check()\n",
+      "timestamp": 1772055636,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpp38u8fdw.py\", line 26, in <module>\n    test_check()\n  File \"/tmp/tmpp38u8fdw.py\", line 24, in test_check\n    check(unique_digits)\n  File \"/tmp/tmpp38u8fdw.py\", line 18, in check\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n  File \"/tmp/tmpp38u8fdw.py\", line 16, in unique_digits\n    return sorted([i for i in x if not any(j % 2 == 0 for j in str(i))])\n  File \"/tmp/tmpp38u8fdw.py\", line 16, in <listcomp>\n    return sorted([i for i in x if not any(j % 2 == 0 for j in str(i))])\n  File \"/tmp/tmpp38u8fdw.py\", line 16, in <genexpr>\n    return sorted([i for i in x if not any(j % 2 == 0 for j in str(i))])\nTypeError: not all arguments converted during string formatting\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

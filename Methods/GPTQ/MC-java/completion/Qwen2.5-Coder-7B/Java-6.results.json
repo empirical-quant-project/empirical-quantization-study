@@ -1,0 +1,20 @@
+{
+  "name": "Java-6",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n\n    /**\n     * Given a grid representing a land divided into square plots, determine the number of distinct oil deposits.\n     * \n     * Parameters:\n     *     grid (char[][]): The grid representing the land. Each character is either '*' for absence of oil or '@' for an oil pocket.\n     * \n     * Returns:\n     *     int: The number of distinct oil deposits in the grid.\n     * \n     * Example:\n     *     >>> countOilDeposits(new char[][] {{'*'}})\n     *     0\n     *     >>> countOilDeposits(new char[][] {{'*', '@', '*', '@', '*'}, {'*', '*', '@', '*', '*'}, {'*', '@', '*', '@', '*'}})\n     *     1\n     *     >>> countOilDeposits(new char[][] {{'@', '@', '*', '*', '*', '*', '@', '*'}})\n     *     2\n     */\n    private static final int[] dx = {-1, 0, 1, 0, -1, -1, 1, 1};\n    private static final int[] dy = {0, 1, 0, -1, -1, 1, -1, 1};\n    public static int countOilDeposits(char[][] grid) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert countOilDeposits(new char[][] {{'@', '@', '@'}, {'@', '*', '@'}, {'@', '@', '@'}}) == 1;\n        assert countOilDeposits(new char[][] {{'@', '*', '@'}, {'*', '*', '*'}, {'@', '*', '@'}}) == 4;\n        assert countOilDeposits(new char[][] {{'*', '*', '*', '*', '*'}, {'*', '@', '@', '@', '*'}, {'*', '@', '*', '@', '*'}, {'*', '@', '@', '@', '*'}, {'*', '*', '*', '*', '*'}}) == 1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n\n    /**\n     * Given a grid representing a land divided into square plots, determine the number of distinct oil deposits.\n     * \n     * Parameters:\n     *     grid (char[][]): The grid representing the land. Each character is either '*' for absence of oil or '@' for an oil pocket.\n     * \n     * Returns:\n     *     int: The number of distinct oil deposits in the grid.\n     * \n     * Example:\n     *     >>> countOilDeposits(new char[][] {{'*'}})\n     *     0\n     *     >>> countOilDeposits(new char[][] {{'*', '@', '*', '@', '*'}, {'*', '*', '@', '*', '*'}, {'*', '@', '*', '@', '*'}})\n     *     1\n     *     >>> countOilDeposits(new char[][] {{'@', '@', '*', '*', '*', '*', '@', '*'}})\n     *     2\n     */\n    private static final int[] dx = {-1, 0, 1, 0, -1, -1, 1, 1};\n    private static final int[] dy = {0, 1, 0, -1, -1, 1, -1, 1};\n    public static int countOilDeposits(char[][] grid)  {\n        if (grid == null || grid.length == 0) return 0;\n        \n        int rows = grid.length;\n        int cols = grid[0].length;\n        boolean[][] visited = new boolean[rows][cols];\n        int depositCount = 0;\n\n        for (int i = 0; i < rows; i++) {\n            for (int j = 0; j < cols; j++) {\n                if (grid[i][j] == '@' && !visited[i][j]) {\n                    dfs(grid, visited, i, j);\n                    depositCount++;\n                }\n            }\n        }\n\n        return depositCount;\n    }\n    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert countOilDeposits(new char[][] {{'@', '@', '@'}, {'@', '*', '@'}, {'@', '@', '@'}}) == 1;\n        assert countOilDeposits(new char[][] {{'@', '*', '@'}, {'*', '*', '*'}, {'@', '*', '@'}}) == 4;\n        assert countOilDeposits(new char[][] {{'*', '*', '*', '*', '*'}, {'*', '@', '@', '@', '*'}, {'*', '@', '*', '@', '*'}, {'*', '@', '@', '@', '*'}, {'*', '*', '*', '*', '*'}}) == 1;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771882063,
+      "stdout": "",
+      "stderr": "/tmp/tmptc8bp2in.java:35: error: cannot find symbol\n                    dfs(grid, visited, i, j);\n                    ^\n  symbol:   method dfs(char[][],boolean[][],int,int)\n  location: class Problem\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

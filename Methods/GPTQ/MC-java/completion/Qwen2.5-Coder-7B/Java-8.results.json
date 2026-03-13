@@ -1,0 +1,20 @@
+{
+  "name": "Java-8",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\n\nclass Problem {\n\n    /**\n     * Count the number of words in the given word list that have the given prefix.\n     * \n     * @param wordList: a list of words\n     * @param prefix: the prefix string\n     * @return the number of words with the given prefix\n     * \n     * Example:\n     * \n     * >>> countPrefixWords(Arrays.asList(\"banana\", \"band\", \"bee\", \"absolute\", \"acm\"), \"ba\")\n     * 2\n     * \n     * >>> countPrefixWords(Arrays.asList(\"banana\", \"band\", \"bee\", \"absolute\", \"acm\"), \"b\")\n     * 3\n     * \n     * >>> countPrefixWords(Arrays.asList(\"banana\", \"band\", \"bee\", \"absolute\", \"acm\"), \"band\")\n     * 1\n     */\n    public static int countPrefixWords(List<String> wordList, String prefix) ",
+  "tests": "    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert countPrefixWords(Arrays.asList(\"apple\", \"ape\", \"april\", \"ant\", \"an\"), \"ap\") == 3;\n        assert countPrefixWords(Arrays.asList(\"cat\", \"cap\", \"cape\", \"camp\"), \"ca\") == 4;\n        assert countPrefixWords(Arrays.asList(\"dog\", \"dodge\", \"dot\", \"dough\"), \"do\") == 4;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.util.*;\n\nclass Problem {\n\n    /**\n     * Count the number of words in the given word list that have the given prefix.\n     * \n     * @param wordList: a list of words\n     * @param prefix: the prefix string\n     * @return the number of words with the given prefix\n     * \n     * Example:\n     * \n     * >>> countPrefixWords(Arrays.asList(\"banana\", \"band\", \"bee\", \"absolute\", \"acm\"), \"ba\")\n     * 2\n     * \n     * >>> countPrefixWords(Arrays.asList(\"banana\", \"band\", \"bee\", \"absolute\", \"acm\"), \"b\")\n     * 3\n     * \n     * >>> countPrefixWords(Arrays.asList(\"banana\", \"band\", \"bee\", \"absolute\", \"acm\"), \"band\")\n     * 1\n     */\n    public static int countPrefixWords(List<String> wordList, String prefix)  {\n        // Your code here\n    }\n    public static void main(String[] args) {\n        // Test the function with different test cases\n        assert countPrefixWords(Arrays.asList(\"apple\", \"ape\", \"april\", \"ant\", \"an\"), \"ap\") == 3;\n        assert countPrefixWords(Arrays.asList(\"cat\", \"cap\", \"cape\", \"camp\"), \"ca\") == 4;\n        assert countPrefixWords(Arrays.asList(\"dog\", \"dodge\", \"dot\", \"dough\"), \"do\") == 4;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1771882055,
+      "stdout": "",
+      "stderr": "/tmp/tmp0uduky5g.java:25: error: missing return statement\n    }\n    ^\n1 error\n",
+      "exit_code": 1,
+      "status": "SyntaxError"
+    }
+  ]
+}

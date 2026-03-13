@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_19_sort_numbers",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    // Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    // Return the string with numbers sorted from smallest to largest\n    // >>> sortNumbers((\"three one five\"))\n    // (\"one three five\")\n    public static String sortNumbers(String numbers) {\n\n        String[] nums = numbers.split(\" \");\n        Arrays.sort(nums, Comparator.comparingInt(String::length));\n        Arrays.sort(nums, Comparator.comparingInt(Integer::parseInt));\n        return String.join(\" \", nums);\n    }\n    public static void main(String[] args) {\n    assert(sortNumbers((\"\")).equals((\"\")));\n    assert(sortNumbers((\"three\")).equals((\"three\")));\n    assert(sortNumbers((\"three five nine\")).equals((\"three five nine\")));\n    assert(sortNumbers((\"five zero four seven nine eight\")).equals((\"zero four five seven eight nine\")));\n    assert(sortNumbers((\"six five four three two one zero\")).equals((\"zero one two three four five six\")));\n    }\n\n}\n",
+      "timestamp": 1772077573,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"nine\"\n\tat java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.base/java.lang.Integer.parseInt(Integer.java:652)\n\tat java.base/java.lang.Integer.parseInt(Integer.java:770)\n\tat java.base/java.util.Comparator.lambda$comparingInt$7b0bb60$1(Comparator.java:490)\n\tat java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)\n\tat java.base/java.util.TimSort.sort(TimSort.java:220)\n\tat java.base/java.util.Arrays.sort(Arrays.java:1441)\n\tat Problem.sortNumbers(tmp6ln4mptu.java:18)\n\tat Problem.main(tmp6ln4mptu.java:24)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

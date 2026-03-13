@@ -1,0 +1,1167 @@
+{
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4",
+    "model_label": "Qwen_Qwen2.5_Coder_7B_Instruct_GPTQ_Int4",
+    "quant_tag": "GPTQ",
+    "language": "py",
+    "temperature": 0.0,
+    "max_new_tokens": 512,
+    "batch_size": 1,
+    "total_tasks": 190,
+    "start_time": "2026-03-03 21:20:29.651813",
+    "tasks": [
+        {
+            "task_id": "62e60f43d76274f8a4026e28",
+            "input_tokens": 62,
+            "output_tokens": 120,
+            "generation_time_sec": 122.04991340637207
+        },
+        {
+            "task_id": "62e60f3bd76274f8a4026e10",
+            "input_tokens": 58,
+            "output_tokens": 69,
+            "generation_time_sec": 71.48984742164612
+        },
+        {
+            "task_id": "62e60f37d76274f8a4026dfd",
+            "input_tokens": 58,
+            "output_tokens": 71,
+            "generation_time_sec": 73.51038694381714
+        },
+        {
+            "task_id": "62e60f33d76274f8a4026de9",
+            "input_tokens": 57,
+            "output_tokens": 81,
+            "generation_time_sec": 82.96834397315979
+        },
+        {
+            "task_id": "62e60ed4d76274f8a4026da0",
+            "input_tokens": 56,
+            "output_tokens": 4,
+            "generation_time_sec": 9.687304973602295
+        },
+        {
+            "task_id": "62e60e49d76274f8a4026d25",
+            "input_tokens": 59,
+            "output_tokens": 34,
+            "generation_time_sec": 37.28594374656677
+        },
+        {
+            "task_id": "62e60e05d76274f8a4026cfd",
+            "input_tokens": 55,
+            "output_tokens": 4,
+            "generation_time_sec": 7.433487415313721
+        },
+        {
+            "task_id": "62e60da4d76274f8a4026cf1",
+            "input_tokens": 61,
+            "output_tokens": 13,
+            "generation_time_sec": 14.886177062988281
+        },
+        {
+            "task_id": "62e60b10d76274f8a4026ccd",
+            "input_tokens": 61,
+            "output_tokens": 12,
+            "generation_time_sec": 14.161038160324097
+        },
+        {
+            "task_id": "62e6087bd76274f8a4026bfa",
+            "input_tokens": 59,
+            "output_tokens": 9,
+            "generation_time_sec": 12.39215898513794
+        },
+        {
+            "task_id": "62e6087ad76274f8a4026bf2",
+            "input_tokens": 208,
+            "output_tokens": 50,
+            "generation_time_sec": 45.52857947349548
+        },
+        {
+            "task_id": "62e60879d76274f8a4026bec",
+            "input_tokens": 284,
+            "output_tokens": 277,
+            "generation_time_sec": 234.11820197105408
+        },
+        {
+            "task_id": "62e60723d76274f8a4026b75",
+            "input_tokens": 54,
+            "output_tokens": 15,
+            "generation_time_sec": 16.691184043884277
+        },
+        {
+            "task_id": "62e60707d76274f8a4026b69",
+            "input_tokens": 58,
+            "output_tokens": 59,
+            "generation_time_sec": 52.87899899482727
+        },
+        {
+            "task_id": "62e5dc9ed76274f8a4026b5b",
+            "input_tokens": 56,
+            "output_tokens": 64,
+            "generation_time_sec": 57.83906102180481
+        },
+        {
+            "task_id": "62e4fbda85ea986430890405",
+            "input_tokens": 104,
+            "output_tokens": 125,
+            "generation_time_sec": 140.8597412109375
+        },
+        {
+            "task_id": "62e4fbda85ea986430890403",
+            "input_tokens": 67,
+            "output_tokens": 63,
+            "generation_time_sec": 52.87274527549744
+        },
+        {
+            "task_id": "62e4fb6585ea98643089032b",
+            "input_tokens": 68,
+            "output_tokens": 9,
+            "generation_time_sec": 11.645812273025513
+        },
+        {
+            "task_id": "62e4fb4d85ea9864308902e7",
+            "input_tokens": 72,
+            "output_tokens": 89,
+            "generation_time_sec": 70.39009594917297
+        },
+        {
+            "task_id": "62b8d27a48ba5a41d1c3f4c6",
+            "input_tokens": 64,
+            "output_tokens": 130,
+            "generation_time_sec": 92.82838368415833
+        },
+        {
+            "task_id": "62b8d24048ba5a41d1c3f49f",
+            "input_tokens": 110,
+            "output_tokens": 226,
+            "generation_time_sec": 158.84466218948364
+        },
+        {
+            "task_id": "62b8d23b48ba5a41d1c3f49a",
+            "input_tokens": 87,
+            "output_tokens": 187,
+            "generation_time_sec": 132.00620341300964
+        },
+        {
+            "task_id": "62b8d23948ba5a41d1c3f498",
+            "input_tokens": 87,
+            "output_tokens": 184,
+            "generation_time_sec": 130.04253578186035
+        },
+        {
+            "task_id": "62b8d23748ba5a41d1c3f496",
+            "input_tokens": 87,
+            "output_tokens": 202,
+            "generation_time_sec": 142.12192964553833
+        },
+        {
+            "task_id": "62b8d22f48ba5a41d1c3f488",
+            "input_tokens": 65,
+            "output_tokens": 7,
+            "generation_time_sec": 8.212091207504272
+        },
+        {
+            "task_id": "62b8d22a48ba5a41d1c3f47e",
+            "input_tokens": 80,
+            "output_tokens": 22,
+            "generation_time_sec": 19.215781450271606
+        },
+        {
+            "task_id": "62b8d22948ba5a41d1c3f47c",
+            "input_tokens": 72,
+            "output_tokens": 8,
+            "generation_time_sec": 8.874974250793457
+        },
+        {
+            "task_id": "62b8d22548ba5a41d1c3f472",
+            "input_tokens": 66,
+            "output_tokens": 108,
+            "generation_time_sec": 77.96588563919067
+        },
+        {
+            "task_id": "62b8b59feb7e40a82d2d1291",
+            "input_tokens": 68,
+            "output_tokens": 12,
+            "generation_time_sec": 11.683840990066528
+        },
+        {
+            "task_id": "62b8b590eb7e40a82d2d1275",
+            "input_tokens": 66,
+            "output_tokens": 41,
+            "generation_time_sec": 32.156414270401
+        },
+        {
+            "task_id": "62b8b58deb7e40a82d2d1269",
+            "input_tokens": 71,
+            "output_tokens": 51,
+            "generation_time_sec": 38.34603023529053
+        },
+        {
+            "task_id": "62b8b559eb7e40a82d2d11f8",
+            "input_tokens": 55,
+            "output_tokens": 71,
+            "generation_time_sec": 51.894410371780396
+        },
+        {
+            "task_id": "62b8b4b9eb7e40a82d2d1134",
+            "input_tokens": 60,
+            "output_tokens": 58,
+            "generation_time_sec": 43.07320952415466
+        },
+        {
+            "task_id": "62b8b416eb7e40a82d2d1129",
+            "input_tokens": 55,
+            "output_tokens": 24,
+            "generation_time_sec": 19.869240522384644
+        },
+        {
+            "task_id": "62b8b3d6eb7e40a82d2d111c",
+            "input_tokens": 81,
+            "output_tokens": 65,
+            "generation_time_sec": 48.5407133102417
+        },
+        {
+            "task_id": "62b8b3d5eb7e40a82d2d1110",
+            "input_tokens": 62,
+            "output_tokens": 61,
+            "generation_time_sec": 45.89046931266785
+        },
+        {
+            "task_id": "62b8b3d4eb7e40a82d2d110f",
+            "input_tokens": 60,
+            "output_tokens": 10,
+            "generation_time_sec": 10.959644556045532
+        },
+        {
+            "task_id": "62b8b3d4eb7e40a82d2d110e",
+            "input_tokens": 71,
+            "output_tokens": 36,
+            "generation_time_sec": 28.121941089630127
+        },
+        {
+            "task_id": "62b8b3d4eb7e40a82d2d110d",
+            "input_tokens": 59,
+            "output_tokens": 13,
+            "generation_time_sec": 12.988210678100586
+        },
+        {
+            "task_id": "62b87b989a0c4fa8b80b35ee",
+            "input_tokens": 74,
+            "output_tokens": 57,
+            "generation_time_sec": 42.434046268463135
+        },
+        {
+            "task_id": "62b87b859a0c4fa8b80b35d7",
+            "input_tokens": 176,
+            "output_tokens": 142,
+            "generation_time_sec": 101.15739035606384
+        },
+        {
+            "task_id": "62b87b839a0c4fa8b80b35cb",
+            "input_tokens": 60,
+            "output_tokens": 43,
+            "generation_time_sec": 32.816375970840454
+        },
+        {
+            "task_id": "62b87b7e9a0c4fa8b80b35bc",
+            "input_tokens": 198,
+            "output_tokens": 168,
+            "generation_time_sec": 119.20357942581177
+        },
+        {
+            "task_id": "62b87b4f9a0c4fa8b80b3580",
+            "input_tokens": 56,
+            "output_tokens": 36,
+            "generation_time_sec": 27.989399909973145
+        },
+        {
+            "task_id": "62b87b199a0c4fa8b80b354e",
+            "input_tokens": 62,
+            "output_tokens": 26,
+            "generation_time_sec": 21.199837684631348
+        },
+        {
+            "task_id": "62b87b099a0c4fa8b80b3538",
+            "input_tokens": 59,
+            "output_tokens": 22,
+            "generation_time_sec": 18.505958080291748
+        },
+        {
+            "task_id": "62b87af99a0c4fa8b80b3524",
+            "input_tokens": 56,
+            "output_tokens": 14,
+            "generation_time_sec": 13.046664476394653
+        },
+        {
+            "task_id": "62b87af69a0c4fa8b80b351a",
+            "input_tokens": 59,
+            "output_tokens": 34,
+            "generation_time_sec": 26.693325519561768
+        },
+        {
+            "task_id": "62b87af19a0c4fa8b80b34f7",
+            "input_tokens": 66,
+            "output_tokens": 110,
+            "generation_time_sec": 79.27410316467285
+        },
+        {
+            "task_id": "62b87af09a0c4fa8b80b34f1",
+            "input_tokens": 72,
+            "output_tokens": 41,
+            "generation_time_sec": 32.184131145477295
+        },
+        {
+            "task_id": "62b86aa3b4d922cb0e688d36",
+            "input_tokens": 63,
+            "output_tokens": 73,
+            "generation_time_sec": 53.36081576347351
+        },
+        {
+            "task_id": "62b86a9eb4d922cb0e688d25",
+            "input_tokens": 64,
+            "output_tokens": 59,
+            "generation_time_sec": 43.8393611907959
+        },
+        {
+            "task_id": "62b86a4fb4d922cb0e688cf8",
+            "input_tokens": 56,
+            "output_tokens": 102,
+            "generation_time_sec": 73.89145159721375
+        },
+        {
+            "task_id": "62b86a4fb4d922cb0e688cf7",
+            "input_tokens": 56,
+            "output_tokens": 85,
+            "generation_time_sec": 62.170086145401
+        },
+        {
+            "task_id": "62b86a01b4d922cb0e688ccc",
+            "input_tokens": 90,
+            "output_tokens": 102,
+            "generation_time_sec": 73.84091782569885
+        },
+        {
+            "task_id": "62b869ebb4d922cb0e688cc6",
+            "input_tokens": 170,
+            "output_tokens": 61,
+            "generation_time_sec": 45.21336364746094
+        },
+        {
+            "task_id": "62b869eab4d922cb0e688cc5",
+            "input_tokens": 187,
+            "output_tokens": 179,
+            "generation_time_sec": 125.9280743598938
+        },
+        {
+            "task_id": "62b869eab4d922cb0e688cbf",
+            "input_tokens": 75,
+            "output_tokens": 47,
+            "generation_time_sec": 36.25080609321594
+        },
+        {
+            "task_id": "62b45df05108cfac7f2109ce",
+            "input_tokens": 62,
+            "output_tokens": 45,
+            "generation_time_sec": 34.19417691230774
+        },
+        {
+            "task_id": "62b45df15108cfac7f2109dc",
+            "input_tokens": 72,
+            "output_tokens": 18,
+            "generation_time_sec": 15.75508713722229
+        },
+        {
+            "task_id": "62b45df15108cfac7f2109dd",
+            "input_tokens": 60,
+            "output_tokens": 10,
+            "generation_time_sec": 10.335493326187134
+        },
+        {
+            "task_id": "62b45e145108cfac7f210a07",
+            "input_tokens": 109,
+            "output_tokens": 128,
+            "generation_time_sec": 91.8708713054657
+        },
+        {
+            "task_id": "62b45e145108cfac7f210a09",
+            "input_tokens": 77,
+            "output_tokens": 76,
+            "generation_time_sec": 55.417746782302856
+        },
+        {
+            "task_id": "62b45e165108cfac7f210a16",
+            "input_tokens": 100,
+            "output_tokens": 97,
+            "generation_time_sec": 70.5116171836853
+        },
+        {
+            "task_id": "62b45e165108cfac7f210a17",
+            "input_tokens": 65,
+            "output_tokens": 78,
+            "generation_time_sec": 57.481701135635376
+        },
+        {
+            "task_id": "62b45e175108cfac7f210a19",
+            "input_tokens": 88,
+            "output_tokens": 154,
+            "generation_time_sec": 109.48514342308044
+        },
+        {
+            "task_id": "62b463153879012d19481498",
+            "input_tokens": 52,
+            "output_tokens": 42,
+            "generation_time_sec": 32.211939334869385
+        },
+        {
+            "task_id": "62b463153879012d1948149a",
+            "input_tokens": 67,
+            "output_tokens": 89,
+            "generation_time_sec": 65.03845524787903
+        },
+        {
+            "task_id": "62b463153879012d1948149b",
+            "input_tokens": 78,
+            "output_tokens": 42,
+            "generation_time_sec": 32.19051432609558
+        },
+        {
+            "task_id": "62b463153879012d1948149c",
+            "input_tokens": 66,
+            "output_tokens": 12,
+            "generation_time_sec": 11.636729955673218
+        },
+        {
+            "task_id": "62b463153879012d1948149d",
+            "input_tokens": 63,
+            "output_tokens": 130,
+            "generation_time_sec": 93.062326669693
+        },
+        {
+            "task_id": "62b463153879012d1948149f",
+            "input_tokens": 128,
+            "output_tokens": 109,
+            "generation_time_sec": 78.04555153846741
+        },
+        {
+            "task_id": "62b463153879012d194814a1",
+            "input_tokens": 75,
+            "output_tokens": 14,
+            "generation_time_sec": 13.058804273605347
+        },
+        {
+            "task_id": "62b463163879012d194814a2",
+            "input_tokens": 72,
+            "output_tokens": 13,
+            "generation_time_sec": 12.349814176559448
+        },
+        {
+            "task_id": "62b463163879012d194814a4",
+            "input_tokens": 64,
+            "output_tokens": 111,
+            "generation_time_sec": 79.96620535850525
+        },
+        {
+            "task_id": "62b463163879012d194814a6",
+            "input_tokens": 58,
+            "output_tokens": 35,
+            "generation_time_sec": 27.416122913360596
+        },
+        {
+            "task_id": "62b4631b3879012d194814dd",
+            "input_tokens": 62,
+            "output_tokens": 13,
+            "generation_time_sec": 12.343856573104858
+        },
+        {
+            "task_id": "62b463283879012d1948153d",
+            "input_tokens": 69,
+            "output_tokens": 27,
+            "generation_time_sec": 22.66564416885376
+        },
+        {
+            "task_id": "62b463303879012d19481579",
+            "input_tokens": 67,
+            "output_tokens": 69,
+            "generation_time_sec": 51.373722314834595
+        },
+        {
+            "task_id": "62b46740d2f69a53b466171a",
+            "input_tokens": 102,
+            "output_tokens": 86,
+            "generation_time_sec": 61.58361339569092
+        },
+        {
+            "task_id": "62b46746d2f69a53b4661722",
+            "input_tokens": 65,
+            "output_tokens": 65,
+            "generation_time_sec": 48.55824828147888
+        },
+        {
+            "task_id": "62b86707b4d922cb0e688c2a",
+            "input_tokens": 67,
+            "output_tokens": 61,
+            "generation_time_sec": 45.85966181755066
+        },
+        {
+            "task_id": "62b86729b4d922cb0e688c2f",
+            "input_tokens": 94,
+            "output_tokens": 115,
+            "generation_time_sec": 82.98336696624756
+        },
+        {
+            "task_id": "62b8a4a4755ee91dce50a3d2",
+            "input_tokens": 67,
+            "output_tokens": 40,
+            "generation_time_sec": 30.970824718475342
+        },
+        {
+            "task_id": "62b8982f755ee91dce50a241",
+            "input_tokens": 53,
+            "output_tokens": 52,
+            "generation_time_sec": 39.99475336074829
+        },
+        {
+            "task_id": "62b89640755ee91dce50a114",
+            "input_tokens": 63,
+            "output_tokens": 57,
+            "generation_time_sec": 43.412848234176636
+        },
+        {
+            "task_id": "62b87d24d292efb640a55670",
+            "input_tokens": 66,
+            "output_tokens": 38,
+            "generation_time_sec": 29.50376319885254
+        },
+        {
+            "task_id": "62b87d24d292efb640a5566f",
+            "input_tokens": 61,
+            "output_tokens": 68,
+            "generation_time_sec": 49.95686316490173
+        },
+        {
+            "task_id": "62b87d24d292efb640a5566d",
+            "input_tokens": 64,
+            "output_tokens": 28,
+            "generation_time_sec": 23.21209478378296
+        },
+        {
+            "task_id": "62b87d23d292efb640a5566b",
+            "input_tokens": 67,
+            "output_tokens": 201,
+            "generation_time_sec": 140.70326399803162
+        },
+        {
+            "task_id": "62b87d23d292efb640a55668",
+            "input_tokens": 58,
+            "output_tokens": 77,
+            "generation_time_sec": 57.020278215408325
+        },
+        {
+            "task_id": "62b87d23d292efb640a55667",
+            "input_tokens": 63,
+            "output_tokens": 54,
+            "generation_time_sec": 41.058693647384644
+        },
+        {
+            "task_id": "62b45e945108cfac7f210a4a",
+            "input_tokens": 90,
+            "output_tokens": 161,
+            "generation_time_sec": 114.30587601661682
+        },
+        {
+            "task_id": "62b45e515108cfac7f210a3c",
+            "input_tokens": 54,
+            "output_tokens": 72,
+            "generation_time_sec": 53.3865430355072
+        },
+        {
+            "task_id": "62b45e2eb89c9fd354170232",
+            "input_tokens": 54,
+            "output_tokens": 75,
+            "generation_time_sec": 54.75027632713318
+        },
+        {
+            "task_id": "62b45e23e0d4551b0392c90a",
+            "input_tokens": 120,
+            "output_tokens": 121,
+            "generation_time_sec": 87.01550221443176
+        },
+        {
+            "task_id": "62b45e21e0d4551b0392c8ed",
+            "input_tokens": 59,
+            "output_tokens": 55,
+            "generation_time_sec": 40.996251344680786
+        },
+        {
+            "task_id": "62b4567ed7d32e5b55cc83d9",
+            "input_tokens": 80,
+            "output_tokens": 87,
+            "generation_time_sec": 63.677109718322754
+        },
+        {
+            "task_id": "62b4567ad7d32e5b55cc83af",
+            "input_tokens": 71,
+            "output_tokens": 34,
+            "generation_time_sec": 26.684614896774292
+        },
+        {
+            "task_id": "62b45679d7d32e5b55cc83a9",
+            "input_tokens": 63,
+            "output_tokens": 39,
+            "generation_time_sec": 29.391844034194946
+        },
+        {
+            "task_id": "62b45665d7d32e5b55cc8365",
+            "input_tokens": 59,
+            "output_tokens": 64,
+            "generation_time_sec": 47.94014096260071
+        },
+        {
+            "task_id": "62b45665d7d32e5b55cc8364",
+            "input_tokens": 137,
+            "output_tokens": 113,
+            "generation_time_sec": 81.43917322158813
+        },
+        {
+            "task_id": "62b438b666fea644fe22cc78",
+            "input_tokens": 71,
+            "output_tokens": 34,
+            "generation_time_sec": 26.747898817062378
+        },
+        {
+            "task_id": "62b438b666fea644fe22cc72",
+            "input_tokens": 63,
+            "output_tokens": 39,
+            "generation_time_sec": 29.442431688308716
+        },
+        {
+            "task_id": "62b438a266fea644fe22cc2e",
+            "input_tokens": 86,
+            "output_tokens": 110,
+            "generation_time_sec": 79.40562081336975
+        },
+        {
+            "task_id": "62b438a266fea644fe22cc2d",
+            "input_tokens": 137,
+            "output_tokens": 113,
+            "generation_time_sec": 81.33729481697083
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd5f",
+            "input_tokens": 101,
+            "output_tokens": 30,
+            "generation_time_sec": 23.11206340789795
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd60",
+            "input_tokens": 96,
+            "output_tokens": 142,
+            "generation_time_sec": 79.60684514045715
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd61",
+            "input_tokens": 126,
+            "output_tokens": 45,
+            "generation_time_sec": 27.08803963661194
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd62",
+            "input_tokens": 100,
+            "output_tokens": 100,
+            "generation_time_sec": 57.24076724052429
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd63",
+            "input_tokens": 88,
+            "output_tokens": 26,
+            "generation_time_sec": 16.73551917076111
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd64",
+            "input_tokens": 68,
+            "output_tokens": 42,
+            "generation_time_sec": 19.758888006210327
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd65",
+            "input_tokens": 84,
+            "output_tokens": 39,
+            "generation_time_sec": 16.98327612876892
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd66",
+            "input_tokens": 192,
+            "output_tokens": 208,
+            "generation_time_sec": 84.37169623374939
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd67",
+            "input_tokens": 119,
+            "output_tokens": 66,
+            "generation_time_sec": 28.408212184906006
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd69",
+            "input_tokens": 79,
+            "output_tokens": 20,
+            "generation_time_sec": 9.861677885055542
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd6a",
+            "input_tokens": 90,
+            "output_tokens": 6,
+            "generation_time_sec": 4.3625168800354
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd6b",
+            "input_tokens": 53,
+            "output_tokens": 36,
+            "generation_time_sec": 16.55409550666809
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd6f",
+            "input_tokens": 123,
+            "output_tokens": 122,
+            "generation_time_sec": 50.0852735042572
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd70",
+            "input_tokens": 66,
+            "output_tokens": 43,
+            "generation_time_sec": 18.889322757720947
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd71",
+            "input_tokens": 101,
+            "output_tokens": 24,
+            "generation_time_sec": 11.465301752090454
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd72",
+            "input_tokens": 73,
+            "output_tokens": 25,
+            "generation_time_sec": 11.855456829071045
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd73",
+            "input_tokens": 142,
+            "output_tokens": 60,
+            "generation_time_sec": 25.682517051696777
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd74",
+            "input_tokens": 157,
+            "output_tokens": 284,
+            "generation_time_sec": 102.17532730102539
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd76",
+            "input_tokens": 91,
+            "output_tokens": 15,
+            "generation_time_sec": 3.553370714187622
+        },
+        {
+            "task_id": "62ece4982e6aefcf4aabbd77",
+            "input_tokens": 134,
+            "output_tokens": 162,
+            "generation_time_sec": 29.63810920715332
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd78",
+            "input_tokens": 108,
+            "output_tokens": 111,
+            "generation_time_sec": 20.759729385375977
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd79",
+            "input_tokens": 87,
+            "output_tokens": 35,
+            "generation_time_sec": 7.099177360534668
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd7a",
+            "input_tokens": 72,
+            "output_tokens": 54,
+            "generation_time_sec": 10.467535257339478
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd7b",
+            "input_tokens": 115,
+            "output_tokens": 79,
+            "generation_time_sec": 14.906524658203125
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd7c",
+            "input_tokens": 89,
+            "output_tokens": 22,
+            "generation_time_sec": 4.788560390472412
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd7d",
+            "input_tokens": 143,
+            "output_tokens": 167,
+            "generation_time_sec": 30.658087015151978
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd7e",
+            "input_tokens": 89,
+            "output_tokens": 71,
+            "generation_time_sec": 13.467988967895508
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd7f",
+            "input_tokens": 104,
+            "output_tokens": 110,
+            "generation_time_sec": 20.55470871925354
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd80",
+            "input_tokens": 110,
+            "output_tokens": 67,
+            "generation_time_sec": 12.937798023223877
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd82",
+            "input_tokens": 94,
+            "output_tokens": 40,
+            "generation_time_sec": 8.153965950012207
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd83",
+            "input_tokens": 91,
+            "output_tokens": 181,
+            "generation_time_sec": 32.95460319519043
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd84",
+            "input_tokens": 70,
+            "output_tokens": 110,
+            "generation_time_sec": 20.54929494857788
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd85",
+            "input_tokens": 186,
+            "output_tokens": 106,
+            "generation_time_sec": 19.851174354553223
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd86",
+            "input_tokens": 79,
+            "output_tokens": 72,
+            "generation_time_sec": 13.642104625701904
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd87",
+            "input_tokens": 106,
+            "output_tokens": 139,
+            "generation_time_sec": 25.69059991836548
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd88",
+            "input_tokens": 104,
+            "output_tokens": 84,
+            "generation_time_sec": 15.769319534301758
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd8a",
+            "input_tokens": 126,
+            "output_tokens": 204,
+            "generation_time_sec": 37.210277795791626
+        },
+        {
+            "task_id": "62ece4992e6aefcf4aabbd8b",
+            "input_tokens": 101,
+            "output_tokens": 93,
+            "generation_time_sec": 17.541853189468384
+        },
+        {
+            "task_id": "62b87b199a0c4fa8b80b354c",
+            "input_tokens": 80,
+            "output_tokens": 79,
+            "generation_time_sec": 14.882641315460205
+        },
+        {
+            "task_id": "62b87b4f9a0c4fa8b80b3581",
+            "input_tokens": 176,
+            "output_tokens": 156,
+            "generation_time_sec": 28.532338619232178
+        },
+        {
+            "task_id": "62b87b519a0c4fa8b80b3583",
+            "input_tokens": 178,
+            "output_tokens": 234,
+            "generation_time_sec": 42.53364658355713
+        },
+        {
+            "task_id": "62b87b869a0c4fa8b80b35e1",
+            "input_tokens": 333,
+            "output_tokens": 258,
+            "generation_time_sec": 46.81239628791809
+        },
+        {
+            "task_id": "62b8b4baeb7e40a82d2d1136",
+            "input_tokens": 292,
+            "output_tokens": 348,
+            "generation_time_sec": 62.769542932510376
+        },
+        {
+            "task_id": "62b8b4baeb7e40a82d2d1137",
+            "input_tokens": 288,
+            "output_tokens": 240,
+            "generation_time_sec": 43.616652727127075
+        },
+        {
+            "task_id": "62b8b4c1eb7e40a82d2d1139",
+            "input_tokens": 65,
+            "output_tokens": 75,
+            "generation_time_sec": 14.173932790756226
+        },
+        {
+            "task_id": "62b8b559eb7e40a82d2d11f6",
+            "input_tokens": 67,
+            "output_tokens": 44,
+            "generation_time_sec": 9.036281108856201
+        },
+        {
+            "task_id": "62b8d22a48ba5a41d1c3f47d",
+            "input_tokens": 85,
+            "output_tokens": 66,
+            "generation_time_sec": 12.580167531967163
+        },
+        {
+            "task_id": "62b8d23748ba5a41d1c3f497",
+            "input_tokens": 60,
+            "output_tokens": 64,
+            "generation_time_sec": 12.401614665985107
+        },
+        {
+            "task_id": "62b8d23a48ba5a41d1c3f499",
+            "input_tokens": 60,
+            "output_tokens": 8,
+            "generation_time_sec": 2.307284116744995
+        },
+        {
+            "task_id": "62b8d23c48ba5a41d1c3f49b",
+            "input_tokens": 61,
+            "output_tokens": 10,
+            "generation_time_sec": 2.6612844467163086
+        },
+        {
+            "task_id": "62b8d23e48ba5a41d1c3f49e",
+            "input_tokens": 66,
+            "output_tokens": 57,
+            "generation_time_sec": 10.984345436096191
+        },
+        {
+            "task_id": "62b8a7b2755ee91dce50a4a7",
+            "input_tokens": 333,
+            "output_tokens": 340,
+            "generation_time_sec": 61.36313247680664
+        },
+        {
+            "task_id": "6305f9991d275c6667163c50",
+            "input_tokens": 89,
+            "output_tokens": 9,
+            "generation_time_sec": 2.6622016429901123
+        },
+        {
+            "task_id": "6306292052e177c0ba469f09",
+            "input_tokens": 103,
+            "output_tokens": 108,
+            "generation_time_sec": 20.19713068008423
+        },
+        {
+            "task_id": "6306292152e177c0ba469f0d",
+            "input_tokens": 75,
+            "output_tokens": 43,
+            "generation_time_sec": 8.684098958969116
+        },
+        {
+            "task_id": "6306292252e177c0ba469f11",
+            "input_tokens": 61,
+            "output_tokens": 60,
+            "generation_time_sec": 11.693604469299316
+        },
+        {
+            "task_id": "6306292352e177c0ba469f1d",
+            "input_tokens": 119,
+            "output_tokens": 229,
+            "generation_time_sec": 48.375694036483765
+        },
+        {
+            "task_id": "6306292352e177c0ba469f1e",
+            "input_tokens": 61,
+            "output_tokens": 135,
+            "generation_time_sec": 24.978962659835815
+        },
+        {
+            "task_id": "6306292652e177c0ba469f34",
+            "input_tokens": 65,
+            "output_tokens": 125,
+            "generation_time_sec": 23.2065532207489
+        },
+        {
+            "task_id": "6306292a52e177c0ba469f41",
+            "input_tokens": 90,
+            "output_tokens": 93,
+            "generation_time_sec": 17.364255905151367
+        },
+        {
+            "task_id": "6306298b52e177c0ba469fdc",
+            "input_tokens": 65,
+            "output_tokens": 19,
+            "generation_time_sec": 4.254867076873779
+        },
+        {
+            "task_id": "6306299052e177c0ba469fe8",
+            "input_tokens": 75,
+            "output_tokens": 20,
+            "generation_time_sec": 4.6093549728393555
+        },
+        {
+            "task_id": "630629b952e177c0ba46a043",
+            "input_tokens": 68,
+            "output_tokens": 81,
+            "generation_time_sec": 15.236653089523315
+        },
+        {
+            "task_id": "630629d052e177c0ba46a0a1",
+            "input_tokens": 73,
+            "output_tokens": 264,
+            "generation_time_sec": 47.83558893203735
+        },
+        {
+            "task_id": "630629e052e177c0ba46a0c4",
+            "input_tokens": 88,
+            "output_tokens": 73,
+            "generation_time_sec": 13.822750568389893
+        },
+        {
+            "task_id": "630629e152e177c0ba46a0d1",
+            "input_tokens": 76,
+            "output_tokens": 99,
+            "generation_time_sec": 18.602349042892456
+        },
+        {
+            "task_id": "630629e152e177c0ba46a0d2",
+            "input_tokens": 79,
+            "output_tokens": 188,
+            "generation_time_sec": 34.19381022453308
+        },
+        {
+            "task_id": "630629e252e177c0ba46a0d6",
+            "input_tokens": 78,
+            "output_tokens": 108,
+            "generation_time_sec": 20.019566535949707
+        },
+        {
+            "task_id": "630629e752e177c0ba46a0fb",
+            "input_tokens": 72,
+            "output_tokens": 112,
+            "generation_time_sec": 20.906057596206665
+        },
+        {
+            "task_id": "6306091073426c38ae68acac",
+            "input_tokens": 153,
+            "output_tokens": 55,
+            "generation_time_sec": 10.63662600517273
+        },
+        {
+            "task_id": "6306091a73426c38ae68acc8",
+            "input_tokens": 66,
+            "output_tokens": 81,
+            "generation_time_sec": 15.236013889312744
+        },
+        {
+            "task_id": "6306092973426c38ae68ad01",
+            "input_tokens": 68,
+            "output_tokens": 26,
+            "generation_time_sec": 5.494368314743042
+        },
+        {
+            "task_id": "6306092c73426c38ae68ad02",
+            "input_tokens": 87,
+            "output_tokens": 72,
+            "generation_time_sec": 13.645015001296997
+        },
+        {
+            "task_id": "6306092d73426c38ae68ad04",
+            "input_tokens": 87,
+            "output_tokens": 193,
+            "generation_time_sec": 35.25762629508972
+        },
+        {
+            "task_id": "6306092d73426c38ae68ad05",
+            "input_tokens": 76,
+            "output_tokens": 26,
+            "generation_time_sec": 5.49678373336792
+        },
+        {
+            "task_id": "6306092d73426c38ae68ad06",
+            "input_tokens": 71,
+            "output_tokens": 14,
+            "generation_time_sec": 3.3697049617767334
+        },
+        {
+            "task_id": "6306092d73426c38ae68ad08",
+            "input_tokens": 113,
+            "output_tokens": 297,
+            "generation_time_sec": 53.51943516731262
+        },
+        {
+            "task_id": "6306092e73426c38ae68ad0d",
+            "input_tokens": 105,
+            "output_tokens": 27,
+            "generation_time_sec": 5.674585342407227
+        },
+        {
+            "task_id": "6306092e73426c38ae68ad0f",
+            "input_tokens": 151,
+            "output_tokens": 239,
+            "generation_time_sec": 43.4207124710083
+        },
+        {
+            "task_id": "6306092f73426c38ae68ad13",
+            "input_tokens": 157,
+            "output_tokens": 241,
+            "generation_time_sec": 43.775553941726685
+        },
+        {
+            "task_id": "6306093273426c38ae68ad15",
+            "input_tokens": 126,
+            "output_tokens": 181,
+            "generation_time_sec": 33.13601279258728
+        },
+        {
+            "task_id": "63060ada73426c38ae68ad31",
+            "input_tokens": 105,
+            "output_tokens": 197,
+            "generation_time_sec": 35.79269075393677
+        },
+        {
+            "task_id": "63060b1a73426c38ae68ad3e",
+            "input_tokens": 67,
+            "output_tokens": 107,
+            "generation_time_sec": 20.01974368095398
+        },
+        {
+            "task_id": "63060b1b73426c38ae68ad42",
+            "input_tokens": 68,
+            "output_tokens": 34,
+            "generation_time_sec": 7.088317394256592
+        }
+    ],
+    "end_time": "2026-03-03 23:29:46.432167",
+    "completed_tasks": 190,
+    "total_tasks_in_dataset": 190,
+    "total_generation_time_sec": 7756.369189023972,
+    "total_input_tokens": 17208,
+    "total_output_tokens": 16231,
+    "avg_time_per_task_sec": 40.82299573170511,
+    "evaluation": {
+        "total_tasks": 190,
+        "passed": 43,
+        "pass_at_1": 22.63,
+        "dataset": "/scratch/oldhome/safrin/projects/CoderEval-Benchmark/CoderEval4Python_filtered.jsonl",
+        "filtered": true
+    }
+}

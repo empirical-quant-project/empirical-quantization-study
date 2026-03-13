@@ -1,0 +1,25 @@
+{
+  "name": "Python-29",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def find_min_n_greater_than_k(k: int) -> int:\n    \"\"\"\n    Calculate the smallest positive integer n such that the sum of the harmonic series\n    up to 1/n is greater than a given positive integer k.\n\n    The harmonic series is defined as S_n = 1 + 1/2 + 1/3 + ... + 1/n.\n\n    Args:\n    - k (int): A positive integer representing the threshold value the harmonic series sum must exceed.\n\n    Returns:\n    - int: The smallest integer n for which the harmonic series sum S_n exceeds the threshold k.\n\n    Examples:\n    >>> find_min_n_greater_than_k(1)\n    2\n    >>> find_min_n_greater_than_k(3)\n    11\n    \"\"\"",
+  "tests": "def test_find_min_n_greater_than_k():\n    # Test case 1: k = 1, expected result is 2\n\n    assert find_min_n_greater_than_k(1) == 2, \"Test case 1 failed.\"\n\n    # Test case 2: k = 3, expected result is 11\n    assert find_min_n_greater_than_k(3) == 11, \"Test case 2 failed.\"\n    # Test case 3: k = 5, expected result is 83\n    assert find_min_n_greater_than_k(5) == 83, \"Test case 3 failed.\"\n\n    print(\"All test cases passed.\")\n\n\n# Run the test function\ntest_find_min_n_greater_than_k()",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def find_min_n_greater_than_k(k: int) -> int:\n    \"\"\"\n    Calculate the smallest positive integer n such that the sum of the harmonic series\n    up to 1/n is greater than a given positive integer k.\n\n    The harmonic series is defined as S_n = 1 + 1/2 + 1/3 + ... + 1/n.\n\n    Args:\n    - k (int): A positive integer representing the threshold value the harmonic series sum must exceed.\n\n    Returns:\n    - int: The smallest integer n for which the harmonic series sum S_n exceeds the threshold k.\n\n    Examples:\n    >>> find_min_n_greater_than_k(1)\n    2\n    >>> find_min_n_greater_than_k(3)\n    11\n    \"\"\"\ndef test_find_min_n_greater_than_k():\n    # Test case 1: k = 1, expected result is 2\n\n    assert find_min_n_greater_than_k(1) == 2, \"Test case 1 failed.\"\n\n    # Test case 2: k = 3, expected result is 11\n    assert find_min_n_greater_than_k(3) == 11, \"Test case 2 failed.\"\n    # Test case 3: k = 5, expected result is 83\n    assert find_min_n_greater_than_k(5) == 83, \"Test case 3 failed.\"\n\n    print(\"All test cases passed.\")\n\n\n# Run the test function\ntest_find_min_n_greater_than_k()",
+      "timestamp": 1771888714,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpt2llhowr.py\", line 34, in <module>\n    test_find_min_n_greater_than_k()\n  File \"/tmp/tmpt2llhowr.py\", line 23, in test_find_min_n_greater_than_k\n    assert find_min_n_greater_than_k(1) == 2, \"Test case 1 failed.\"\nAssertionError: Test case 1 failed.\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

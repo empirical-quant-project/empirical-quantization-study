@@ -5,7 +5,7 @@ if (!require("effsize")) install.packages("effsize")
 library(effsize)
 
 # ──────────────────────────── CONFIG ────────────────────────────
-BASE_DIR <- "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/per-directory"
+BASE_DIR <- "/scratch/oldhome/user/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/per-directory"
 
 BENCHMARKS <- c("McEval-Python", "CoderEval-Python", "BCB-Python")
 MODELS <- c("CodeLlama-7B", "Qwen2.5-Coder-7B")
@@ -13,7 +13,7 @@ TECHNIQUES <- c("AWQ", "GPTQ", "BitsAndBytes", "AQLM", "GGUF", "QUIP")
 METRICS <- c("LoC", "Reliability", "Maintainability", "Security_Hotspots", "CyC", "CoC")
 
 # Output CSV path
-OUTPUT_DIR <- "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/statistical-tests"
+OUTPUT_DIR <- "/scratch/oldhome/user/projects/Empirical-Quantization-Study/statistical-tests"
 
 # ──────────────────────── HELPER FUNCTIONS ──────────────────────
 

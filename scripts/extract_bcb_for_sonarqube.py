@@ -19,8 +19,8 @@ import json
 import glob
 
 # ──────────────────────────── CONFIG ────────────────────────────
-METHODS_BASE = "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Methods"
-PY_DEST_BASE = "/scratch/oldhome/safrin/projects/sonarQube-analysis/emp-quant"
+METHODS_BASE = "/scratch/oldhome/user/projects/Empirical-Quantization-Study/Methods"
+PY_DEST_BASE = "/scratch/oldhome/user/projects/sonarQube-analysis/emp-quant"
 
 DRY_RUN = "--dry-run" in sys.argv
 

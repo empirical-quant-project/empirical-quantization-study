@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_6_parse_nested_parens",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    // For each of the group, output the deepest level of nesting of parentheses.\n    // E.g. (()()) has maximum two levels of nesting while ((())) has three.\n    // >>> parseNestedParens((\"(()()) ((())) () ((())()())\"))\n    // (new ArrayList<Long>(Arrays.asList((long)2l, (long)3l, (long)1l, (long)3l)))\n    public static ArrayList<Long> parseNestedParens(String paren_string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(parseNestedParens((\"(()()) ((())) () ((())()())\")).equals((new ArrayList<Long>(Arrays.asList((long)2l, (long)3l, (long)1l, (long)3l)))));\n    assert(parseNestedParens((\"() (()) ((())) (((())))\")).equals((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)3l, (long)4l)))));\n    assert(parseNestedParens((\"(()(())((())))\")).equals((new ArrayList<Long>(Arrays.asList((long)4l)))));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    // For each of the group, output the deepest level of nesting of parentheses.\n    // E.g. (()()) has maximum two levels of nesting while ((())) has three.\n    // >>> parseNestedParens((\"(()()) ((())) () ((())()())\"))\n    // (new ArrayList<Long>(Arrays.asList((long)2l, (long)3l, (long)1l, (long)3l)))\n    public static ArrayList<Long> parseNestedParens(String paren_string) {\n\n        ArrayList<Long> result = new ArrayList<Long>();\n        for (String group : paren_string.split(\" \")) {\n            int level = 0;\n            for (char c : group.toCharArray()) {\n                if (c == '(') {\n                    level++;\n                } else if (c == ')') {\n                    level--;\n                }\n            }\n            result.add((long)level);\n        }\n        return result;\n    }\n    public static void main(String[] args) {\n    assert(parseNestedParens((\"(()()) ((())) () ((())()())\")).equals((new ArrayList<Long>(Arrays.asList((long)2l, (long)3l, (long)1l, (long)3l)))));\n    assert(parseNestedParens((\"() (()) ((())) (((())))\")).equals((new ArrayList<Long>(Arrays.asList((long)1l, (long)2l, (long)3l, (long)4l)))));\n    assert(parseNestedParens((\"(()(())((())))\")).equals((new ArrayList<Long>(Arrays.asList((long)4l)))));\n    }\n\n}\n",
+      "timestamp": 1772077544,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmphaq8xtn_.java:31)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

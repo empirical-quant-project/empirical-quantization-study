@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_93_encode",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def encode(message: str) -> str:\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('TEST') == 'tgst'\n    assert candidate('Mudasir') == 'mWDCSKR'\n    assert candidate('YES') == 'ygs'\n    assert candidate('This is a message') == 'tHKS KS C MGSSCGG'\n    assert candidate('I DoNt KnOw WhAt tO WrItE') == 'k dQnT kNqW wHcT Tq wRkTg'\n\ndef test_check():\n    check(encode)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def encode(message: str) -> str:\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n    \n    # Define the mapping for vowels\n    vowel_map = {'a': 'c', 'e': 'g', 'i': 'k', 'o': 'q', 'u': 'w'}\n    \n    # Initialize an empty list to store encoded characters\n    encoded_chars = []\n    \n    # Iterate over each character in the message\n    for char in message:\n        if char.isalpha():\n            # Swap the case of the character\n            swapped_char = char.swapcase()\n            \n            # Check if the character is a vowel and replace it accordingly\n            if swapped_char.lower() in vowel_map:\n                encoded_char = vowel_map[swapped_char.lower()]\n            else:\n                encoded_char = swapped_char\n                \n            # Append the encoded character to the list\n            encoded_chars.append(encoded_char)\n        else:\n            # If not a letter, just append the original character\n            encoded_chars.append(char)\n    \n    # Join the list into a single string and return it\n    return ''.join(encoded_chars)\ndef check(candidate):\n    assert candidate('TEST') == 'tgst'\n    assert candidate('Mudasir') == 'mWDCSKR'\n    assert candidate('YES') == 'ygs'\n    assert candidate('This is a message') == 'tHKS KS C MGSSCGG'\n    assert candidate('I DoNt KnOw WhAt tO WrItE') == 'k dQnT kNqW wHcT Tq wRkTg'\n\ndef test_check():\n    check(encode)\n\ntest_check()\n",
+      "timestamp": 1771797233,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpx55p2pnn.py\", line 52, in <module>\n    test_check()\n  File \"/tmp/tmpx55p2pnn.py\", line 50, in test_check\n    check(encode)\n  File \"/tmp/tmpx55p2pnn.py\", line 44, in check\n    assert candidate('Mudasir') == 'mWDCSKR'\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 rm(list=ls())
 
 # ──────────────────────────── CONFIG ────────────────────────────
-BASE_DIR <- "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values"
+BASE_DIR <- "/scratch/oldhome/user/projects/Empirical-Quantization-Study/Analysis-and-Reports/Python/pass@1-values"
 
 BENCHMARKS <- list(
   "McEval-Python" = file.path(BASE_DIR, "McEval"),
@@ -13,7 +13,7 @@ MODELS <- c("CodeLlama-7B", "Qwen2.5-Coder-7B")
 TECHNIQUES <- c("AWQ", "GPTQ", "BitsAndBytes", "AQLM", "GGUF", "QUIP")
 
 # Output
-OUTPUT_DIR <- "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/statistical-tests"
+OUTPUT_DIR <- "/scratch/oldhome/user/projects/Empirical-Quantization-Study/statistical-tests"
 
 # ──────────────────────── HELPER FUNCTIONS ──────────────────────
 

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_18_how_many_times",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find how many times a given substring can be found in the original string. Count overlaping cases.\n    // >>> howManyTimes((\"\"), (\"a\"))\n    // (0l)\n    // >>> howManyTimes((\"aaa\"), (\"a\"))\n    // (3l)\n    // >>> howManyTimes((\"aaaa\"), (\"aa\"))\n    // (3l)\n    public static long howManyTimes(String string, String substring) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(howManyTimes((\"\"), (\"x\")) == (0l));\n    assert(howManyTimes((\"xyxyxyx\"), (\"x\")) == (4l));\n    assert(howManyTimes((\"cacacacac\"), (\"cac\")) == (4l));\n    assert(howManyTimes((\"john doe\"), (\"john\")) == (1l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Find how many times a given substring can be found in the original string. Count overlaping cases.\n    // >>> howManyTimes((\"\"), (\"a\"))\n    // (0l)\n    // >>> howManyTimes((\"aaa\"), (\"a\"))\n    // (3l)\n    // >>> howManyTimes((\"aaaa\"), (\"aa\"))\n    // (3l)\n    public static long howManyTimes(String string, String substring) {\n\n        long count = 0;\n        for (int i = 0; i < string.length(); i++) {\n            int j = i;\n            while (j < string.length() && string.charAt(j) == substring.charAt(0)) {\n                if (substring.length() + j - i <= string.length()) {\n                    boolean match = true;\n                    for (int k = 1; k < substring.length(); k++) {\n                        if (string.charAt(j + k) != substring.charAt(k)) {\n                            match = false;\n                            break;\n                        }\n                    }\n                    if (match) {\n                        count++;\n                    }\n                }\n                j++;\n            }\n        }\n        return count;\n    }\n    public static void main(String[] args) {\n    assert(howManyTimes((\"\"), (\"x\")) == (0l));\n    assert(howManyTimes((\"xyxyxyx\"), (\"x\")) == (4l));\n    assert(howManyTimes((\"cacacacac\"), (\"cac\")) == (4l));\n    assert(howManyTimes((\"john doe\"), (\"john\")) == (1l));\n    }\n\n}\n",
+      "timestamp": 1772077559,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: String index out of range: 9\n\tat java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)\n\tat java.base/java.lang.String.charAt(String.java:693)\n\tat Problem.howManyTimes(tmpp0nv7sgm.java:25)\n\tat Problem.main(tmpp0nv7sgm.java:42)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

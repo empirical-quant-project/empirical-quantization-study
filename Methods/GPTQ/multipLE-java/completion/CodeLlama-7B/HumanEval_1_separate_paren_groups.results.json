@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_1_separate_paren_groups",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    // separate those group into separate strings and return the array list of those.\n    // Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    // Ignore any spaces in the input string.\n    // >>> separateParenGroups((\"( ) (( )) (( )( ))\"))\n    // (new ArrayList<String>(Arrays.asList((String)\"()\", (String)\"(())\", (String)\"(()())\")))\n    public static ArrayList<String> separateParenGroups(String paren_string) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(separateParenGroups((\"(()()) ((())) () ((())()())\")).equals((new ArrayList<String>(Arrays.asList((String)\"(()())\", (String)\"((()))\", (String)\"()\", (String)\"((())()())\")))));\n    assert(separateParenGroups((\"() (()) ((())) (((())))\")).equals((new ArrayList<String>(Arrays.asList((String)\"()\", (String)\"(())\", (String)\"((()))\", (String)\"(((())))\")))));\n    assert(separateParenGroups((\"(()(())((())))\")).equals((new ArrayList<String>(Arrays.asList((String)\"(()(())((())))\")))));\n    assert(separateParenGroups((\"( ) (( )) (( )( ))\")).equals((new ArrayList<String>(Arrays.asList((String)\"()\", (String)\"(())\", (String)\"(()())\")))));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    // separate those group into separate strings and return the array list of those.\n    // Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    // Ignore any spaces in the input string.\n    // >>> separateParenGroups((\"( ) (( )) (( )( ))\"))\n    // (new ArrayList<String>(Arrays.asList((String)\"()\", (String)\"(())\", (String)\"(()())\")))\n    public static ArrayList<String> separateParenGroups(String paren_string) {\n\n        ArrayList<String> groups = new ArrayList<String>();\n        int open_count = 0;\n        int close_count = 0;\n        int start = 0;\n        int end = 0;\n        for (int i = 0; i < paren_string.length(); i++) {\n            if (paren_string.charAt(i) == '(') {\n                open_count++;\n            } else if (paren_string.charAt(i) == ')') {\n                close_count++;\n            }\n            if (open_count == close_count) {\n                start = i + 1;\n            }\n            if (open_count == close_count + 1) {\n                end = i;\n                groups.add(paren_string.substring(start, end));\n            }\n        }\n        return groups;\n    }\n    public static void main(String[] args) {\n    assert(separateParenGroups((\"(()()) ((())) () ((())()())\")).equals((new ArrayList<String>(Arrays.asList((String)\"(()())\", (String)\"((()))\", (String)\"()\", (String)\"((())()())\")))));\n    assert(separateParenGroups((\"() (()) ((())) (((())))\")).equals((new ArrayList<String>(Arrays.asList((String)\"()\", (String)\"(())\", (String)\"((()))\", (String)\"(((())))\")))));\n    assert(separateParenGroups((\"(()(())((())))\")).equals((new ArrayList<String>(Arrays.asList((String)\"(()(())((())))\")))));\n    assert(separateParenGroups((\"( ) (( )) (( )( ))\")).equals((new ArrayList<String>(Arrays.asList((String)\"()\", (String)\"(())\", (String)\"(()())\")))));\n    }\n\n}\n",
+      "timestamp": 1772077565,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp6b6t4lka.java:39)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

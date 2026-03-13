@@ -1,0 +1,20 @@
+{
+  "name": "Java-24",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "class Problem {\n    /**\n    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.\n    *\n    * Example 1:\n    * Input: s = \"(()))\"\n    * Output: 1\n    * Explanation:  We need to add one '(' at the first of the string to make it balanced: \"((()))\".\n    * Example 2:\n    * Input: s = \"((()))\"\n    * Output: 0\n    *\n    * - s consists of '(' and ')' only.\n    */\n public int minInsertions(String s) ",
+  "tests": "    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.minInsertions(\"((()))\") == 0;\n        assert solution.minInsertions(\"()()()\") == 0;\n        assert solution.minInsertions(\"(()))(()\") == 2;\n        assert solution.minInsertions(\"))())(((\") == 6;\n        System.out.println(\"All tests passed\");\n    }\n}",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "class Problem {\n    /**\n    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.\n    *\n    * Example 1:\n    * Input: s = \"(()))\"\n    * Output: 1\n    * Explanation:  We need to add one '(' at the first of the string to make it balanced: \"((()))\".\n    * Example 2:\n    * Input: s = \"((()))\"\n    * Output: 0\n    *\n    * - s consists of '(' and ')' only.\n    */\n public int minInsertions(String s)  {\n        int left = 0, right = 0;\n        for (char c : s.toCharArray()) {\n            if (c == '(') {\n                left++;\n            } else {\n                right++;\n            }\n        }\n        return Math.abs(left - right);\n    }\n    public static void main(String[] args) {\n        Problem solution = new Problem();\n\n        // Test the function with different test cases\n        assert solution.minInsertions(\"((()))\") == 0;\n        assert solution.minInsertions(\"()()()\") == 0;\n        assert solution.minInsertions(\"(()))(()\") == 2;\n        assert solution.minInsertions(\"))())(((\") == 6;\n        System.out.println(\"All tests passed\");\n    }\n}",
+      "timestamp": 1772053501,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpclvfearp.java:32)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

@@ -31,7 +31,7 @@ import time
 
 # ──────────────────────────── CONFIG ────────────────────────────
 SONAR_TOKEN = "748648749bb73630fcf96d51cd4e8764e2150987"  # Replace with your SonarCloud token
-PROJECT_KEY = "saimaafrin_SonarQube-Analysis-java"
+PROJECT_KEY = "user_SonarQube-Analysis-java"
 SONAR_URL = "https://sonarcloud.io"
 
 # Target directories under emp-quant/

@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_89_encrypt",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function encrypt that takes a string as an argument and\n    // returns a string encrypted with the alphabet being rotated. \n    // The alphabet should be rotated in a manner such that the letters \n    // shift down by two multiplied to two places.\n    // For example:\n    // >>> encrypt((\"hi\"))\n    // (\"lm\")\n    // >>> encrypt((\"asdfghjkl\"))\n    // (\"ewhjklnop\")\n    // >>> encrypt((\"gf\"))\n    // (\"kj\")\n    // >>> encrypt((\"et\"))\n    // (\"ix\")\n    public static String encrypt(String s) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(encrypt((\"hi\")).equals((\"lm\")));\n    assert(encrypt((\"asdfghjkl\")).equals((\"ewhjklnop\")));\n    assert(encrypt((\"gf\")).equals((\"kj\")));\n    assert(encrypt((\"et\")).equals((\"ix\")));\n    assert(encrypt((\"faewfawefaewg\")).equals((\"jeiajeaijeiak\")));\n    assert(encrypt((\"hellomyfriend\")).equals((\"lippsqcjvmirh\")));\n    assert(encrypt((\"dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh\")).equals((\"hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl\")));\n    assert(encrypt((\"a\")).equals((\"e\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function encrypt that takes a string as an argument and\n    // returns a string encrypted with the alphabet being rotated. \n    // The alphabet should be rotated in a manner such that the letters \n    // shift down by two multiplied to two places.\n    // For example:\n    // >>> encrypt((\"hi\"))\n    // (\"lm\")\n    // >>> encrypt((\"asdfghjkl\"))\n    // (\"ewhjklnop\")\n    // >>> encrypt((\"gf\"))\n    // (\"kj\")\n    // >>> encrypt((\"et\"))\n    // (\"ix\")\n    public static String encrypt(String s) {\n \n        StringBuilder sb = new StringBuilder();\n        for (char c : s.toCharArray()) {\n            if (Character.isLetter(c)) {\n                char base = Character.isUpperCase(c) ? 'A' : 'a';\n                int offset = ((c - base + 2 * 2) % 26);\n                sb.append((char)(base + offset));\n            } else {\n                sb.append(c);\n            }\n        }\n        return sb.toString();\n    }\n    public static void main(String[] args) {\n    assert(encrypt((\"hi\")).equals((\"lm\")));\n    assert(encrypt((\"asdfghjkl\")).equals((\"ewhjklnop\")));\n    assert(encrypt((\"gf\")).equals((\"kj\")));\n    assert(encrypt((\"et\")).equals((\"ix\")));\n    assert(encrypt((\"faewfawefaewg\")).equals((\"jeiajeaijeiak\")));\n    assert(encrypt((\"hellomyfriend\")).equals((\"lippsqcjvmirh\")));\n    assert(encrypt((\"dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh\")).equals((\"hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl\")));\n    assert(encrypt((\"a\")).equals((\"e\")));\n    }\n\n}\n",
+      "timestamp": 1771790456,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

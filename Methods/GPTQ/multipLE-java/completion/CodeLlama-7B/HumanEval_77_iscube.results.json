@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_77_iscube",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that takes an integer a and returns true \n    // if this ingeger is a cube of some integer number.\n    // Note: you may assume the input is always valid.\n    // Examples:\n    // >>> iscube((1l))\n    // (true)\n    // >>> iscube((2l))\n    // (false)\n    // >>> iscube((-1l))\n    // (true)\n    // >>> iscube((64l))\n    // (true)\n    // >>> iscube((0l))\n    // (true)\n    // >>> iscube((180l))\n    // (false)\n    public static boolean iscube(long a) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(iscube((1l)) == (true));\n    assert(iscube((2l)) == (false));\n    assert(iscube((-1l)) == (true));\n    assert(iscube((64l)) == (true));\n    assert(iscube((180l)) == (false));\n    assert(iscube((1000l)) == (true));\n    assert(iscube((0l)) == (true));\n    assert(iscube((1729l)) == (false));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that takes an integer a and returns true \n    // if this ingeger is a cube of some integer number.\n    // Note: you may assume the input is always valid.\n    // Examples:\n    // >>> iscube((1l))\n    // (true)\n    // >>> iscube((2l))\n    // (false)\n    // >>> iscube((-1l))\n    // (true)\n    // >>> iscube((64l))\n    // (true)\n    // >>> iscube((0l))\n    // (true)\n    // >>> iscube((180l))\n    // (false)\n    public static boolean iscube(long a) {\n\n        return (Math.pow(a, 1.0/3.0) % 1 == 0);\n    }\n    public static void main(String[] args) {\n    assert(iscube((1l)) == (true));\n    assert(iscube((2l)) == (false));\n    assert(iscube((-1l)) == (true));\n    assert(iscube((64l)) == (true));\n    assert(iscube((180l)) == (false));\n    assert(iscube((1000l)) == (true));\n    assert(iscube((0l)) == (true));\n    assert(iscube((1729l)) == (false));\n    }\n\n}\n",
+      "timestamp": 1772053550,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpg2_fnlly.java:32)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

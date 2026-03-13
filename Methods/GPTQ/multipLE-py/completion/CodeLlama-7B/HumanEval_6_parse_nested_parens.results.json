@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_6_parse_nested_parens",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import List\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    \"\"\" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    For each of the group, output the deepest level of nesting of parentheses.\n    E.g. (()()) has maximum two levels of nesting while ((())) has three.\n\n    >>> parse_nested_parens('(()()) ((())) () ((())()())')\n    [2, 3, 1, 3]\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('(()()) ((())) () ((())()())') == [2, 3, 1, 3]\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n    assert candidate('(()(())((())))') == [4]\n\ndef test_check():\n    check(parse_nested_parens)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import List\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    \"\"\" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    For each of the group, output the deepest level of nesting of parentheses.\n    E.g. (()()) has maximum two levels of nesting while ((())) has three.\n\n    >>> parse_nested_parens('(()()) ((())) () ((())()())')\n    [2, 3, 1, 3]\n    \"\"\"\n\n    # Initialize a list to store the result\n    result = []\n    # Initialize a stack to store the level of nesting\n    stack = []\n    # Iterate through the characters in the input string\n    for char in paren_string:\n        # If the character is an opening parenthesis, push it onto the stack\n        if char == '(':\n            stack.append(char)\n        # If the character is a closing parenthesis, pop the stack and count the number of elements popped\n        elif char == ')':\n            while stack and stack[-1] != '(':\n                stack.pop()\n            if stack:\n                stack.pop()\n            else:\n                stack.append(char)\n    # Count the number of elements in the stack\n    result.append(len(stack))\n    # Return the result\n    return result\ndef check(candidate):\n    assert candidate('(()()) ((())) () ((())()())') == [2, 3, 1, 3]\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n    assert candidate('(()(())((())))') == [4]\n\ndef test_check():\n    check(parse_nested_parens)\n\ntest_check()\n",
+      "timestamp": 1772081728,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmpw2roy0gc.py\", line 41, in <module>\n    test_check()\n  File \"/tmp/tmpw2roy0gc.py\", line 39, in test_check\n    check(parse_nested_parens)\n  File \"/tmp/tmpw2roy0gc.py\", line 34, in check\n    assert candidate('(()()) ((())) () ((())()())') == [2, 3, 1, 3]\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

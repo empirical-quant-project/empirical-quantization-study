@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_48_is_palindrome",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Checks if given string is a palindrome\n    // >>> isPalindrome((\"\"))\n    // (true)\n    // >>> isPalindrome((\"aba\"))\n    // (true)\n    // >>> isPalindrome((\"aaaaa\"))\n    // (true)\n    // >>> isPalindrome((\"zbcd\"))\n    // (false)\n    public static boolean isPalindrome(String text) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(isPalindrome((\"\")) == (true));\n    assert(isPalindrome((\"aba\")) == (true));\n    assert(isPalindrome((\"aaaaa\")) == (true));\n    assert(isPalindrome((\"zbcd\")) == (false));\n    assert(isPalindrome((\"xywyx\")) == (true));\n    assert(isPalindrome((\"xywyz\")) == (false));\n    assert(isPalindrome((\"xywzx\")) == (false));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Checks if given string is a palindrome\n    // >>> isPalindrome((\"\"))\n    // (true)\n    // >>> isPalindrome((\"aba\"))\n    // (true)\n    // >>> isPalindrome((\"aaaaa\"))\n    // (true)\n    // >>> isPalindrome((\"zbcd\"))\n    // (false)\n    public static boolean isPalindrome(String text) {\n\n        return text.equals(new StringBuilder(text).reverse().toString());\n    }\n    public static void main(String[] args) {\n    assert(isPalindrome((\"\")) == (true));\n    assert(isPalindrome((\"aba\")) == (true));\n    assert(isPalindrome((\"aaaaa\")) == (true));\n    assert(isPalindrome((\"zbcd\")) == (false));\n    assert(isPalindrome((\"xywyx\")) == (true));\n    assert(isPalindrome((\"xywyz\")) == (false));\n    assert(isPalindrome((\"xywzx\")) == (false));\n    }\n\n}\n",
+      "timestamp": 1772053549,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

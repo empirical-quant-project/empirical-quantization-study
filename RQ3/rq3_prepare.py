@@ -4,7 +4,7 @@ RQ3 Data Preparation: Merge entropy buckets with per-task results.
 Then call rq3_analysis.R for statistical tests + LaTeX table.
 
 Usage:
-  python rq3_prepare.py --entropy_csv /scratch/oldhome/safrin/projects/Empirical-Quantization-Study/RQ3/output_dir/entropy_buckets_per_task.csv \
+  python rq3_prepare.py --entropy_csv /scratch/oldhome/user/projects/Empirical-Quantization-Study/RQ3/output_dir/entropy_buckets_per_task.csv \
                         --config rq3_config.json \
                         --output_dir ./rq3_results
 """

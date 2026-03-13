@@ -1,0 +1,20 @@
+{
+  "name": "Java-48",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.lang.Math;\n\nclass Problem {\n\n  /**\n   * Find and return the nth ugly number.\n   *\n   * @param n The index of the ugly number to find.\n   * @return The nth ugly number.\n   *\n   * Example:\n   * findNthUglyNumber(10)\n   * Output: 12\n   */\n  public static int findNthUglyNumber(int n) ",
+  "tests": "  public static void main(String[] args) {\n    assert findNthUglyNumber(1) == 1 : \"Test case 1 failed\";\n    assert findNthUglyNumber(7) == 8 : \"Test case 2 failed\";\n    assert findNthUglyNumber(15) == 24 : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+  "stop_tokens": [],
+  "results": [
+    {
+      "program": "import java.lang.Math;\n\nclass Problem {\n\n  /**\n   * Find and return the nth ugly number.\n   *\n   * @param n The index of the ugly number to find.\n   * @return The nth ugly number.\n   *\n   * Example:\n   * findNthUglyNumber(10)\n   * Output: 12\n   */\n  public static int findNthUglyNumber(int n)  {\n    int[] uglyNumbers = new int[n];\n    uglyNumbers[0] = 1;\n    int uglyNumberIndex = 1;\n    int[] primes = new int[] {2, 3, 5};\n    int[] primeIndex = new int[] {0, 0, 0};\n\n    while (uglyNumberIndex < n) {\n      int min = Math.min(uglyNumbers[uglyNumberIndex - 1] * primes[0],\n                         Math.min(uglyNumbers[uglyNumberIndex - 1] * primes[1],\n                                  uglyNumbers[uglyNumberIndex - 1] * primes[2]));\n      uglyNumbers[uglyNumberIndex] = min;\n      uglyNumberIndex++;\n\n      for (int i = 0; i < 3; i++) {\n        if (uglyNumbers[uglyNumberIndex - 1] == min) {\n          primeIndex[i]++;\n        }\n      }\n    }\n\n    return uglyNumbers[n - 1];\n  }\n  public static void main(String[] args) {\n    assert findNthUglyNumber(1) == 1 : \"Test case 1 failed\";\n    assert findNthUglyNumber(7) == 8 : \"Test case 2 failed\";\n    assert findNthUglyNumber(15) == 24 : \"Test case 3 failed\";\n\n    System.out.println(\"All tests passed\");\n  }\n}\n",
+      "timestamp": 1772053485,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError: Test case 2 failed\n\tat Problem.main(tmpq5lljc9u.java:40)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

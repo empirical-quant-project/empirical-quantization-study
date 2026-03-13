@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_134_check_if_last_char_is_a_letter",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function that returns true if the last character\n    // of a given string is an alphabetical character and is not\n    // a part of a word, and false otherwise.\n    // Note: \"word\" is a group of characters separated by space.\n    // Examples:\n    // >>> checkIfLastCharIsALetter((\"apple pie\"))\n    // (false)\n    // >>> checkIfLastCharIsALetter((\"apple pi e\"))\n    // (true)\n    // >>> checkIfLastCharIsALetter((\"apple pi e \"))\n    // (false)\n    // >>> checkIfLastCharIsALetter((\"\"))\n    // (false)\n    public static boolean checkIfLastCharIsALetter(String txt) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(checkIfLastCharIsALetter((\"apple\")) == (false));\n    assert(checkIfLastCharIsALetter((\"apple pi e\")) == (true));\n    assert(checkIfLastCharIsALetter((\"eeeee\")) == (false));\n    assert(checkIfLastCharIsALetter((\"A\")) == (true));\n    assert(checkIfLastCharIsALetter((\"Pumpkin pie \")) == (false));\n    assert(checkIfLastCharIsALetter((\"Pumpkin pie 1\")) == (false));\n    assert(checkIfLastCharIsALetter((\"\")) == (false));\n    assert(checkIfLastCharIsALetter((\"eeeee e \")) == (false));\n    assert(checkIfLastCharIsALetter((\"apple pie\")) == (false));\n    assert(checkIfLastCharIsALetter((\"apple pi e \")) == (false));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Create a function that returns true if the last character\n    // of a given string is an alphabetical character and is not\n    // a part of a word, and false otherwise.\n    // Note: \"word\" is a group of characters separated by space.\n    // Examples:\n    // >>> checkIfLastCharIsALetter((\"apple pie\"))\n    // (false)\n    // >>> checkIfLastCharIsALetter((\"apple pi e\"))\n    // (true)\n    // >>> checkIfLastCharIsALetter((\"apple pi e \"))\n    // (false)\n    // >>> checkIfLastCharIsALetter((\"\"))\n    // (false)\n    public static boolean checkIfLastCharIsALetter(String txt) {\n\n        if (txt.length() == 0) {\n            return false;\n        }\n        char lastChar = txt.charAt(txt.length() - 1);\n        if (lastChar >= 'a' && lastChar <= 'z') {\n            return true;\n        }\n        if (lastChar >= 'A' && lastChar <= 'Z') {\n            return true;\n        }\n        return false;\n    }\n    public static void main(String[] args) {\n    assert(checkIfLastCharIsALetter((\"apple\")) == (false));\n    assert(checkIfLastCharIsALetter((\"apple pi e\")) == (true));\n    assert(checkIfLastCharIsALetter((\"eeeee\")) == (false));\n    assert(checkIfLastCharIsALetter((\"A\")) == (true));\n    assert(checkIfLastCharIsALetter((\"Pumpkin pie \")) == (false));\n    assert(checkIfLastCharIsALetter((\"Pumpkin pie 1\")) == (false));\n    assert(checkIfLastCharIsALetter((\"\")) == (false));\n    assert(checkIfLastCharIsALetter((\"eeeee e \")) == (false));\n    assert(checkIfLastCharIsALetter((\"apple pie\")) == (false));\n    assert(checkIfLastCharIsALetter((\"apple pi e \")) == (false));\n    }\n\n}\n",
+      "timestamp": 1772053515,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmp3jtiqr6q.java:37)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

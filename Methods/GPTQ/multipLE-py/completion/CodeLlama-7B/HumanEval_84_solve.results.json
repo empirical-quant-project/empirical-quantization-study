@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_84_solve",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def solve(N: int) -> str:\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n    >>> solve(1000)\n    '1'\n    >>> solve(150)\n    '110'\n    >>> solve(147)\n    '1100'\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate(1000) == '1'\n    assert candidate(150) == '110'\n    assert candidate(147) == '1100'\n    assert candidate(333) == '1001'\n    assert candidate(963) == '10010'\n\ndef test_check():\n    check(solve)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def solve(N: int) -> str:\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n    >>> solve(1000)\n    '1'\n    >>> solve(150)\n    '110'\n    >>> solve(147)\n    '1100'\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n\n    return bin(N)[2:]\ndef check(candidate):\n    assert candidate(1000) == '1'\n    assert candidate(150) == '110'\n    assert candidate(147) == '1100'\n    assert candidate(333) == '1001'\n    assert candidate(963) == '10010'\n\ndef test_check():\n    check(solve)\n\ntest_check()\n",
+      "timestamp": 1772081737,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmphmhhis8j.py\", line 30, in <module>\n    test_check()\n  File \"/tmp/tmphmhhis8j.py\", line 28, in test_check\n    check(solve)\n  File \"/tmp/tmphmhhis8j.py\", line 21, in check\n    assert candidate(1000) == '1'\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

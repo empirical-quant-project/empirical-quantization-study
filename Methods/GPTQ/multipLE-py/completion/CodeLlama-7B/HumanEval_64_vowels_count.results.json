@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_64_vowels_count",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "def vowels_count(s: str) -> int:\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count('abcde')\n    2\n    >>> vowels_count('ACEDY')\n    3\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('abcde') == 2\n    assert candidate('Alone') == 3\n    assert candidate('key') == 2\n    assert candidate('bye') == 1\n    assert candidate('keY') == 2\n    assert candidate('bYe') == 1\n    assert candidate('ACEDY') == 3\n\ndef test_check():\n    check(vowels_count)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "def vowels_count(s: str) -> int:\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count('abcde')\n    2\n    >>> vowels_count('ACEDY')\n    3\n    \"\"\"\n\n    vowels = ['a', 'e', 'i', 'o', 'u', 'y']\n    count = 0\n    for char in s:\n        if char.lower() in vowels:\n            count += 1\n    return count\ndef check(candidate):\n    assert candidate('abcde') == 2\n    assert candidate('Alone') == 3\n    assert candidate('key') == 2\n    assert candidate('bye') == 1\n    assert candidate('keY') == 2\n    assert candidate('bYe') == 1\n    assert candidate('ACEDY') == 3\n\ndef test_check():\n    check(vowels_count)\n\ntest_check()\n",
+      "timestamp": 1772055654,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp8bxdkfoa.py\", line 32, in <module>\n    test_check()\n  File \"/tmp/tmp8bxdkfoa.py\", line 30, in test_check\n    check(vowels_count)\n  File \"/tmp/tmp8bxdkfoa.py\", line 24, in check\n    assert candidate('bye') == 1\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

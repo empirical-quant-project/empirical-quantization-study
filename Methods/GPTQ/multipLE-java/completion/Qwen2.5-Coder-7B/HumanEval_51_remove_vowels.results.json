@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_51_remove_vowels",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // remove_vowels is a function that takes string and returns string without vowels.\n    // >>> removeVowels((\"\"))\n    // (\"\")\n    // >>> removeVowels((\"abcdef\"))\n    // (\"bcdf\")\n    // >>> removeVowels((\"aaaaa\"))\n    // (\"\")\n    // >>> removeVowels((\"aaBAA\"))\n    // (\"B\")\n    // >>> removeVowels((\"zbcd\"))\n    // (\"zbcd\")\n    public static String removeVowels(String text) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(removeVowels((\"\")).equals((\"\")));\n    assert(removeVowels((\"abcdef\\nghijklm\")).equals((\"bcdf\\nghjklm\")));\n    assert(removeVowels((\"fedcba\")).equals((\"fdcb\")));\n    assert(removeVowels((\"eeeee\")).equals((\"\")));\n    assert(removeVowels((\"acBAA\")).equals((\"cB\")));\n    assert(removeVowels((\"EcBOO\")).equals((\"cB\")));\n    assert(removeVowels((\"ybcd\")).equals((\"ybcd\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // remove_vowels is a function that takes string and returns string without vowels.\n    // >>> removeVowels((\"\"))\n    // (\"\")\n    // >>> removeVowels((\"abcdef\"))\n    // (\"bcdf\")\n    // >>> removeVowels((\"aaaaa\"))\n    // (\"\")\n    // >>> removeVowels((\"aaBAA\"))\n    // (\"B\")\n    // >>> removeVowels((\"zbcd\"))\n    // (\"zbcd\")\n    public static String removeVowels(String text) {\n \n        return text.replaceAll(\"[aeiouAEIOU]\", \"\");\n    }\n    public static void main(String[] args) {\n    assert(removeVowels((\"\")).equals((\"\")));\n    assert(removeVowels((\"abcdef\\nghijklm\")).equals((\"bcdf\\nghjklm\")));\n    assert(removeVowels((\"fedcba\")).equals((\"fdcb\")));\n    assert(removeVowels((\"eeeee\")).equals((\"\")));\n    assert(removeVowels((\"acBAA\")).equals((\"cB\")));\n    assert(removeVowels((\"EcBOO\")).equals((\"cB\")));\n    assert(removeVowels((\"ybcd\")).equals((\"ybcd\")));\n    }\n\n}\n",
+      "timestamp": 1771790454,
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "HumanEval_111_histogram",
+  "language": "py",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "from typing import Dict\n\ndef histogram(test: str) -> Dict[str, int]:\n    \"\"\"Given a string representing a space separated lowercase letters, return a dictionary\n    of the letter with the most repetition and containing the corresponding count.\n    If several letters have the same occurrence, return all of them.\n    \n    Example:\n    >>> histogram('a b c')\n    { 'a': 1, 'b': 1, 'c': 1 }\n    >>> histogram('a b b a')\n    { 'a': 2, 'b': 2 }\n    >>> histogram('a b c a b')\n    { 'a': 2, 'b': 2 }\n    >>> histogram('b b b b a')\n    { 'b': 4 }\n    >>> histogram('')\n    {  }\n\n    \"\"\"\n",
+  "tests": "def check(candidate):\n    assert candidate('a b b a') == { 'a': 2, 'b': 2 }\n    assert candidate('a b c a b') == { 'a': 2, 'b': 2 }\n    assert candidate('a b c d g') == { 'a': 1, 'b': 1, 'c': 1, 'd': 1, 'g': 1 }\n    assert candidate('r t g') == { 'r': 1, 't': 1, 'g': 1 }\n    assert candidate('b b b b a') == { 'b': 4 }\n    assert candidate('r t g') == { 'r': 1, 't': 1, 'g': 1 }\n    assert candidate('') == {  }\n    assert candidate('a') == { 'a': 1 }\n\ndef test_check():\n    check(histogram)\n\ntest_check()\n",
+  "stop_tokens": [
+    "\ndef",
+    "\n#",
+    "\nif",
+    "\nclass"
+  ],
+  "results": [
+    {
+      "program": "from typing import Dict\n\ndef histogram(test: str) -> Dict[str, int]:\n    \"\"\"Given a string representing a space separated lowercase letters, return a dictionary\n    of the letter with the most repetition and containing the corresponding count.\n    If several letters have the same occurrence, return all of them.\n    \n    Example:\n    >>> histogram('a b c')\n    { 'a': 1, 'b': 1, 'c': 1 }\n    >>> histogram('a b b a')\n    { 'a': 2, 'b': 2 }\n    >>> histogram('a b c a b')\n    { 'a': 2, 'b': 2 }\n    >>> histogram('b b b b a')\n    { 'b': 4 }\n    >>> histogram('')\n    {  }\n\n    \"\"\"\n\ndef check(candidate):\n    assert candidate('a b b a') == { 'a': 2, 'b': 2 }\n    assert candidate('a b c a b') == { 'a': 2, 'b': 2 }\n    assert candidate('a b c d g') == { 'a': 1, 'b': 1, 'c': 1, 'd': 1, 'g': 1 }\n    assert candidate('r t g') == { 'r': 1, 't': 1, 'g': 1 }\n    assert candidate('b b b b a') == { 'b': 4 }\n    assert candidate('r t g') == { 'r': 1, 't': 1, 'g': 1 }\n    assert candidate('') == {  }\n    assert candidate('a') == { 'a': 1 }\n\ndef test_check():\n    check(histogram)\n\ntest_check()\n",
+      "timestamp": 1771797228,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp04uv0_8v.py\", line 35, in <module>\n    test_check()\n  File \"/tmp/tmp04uv0_8v.py\", line 33, in test_check\n    check(histogram)\n  File \"/tmp/tmp04uv0_8v.py\", line 23, in check\n    assert candidate('a b b a') == { 'a': 2, 'b': 2 }\nAssertionError\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

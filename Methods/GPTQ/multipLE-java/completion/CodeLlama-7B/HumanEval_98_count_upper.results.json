@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_98_count_upper",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given a string s, count the number of uppercase vowels in even indices.\n    // For example:\n    // >>> countUpper((\"aBCdEf\"))\n    // (1l)\n    // >>> countUpper((\"abcdefg\"))\n    // (0l)\n    // >>> countUpper((\"dBBE\"))\n    // (0l)\n    public static long countUpper(String s) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(countUpper((\"aBCdEf\")) == (1l));\n    assert(countUpper((\"abcdefg\")) == (0l));\n    assert(countUpper((\"dBBE\")) == (0l));\n    assert(countUpper((\"B\")) == (0l));\n    assert(countUpper((\"U\")) == (1l));\n    assert(countUpper((\"\")) == (0l));\n    assert(countUpper((\"EEEE\")) == (2l));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Given a string s, count the number of uppercase vowels in even indices.\n    // For example:\n    // >>> countUpper((\"aBCdEf\"))\n    // (1l)\n    // >>> countUpper((\"abcdefg\"))\n    // (0l)\n    // >>> countUpper((\"dBBE\"))\n    // (0l)\n    public static long countUpper(String s) {\n\n        return s.chars().filter(c -> c >= 'A' && c <= 'Z' && c % 2 == 0).count();\n    }\n    public static void main(String[] args) {\n    assert(countUpper((\"aBCdEf\")) == (1l));\n    assert(countUpper((\"abcdefg\")) == (0l));\n    assert(countUpper((\"dBBE\")) == (0l));\n    assert(countUpper((\"B\")) == (0l));\n    assert(countUpper((\"U\")) == (1l));\n    assert(countUpper((\"\")) == (0l));\n    assert(countUpper((\"EEEE\")) == (2l));\n    }\n\n}\n",
+      "timestamp": 1772053544,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpf21l49ut.java:24)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

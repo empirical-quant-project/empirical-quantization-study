@@ -1,0 +1,22 @@
+{
+  "name": "HumanEval_93_encode",
+  "language": "java",
+  "temperature": 0.0,
+  "top_p": 0.95,
+  "max_tokens": 1024,
+  "prompt": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that takes a message, and encodes in such a \n    // way that it swaps case of all letters, replaces all vowels in \n    // the message with the letter that appears 2 places ahead of that \n    // vowel in the english alphabet. \n    // Assume only letters. \n    // Examples:\n    // >>> encode((\"test\"))\n    // (\"TGST\")\n    // >>> encode((\"This is a message\"))\n    // (\"tHKS KS C MGSSCGG\")\n    public static String encode(String message) {\n",
+  "tests": "    }\n    public static void main(String[] args) {\n    assert(encode((\"TEST\")).equals((\"tgst\")));\n    assert(encode((\"Mudasir\")).equals((\"mWDCSKR\")));\n    assert(encode((\"YES\")).equals((\"ygs\")));\n    assert(encode((\"This is a message\")).equals((\"tHKS KS C MGSSCGG\")));\n    assert(encode((\"I DoNt KnOw WhAt tO WrItE\")).equals((\"k dQnT kNqW wHcT Tq wRkTg\")));\n    }\n\n}\n",
+  "stop_tokens": [
+    "\n    }\n"
+  ],
+  "results": [
+    {
+      "program": "import java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    // Write a function that takes a message, and encodes in such a \n    // way that it swaps case of all letters, replaces all vowels in \n    // the message with the letter that appears 2 places ahead of that \n    // vowel in the english alphabet. \n    // Assume only letters. \n    // Examples:\n    // >>> encode((\"test\"))\n    // (\"TGST\")\n    // >>> encode((\"This is a message\"))\n    // (\"tHKS KS C MGSSCGG\")\n    public static String encode(String message) {\n\n        String result = \"\";\n        for (int i = 0; i < message.length(); i++) {\n            char c = message.charAt(i);\n            if (c >= 'a' && c <= 'z') {\n                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {\n                    result += (char) (c + 2);\n                } else {\n                    result += (char) (c - 2);\n                }\n            } else if (c >= 'A' && c <= 'Z') {\n                if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {\n                    result += (char) (c + 2);\n                } else {\n                    result += (char) (c - 2);\n                }\n            } else {\n                result += c;\n            }\n        }\n        return result;\n    }\n    public static void main(String[] args) {\n    assert(encode((\"TEST\")).equals((\"tgst\")));\n    assert(encode((\"Mudasir\")).equals((\"mWDCSKR\")));\n    assert(encode((\"YES\")).equals((\"ygs\")));\n    assert(encode((\"This is a message\")).equals((\"tHKS KS C MGSSCGG\")));\n    assert(encode((\"I DoNt KnOw WhAt tO WrItE\")).equals((\"k dQnT kNqW wHcT Tq wRkTg\")));\n    }\n\n}\n",
+      "timestamp": 1772053555,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.AssertionError\n\tat Problem.main(tmpiwic0r57.java:43)\n",
+      "exit_code": 1,
+      "status": "Exception"
+    }
+  ]
+}

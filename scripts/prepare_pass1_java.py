@@ -24,8 +24,8 @@ import glob
 import csv
 
 # ──────────────────────────── CONFIG ────────────────────────────
-METHODS_BASE = "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Methods"
-OUTPUT_DIR = "/scratch/oldhome/safrin/projects/Empirical-Quantization-Study/Analysis-and-Reports/Java/pass@1-values"
+METHODS_BASE = "/scratch/oldhome/user/projects/Empirical-Quantization-Study/Methods"
+OUTPUT_DIR = "/scratch/oldhome/user/projects/Empirical-Quantization-Study/Analysis-and-Reports/Java/pass@1-values"
 
 DRY_RUN = "--dry-run" in sys.argv
 
