@@ -49,7 +49,7 @@ EXAMPLES = [
      "QUIP-ONLY FAIL: BCB-Python balanced spread (LoC 11-22, CyC 6, CoC 5)", "bcb-py"),
 ]
 
-BCB_PROMPTS = Path("/scratch/oldhome/safrin/projects/BigCodeBench/scripts/bcb_generations/inputs_instruct_full.jsonl")
+BCB_PROMPTS = Path("/scratch/oldhome/user/projects/BigCodeBench/scripts/bcb_generations/inputs_instruct_full.jsonl")
 
 CONFIGS = [
     ("FP",    "FP",            "FP"),

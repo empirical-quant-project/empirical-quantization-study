@@ -58,14 +58,14 @@ average per-prompt latency (excluding 3 warm-up prompts), and throughput
 **Reproduce**
 
 Use the same conda env as the main experiments
-(`/scratch/oldhome/safrin/anaconda3/envs/aqlm-fse` — torch 2.5.1+cu124,
+(`/scratch/oldhome/user/anaconda3/envs/aqlm-fse` — torch 2.5.1+cu124,
 transformers 4.47.0, autoawq 0.2.7, auto_gptq 0.7.1, bitsandbytes 0.48.2,
 aqlm 1.1.6, gguf 0.17.1, quiptools_cuda 0.0.0). The MultiPL-E Docker image must
 be tagged `multipl-e-eval`. Pin a single GPU (the production scripts use GPU 2):
 
 ```bash
-cd /scratch/oldhome/safrin/projects/Empirical-Quantization-Study
-conda activate /scratch/oldhome/safrin/anaconda3/envs/aqlm-fse
+cd /scratch/oldhome/user/projects/Empirical-Quantization-Study
+conda activate /scratch/oldhome/user/anaconda3/envs/aqlm-fse
 CUDA_VISIBLE_DEVICES=2 python3 rebuttal/combined_variance_efficiency.py
 ```
 

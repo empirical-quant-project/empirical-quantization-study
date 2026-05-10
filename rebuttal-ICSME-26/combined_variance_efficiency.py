@@ -58,7 +58,7 @@ import torch
 THIS = Path(__file__).resolve()
 REBUTTAL_DIR = THIS.parent
 REPO_ROOT = REBUTTAL_DIR.parent  # Empirical-Quantization-Study/
-LOWBIT_ROOT = Path("/scratch/oldhome/safrin/projects/lowbit-quantization-D070")
+LOWBIT_ROOT = Path("/scratch/oldhome/user/projects/lowbit-quantization-D070")
 UTILS_DIR = LOWBIT_ROOT / "utils"
 MULTIPLE_DIR = UTILS_DIR / "MultiPL-E"
 CLEAN_SCRIPT = UTILS_DIR / "clean_completions.py"

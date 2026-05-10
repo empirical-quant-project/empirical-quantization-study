@@ -1,5 +1,5 @@
 # === SonarQube Friedman Test (rebuttal) ===
-# Adapted from /scratch/oldhome/safrin/projects/NonFunc-AWQ/scripts/statistical-tests/R-scripts/friedman-test-sonarqube.r
+# Adapted from /scratch/oldhome/user/projects/NonFunc-AWQ/scripts/statistical-tests/R-scripts/friedman-test-sonarqube.r
 #
 # Reads wide-format CSVs (one per metric) from rebuttal/friedman/inputs/, where
 # each CSV has columns: TaskID, FP, AWQ, GPTQ, GGUF, BnB, AQLM, QuIP. Runs
@@ -7,7 +7,7 @@
 # 7 configuration columns as repeated measures.
 #
 # Usage:
-#   cd /scratch/oldhome/safrin/projects/Empirical-Quantization-Study
+#   cd /scratch/oldhome/user/projects/Empirical-Quantization-Study
 #   Rscript rebuttal/friedman-test-sonarqube.r
 #
 # Output:

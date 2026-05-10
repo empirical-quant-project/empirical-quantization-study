@@ -9,7 +9,7 @@ Dest:    sonarQube-analysis/emp-quant/Rebuttal-McEval-Python-Qwen2.5-Coder-7B-<T
 This only stages the files locally. Pushing to GitHub (where SonarCloud picks
 them up via CI) is a separate, user-gated step:
 
-    cd /scratch/oldhome/safrin/projects/sonarQube-analysis
+    cd /scratch/oldhome/user/projects/sonarQube-analysis
     git add emp-quant/Rebuttal-McEval-Python-Qwen2.5-Coder-7B-*
     git commit -m "Rebuttal: McEval-Python Qwen2.5-Coder-7B per-config snapshots"
     git push
@@ -29,7 +29,7 @@ from pathlib import Path
 
 REBUTTAL = Path(__file__).resolve().parent
 WORK = REBUTTAL / "runs_qwen_mceval_py"
-DEST_BASE = Path("/scratch/oldhome/safrin/projects/sonarQube-analysis/emp-quant")
+DEST_BASE = Path("/scratch/oldhome/user/projects/sonarQube-analysis/emp-quant")
 
 # (run-dir name, SonarQube tech label)
 CONFIG_MAP = [
