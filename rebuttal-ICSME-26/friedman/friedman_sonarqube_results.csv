@@ -1,0 +1,7 @@
+"model","metric","n_tasks","n_configs","p.value","signif_0.01","signif_0.05","signif_0.10"
+"Qwen2.5-Coder-7B_McEval-Python","LoC",42,7,1.44951568680106e-07,"Yes","Yes","Yes"
+"Qwen2.5-Coder-7B_McEval-Python","Reliability",42,7,0.423190081126843,"No","No","No"
+"Qwen2.5-Coder-7B_McEval-Python","Maintainability",42,7,0.194030090125184,"No","No","No"
+"Qwen2.5-Coder-7B_McEval-Python","Security_Hotspots",42,7,NA,"No","No","No"
+"Qwen2.5-Coder-7B_McEval-Python","CyC",42,7,4.41117544029621e-06,"Yes","Yes","Yes"
+"Qwen2.5-Coder-7B_McEval-Python","CoC",42,7,0.000144807553499319,"Yes","Yes","Yes"

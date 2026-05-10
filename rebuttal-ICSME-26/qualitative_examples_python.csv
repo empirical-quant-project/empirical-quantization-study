@@ -1,0 +1,2518 @@
+"example_id","narrative","benchmark","language","model","task_id","config","prompt","generated_code","passed","LoC","Reliability","Maintainability","Security_Hotspots","CyC","CoC","load_error"
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","FP","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """""" 
+    if not 1 <= n <= 50:
+        raise ValueError(""The input must be an integer between 1 and 50."")
+
+    factorial_sum = 0
+    current_factorial = 1
+
+    for i in range(1, n + 1):
+        current_factorial *= i
+        factorial_sum += current_factorial
+
+    return factorial_sum
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","1","18.0","0","0","0","4.0","2.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","AWQ","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""    
+    if not 1 <= n <= 50:
+        raise ValueError(""The input must be an integer between 1 and 50."")
+
+    factorial_sum = 0
+    current_factorial = 1
+
+    for i in range(1, n + 1):
+        current_factorial *= i
+        factorial_sum += current_factorial
+
+    return factorial_sum
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","1","18.0","0","0","0","4.0","2.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","GPTQ","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """""" 
+    if not 1 <= n <= 50:
+        raise ValueError(""The input value must be between 1 and 50."")
+
+    factorial_sum = 0
+    current_factorial = 1
+
+    for i in range(1, n + 1):
+        current_factorial *= i
+        factorial_sum += current_factorial
+
+    return factorial_sum
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","1","18.0","0","0","0","4.0","2.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","GGUF","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""    
+    if not 1 <= n <= 50:
+        raise ValueError(""n must be in the range of 1 to 50, inclusive."")
+    
+    factorial_sum = 0
+    current_factorial = 1
+    
+    for i in range(1, n + 1):
+        current_factorial *= i
+        factorial_sum += current_factorial
+    
+    return factorial_sum
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","1","18.0","0","0","0","4.0","2.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","BnB","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""
+    if not 1 <= n <= 50:
+        raise ValueError(""n must be in the range 1 to 50, inclusive."")
+
+    factorial_sum = 0
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+        factorial_sum += factorial
+    return factorial_sum
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","1","18.0","0","0","0","4.0","2.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","AQLM","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """""" 
+    if n < 1 or n > 50:
+        raise ValueError(""n must be in the range of 1 to 50, inclusive."")
+    
+    factorial_sum = 0
+    current_factorial = 1
+    
+    for i in range(1, n + 1):
+        current_factorial *= i
+        factorial_sum += current_factorial
+    
+    return factorial_sum
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","1","18.0","0","0","0","5.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Python","Qwen2.5-Coder-7B","Python-10","QuIP#","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""","def sum_of_factorials_optimized(n: int) -> int:
+    """"""
+    Compute the cumulative sum of factorial values from 1 up to a specified integer n.
+
+    This function employs a more efficient method to calculate factorials by iteratively
+    multiplying the current number to the previous factorial result, thus avoiding redundant
+    calculations. It then accumulates the factorial of each number from 1 to n inclusively.
+
+    Args:
+    n (int): The upper limit of the range for which the factorial sum is to be calculated.
+             The value of n should be in the range of 1 to 50, inclusive.
+
+    Returns:
+    int: The sum of all factorial values from 1! to n!.
+
+    Examples:
+    >>> sum_of_factorials_optimized(3)
+    9
+    >>> sum_of_factorials_optimized(5)
+    153
+    """"""
+def test_sum_of_factorials_optimized():
+    assert sum_of_factorials_optimized(1) == 1, ""Test case 1 failed: sum_of_factorials_optimized(1) should be 1.""
+    assert sum_of_factorials_optimized(3) == 9, ""Test case 2 failed: sum_of_factorials_optimized(3) should be 9.""
+    assert sum_of_factorials_optimized(4) == 33, ""Test case 3 failed: sum_of_factorials_optimized(4) should be 33.""
+    assert sum_of_factorials_optimized(5) == 153, ""Test case 4 failed: sum_of_factorials_optimized(5) should be 153.""
+    assert sum_of_factorials_optimized(6) == 873, ""Test case 5 failed: sum_of_factorials_optimized(6) should be 873.""
+    assert sum_of_factorials_optimized(10) == 4037913, ""Test case 6 failed: sum_of_factorials_optimized(10) should be 4037913.""
+    print(""All test cases passed."")
+
+# Call the test function to run the test cases
+test_sum_of_factorials_optimized()","0","10.0","0","0","0","2.0","0.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","FP","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""    
+    # Initialize variables
+    row = 1
+    col = 1
+    direction = 'up'  # Start by moving up
+
+    # Loop until we reach the N-th term
+    while True:
+        if N == 1:
+            return f""{row}/{col}""
+        
+        # Move according to the current direction
+        if direction == 'up':
+            row -= 1
+            col += 1
+        else:
+            row += 1
+            col -= 1
+        
+        # Decrease N as we move one step closer to the target
+        N -= 1
+        
+        # Change direction when reaching the boundaries
+        if row == 0 or col == 0:
+            if direction == 'up':
+                direction = 'down'
+                if row == 0:
+                    row = 1
+                else:
+                    col = 1
+            else:
+                direction = 'up'
+                if col == 0:
+                    col = 1
+                else:
+                    row = 1
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","1","34.0","0","2","0","10.0","23.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","AWQ","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""    
+    # Initialize variables
+    row = 1
+    col = 1
+    
+    # Loop until we reach or surpass the N-th term
+    while True:
+        # Calculate the number of terms in the current diagonal
+        num_terms = row + col - 1
+        
+        # If N is within this diagonal, calculate the exact position
+        if N <= num_terms:
+            # Determine the numerator and denominator based on the direction of the diagonal
+            if row % 2 == 0:
+                return f""{col - (N - 1)} / {row + (N - 1)}""
+            else:
+                return f""{row + (N - 1)} / {col - (N - 1)}""
+        
+        # Move to the next diagonal
+        N -= num_terms
+        if row % 2 == 0:
+            row += 1
+        else:
+            col += 1
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","0","22.0","0","1","0","6.0","10.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","GPTQ","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""    
+    # Initialize variables
+    row = 1
+    col = 1
+    direction = 'up'  # Start by moving up
+
+    # Loop until we reach the desired position
+    while N > 0:
+        if direction == 'up':
+            # Move up along the diagonal
+            for _ in range(row):
+                if N == 0:
+                    return f""{col}/{row}""
+                N -= 1
+                col += 1
+                row -= 1
+            # Change direction after reaching the top
+            direction = 'down'
+        else:
+            # Move down along the diagonal
+            for _ in range(col):
+                if N == 0:
+                    return f""{col}/{row}""
+                N -= 1
+                col -= 1
+                row += 1
+            # Change direction after reaching the bottom
+            direction = 'up'
+
+        # Increase the size of the diagonal
+        if direction == 'up':
+            row += 1
+        else:
+            col += 1
+
+    return ""Invalid input""
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","0","33.0","0","2","0","9.0","21.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","GGUF","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""    
+    # Initialize variables
+    numerator = 1
+    denominator = 1
+    direction = 1  # 1 for up-right, -1 for down-left
+
+    # Loop until we reach the N-th term
+    while N > 1:
+        # Move in the current direction
+        if direction == 1:
+            numerator += 1
+            denominator -= 1
+        else:
+            numerator -= 1
+            denominator += 1
+
+        # Move to the next diagonal
+        N -= 1
+        if numerator == 0:
+            numerator = 1
+            direction = -1
+        elif denominator == 0:
+            denominator = 1
+            direction = 1
+
+    # Return the fraction as a string
+    return f""{numerator}/{denominator}""
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","0","26.0","0","1","0","5.0","7.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","BnB","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""
+    # Initialize variables
+    numerator = 1
+    denominator = 1
+    direction = 1  # 1 for ascending, -1 for descending
+    diagonal = 1  # The diagonal number in the Cantor table
+
+    # Loop until we reach the N-th term
+    while N > 0:
+        # Calculate the number of terms in the current diagonal
+        diagonal_terms = diagonal + 1
+
+        # If N is within the current diagonal
+        if N <= diagonal_terms:
+            # If the diagonal is even, the numerator starts from 1 and increases
+            if diagonal % 2 == 0:
+                numerator = 1
+                denominator = diagonal - N + 1
+            # If the diagonal is odd, the denominator starts from 1 and increases
+            else:
+                numerator = diagonal - N + 1
+                denominator = 1
+            break
+
+        # If N is not within the current diagonal, move to the next diagonal
+        N -= diagonal_terms
+        diagonal += 1
+
+    # Return the fraction as a string
+    return f""{numerator}/{denominator}""
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","0","25.0","0","2","0","5.0","7.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","AQLM","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""    
+    # Initialize variables to track the current row and column in the Cantor table
+    row = 1
+    col = 1
+    direction = 1  # 1 for up-right, -1 for down-left
+
+    # Loop until we reach the N-th term
+    while N > 0:
+        # If we are moving up-right
+        if direction == 1:
+            # If we are at the end of the row, move down to the next row
+            if col == row:
+                row += 1
+                direction = -1
+            else:
+                col += 1
+                N -= 1
+        # If we are moving down-left
+        else:
+            # If we are at the end of the column, move up to the next column
+            if row == col:
+                col += 1
+                direction = 1
+            else:
+                row += 1
+                N -= 1
+
+    # Return the fraction in the form of a string
+    return f""{row}/{col}""
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","0","27.0","0","1","0","6.0","12.0",""
+"E2","FP-only pass (all 6 quantized fail)","McEval","Python","Qwen2.5-Coder-7B","Python-11","QuIP#","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""","def cantor_numbering(N: int) -> str:
+    """"""
+    Determines the numerator and denominator of the N-th term in the Cantor table.
+
+    Args:
+    - N (int): The position in the Cantor table to find the corresponding fraction for.
+
+    Returns:
+    - str: A string representation of the fraction at the N-th position in the Cantor table.
+    """"""
+
+
+    # Initialize variables
+    numerator = 1
+    denominator = 1
+    level = 1
+
+    # Iterate through the levels of the Cantor table
+    while N > 0:
+        # If N is in the left half of the level, move to the next level
+        if N <= level:
+            N -= level
+            level *= 2
+        else:
+            # If N is in the right half of the level, move to the next level and subtract the level
+            N -= level
+            level *= 2
+            N += level
+
+    # Adjust the numerator and denominator based on the level
+    if level % 2 == 0:
+        numerator = N
+        denominator = level - N + 1
+    else:
+        numerator = level - N + 1
+        denominator = N
+
+    return f""{numerator}/{denominator}""
+def test_cantor_numbering():
+    # Test case 1: N = 1, the first element, should be ""1/1""
+    assert cantor_numbering(1)==""1/1""
+
+    # Test case 2: N = 2, the second element, should be ""1/2""
+    assert cantor_numbering(2)==""1/2""
+
+    # Test case 3: N = 6, the sixth element, should be ""1/3""
+    assert cantor_numbering(6)==""1/3""
+
+    # Corrected test case: N = 7, the seventh element, should be ""1/4""
+    assert cantor_numbering(7) == ""1/4""
+
+    # Additional test case: N = 8, the eighth element, should be ""2/3""
+    assert cantor_numbering(8) == ""2/3""
+
+
+test_cantor_numbering()","0","26.0","0","1","0","5.0","6.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","FP","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","0","20.0","0","0","0","2.0","0.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","AWQ","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""    
+    i = len(perm) - 2
+    while i >= 0 and perm[i] >= perm[i + 1]:
+        i -= 1
+    
+    if i == -1:
+        return False
+    
+    j = len(perm) - 1
+    while perm[j] <= perm[i]:
+        j -= 1
+    
+    perm[i], perm[j] = perm[j], perm[i]
+    perm[i + 1:] = reversed(perm[i + 1:])
+    return True
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","1","31.0","0","0","0","6.0","4.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","GPTQ","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","0","20.0","0","0","0","2.0","0.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","GGUF","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""    
+    i = len(perm) - 2
+    while i >= 0 and perm[i] >= perm[i + 1]:
+        i -= 1
+    if i == -1:
+        return False
+    j = len(perm) - 1
+    while perm[j] <= perm[i]:
+        j -= 1
+    perm[i], perm[j] = perm[j], perm[i]
+    perm[i + 1:] = reversed(perm[i + 1:])
+    return True
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","1","31.0","0","0","0","6.0","4.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","BnB","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""
+    # Find the first index 'i' such that perm[i] < perm[i + 1], starting from the end of the list
+    i = len(perm) - 2
+    while i >= 0 and perm[i] >= perm[i + 1]:
+        i -= 1
+    
+    # If no such index is found, the permutation is the last permutation
+    if i == -1:
+        return False
+    
+    # Find the smallest number greater than perm[i] to the right of perm[i]
+    j = len(perm) - 1
+    while perm[j] <= perm[i]:
+        j -= 1
+    
+    # Swap the numbers at indices i and j
+    perm[i], perm[j] = perm[j], perm[i]
+    
+    # Reverse the order of numbers after index i
+    perm[i + 1:] = reversed(perm[i + 1:])
+    
+    return True
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","1","31.0","0","0","0","6.0","4.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","AQLM","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""    
+    i = len(perm) - 2
+    while i >= 0 and perm[i] >= perm[i + 1]:
+        i -= 1
+    if i == -1:
+        return False
+    j = len(perm) - 1
+    while perm[j] <= perm[i]:
+        j -= 1
+    perm[i], perm[j] = perm[j], perm[i]
+    perm[i + 1:] = reversed(perm[i + 1:])
+    return True
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","1","31.0","0","0","0","6.0","4.0",""
+"E3","Multi-method help (5/6 quantized pass while FP fails)","McEval","Python","Qwen2.5-Coder-7B","Python-43","QuIP#","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""","from itertools import permutations
+def next_permutation(perm: list) -> bool:
+    """"""
+    Transforms the input permutation to the next permutation in lexicographic order.
+    
+    The function finds the first number from the end that is smaller than the number following it 
+    and swaps it with the smallest number that is larger and comes after it. Then it reverses the 
+    order of numbers after the original first smaller number. If the input is the last permutation 
+    (in descending order), the function returns False, indicating no next permutation is possible.
+    
+    Args:
+    perm (list): A list of integers representing the current permutation.
+    
+    Returns:
+    bool: True if the permutation was successfully transformed, False if it was the last permutation.
+    
+    Examples:
+    >>> next_permutation([1, 2, 3])
+    True
+    >>> [1, 2, 3]
+    [1, 3, 2]
+    
+    >>> next_permutation([3, 2, 1])
+    False
+    >>> [3, 2, 1]
+    [3, 2, 1]
+    """"""    
+    # Find the first number from the end that is smaller than the number following it
+    i = len(perm) - 2
+    while i >= 0 and perm[i] >= perm[i + 1]:
+        i -= 1
+    
+    # If no such number is found, the permutation is the last one
+    if i < 0:
+        return False
+    
+    # Find the smallest number that is larger and comes after the original first smaller number
+    j = len(perm) - 1
+    while perm[j] <= perm[i]:
+        j -= 1
+    
+    # Swap the found numbers
+    perm[i], perm[j] = perm[j], perm[i]
+    
+    # Reverse the order of numbers after the original first smaller number
+    perm[i + 1:] = reversed(perm[i + 1:])
+    
+    return True
+def test_next_permutation():
+    # Test case 1: ordinary case
+    perm1 = [1, 2, 3]
+    assert next_permutation(perm1) == True, ""Test case 1 failed: next_permutation([1, 2, 3]) should return True""
+    assert perm1 == [1, 3, 2], ""Test case 1 failed: perm1 should be [1, 3, 2]""
+    
+    # Test case 2: last permutation, should return False
+    perm2 = [3, 2, 1]
+    assert next_permutation(perm2) == False, ""Test case 2 failed: next_permutation([3, 2, 1]) should return False""
+    assert perm2 == [3, 2, 1], ""Test case 2 failed: perm2 should be [3, 2, 1] (unchanged)""
+    
+    # Test case 3: permutation with repeated elements
+    perm3 = [1, 5, 1]
+    assert next_permutation(perm3) == True, ""Test case 3 failed: next_permutation([1, 5, 1]) should return True""
+    assert perm3 == [5, 1, 1], ""Test case 3 failed: perm3 should be [5, 1, 1]""
+
+    # Test case 4: permutation with all elements equal
+    perm4 = [1, 1, 1]
+    assert next_permutation(perm4) == False, ""Test case 4 failed: next_permutation([1, 1, 1]) should return False""
+    assert perm4 == [1, 1, 1], ""Test case 4 failed: perm4 should be [1, 1, 1] (unchanged)""
+    
+    # Test case 5: permutation with only one element
+    perm5 = [42]
+    assert next_permutation(perm5) == False, ""Test case 5 failed: next_permutation([42]) should return False""
+    assert perm5 == [42], ""Test case 5 failed: perm5 should be [42] (unchanged)""
+    
+    print(""All test cases passed."")
+
+# Run the test function
+test_next_permutation()","1","31.0","0","0","0","6.0","4.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","FP","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """""" 
+    # Initialize a set to keep track of all positions that need to be cleared
+    clear_positions = set()
+    for start, end in areas:
+        for pos in range(start, end + 1):
+            clear_positions.add(pos)
+    
+    # Calculate the number of remaining trees by subtracting the size of the clear_positions set from the total length
+    remaining_trees = l - len(clear_positions)
+    return remaining_trees
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","0","19.0","0","0","0","5.0","4.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","AWQ","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """""" 
+    # Initialize a set to keep track of all positions that are not cleared
+    remaining_positions = set(range(l))
+    
+    # Iterate over each cleared area and remove its positions from the set
+    for start, end in areas:
+        for pos in range(start, end + 1):
+            if pos in remaining_positions:
+                remaining_positions.remove(pos)
+                
+    # The number of remaining trees is the size of the set
+    return len(remaining_positions)
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","0","19.0","0","0","0","6.0","7.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","GPTQ","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """""" 
+    # Initialize a set to keep track of all positions that are cleared
+    cleared_positions = set()
+    
+    # Iterate over each area in the list of cleared areas
+    for start, end in areas:
+        # Add all positions within the current area to the set of cleared positions
+        for pos in range(start, end + 1):
+            cleared_positions.add(pos)
+            
+    # Calculate the total number of remaining trees by subtracting the number of cleared positions from the total length
+    remaining_trees = l - len(cleared_positions)
+    
+    return remaining_trees
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","0","19.0","0","0","0","5.0","4.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","GGUF","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""    
+    # Initialize a set to keep track of cleared positions
+    cleared_positions = set()
+    
+    # Add all positions in the cleared areas to the set
+    for start, end in areas:
+        for pos in range(start, end + 1):
+            cleared_positions.add(pos)
+    
+    # Calculate the number of remaining trees by subtracting the cleared positions from the total length
+    remaining_trees = l - len(cleared_positions)
+    
+    return remaining_trees
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","0","19.0","0","0","0","5.0","4.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","BnB","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""
+    # Initialize a list to keep track of the number of trees in each segment of the road
+    trees = [1] * l
+
+    # Iterate over each area to be cleared
+    for start, end in areas:
+        # Mark the trees in the cleared area as 0
+        for i in range(start, end + 1):
+            trees[i - 1] = 0
+
+    # Count the remaining trees
+    remaining_trees = sum(trees)
+
+    return remaining_trees
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","0","19.0","0","0","0","5.0","4.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","AQLM","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""    
+    # Initialize a list to keep track of cleared trees
+    cleared_trees = [False] * (l + 1)
+    
+    # Mark the trees to be cleared
+    for start, end in areas:
+        for i in range(start, end + 1):
+            cleared_trees[i] = True
+    
+    # Count the remaining trees
+    remaining_trees = sum(not cleared for cleared in cleared_trees)
+    
+    return remaining_trees
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","1","19.0","0","0","0","5.0","4.0",""
+"E4","Sole AQLM win on a road-clearing problem","McEval","Python","Qwen2.5-Coder-7B","Python-36","QuIP#","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""","from typing import List, Tuple
+def remaining_trees_after_clearing(l: int, areas: List[Tuple[int, int]]) -> int:
+    """"""
+    Calculate the number of remaining trees along a road after specific areas have been cleared.
+
+    The road is represented as a straight line of length 'l' and is initially filled with trees.
+    Each area scheduled for clearing is specified as a pair of integers (start, end), representing
+    the inclusive range along the road where the trees will be removed.
+
+    Args:
+    - l (int): The length of the road.
+    - areas (List[Tuple[int, int]]): A list of tuples where each tuple represents a cleared area on the road.
+    
+    Returns:
+    - int: The total number of trees remaining along the road after the specified areas have been cleared.
+    
+    Examples:
+    - remaining_trees_after_clearing(10, [(2, 5), (7, 9)]) will return 5    
+    - remaining_trees_after_clearing(100, [(10, 90)]) will return 20.
+    """"""
+def test_remaining_trees_after_clearing():
+    test_cases = [
+        (500, [(150, 300), (100, 200), (470, 471)], 298),
+        (1000, [(0, 100), (200, 300), (400, 500), (600, 700), (800, 900)], 496),
+        (10, [(3, 4), (7, 9)], 6),
+    ]
+
+    for i, (l, areas, expected) in enumerate(test_cases, 1):
+        result = remaining_trees_after_clearing(l, areas)
+        assert result == expected, f""Test case {i} failed: expected {expected}, got {result}""
+        print(f""Test case {i} passed."")
+
+
+test_remaining_trees_after_clearing()","0","13.0","0","0","0","3.0","1.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","FP","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","0","12.0","0","0","0","2.0","0.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","AWQ","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","0","12.0","0","0","0","2.0","0.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","GPTQ","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","0","12.0","0","0","0","2.0","0.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","GGUF","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""
+
+
+    unique_numbers = sorted(set(numbers))
+    return len(unique_numbers), unique_numbers
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","1","14.0","0","0","0","2.0","0.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","BnB","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """""" unique_numbers = set(numbers)
+    sorted_unique_numbers = sorted(unique_numbers)
+    return len(sorted_unique_numbers), sorted_unique_numbers
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","0","0.0","0","0","0","0.0","0.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","AQLM","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""
+
+
+    unique_numbers = sorted(set(numbers))
+    return len(unique_numbers), unique_numbers
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","1","14.0","0","0","0","2.0","0.0",""
+"E5","QuIP# + AQLM + GGUF help (counter-narrative: QuIP# can also help)","McEval","Python","Qwen2.5-Coder-7B","Python-17","QuIP#","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""","from typing import List, Tuple
+def process_random_numbers(numbers: List[int]) -> Tuple[int, List[int]]:
+    """"""
+    Remove duplicate integers from the input list and return the sorted unique numbers.
+
+    The function first converts the input list of numbers into a set to remove any duplicates,
+    then sorts the resulting set of unique numbers. It returns a tuple containing the count
+    of unique numbers and a list of these unique numbers in ascending order.
+
+    Args:
+    numbers (List[int]): A list of integers, which may contain duplicates.
+
+    Returns:
+    Tuple[int, List[int]]: A tuple with two elements:
+        - An integer representing the count of unique numbers.
+        - A list of the unique numbers sorted in ascending order.
+
+    Examples:
+    >>> process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15])
+    (8, [15, 20, 32, 40, 67, 89, 300, 400])
+
+    >>> process_random_numbers([5, 3, 5, 2, 1, 4, 1])
+    (5, [1, 2, 3, 4, 5])
+    """"""
+
+
+    unique_numbers = list(set(numbers))
+    unique_numbers.sort()
+    return (len(unique_numbers), unique_numbers)
+def test_process_random_numbers():
+    # Test case 1: Basic example with duplicates
+    assert process_random_numbers([20, 40, 32, 67, 40, 20, 89, 300, 400, 15]) == (8, [15, 20, 32, 40, 67, 89, 300, 400]), ""Test case 1 failed""
+
+    # Test case 2: All elements are the same
+    assert process_random_numbers([1, 1, 1, 1]) == (1, [1]), ""Test case 2 failed""
+
+    # Test case 3: No duplicates
+    assert process_random_numbers([3, 1, 4, 2]) == (4, [1, 2, 3, 4]), ""Test case 3 failed""
+
+    # Test case 4: Random numbers with single element
+    assert process_random_numbers([42]) == (1, [42]), ""Test case 4 failed""
+
+    # Test case 5: Empty list
+    assert process_random_numbers([]) == (0, []), ""Test case 5 failed""
+
+    # Test case 6: Random numbers with negatives and zero
+    assert process_random_numbers([0, -1, -2, -1, 0, 3]) == (4, [-2, -1, 0, 3]), ""Test case 6 failed""
+
+    # Test case 7: Large range of numbers
+    assert process_random_numbers(list(range(1000, 0, -1))) == (1000, list(range(1, 1001))), ""Test case 7 failed""
+
+    print(""All test cases passed!"")
+
+# Run the test function
+test_process_random_numbers()","1","15.0","0","0","0","2.0","0.0",""

@@ -1,0 +1,1776 @@
+"example_id","narrative","benchmark","language","model","task_id","config","prompt","generated_code","passed","LoC","Reliability","Maintainability","Security_Hotspots","CyC","CoC","load_error"
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","FP","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"", ""-..."", ""-.-."", ""-.."", ""."", ""..-."", ""--."", ""...."", "".."", "".---"", ""-.-"", "".-.."", ""--"", ""-."", ""---"", "".--."", ""--.-"", "".-."", ""..."", ""-"", ""..-"", ""...-"", "".--"", ""-..-"", ""-.--"", ""--..""};
+
+        Set<String> set = new HashSet<>();
+        for (String w : words) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : w.toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            set.add(sb.toString());
+        }
+
+        return set.size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","1","22.0","0","4","0","4.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","AWQ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"", ""-..."", ""-.-."", ""-.."", ""."", ""..-."", ""--."", ""...."", "".."", "".---"", ""-.-"", "".-.."", ""--"", ""-."", ""---"", "".--."", ""--.-"", "".-."", ""..."", ""-"", ""..-"", ""...-"", "".--"", ""-..-"", ""-.--"", ""--..""};
+
+        Set<String> set = new HashSet<>();
+        for (String w : words) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : w.toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            set.add(sb.toString());
+        }
+
+        return set.size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","1","22.0","0","8","0","4.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","GPTQ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"", ""-..."", ""-.-."", ""-.."", ""."", ""..-."", ""--."", ""...."", "".."", "".---"",
+                ""-.-"", "".-.."", ""--"", ""-."", ""---"", "".--."", ""--.-"", "".-."", ""..."", ""-"", ""..-"", ""...-"",
+                "".--"", ""-..-"", ""-.--"", ""--..""};
+
+        Set<String> set = new HashSet<>();
+        for (String w : words) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : w.toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            set.add(sb.toString());
+        }
+
+        return set.size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","1","24.0","0","4","0","4.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","GGUF","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"", ""-..."", ""-.-."", ""-.."", ""."", ""..-."", ""--."", ""...."", "".."", "".---"", ""-.-"", "".-.."", ""--"", ""-."", ""---"", "".--."", ""--.-"", "".-."", ""..."", ""-"", ""..-"", ""...-"", "".--"", ""-..-"", ""-.--"", ""--..""};
+
+        Set<String> set = new HashSet<>();
+        for (String word : words) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : word.toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            set.add(sb.toString());
+        }
+        return set.size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","1","22.0","0","4","0","4.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","BnB","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"",""-..."",""-.-."",""-.."",""."",""..-."",""--."",""...."","".."","".---"",""-.-"","".-.."",""--"",""-."",""---"","".--."",""--.-"","".-."",""..."",""-"",""..-"",""...-"","".--"",""-..-"",""-.--"",""--..""};
+        Set<String> set = new HashSet<>();
+        for (String word : words) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : word.toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            set.add(sb.toString());
+        }
+        return set.size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","1","22.0","0","4","0","4.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","AQLM","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"", ""-..."", ""-.-."", ""-.."", ""."", ""..-."", ""--."", ""...."", "".."", "".---"", ""-.-"", "".-.."", ""--"", ""-."", ""---"", "".--."", ""--.-"", "".-."", ""..."", ""-"", ""..-"", ""...-"", "".--"", ""-..-"", ""-.--"", ""--..""};
+
+        Set<String> set = new HashSet<>();
+        for (String word : words) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : word.toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            set.add(sb.toString());
+        }
+        return set.size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","1","22.0","0","4","0","4.0","3.0",""
+"E1","QuIP-only failure (6/7 pass, only QuIP# fails)","McEval","Java","Qwen2.5-Coder-7B","Java-21","QuIP#","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words) ","import java.util.*;
+
+class Problem {
+    /**
+     * Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter,
+     * return the number of different transformations among all words.
+     *
+     * Example:
+     * uniqueMorseRepresentations([""gin"",""zen"",""gig"",""msg""]) -> 2
+     * uniqueMorseRepresentations([""a""]) -> 1
+     */
+    public int uniqueMorseRepresentations(String[] words)  {
+        String[] morse = {"".-"", ""-..."", ""-.-."", ""-.."", ""."", ""..-."", ""--."", ""...."", "".."", "".--"", ""-."", ""---"", "".--."", ""--.."", "".""}, ans = new String[words.length];
+        for (int i = 0; i < words.length; i++) {
+            StringBuilder sb = new StringBuilder();
+            for (char c : words[i].toCharArray()) {
+                sb.append(morse[c - 'a']);
+            }
+            ans[i] = sb.toString();
+        }
+        return ans.length - new HashSet<>(Arrays.asList(ans)).size();
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.uniqueMorseRepresentations(new String[]{""hello"", ""world"", ""hello""}) == 2;
+        assert solution.uniqueMorseRepresentations(new String[]{""abc"", ""def"", ""ghi""}) == 3;
+        assert solution.uniqueMorseRepresentations(new String[]{""aaa"", ""aaa"", ""aaa""}) == 1;
+        System.out.println(""All tests passed"");
+    }
+}","0","21.0","0","5","0","4.0","3.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","FP","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        int count = 0;
+        while (true) {
+            if ((Y % 4 == 0 && Y % 100 != 0) || (Y % 400 == 0)) {
+                count++;
+                if (count == N) {
+                    return Y;
+                }
+            }
+            Y++;
+        }
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","1","20.0","0","7","0","7.0","8.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","AWQ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        // Calculate the number of leap years between Y and the first possible leap year after Y
+        int leapYearsBefore = (Y % 4 == 0 && Y % 100 != 0 || Y % 400 == 0) ? 1 : 0;
+        
+        // Calculate the total number of leap years from Y to the Nth leap year
+        int totalLeapYears = N + leapYearsBefore - 1;
+        
+        // Calculate the Nth leap year
+        int nthLeapYear = Y + (totalLeapYears - leapYearsBefore) * 4;
+        
+        return nthLeapYear;
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","1","14.0","0","8","0","5.0","3.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","GPTQ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        // Calculate the first leap year after Y
+        int firstLeapYear = (Y % 4 == 0 && Y % 100 != 0 || Y % 400 == 0) ? Y : Y + (4 - Y % 4);
+        
+        // Calculate the Nth leap year
+        return firstLeapYear + (N - 1) * 4;
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","1","12.0","0","7","0","5.0","3.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","GGUF","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        int count = 0;
+        while (true) {
+            if (isLeapYear(Y)) {
+                count++;
+                if (count == N) {
+                    return Y;
+                }
+            }
+            Y++;
+        }
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","0","20.0","0","7","0","5.0","6.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","BnB","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        int count = 0;
+        int year = Y;
+        while (count < N) {
+            year++;
+            if (isLeapYear(year)) {
+                count++;
+            }
+        }
+        return year;
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","0","19.0","0","7","0","4.0","3.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","AQLM","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        int count = 0;
+        int year = Y;
+        while (count < N) {
+            year++;
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                count++;
+            }
+        }
+        return year;
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","0","19.0","0","7","0","6.0","5.0",""
+"E2","Broad low-bit degradation (4-bit techniques all fail)","McEval","Java","Qwen2.5-Coder-7B","Java-2","QuIP#","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N) ","class Problem {
+    /**
+     * Given a positive integer Y indicating the start year, and a positive integer N,
+     * this function finds the Nth leap year after the start year Y.
+     *
+     * @param Y The start year.
+     * @param N The position of the leap year to find.
+     * @return The Nth leap year after the start year Y.
+     *
+     * Example:
+     * findNthLeapYear(2000, 4) => 2008
+     * findNthLeapYear(1996, 10) => 2032
+     */
+    public static int findNthLeapYear(int Y, int N)  {
+        int leapYear = 0;
+        for (int i = 0; i < N; i++) {
+            while (!isLeapYear(Y)) {
+                Y++;
+            }
+            leapYear = Y;
+            Y++;
+        }
+        return leapYear;
+    }
+    public static void main(String[] args) {
+        // Test the function with the examples from the comment
+        assert findNthLeapYear(2000, 4) == 2012;
+        assert findNthLeapYear(1996, 10) == 2032;
+        assert findNthLeapYear(2000, 1) == 2000;
+        System.out.println(""All tests passed"");
+    }
+}","0","19.0","0","7","0","4.0","3.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","FP","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int open = 0, close = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                open++;
+            } else {
+                close++;
+                if (close > open) {
+                    open++;
+                    close--;
+                }
+            }
+        }
+        return open + (close % 2 == 0 ? 0 : 2);
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","0","25.0","0","5","0","6.0","8.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","AWQ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int open = 0, close = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                open++;
+            } else {
+                close++;
+                if (close > open) {
+                    open++;
+                    close--;
+                }
+            }
+        }
+        return open + (close % 2 == 0 ? 0 : 2);
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","0","25.0","0","5","0","6.0","8.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","GPTQ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int open = 0, close = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                open++;
+            } else {
+                if (open > 0) {
+                    open--;
+                } else {
+                    close++;
+                }
+            }
+        }
+        return open + close;
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","1","25.0","0","5","0","5.0","8.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","GGUF","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int left = 0, right = 0, result = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                if (right % 2 == 1) {
+                    result++;
+                    right--;
+                }
+                left++;
+            } else {
+                right++;
+                if (right == 2 * left) {
+                    left--;
+                    right = 0;
+                }
+            }
+        }
+        return result + 2 * (left - right / 2);
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","0","29.0","0","5","0","6.0","10.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","BnB","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int left = 0, right = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                if (right % 2 != 0) {
+                    left++;
+                    right--;
+                }
+                right += 2;
+            } else {
+                right--;
+                if (right < 0) {
+                    right = 0;
+                    left++;
+                }
+            }
+        }
+        return left + right;
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","0","29.0","0","5","0","6.0","10.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","AQLM","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int left = 0, right = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                left++;
+            } else {
+                if (left > 0) {
+                    left--;
+                } else {
+                    right++;
+                }
+            }
+        }
+        return left + right;
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","1","25.0","0","5","0","5.0","8.0",""
+"E3","AQLM and GPTQ pass tasks FP fails","McEval","Java","Qwen2.5-Coder-7B","Java-24","QuIP#","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s) ","class Problem {
+    /**
+    * Given a string s composed of '(' and ')', the left and right brackets in s may be unbalanced. Each operation can insert a '(' or ')', and calculate the minimum number of insertion operations required. Make the left and right brackets in s balanced.
+    *
+    * Example 1:
+    * Input: s = ""(()))""
+    * Output: 1
+    * Explanation:  We need to add one '(' at the first of the string to make it balanced: ""((()))"".
+    * Example 2:
+    * Input: s = ""((()))""
+    * Output: 0
+    *
+    * - s consists of '(' and ')' only.
+    */
+ public int minInsertions(String s)  {
+        int left = 0, right = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                left++;
+            } else {
+                right++;
+            }
+        }
+        return (left - right) * 2;
+    }
+    public static void main(String[] args) {
+        Problem solution = new Problem();
+
+        // Test the function with different test cases
+        assert solution.minInsertions(""((()))"") == 0;
+        assert solution.minInsertions(""()()()"") == 0;
+        assert solution.minInsertions(""(()))(()"") == 2;
+        assert solution.minInsertions(""))())((("") == 6;
+        System.out.println(""All tests passed"");
+    }
+}","0","21.0","0","5","0","4.0","4.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","FP","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        SimpleDateFormat inputFormat = new SimpleDateFormat(""MM dd yyyy"");
+        try {
+            Date parsedDate = inputFormat.parse(date);
+            SimpleDateFormat outputFormat = new SimpleDateFormat(""MMMM dd, yyyy 'is a' EEEE"");
+            return outputFormat.format(parsedDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","0","22.0","0","5","0","2.0","1.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","AWQ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        SimpleDateFormat inputFormat = new SimpleDateFormat(""MM dd yyyy"");
+        try {
+            Date parsedDate = inputFormat.parse(date);
+            SimpleDateFormat outputFormat = new SimpleDateFormat(""MMMM dd, yyyy 'is a' EEEE"");
+            return outputFormat.format(parsedDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","0","22.0","0","5","0","2.0","1.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","GPTQ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        SimpleDateFormat inputFormat = new SimpleDateFormat(""MM dd yyyy"");
+        try {
+            Date parsedDate = inputFormat.parse(date);
+            SimpleDateFormat outputFormat = new SimpleDateFormat(""MMMM dd, yyyy 'is a' EEEE"");
+            return outputFormat.format(parsedDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return """";
+        }
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","0","22.0","0","5","0","2.0","1.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","GGUF","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        String[] dateParts = date.split("" "");
+        int month = Integer.parseInt(dateParts[0]);
+        int day = Integer.parseInt(dateParts[1]);
+        int year = Integer.parseInt(dateParts[2]);
+        
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month - 1, day);
+        String weekday = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US);
+        
+        return dateParts[0] + "" "" + dateParts[1] + "" "" + dateParts[2] + "" is a "" + weekday;
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","0","21.0","0","5","0","2.0","0.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","BnB","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        // Parse the input date string into a Date object
+        SimpleDateFormat dateFormat = new SimpleDateFormat(""MM dd yyyy"");
+        Date parsedDate;
+        try {
+            parsedDate = dateFormat.parse(date);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException(""Invalid date format. Please use 'MM dd yyyy'."");
+        }
+
+        // Get the weekday of the parsed date
+        String[] weekdays = {""Sunday"", ""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday"", ""Saturday""};
+        int dayOfWeek = parsedDate.getDay();
+
+        // Format the date to include the weekday
+        String formattedDate = dateFormat.format(parsedDate) + "" is a "" + weekdays[dayOfWeek];
+
+        return formattedDate;
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","0","24.0","0","6","0","2.0","1.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","AQLM","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        String[] parts = date.split("" "");
+        int month = Integer.parseInt(parts[0]);
+        int day = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+        String[] months = {""January"", ""February"", ""March"", ""April"", ""May"", ""June"", ""July"", ""August"", ""September"", ""October"", ""November"", ""December""};
+        String[] weekdays = {""Sunday"", ""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday"", ""Saturday""};
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month - 1, day);
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        return months[month - 1] + "" "" + day + "", "" + year + "" is a "" + weekdays[dayOfWeek - 1];
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","1","23.0","0","7","0","2.0","0.0",""
+"E4","Sole AQLM win on a date-arithmetic task","McEval","Java","Qwen2.5-Coder-7B","Java-12","QuIP#","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date) ","import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+class Problem {
+    /**
+     * Given a date in the format ""MM dd yyyy"", return the weekday of the date.
+     * 
+     * Example:
+     * >>> convertDatesToWeekdays(""11 15 1997"")
+     * ""November 15, 1997 is a Saturday""
+     * >>> convertDatesToWeekdays(""01 01 2000"")
+     * ""January 1, 2000 is a Saturday""
+     * >>> convertDatesToWeekdays(""07 04 1998"")
+     * ""July 4, 1998 is a Saturday""
+     */
+    public static String convertDatesToWeekdays(String date)  {
+        String[] months = {""January"", ""February"", ""March"", ""April"", ""May"", ""June"", ""July"", ""August"", ""September"", ""October"", ""November"", ""December""};
+        String[] days = {""Sunday"", ""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday"", ""Saturday""};
+        String[] dateParts = date.split("" "");
+        int month = Integer.parseInt(dateParts[0]);
+        int day = Integer.parseInt(dateParts[1]);
+        int year = Integer.parseInt(dateParts[2]);
+        String weekday = days[getDayOfWeek(year, month, day)];
+        return months[month - 1] + "" "" + day + "", "" + year + "" is a "" + weekday;
+    }
+    public static void main(String[] args) {
+        // Test the function with different test cases
+        assert convertDatesToWeekdays(""02 05 2024"").equals(""February 5, 2024 is a Monday"");
+        assert convertDatesToWeekdays(""01 12 2023"").equals(""January 12, 2023 is a Thursday"");
+        assert convertDatesToWeekdays(""09 14 2013"").equals(""September 14, 2013 is a Saturday"");
+        System.out.println(""All tests passed"");
+    }
+}","0","21.0","0","5","0","2.0","0.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","FP","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    // Your code here
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","0","11.0","0","5","0","2.0","0.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","AWQ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    if (heights == null || heights.length == 0) return 0;
+    Stack<Integer> stack = new Stack<>();
+    int maxArea = 0;
+    for (int i = 0; i <= heights.length; i++) {
+      while (!stack.isEmpty() && (i == heights.length || heights[stack.peek()] >= heights[i])) {
+        int height = heights[stack.pop()];
+        int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+        maxArea = Math.max(maxArea, height * width);
+      }
+      stack.push(i);
+    }
+    return maxArea;
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","1","23.0","0","9","0","9.0","10.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","GPTQ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    // Your code here
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","0","11.0","0","5","0","2.0","0.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","GGUF","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    // Your code goes here
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","0","11.0","0","5","0","2.0","0.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","BnB","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    int n = heights.length;
+    int[] left = new int[n];
+    int[] right = new int[n];
+    Stack<Integer> stack = new Stack<>();
+
+    // Fill left array
+    for (int i = 0; i < n; i++) {
+      while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+        stack.pop();
+      }
+      left[i] = stack.isEmpty() ? -1 : stack.peek();
+      stack.push(i);
+    }
+
+    // Clear stack
+    stack.clear();
+
+    // Fill right array
+    for (int i = n - 1; i >= 0; i--) {
+      while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+        stack.pop();
+      }
+      right[i] = stack.isEmpty() ? n : stack.peek();
+      stack.push(i);
+    }
+
+    // Calculate maximum area
+    int maxArea = 0;
+    for (int i = 0; i < n; i++) {
+      maxArea = Math.max(maxArea, heights[i] * (right[i] - left[i] - 1));
+    }
+
+    return maxArea;
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","1","35.0","0","5","0","11.0","13.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","AQLM","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    if (heights == null || heights.length == 0) {
+      return 0;
+    }
+
+    Stack<Integer> stack = new Stack<>();
+    int maxArea = 0;
+    int i = 0;
+
+    while (i < heights.length) {
+      if (stack.isEmpty() || heights[i] >= heights[stack.peek()]) {
+        stack.push(i++);
+      } else {
+        int top = stack.pop();
+        int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+        maxArea = Math.max(maxArea, heights[top] * width);
+      }
+    }
+
+    while (!stack.isEmpty()) {
+      int top = stack.pop();
+      int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+      maxArea = Math.max(maxArea, heights[top] * width);
+    }
+
+    return maxArea;
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","1","32.0","0","5","0","10.0","13.0",""
+"E5","Multi-method help on a classic algorithms task","McEval","Java","Qwen2.5-Coder-7B","Java-43","QuIP#","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights) ","import java.util.*;
+class Problem {
+
+  /**
+   * Given n non-negative integers representing the heights of bars in a bar chart.
+   * Each bar has a width of 1 unit. Calculate the largest rectangle area that can be formed in the bar chart.
+   *
+   * @param heights An array of integers representing the heights of bars.
+   * @return The maximum area of the rectangle that can be formed.
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,1,5,6,2,3})
+   * Output: 10
+   *
+   * Example:
+   * largestRectangleArea(new int[]{2,4})
+   * Output: 4
+   */
+  public static int largestRectangleArea(int[] heights)  {
+    // Implement the solution here
+  }
+  public static void main(String[] args) {
+    assert largestRectangleArea(new int[] { 1, 2, 3, 4, 5, 3, 3, 2 }) == 15;
+    assert largestRectangleArea(new int[] { 6, 2, 5, 4, 5, 1, 6 }) == 12;
+    assert largestRectangleArea(new int[] { 2, 1, 2, 3, 1 }) == 5;
+
+    System.out.println(""All tests passed"");
+  }
+}","0","11.0","0","5","0","2.0","0.0",""

@@ -1,0 +1,15 @@
+base_model,technique,repo_id,downloads_all_time,downloads_last_30d,likes,created_at,last_modified
+Qwen2.5-Coder-7B-Instruct,FP16,Qwen/Qwen2.5-Coder-7B-Instruct,12928337,2289684,704,2024-09-17T13:38:49.000Z,2025-01-12T02:03:41.000Z
+Qwen2.5-Coder-7B-Instruct,AWQ,Qwen/Qwen2.5-Coder-7B-Instruct-AWQ,4176652,339238,22,2024-09-20T03:30:26.000Z,2024-11-18T12:54:24.000Z
+Qwen2.5-Coder-7B-Instruct,GPTQ,Qwen/Qwen2.5-Coder-7B-Instruct-GPTQ-Int4,4710176,565362,13,2024-09-20T03:29:44.000Z,2024-11-18T12:54:13.000Z
+Qwen2.5-Coder-7B-Instruct,GGUF,Qwen/Qwen2.5-Coder-7B-Instruct-GGUF,965027,124457,240,2024-09-18T11:40:39.000Z,2024-11-12T07:59:32.000Z
+Qwen2.5-Coder-7B-Instruct,BitsAndBytes,unsloth/Qwen2.5-Coder-7B-Instruct-bnb-4bit,579296,170025,12,2024-09-23T06:55:21.000Z,2024-11-12T02:53:32.000Z
+Qwen2.5-Coder-7B-Instruct,AQLM,(self-quantized; not released on HF),,,,,
+Qwen2.5-Coder-7B-Instruct,QuIP#,(self-quantized; not released on HF),,,,,
+CodeLlama-7B-Instruct,FP16,codellama/CodeLlama-7b-Instruct-hf,2799862,45771,255,2023-08-24T16:33:37.000Z,2024-04-12T14:18:42.000Z
+CodeLlama-7B-Instruct,AWQ,TheBloke/CodeLlama-7B-Instruct-AWQ,22184,92,4,2023-09-19T00:33:48.000Z,2023-11-09T18:21:06.000Z
+CodeLlama-7B-Instruct,GPTQ,TheBloke/CodeLlama-7B-Instruct-GPTQ,475871,497,46,2023-08-24T20:27:24.000Z,2023-09-27T12:46:05.000Z
+CodeLlama-7B-Instruct,GGUF,TheBloke/CodeLlama-7B-Instruct-GGUF,364469,10840,149,2023-08-24T17:01:14.000Z,2023-09-27T12:46:02.000Z
+CodeLlama-7B-Instruct,BitsAndBytes,(runtime BnB applied to FP16 base; no separate HF repo),,,,,
+CodeLlama-7B-Instruct,AQLM,Devy1/CodeLlama-7b-hf-AQLM-4bit-mixed-2x15,43,5,0,2025-01-18T09:46:49.000Z,2025-03-07T13:19:56.000Z
+CodeLlama-7B-Instruct,QuIP#,(self-quantized; not released on HF),,,,,
